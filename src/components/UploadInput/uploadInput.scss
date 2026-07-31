@@ -1,0 +1,228 @@
+.upload-input-container {
+  margin-bottom: 6px; /* tighter block spacing */
+
+  .upload-label {
+    display: block;
+    font-weight: 500;
+    color: #747474;
+
+    margin-bottom: 4px;
+    font-size: 0.85rem;
+  }
+
+  .upload-area {
+    border: 1px dashed #ddd;
+    border-radius: 6px;
+    padding: 0.35rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #fafafa;
+    position: relative;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      border-color: var(--checkboxColor);
+      background-color: #f8fff8;
+    }
+
+    &.drag-over {
+      border-color: var(--checkboxColor);
+      background-color: #f0fff0;
+      transform: scale(1.02);
+    }
+
+    &.has-file {
+      border-color: var(--checkboxColor);
+      background-color: #f8fff8;
+      border-style: solid;
+      cursor: default;
+
+      &:hover {
+        border-color: var(--checkboxColor);
+        background-color: #f8fff8;
+        transform: none;
+      }
+    }
+
+    &.has-error {
+      border-color: #dc3545;
+      background-color: #fff5f5;
+    }
+
+    .file-input {
+      position: absolute;
+      opacity: 0;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+    }
+
+    .upload-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+
+      .upload-icon {
+        font-size: 0.9rem;
+        opacity: 0.6;
+      }
+
+      .upload-text {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+
+        .upload-main-text {
+          font-weight: 500;
+          color: var(--fontColor);
+          font-size: 0.78rem;
+        }
+
+        .upload-sub-text {
+          font-size: 0.68rem;
+          color: #666;
+        }
+      }
+    }
+
+    .file-selected {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 0.25rem 0.35rem;
+      background: white;
+      border-radius: 4px;
+      border: 1px solid var(--checkboxColor);
+
+      .file-info {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        flex: 1;
+
+        .file-icon {
+          font-size: 0.9rem;
+        }
+
+        .file-details {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0.25rem;
+
+          .file-name {
+            font-weight: 500;
+            color: var(--fontColor);
+            font-size: 0.78rem;
+            word-break: break-all;
+          }
+
+          .file-size {
+            font-size: 0.68rem;
+            color: #666;
+          }
+        }
+      }
+
+      .remove-btn {
+        // background: #dc3545;
+        // color: white;
+        border: none;
+        // border-radius: 50%;
+        // width: 24px;
+        // height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        font-size: 0.8rem;
+        transition: background-color 0.2s ease;
+        position: relative;
+        z-index: 10;
+        pointer-events: auto;
+
+      img, svg, .remove-icon {
+          filter: brightness(0) saturate(100%) invert(19%) sepia(97%) saturate(5163%) hue-rotate(348deg) brightness(87%) contrast(97%);
+          /* This filter renders a red-like tone for monochrome SVG/PNG */
+          width: 14px;
+          height: 14px;
+        }
+
+        &:hover {
+          background: rgba(220, 53, 69, 0.08);
+        }
+
+        &:active {
+          background: rgba(220, 53, 69, 0.15);
+        }
+      }
+    }
+  }
+
+  .upload-error {
+    color: #dc3545;
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+    padding-left: 0.25rem;
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .upload-input-container {
+    .upload-area {
+      padding: 1rem;
+      min-height: 100px;
+
+      .upload-placeholder {
+        .upload-icon {
+          font-size: 1.5rem;
+        }
+
+        .upload-text {
+          .upload-main-text {
+            font-size: 0.85rem;
+          }
+
+          .upload-sub-text {
+            font-size: 0.75rem;
+          }
+        }
+      }
+
+      .file-selected {
+        padding: 0.4rem;
+
+        .file-info {
+          gap: 0.5rem;
+
+          .file-icon {
+            font-size: 1.25rem;
+          }
+
+          .file-details {
+            .file-name {
+              font-size: 0.85rem;
+            }
+
+            .file-size {
+              font-size: 0.75rem;
+            }
+          }
+        }
+
+        .remove-btn {
+          width: 20px;
+          height: 20px;
+          font-size: 0.7rem;
+        }
+      }
+    }
+  }
+}

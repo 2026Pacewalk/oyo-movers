@@ -1,0 +1,13 @@
+.mapContainer {
+  background: #fff;
+  padding: 6px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  margin-top: 6px;
+  position: relative;
+  min-height: 360px;
+  width: 100%;
+  overflow: hidden;
+  @media (max-width: 991px) {
+    display: none;
+  }
+}

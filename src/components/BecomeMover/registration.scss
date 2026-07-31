@@ -1,0 +1,41 @@
+// Styles for Initial Registration (WorkDetails) to match other steps
+
+.registration-wrapper {
+  .form-section {
+    background-color: #ffffff !important;
+    border: 1px solid #e9ecef !important;
+    box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04) !important;
+    border-radius: 8px !important;
+    padding: 10px !important;
+    margin-bottom: 0px !important;
+    transition: box-shadow 0.2s ease, border-color 0.2s ease, transform 0.2s ease !important;
+
+    &:hover {
+      border-color: var(--secondaryColor) !important; // keep theme accent
+      box-shadow: 0 2px 8px rgba(16, 24, 40, 0.06) !important; // softer, neutral shadow
+      transform: none !important; // remove lift
+    }
+  }
+
+  .form-header {
+    margin-bottom: 18px !important;
+  }
+
+  .errorMessage,
+  .text-danger {
+    margin-top: 4px !important;
+    margin-bottom: 8px !important;
+    font-size: 12px !important;
+    padding: 0 !important;
+    background-color: transparent !important;
+    border: none !important;
+    color: #dc3545 !important;
+    display: block !important;
+    line-height: 1.3;
+    min-height: auto;
+  }
+
+  .dateSelection .mainSelect {
+    min-width: 60px;
+  }
+}

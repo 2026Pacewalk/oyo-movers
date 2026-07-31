@@ -1,0 +1,26 @@
+.recaptcha-container {
+  margin: 16px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.recaptcha-error {
+  color: #d93025;
+  font-size: 12px;
+  margin-top: 8px;
+  padding-left: 4px;
+}
+
+// Mobile responsiveness
+@media (max-width: 768px) {
+  .recaptcha-container {
+    margin: 12px 0;
+  }
+  
+  // Scale down reCAPTCHA on mobile
+  .g-recaptcha {
+    transform: scale(0.85);
+    transform-origin: left top;
+  }
+}

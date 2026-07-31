@@ -1,0 +1,46 @@
+.webClick {
+  width: 39px;
+  height: 41px;
+}
+.bookOyoBox {
+  width: 351px;
+  height: 72px;
+  margin-bottom: 25px;
+  .nextImage {
+    width: 60px;
+    height: 60px;
+  }
+}
+.howItsWorkBox {
+  width: 457px;
+  height: 309px;
+
+  .nextImage {
+    width: 427px;
+    height: 164px;
+  }
+}
+.imageBox {
+  width: 436px;
+  height: 275px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+
+  .nextImage {
+    width: 107px;
+    height: 65px;
+  }
+  .clearUpfrontImg {
+    width: 65px;
+  }
+  .fullyTrainedImg {
+    width: 45px;
+    height: 59px;
+  }
+}
+
+.storesPickUpImage .nextImage {
+  width: 35px !important;
+  height: 27px;
+}

@@ -1,0 +1,448 @@
+/* Wrapper div for MoverInput component - ensures proper spacing */
+.moverInputWrapper {
+  margin-bottom: 0 !important;
+  /* Let error message handle spacing */
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+/* Reserve space for error in registration wrapper to prevent input movement */
+.registration-wrapper .moverInputWrapper {
+  margin-bottom: 6px !important; /* Reduced to 6px: reserve space for error (4px margin-top + 18px min-height) */
+  position: relative !important;
+  
+  /* Error message fills the reserved space */
+  >.errorMessage {
+    margin-bottom: 0 !important; /* No bottom margin, space already reserved */
+  }
+}
+
+/* When wrapper is inside workcheckBox, make it inline */
+.workcheckBox .moverInputWrapper {
+  display: inline-block !important;
+  width: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* When wrapper contains radio button, make it inline */
+.moverInputWrapper:has(.moverCustomInput input[type="radio"]),
+.moverInputWrapper:has(input[type="radio"]) {
+  display: inline-block !important;
+  width: auto !important;
+  margin-right: 16px !important;
+  /* gap-4 spacing */
+}
+
+/* Fallback for browsers without :has() support - target by parent context */
+.d-flex .moverInputWrapper,
+.tabRadioWraper .d-flex .moverInputWrapper {
+  display: inline-block !important;
+  width: auto !important;
+  margin-right: 0 !important;
+  /* gap handles spacing */
+}
+
+.moverCustomInput {
+  margin-bottom: 10px !important;
+  /* ensure consistent spacing */
+  position: relative;
+  /* For proper positioning of child elements */
+
+  input {
+    border: 1px solid #eaebef;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 14px;
+    display: block;
+    width: 100%;
+    box-shadow: none !important;
+    padding-right: 35px !important;
+    outline: none !important;
+    background-color: #fff !important;
+    box-sizing: border-box;
+    /* Ensure consistent sizing across browsers */
+    -webkit-box-sizing: border-box;
+
+    /* Safari fix */
+    &:focus {
+      border-color: var(--highlightColor);
+    }
+
+    /* Prevent mobile zoom on input focus - font-size must be at least 16px */
+    @media (max-width: 768px) {
+      font-size: 16px !important;
+    }
+  }
+
+  /* Also prevent zoom for Form.Control (FloatingLabel inputs) */
+  .form-control {
+    @media (max-width: 768px) {
+      font-size: 16px !important;
+    }
+  }
+
+  textarea {
+    border: 1px solid #eaebef;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1rem;
+    display: block;
+    width: 100%;
+    box-shadow: none !important;
+    outline: none !important;
+  }
+}
+
+/* Ensure error message in wrapper has proper spacing */
+.moverInputWrapper>.errorMessage {
+  display: block !important;
+  margin-top: 4px !important;
+  margin-bottom: 0 !important; /* No bottom margin to prevent pushing */
+  min-height: 18px !important;
+}
+
+.editField {
+  line-height: 10px;
+
+  span {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    svg {
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+  label {
+    font-size: 14px;
+    color: #999;
+  }
+
+  /* Prevent mobile zoom for Form.Control inputs */
+  .form-control {
+    @media (max-width: 768px) {
+      font-size: 16px !important;
+    }
+  }
+}
+
+.passwordWrapper {
+  position: relative;
+
+  input {
+    padding-right: 40px;
+  }
+
+  .eye-icon {
+    position: absolute;
+    top: 11px;
+    right: 10px;
+  }
+}
+
+.selceted-label {
+  background-color: #fff;
+}
+
+.character-counter {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 5px;
+  font-size: 12px;
+  color: #666;
+
+  span {
+    &.warning {
+      color: #ff6b35;
+      font-weight: 500;
+    }
+  }
+}
+
+// Radio button styling (only for radio buttons, not checkboxes)
+// Support both radio-input and radioCheck classes for backward compatibility
+.moverCustomInput.radio-input,
+.moverCustomInput.radioCheck {
+  display: inline-flex !important;
+  /* Changed from flex to inline-flex for horizontal layout */
+  align-items: center !important;
+  gap: 8px !important;
+  margin-bottom: 0 !important;
+  width: auto !important;
+  flex-shrink: 0 !important;
+  flex-direction: row !important;
+  /* Ensure horizontal direction */
+
+  input[type="radio"] {
+    width: 16px !important;
+    height: 16px !important;
+    min-width: 16px !important;
+    min-height: 16px !important;
+    max-width: 16px !important;
+    max-height: 16px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: none !important;
+    display: inline-block !important;
+    vertical-align: middle !important;
+    flex-shrink: 0 !important;
+    cursor: pointer !important;
+    -webkit-appearance: radio !important;
+    appearance: radio !important;
+    position: relative !important;
+    z-index: 1 !important;
+  }
+
+  label {
+    display: inline-block !important;
+    align-items: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    cursor: pointer !important;
+    vertical-align: middle !important;
+    line-height: 1.4 !important;
+    white-space: nowrap !important;
+    position: relative !important;
+    z-index: 0 !important;
+  }
+}
+
+// Additional fix for radio buttons in flex containers (Safari/MacBook fix)
+.d-flex .moverCustomInput.radio-input,
+.d-flex .moverCustomInput.radioCheck,
+.d-flex .moverCustomInput:has(input[type="radio"]),
+.tabRadioWraper .moverCustomInput.radio-input,
+.tabRadioWraper .moverCustomInput.radioCheck,
+.tabRadioWraper .moverCustomInput:has(input[type="radio"]) {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  margin: 0 !important;
+  flex-shrink: 0 !important;
+  width: auto !important;
+
+  input[type="radio"] {
+    width: 16px !important;
+    height: 16px !important;
+    min-width: 16px !important;
+    min-height: 16px !important;
+    max-width: 16px !important;
+    max-height: 16px !important;
+    position: relative !important;
+    z-index: 1 !important;
+    flex-shrink: 0 !important;
+  }
+
+  label {
+    position: relative !important;
+    z-index: 0 !important;
+    flex-shrink: 0 !important;
+  }
+}
+
+// Universal fix: any MoverInput with radio type should be inline
+.moverInputWrapper:has(.moverCustomInput input[type="radio"]),
+.moverInputWrapper:has(.moverCustomInput[type="radio"]) {
+  display: inline-block !important;
+  width: auto !important;
+  margin-right: 16px !important;
+  /* gap-4 spacing */
+}
+
+// Checkbox styling
+.moverCustomInput {
+  input[type="checkbox"] {
+    width: auto !important;
+    height: auto !important;
+    min-width: 16px !important;
+    min-height: 16px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: none !important;
+    display: inline-block !important;
+    vertical-align: baseline !important;
+    margin-right: 6px !important;
+    /* Reduced gap - was 0px, now 6px for better spacing */
+    flex-shrink: 0 !important;
+    cursor: pointer !important;
+    -webkit-appearance: checkbox !important;
+    appearance: checkbox !important;
+  }
+
+  label {
+    display: inline-flex !important;
+    align-items: baseline !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    cursor: pointer !important;
+    vertical-align: baseline !important;
+    line-height: 1.4 !important;
+  }
+}
+
+// Specific fix for workcheckBox - proper gap and alignment
+.workcheckBox .moverCustomInput input[type="checkbox"] {
+  margin-right: 0 !important;
+  /* Gap handled by parent flex gap */
+  margin-left: 0 !important;
+  margin-top: 3px !important;
+  /* Align with text baseline */
+  margin-bottom: 0 !important;
+  vertical-align: top !important;
+}
+
+// Ensure workcheckBox label has no left margin/padding and aligns with checkbox
+.workcheckBox .terms-label {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  line-height: 1.5 !important;
+  align-self: flex-start !important;
+  /* Align with checkbox */
+}
+
+// Specific styling for emergency contact checkbox to override defaults
+.emergency-checkbox-container .moverCustomInput {
+  input[type="checkbox"] {
+    margin-right: 0 !important; // Remove right margin since we use gap in container
+    vertical-align: baseline !important;
+  }
+
+  label {
+    display: none !important; // Hide the default label since we use custom label
+  }
+}
+
+// Simple text-only error message styling within MoverInput
+.moverCustomInput {
+  .errorMessage {
+    display: block !important;
+    margin-top: 4px !important;
+    margin-bottom: 12px !important;
+    /* Increased from 8px */
+    color: #dc3545 !important;
+    font-size: 12px !important;
+    font-weight: 400;
+    padding: 0 !important;
+    background-color: transparent !important;
+    border: none !important;
+    line-height: 1.4 !important;
+    /* Increased from 1.3 */
+    min-height: 18px !important;
+    /* Reserve space to prevent overlap */
+    position: relative !important;
+    z-index: 1 !important;
+  }
+}
+
+// Mobile adjustments for MoverInput
+@media (max-width: 768px) {
+  .moverCustomInput {
+    margin-bottom: 18px !important;
+
+    .errorMessage {
+      margin-bottom: 8px !important;
+      padding: 0;
+      font-size: 12px !important;
+    }
+  }
+}
+
+// ============================================
+// UNIVERSAL RADIO BUTTON FIX FOR ALL STEPS
+// ============================================
+// This ensures radio buttons don't overlap on any device/browser
+// Applies to ALL steps: WorkDetails, MoreAbout, CompleteProfile, 
+// VehicalDetails, PublicLiabilityInsurance, BussinessNumber, etc.
+
+// Universal fix: Any container with radio buttons should use flex
+.tabRadioWraper,
+.tabContainer .tabRadioWraper,
+.profile-form-wrapper .tabRadioWraper,
+.complete-profile-wrapper .tabRadioWraper,
+.vehicle-details-wrapper .tabRadioWraper,
+.liability-ins-wrapper .tabRadioWraper,
+.workdetailsContainer .tabRadioWraper {
+
+  // All direct child divs should be flex containers
+  >div:not(.tabFullWraper):not(.yearMoverInput) {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    gap: 10px !important;
+  }
+
+  // All radio button inputs should be properly sized
+  input[type="radio"] {
+    width: 16px !important;
+    height: 16px !important;
+    min-width: 16px !important;
+    min-height: 16px !important;
+    max-width: 16px !important;
+    max-height: 16px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    flex-shrink: 0 !important;
+    position: relative !important;
+    z-index: 1 !important;
+    -webkit-appearance: radio !important;
+    appearance: radio !important;
+  }
+
+  // All radio button containers should be inline-flex
+  .moverCustomInput:has(input[type="radio"]),
+  .moverInputWrapper:has(input[type="radio"]),
+  .moverCustomInput.radio-input,
+  .moverCustomInput.radioCheck {
+    display: inline-flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 8px !important;
+    margin: 0 !important;
+    flex-shrink: 0 !important;
+    width: auto !important;
+  }
+
+  // Labels should not overlap
+  label {
+    display: inline-block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    white-space: nowrap !important;
+    position: relative !important;
+    z-index: 0 !important;
+    line-height: 1.4 !important;
+  }
+}
+
+// Universal fix for d-flex containers with radio buttons
+.d-flex:has(.moverCustomInput input[type="radio"]),
+.d-flex:has(.moverInputWrapper input[type="radio"]) {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 10px !important;
+  flex-wrap: wrap !important;
+
+  .moverCustomInput,
+  .moverInputWrapper {
+    display: inline-flex !important;
+    flex-shrink: 0 !important;
+    width: auto !important;
+  }
+}

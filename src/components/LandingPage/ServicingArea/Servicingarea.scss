@@ -1,0 +1,41 @@
+.servicingArea {
+  text-align: center;
+  padding: 2rem 1rem;
+  max-width: 700px;
+  margin: 0 auto;
+
+  .mapservice {
+    img {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .servicingArea {
+    padding: 1.5rem 0.5rem;
+    max-width: 100%;
+
+    h2 {
+      font-size: 1.8rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .servicingArea {
+    padding: 1rem 0.5rem;
+
+    h2 {
+      font-size: 1.5rem;
+    }
+
+    p {
+      font-size: 0.85rem;
+    }
+  }
+}

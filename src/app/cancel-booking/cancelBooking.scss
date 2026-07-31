@@ -1,0 +1,449 @@
+:root {
+    --btnBlue: #2041ae;
+    --greenSuccess: #059669;
+}
+
+.modal-dialog {
+    max-width: 400px;
+}
+
+.cancelBookingPage {
+    min-height: 100vh;
+    background-color: var(--bgColor);
+    padding: 40px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cancelBookingContainer {
+    width: 100%;
+    max-width: 500px;
+}
+
+.cancelBookingCard {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+
+    .cardHeader {
+        text-align: center;
+        padding: 30px 20px 20px;
+        border-bottom: 1px solid #e5e7eb;
+
+        h2 {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--fontColor);
+            margin-bottom: 8px;
+        }
+
+        p {
+            font-size: 14px;
+            color: var(--placeHolder);
+            margin: 0;
+        }
+    }
+
+    .reasonOption>div {
+        display: flex;
+    }
+
+    .cardBody {
+        padding: 30px;
+
+        .reasonsSection {
+            margin-bottom: 0;
+
+            .reasonsList {
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+
+                .reasonOption {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    padding: 12px 15px;
+                    border: 1px solid #e5e7eb;
+                    border-radius: 8px;
+                    cursor: pointer;
+                    transition: all 0.2s ease;
+
+                    &:hover {
+                        background-color: #f9fafb;
+                        border-color: var(--tertiaryColor);
+                    }
+
+                    input[type="radio"] {
+                        cursor: pointer;
+                    }
+
+                    label {
+                        cursor: pointer;
+                        font-size: 15px;
+                        color: var(--fontColor);
+                        margin: 0;
+                        flex: 1;
+                    }
+
+                }
+            }
+
+            .otherReasonInput {
+                margin-top: 15px;
+
+                .otherReasonTextarea {
+                    width: 100%;
+                    min-height: 100px;
+                    padding: 12px;
+                    border: 1px solid #e5e7eb;
+                    border-radius: 8px;
+                    font-size: 14px;
+                    resize: vertical;
+                    font-family: inherit;
+
+                    &:focus {
+                        outline: none;
+                        border-color: var(--tertiaryColor);
+                    }
+                }
+
+                .characterCount {
+                    text-align: right;
+                    font-size: 12px;
+                    color: var(--placeHolder);
+                    margin-top: 5px;
+                }
+            }
+        }
+
+        .confirmCancelButton {
+            width: 100%;
+            background-color: #dc2626;
+            color: white;
+            border: none;
+            padding: 14px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            margin-top: 15px;
+
+            &:hover:not(:disabled) {
+                background-color: #b91c1c;
+            }
+
+            &:disabled {
+                background-color: #9ca3af;
+                cursor: not-allowed;
+            }
+        }
+    }
+}
+
+// Modal Styles
+.needHelpModal,
+.successCancellationModal,
+.confirmCancellationChargesModal {
+    .modal-content {
+        border-radius: 12px;
+        border: none;
+    }
+
+    .modal-header {
+        border: none;
+        padding: 15px 15px 0;
+    }
+
+    .modal-body {
+        padding: 0px 30px 30px 30px;
+    }
+}
+
+.needHelpModalContent {
+    text-align: center;
+
+    .iconWrapper {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 15px;
+
+        i {
+            font-size: 55px;
+            color: var(--btnBlue);
+        }
+    }
+
+    h2 {
+        font-size: 22px;
+        font-weight: 700;
+        color: var(--fontColor);
+        margin-bottom: 8px;
+    }
+
+    p {
+        font-size: 14px;
+        color: var(--placeHolder);
+        margin-bottom: 20px;
+    }
+
+    .phoneSection {
+        text-align: center;
+        padding: 20px;
+        background-color: #eff6ff;
+        border: 1px solid #bfdbfe;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+
+        .callText {
+            font-size: 14px;
+            color: var(--fontColor);
+            margin-bottom: 10px;
+        }
+
+        .phoneNumber {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--btnBlue);
+            text-decoration: none;
+            display: block;
+
+            &:hover {
+                color: #1d4ed8;
+            }
+        }
+    }
+
+    .divider {
+        text-align: center;
+        color: var(--placeHolder);
+        font-size: 14px;
+        font-weight: 500;
+        margin: 25px 0;
+        position: relative;
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            width: 40%;
+            height: 1px;
+            background-color: #e5e7eb;
+        }
+
+        &::before {
+            left: 0;
+        }
+
+        &::after {
+            right: 0;
+        }
+    }
+
+    .confirmCancelButton {
+        width: 100%;
+        background-color: #dc2626;
+        color: white;
+        border: none;
+        padding: 14px;
+        font-size: 16px;
+        font-weight: 600;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+
+        &:hover:not(:disabled) {
+            background-color: #b91c1c;
+        }
+
+        &:disabled {
+            background-color: #9ca3af;
+            cursor: not-allowed;
+        }
+    }
+}
+
+.confirmModalContent,
+.successModalContent,
+.chargesModalContent {
+    text-align: center;
+
+    h2,
+    h3 {
+        font-size: 22px;
+        font-weight: 700;
+        color: var(--fontColor);
+        margin-bottom: 20px;
+        font-family: sans-serif;
+    }
+
+    .modalButtons {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 25px;
+
+        button {
+            width: 100%;
+            padding: 10px 14px;
+            font-size: 16px;
+            font-weight: 700;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .keepBookingButton {
+            background-color: transparent;
+            color: #059669;
+            border: 2px solid #059669;
+
+            &:hover {
+                background-color: #d1fae5;
+            }
+        }
+
+        .proceedButton {
+            background-color: #dc2626;
+            color: white;
+
+            &:hover {
+                background-color: #b91c1c;
+            }
+        }
+
+        .bookNewButton {
+            background-color: var(--btnBlue);
+            color: white;
+
+            &:hover {
+                background-color: #3328ca;
+            }
+        }
+    }
+}
+
+.successModalContent {
+    .successIcon {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+
+        i {
+            font-size: 55px;
+            color: #059669;
+        }
+    }
+
+    .noCancellationFeeBox {
+        background-color: #d1fae5;
+        border: 1px solid #059669;
+        border-radius: 8px;
+        padding: 20px;
+        margin: 20px 0;
+
+        h4 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #059669;
+            margin-bottom: 8px;
+        }
+
+        p {
+            font-size: 14px;
+            color: #047857;
+            margin: 0;
+        }
+    }
+}
+
+.chargesModalContent {
+    .warningIcon {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+
+        i {
+            font-size: 55px;
+            filter: invert(17%) sepia(85%) saturate(6500%) hue-rotate(355deg) brightness(92%) contrast(94%);
+        }
+    }
+
+    .cancellationChargesBox {
+        background-color: #fee2e2;
+        border: 1px solid #dc2626;
+        border-radius: 8px;
+        padding: 20px;
+        margin: 20px 0;
+        text-align: left;
+
+        h4 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #dc2626;
+            margin-bottom: 8px;
+        }
+
+        p {
+            font-size: 14px;
+            color: #991b1b;
+            margin: 0;
+            line-height: 1.5;
+            font-weight: 600;
+
+            strong {
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+// Responsive
+@media (max-width: 768px) {
+    .cancelBookingPage {
+        padding: 20px 15px;
+    }
+
+    .cancelBookingCard {
+        .cardHeader {
+            padding: 25px 15px 15px;
+
+            h2 {
+                font-size: 20px;
+            }
+        }
+
+        .cardBody {
+            padding: 20px;
+
+            .phoneSection {
+                .phoneNumber {
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+
+    .confirmModalContent,
+    .successModalContent,
+    .chargesModalContent {
+
+        h2,
+        h3 {
+            font-size: 18px;
+        }
+
+        .modalButtons {
+            button {
+                font-size: 14px;
+                padding: 12px;
+            }
+        }
+    }
+}

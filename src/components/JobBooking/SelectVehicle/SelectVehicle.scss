@@ -1,0 +1,450 @@
+// Uniform vehicle image height on Select Vehicle (van + trucks)
+.selectVehiclePage {
+  .selectVehicleVehicleImg {
+    height: 72px;
+    width: auto;
+    max-width: none !important;
+    object-fit: contain;
+    display: block;
+    position: relative;
+    z-index: 1;
+  }
+}
+
+// Select Vehicle step - new UI only below 480px (larger screens keep original)
+@media (max-width: 480px) {
+.selectVehiclePage {
+  padding-bottom: 1rem;
+
+  .selectVehicleHeader {
+    margin-bottom: 1rem;
+
+    .selectVehicleTitle {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #1976d2;
+      margin: 0;
+      margin-top: 0.25rem;
+    }
+  }
+
+  .selectVehicleList {
+    display: flex;
+    flex-direction: column;
+    // gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  // Footer: Estimated Cost & Time + CTA button
+  .selectVehicleFooter {
+    border-top: 1px solid #e5e5e5;
+    padding-top: 1rem;
+    margin-top: 0.5rem;
+
+    .estimatedCostRow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+      font-size: 15px;
+      color: #333;
+      font-weight: 800;
+
+      .estimatedCostIcon {
+        width: 16px;
+        height: 16px;
+        color: #1976d2;
+      }
+    }
+
+    .chooseVehicleBtn {
+      width: 100%;
+      max-width: 100%;
+      background: linear-gradient(180deg, #fae12a 4.18%, #ffce00 100%) !important;
+      color: #000 !important;
+      border: 1px solid #e0c800 !important;
+      border-radius: 12px !important;
+      padding: 14px 24px !important;
+      font-weight: 700 !important;
+      font-size: 1.1rem !important;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      transition: all 0.2s ease;
+
+      &:hover:not(:disabled) {
+        background: linear-gradient(180deg, #ffec50 4.18%, #ffd611 100%) !important;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      }
+
+      &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+    }
+  }
+}
+
+// Shared Most Popular ribbon (Select Vehicle mobile + Prices page)
+.mostPopularRibbon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background: linear-gradient(90deg, #f5a623 0%, #e67e00 50%, #d35400 100%);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  padding: 5px 12px;
+  border-radius: 12px 0 10px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+// Vehicle card - compact (unselected) vs expanded (selected)
+.selectVehicleCard {
+  position: relative;
+  cursor: pointer;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  background: #fff;
+  transition: all 0.25s ease;
+  overflow: hidden;
+
+  .mostPopularRibbon {
+    pointer-events: none;
+  }
+
+  &--med:not(.selectVehicleCard--selected) .selectVehicleCard__compact {
+    padding-top: 26px;
+  }
+
+  &--med.selectVehicleCard--selected .selectVehicleCard__expanded {
+    padding-top: 28px;
+  }
+
+  &:hover:not(.selectVehicleCard--selected) {
+    background: #f8f8f8;
+    border-color: #eee;
+    padding: 0px 3px;
+  }
+
+  &--selected {
+    background: linear-gradient(2deg, rgba(255, 255, 242, 0) 23%, #ffe1474a 56%);
+    border-color: #707070;
+    // box-shadow: 0 4px 16px rgba(255, 206, 0, 0.25);
+    padding: 0;
+  }
+
+  .cardTitleRow {
+    overflow: visible;
+    align-items: center;
+  }
+
+  .infoIconBtn {
+    background: none;
+    border: none;
+    margin: 0;
+    padding: 2px;
+    cursor: pointer;
+    color: #1976d2;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    min-width: 22px;
+    min-height: 22px;
+    line-height: 0;
+    overflow: visible;
+    box-sizing: border-box;
+
+    svg {
+      width: 16px !important;
+      height: 16px !important;
+      min-width: 16px;
+      min-height: 16px;
+      flex-shrink: 0;
+      display: block;
+      overflow: visible;
+      stroke-width: 1;
+    }
+  }
+
+  // Compact card layout (unselected) - match image: row1 = title+price, row2 = desc+wasPrice
+  .selectVehicleCard__compact {
+    display: flex;
+    align-items: center;
+    // padding: 10px 12px;
+    gap: 7px;
+    min-height: 70px;
+    border-bottom: 1px solid #f2f2f2;
+
+    .cardImageWrap {
+      flex-shrink: 0;
+      width: 110px;
+      min-width: 110px;
+      max-width: 110px;
+      height: 53px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      position: relative;
+
+      .selectVehicleVehicleImg {
+        width: 110px;
+        height: 53px;
+        max-width: 110px !important;
+        object-fit: contain;
+      }
+    }
+
+    .cardContent {
+      flex: 1;
+      min-width: 0;
+      text-align: left;
+    }
+
+    .cardContentLeft {
+      display: flex;
+      flex-direction: column;
+      gap: 0px;
+      min-width: 0;
+    }
+
+    .cardRow1 {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin: 0;
+    }
+
+    .cardRow2 {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin: 0;
+    }
+
+    .cardTitleRow {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin: 0;
+      min-width: 0;
+
+      .cardTitle {
+        font-size: 14px !important;
+        font-weight: 700;
+        color: #222;
+        margin: 0;
+        line-height: 1.3;
+      }
+
+      .menBadge {
+        background: #222;
+        color: #fff;
+        font-size: 0.65rem;
+        font-weight: 600;
+        padding: 2px 6px;
+        border-radius: 12px;
+        flex-shrink: 0;
+      }
+
+      // .infoIconBtn {
+      //   background: none;
+      //   border: none;
+      //   padding: 0;
+      //   cursor: pointer;
+      //   color: #1976d2;
+      //   display: inline-flex;
+      //   align-items: center;
+
+       
+      // }
+    }
+
+    .cardPriceMain {
+      flex-shrink: 0;
+      display: flex;
+      align-items: baseline;
+      gap: 2px;
+
+      .priceNow {
+        font-size: 16px !important;
+        font-weight: 700;
+        color: #222;
+      }
+
+      .priceDuration {
+        font-size: 12px;
+        color: #666;
+        font-weight: 400;
+      }
+    }
+
+    .cardDesc {
+      font-size: 12px !important;
+      color: #666;
+      margin: 0;
+      line-height: 1.3;
+      min-width: 0;
+    }
+
+    .priceWas {
+      font-size: 12px;
+      color: #999;
+      text-decoration: line-through;
+      flex-shrink: 0;
+    }
+  }
+
+  // Expanded card layout (selected) - same row structure as compact
+  .selectVehicleCard__expanded {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 16px;
+
+    .cardImageWrap {
+      position: relative;
+      width: 160px;
+      min-width: 160px;
+      max-width: 160px;
+      height: 75px;
+      min-height: 75px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      margin: 0 auto 10px;
+      padding-bottom: 8px;
+
+      .selectVehicleVehicleImg {
+        width: 160px;
+        height: 75px;
+        max-width: 160px !important;
+        object-fit: contain;
+      }
+    }
+
+    .cardContent {
+      text-align: left;
+    }
+
+    .cardContentLeft {
+      display: flex;
+      flex-direction: column;
+      gap: 0px;
+      min-width: 0;
+    }
+
+    .cardRow1 {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin: 0;
+    }
+
+    .cardRow2 {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin: 0;
+    }
+
+    .cardTitleRow {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin: 0;
+      min-width: 0;
+
+      .cardTitle {
+        font-size: 15px !important;
+        font-weight: 700;
+        color: #222;
+        margin: 0;
+        line-height: 1.3;
+      }
+
+      .menBadge {
+        background: #222;
+        color: #fff;
+        font-size: 12px !important;
+        font-weight: 600;
+        padding: 3px 8px;
+        border-radius: 14px;
+        flex-shrink: 0;
+      }
+    }
+
+    .cardPriceMain {
+      flex-shrink: 0;
+      display: flex;
+      align-items: baseline;
+      gap: 2px;
+
+      .priceNow {
+        font-size: 15px !important;
+        font-weight: 700;
+        color: #222;
+      }
+
+      .priceDuration {
+        font-size: 12px !important;
+        color: #666;
+        font-weight: 400;
+      }
+    }
+
+    .cardDesc {
+      font-size: 12px !important;
+      color: #555;
+      margin: 0;
+      line-height: 1.3;
+      min-width: 0;
+    }
+
+    .priceWas {
+      font-size: 12px !important;
+      color: #999;
+      text-decoration: line-through;
+      flex-shrink: 0;
+    }
+  }
+
+  // Med Truck dimensionless — ground line below men's feet (not through them)
+  &__compact--med .cardImageWrap,
+  &__expanded--med .cardImageWrap {
+    padding-bottom: 0;
+    box-sizing: border-box;
+
+    .selectVehicleVehicleImg {
+      margin-bottom: 1px;
+      display: block;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 8%;
+      right: 8%;
+      bottom: 0;
+      height: 1px;
+      background: #222;
+      border-radius: 1px;
+      z-index: 1;
+    }
+  }
+
+  &__expanded--med .cardImageWrap {
+    padding-bottom: 0;
+  }
+}
+} // end mobile-only (max-width: 480px)

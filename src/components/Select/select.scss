@@ -1,0 +1,30 @@
+.mainSelect {
+  // margin-bottom: 20px;
+  position: relative;
+  
+  select{
+    box-shadow: none !important;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    padding-right: 40px; // Add padding to prevent overlap with arrow icon
+    max-width: 100%;
+    
+    &::placeholder {
+      font-size: 14px !important;
+    }
+  }
+}
+
+.form-label {
+  font-size: 14px;
+  color: var(--dark);
+  font-weight: 500;
+}
+
+/* Smaller select variant for compact forms */
+.select-sm {
+  select {
+    font-size: 14px !important;
+  }
+}

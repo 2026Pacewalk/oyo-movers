@@ -1,0 +1,665 @@
+.becomeMoverStep {
+  margin-top: 16px;
+  /* Allow natural page scroll so sticky works */
+  height: auto;
+  /* Ensure enough height to push footer below viewport */
+  min-height: 90vh;
+
+  // padding-bottom: 200px;
+  @media (max-width: 992px) {
+    /* No offset needed for sticky; it flows until reaching the top */
+    padding-top: 0;
+  }
+
+  &__content {
+    p {
+      color: grey;
+      font-size: 14px;
+    }
+
+    h2 {
+      font-size: 28px;
+    }
+
+    h3 {
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    h4 {
+      font-size: 18px;
+    }
+
+    /* Sticky mobile stepper bar */
+    .mobileStepper {
+      display: none;
+
+      @media (max-width: 768px) {
+        display: block;
+        position: relative;
+        /* default flow, no sticky */
+        z-index: 7;
+        background: #fff;
+        padding: 10px 12px;
+        border-bottom: 1px solid #e9ecef;
+        overflow: visible;
+      }
+
+      &__list {
+        display: flex;
+        gap: 4px;
+        overflow-x: auto;
+        overflow-y: visible;
+        -webkit-overflow-scrolling: touch;
+        list-style: none;
+        padding: 4px 0;
+        margin: 0;
+      }
+
+      &__item {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        padding: 7px 12px;
+        border-radius: 999px;
+        border: 1px solid #e9ecef;
+        background: #fff;
+        white-space: nowrap;
+        cursor: pointer;
+        transition: background-color .2s ease, border-color .2s ease;
+
+        .idx {
+          width: 22px;
+          height: 22px;
+          border-radius: 999px;
+          background: #e9ecef;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 12px;
+          font-weight: 700;
+          color: #495057;
+        }
+
+        .lbl {
+          font-size: 12px;
+          font-weight: 600;
+          color: #495057;
+          line-height: 1.2
+        }
+
+        &.active {
+          border-color: #ffe08a;
+          background: #fffbea;
+
+          .idx {
+            background: #ffc107;
+            color: #212529;
+          }
+
+          .lbl {
+            color: #ffc107;
+          }
+        }
+
+        &.completed {
+          border-color: var(--checkboxColor);
+          background: #f8fff8;
+          opacity: 0.55;
+
+          /* decrease visibility of completed items */
+          .idx {
+            background: #d3f9d8;
+            color: #1b5e20;
+            opacity: 0.85;
+          }
+
+          .lbl {
+            color: #1b5e20;
+          }
+        }
+
+        &:hover {
+          transform: none;
+        }
+      }
+
+      /* no sticky state */
+    }
+  }
+
+  .nav {
+    box-shadow: 0 0.25rem 1.125rem rgba(75, 70, 92, 0.1);
+    padding: 20px;
+    border-radius: 4px;
+
+    .nav-item {
+      margin-bottom: 10px;
+      box-shadow: none !important;
+    }
+
+    .nav-link.active {
+      background: var(--secondaryColor);
+      color: var(--fontColor) !important;
+    }
+
+    .nav-link {
+      color: var(--fontColor);
+
+      span {
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+.thirdTab {
+  &>div {
+    width: 100%;
+    margin-bottom: 16px;
+    margin-top: 0px !important;
+
+    .datePickerOverview {
+      padding: 7px 10px !important;
+
+    }
+  }
+}
+
+.licenceDetails {
+  color: #0674cc;
+}
+
+.emergencyContact {
+  div {
+    margin: 0 !important;
+    width: 100%;
+  }
+}
+
+.numberOrderList ol li {
+  font-size: 13px;
+  padding: 0 0 6px 5px;
+}
+
+.secondTabRadio {
+  div {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  input {
+    width: auto !important;
+    min-width: 18px !important;
+    min-height: 18px !important;
+    flex-shrink: 0 !important;
+  }
+
+  label {
+    font-size: 14px;
+    font-weight: bold;
+    white-space: nowrap !important;
+  }
+
+  // Ensure radio buttons don't overlap
+  .moverCustomInput {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    margin: 0 !important;
+    flex-shrink: 0 !important;
+
+    input[type="radio"] {
+      width: 16px !important;
+      height: 16px !important;
+      min-width: 16px !important;
+      min-height: 16px !important;
+      max-width: 16px !important;
+      max-height: 16px !important;
+      flex-shrink: 0 !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    label {
+      white-space: nowrap !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+  }
+}
+
+.seventhTab {
+  p {
+    font-size: 14px;
+  }
+}
+
+.tabContainer {
+  box-shadow: 0 0.25rem 1.125rem rgba(75, 70, 92, 0.1);
+
+  h4 {
+    font-size: 14px;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+
+  span {
+    font-size: 13px;
+  }
+
+  .uploadfile {
+    cursor: pointer;
+    width: 30px;
+    height: 40px;
+    margin: 0 auto;
+  }
+
+  h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 25px;
+  }
+}
+
+// .tabFullWraper {
+//   p {
+//     font-size: 14px;
+//     font-weight: bold;
+//     margin-bottom: 5px !important;
+//   }
+//   input {
+//     width: 100% !important;
+//     height: 40px !important;
+//   }
+// }
+.tabRadioWraper {
+  div {
+    display: flex !important;
+    /* Ensure flex layout */
+    flex-direction: row !important;
+    /* Horizontal direction */
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+    /* Allow wrapping on small screens only */
+  }
+
+  // Ensure all direct child divs that contain radio buttons are flex
+  >div:not(.tabFullWraper):not(.yearMoverInput) {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    gap: 10px !important;
+  }
+
+  // For divs with justify-content-between (like experience/fresher section)
+  .justify-content-between {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: flex-start !important;
+    gap: 16px !important;
+    flex-wrap: wrap !important;
+
+    >div {
+      display: flex !important;
+      flex-direction: row !important;
+      align-items: center !important;
+      gap: 10px !important;
+      flex-wrap: wrap !important;
+    }
+  }
+
+  p {
+    font-size: 16px; // Standard body text size for questions
+    font-weight: 600; // Slightly lighter than bold
+    margin-bottom: 3px !important;
+    color: #747474;
+  }
+
+  label {
+    font-size: 14px; // Keep radio labels smaller
+  }
+
+  // Ensure radio buttons in tabRadioWraper don't overlap and stay horizontal
+  .moverCustomInput {
+    display: inline-flex !important;
+    /* Changed to inline-flex for horizontal layout */
+    align-items: center !important;
+    gap: 8px !important;
+    margin: 0 !important;
+    flex-shrink: 0 !important;
+    flex-direction: row !important;
+    /* Ensure horizontal */
+    width: auto !important;
+    /* Don't take full width */
+
+    input[type="radio"] {
+      width: 16px !important;
+      height: 16px !important;
+      min-width: 16px !important;
+      min-height: 16px !important;
+      max-width: 16px !important;
+      max-height: 16px !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      flex-shrink: 0 !important;
+      cursor: pointer !important;
+    }
+
+    label {
+      display: inline-block !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      white-space: nowrap !important;
+      cursor: pointer !important;
+    }
+  }
+
+  .customInput {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    input {
+      width: 15px;
+      height: 15px;
+      cursor: pointer;
+    }
+  }
+}
+
+.tabSixthContent {
+  p {
+    font-size: 14px;
+  }
+
+  u {
+    color: #0d6efd;
+    cursor: pointer;
+  }
+}
+
+.tabFooter {
+  margin-top: 30px;
+
+  .footerButton {
+    background: var(--secondaryColor) !important;
+    color: var(--fontColor) !important;
+    border-color: var(--secondaryColor) !important;
+    box-shadow: none !important;
+  }
+}
+
+.buttonClass {
+  background-color: #fff !important;
+  border-color: #f7f7f7 !important;
+  color: var(--fontColor) !important;
+  padding: 8px 16px;
+  display: flex;
+  gap: 10px;
+  border-radius: 8px;
+
+  &:hover {
+    background-color: var(--secondaryColor) !important;
+    border-color: var(--secondaryColor) !important;
+  }
+}
+
+.activeClass {
+  background-color: var(--secondaryColor) !important;
+  border-color: var(--secondaryColor) !important;
+}
+
+.moverRequirementWrapper {
+  h3 {
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  .moverRequirementList {
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+
+    ul {
+      margin: 0;
+      padding: 16px;
+
+      li {
+        font-size: 14px;
+      }
+    }
+
+    &__list {
+      border-left: 1px solid #ced4da;
+    }
+  }
+
+  .termsAndCondition {
+    margin: 0 !important;
+
+    a {
+      color: #0d6efd;
+    }
+  }
+
+  .customInput {
+    position: relative;
+
+    span {
+      position: absolute;
+    }
+  }
+}
+
+.buttonClassVevo {
+  color: var(--fontColor) !important;
+  background: var(--bgColorButton);
+  border: 1px solid var(--bgColorButton);
+  padding: 17px 16px;
+  display: flex;
+  gap: 10px;
+  border-radius: 8px;
+
+  &:hover {
+    background-color: var(--secondaryColor) !important;
+    border-color: var(--secondaryColor) !important;
+  }
+}
+
+.uploadGroupImg {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+  width: 100%;
+  overflow: auto;
+
+  .uploadInnerContent {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.thankingApplication {
+  padding: 20px 16px;
+
+  h2 {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    color: #000 !important;
+  }
+
+  p {
+    text-align: center;
+    margin: 20px 0 !important;
+    font-size: 14px;
+    color: #000 !important;
+  }
+
+  .signupButton {
+    width: 100px;
+    margin: 0 !important;
+  }
+}
+
+.thankYouWrapper {
+  .modal-header {
+    display: none !important;
+  }
+}
+
+.whichVehicalUse {
+  h2 {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: left;
+    color: #000;
+    margin-bottom: 12px;
+  }
+
+  p {
+    color: #000;
+  }
+
+  ul {
+    padding-left: 12px;
+
+    li {
+      color: #000;
+    }
+  }
+}
+
+.tabLink {
+  font-weight: bold;
+  color: black important;
+}
+
+.greyTab {
+  color: grey !important;
+}
+
+.vevoList {
+  margin-top: 12px;
+  font-size: 12px;
+
+  u {
+    color: #0d6efd;
+    cursor: pointer;
+  }
+}
+
+.insuranceInfo {
+  margin-top: 88px;
+  font-size: 13px;
+}
+
+.tabFullWraper {
+  p {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px !important;
+  }
+}
+
+.submitBtn {
+  background: green !important;
+  border-color: green !important;
+}
+
+.liabilityTitle {
+  color: #0d6efd;
+}
+
+.yearInput .customInput {
+  width: 220px;
+
+  input {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.dateSelection .mainSelect {
+  margin-bottom: 0%;
+}
+
+// Full Page Loader - Shows while waiting for data
+.emailVerificationLoader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(3px);
+
+  .spinner-border {
+    border-width: 4px;
+    border-color: var(--secondaryColor);
+    border-right-color: transparent;
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+// Email Verification Success Modal
+.emailVerificationModal {
+  .modal-content {
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .modal-header {
+    border-bottom: none;
+    padding: 20px 20px 0 20px;
+    justify-content: flex-end;
+  }
+
+  .modal-body {
+    padding: 0 20px 30px 20px;
+  }
+
+  .emailVerificationContent {
+    padding: 20px 0;
+    text-align: center;
+
+    .emailVerificationIcon {
+      width: 40px;
+      height: 40px;
+      margin: 0 auto 20px auto;
+      color: #66BB6A;
+      fill: #66BB6A;
+      display: block;
+
+      path {
+        fill: #66BB6A;
+      }
+    }
+
+    h2 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: #000 !important;
+    }
+
+    p {
+      font-size: 16px;
+      color: #000 !important;
+      line-height: 1.5;
+      margin: 0;
+    }
+  }
+}

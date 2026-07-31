@@ -1,0 +1,274 @@
+﻿@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  font-family: "Montserrat", sans-serif;
+} 
+.booking-confirmation-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 200px);
+  padding: 3rem 1rem;
+  background: #fff;
+}
+
+.confirmation-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 5rem 0rem;
+  width: 100%;
+  text-align: center;
+}
+
+.success-icon-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  
+  .success-icon-image {
+    width: 152px;
+    height: 132px;
+    position: relative;
+    
+    img {
+      object-fit: contain;
+    }
+  }
+}
+
+.congratulations-title {
+  font-size: 30px;
+  font-weight: 700;
+  color: #4BCF1B !important;
+  margin-top: 3rem;
+  line-height: 0.5;
+}
+
+.booking-confirmed-text {
+  font-size: 24px;
+  font-weight: 700;
+  color: #000;
+  line-height: 1.4;
+}
+
+.email-instruction {
+  font-size: 20px;
+  font-weight: 500;
+  color: #000;
+  margin-bottom: 2.5rem !important;
+  line-height: 1.6;
+}
+
+.next-steps-section {
+  text-align: left;
+  margin: 3.5rem 0rem;
+  padding: 0;
+}
+
+.next-steps-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.next-steps-list {
+  padding-left: 1.5rem;
+  margin: 0;
+  
+  li {
+    font-size: 20px;
+    font-weight: 400;
+    color: #4A4848;
+    margin-bottom: 0.6rem;
+    line-height: 1.6;
+  }
+}
+
+.contact-section {
+  margin-bottom: 4.5rem;
+}
+
+.contact-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  justify-content: center;
+}
+
+.headphone-icon {
+  color: #333;
+  font-size: 20px;
+}
+
+.call-icon {
+  color: rgb(168, 168, 168);
+  font-size: 20px;
+}
+
+.sms-icon {
+  color: rgb(168, 168, 168);
+  font-size: 20px;
+}
+
+.contact-title {
+  font-size: 16px;
+  color: #333;
+  font-weight: 600;
+}
+
+.contact-options {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+.contact-options-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-card {
+  flex: 1 1;
+  min-width: 200px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  padding: 7px 32px;
+  border: 1px solid #1976D2;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+  color: #000;
+
+  &:hover {
+    border-color: #1976D2;
+    background: #E3F2FD;
+    color: #000;
+    text-decoration: none;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    min-width: auto;
+  }
+}
+
+.contact-icon {
+  color: #A8A8A8;
+  font-size: 15px;
+  flex-shrink: 0;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.contact-label {
+  font-size: 13px;
+  color: #222;
+  font-weight: 600;
+}
+
+.contact-hours {
+  font-size: 10px;
+  font-weight: 500;
+  color: rgba(67, 67, 67, 1);
+  margin-top: 6px;
+}
+
+.contact-divider {
+  font-size: 14px;
+  color: #434343;
+  font-weight: 500;
+  margin-bottom: 30px;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .booking-confirmation-container {
+    padding: 2rem 1rem;
+    min-height: calc(100vh - 150px);
+  }
+
+  .confirmation-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .success-icon-wrapper .success-icon-image {
+    width: 100px;
+    height: 100px;
+
+  }
+
+  .success-icon-wrapper{
+    margin-bottom: 0rem;
+  }
+
+  .congratulations-title {
+    font-size: 2rem;
+    line-height: 1;
+    margin-top: 2rem;
+  }
+
+  .booking-confirmed-text {
+    font-size: 1.25rem;
+  }
+
+  .email-instruction {
+    font-size: 0.9rem;
+  }
+
+  .next-steps-section {
+    margin: 2.5rem 0rem;
+  }
+
+  .next-steps-title {
+    font-size: 1.1rem;
+  }
+
+  .next-steps-list {
+    padding-left: 1.25rem;
+    
+    li {
+      font-size: 0.9rem;
+    }
+  }
+
+}
+
+@media (max-width: 480px) {
+  .booking-confirmed-text{
+    font-size: 1rem;
+  }
+
+  .email-instruction{
+    font-size: 0.7rem;
+  }
+
+  .next-steps-title {
+    font-size: 1rem;
+  }
+
+  .next-steps-list li {
+    font-size: 0.7rem;
+  }
+}

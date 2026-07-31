@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');// @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+
+body {   
+   font-family: "Montserrat", sans-serif;
+}
+
+.footer-section {
+  position: relative;
+  background-color: #F6F7F8;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    // background-image: url('../../../public/images/footer-bg-img.png');
+    // background-size: cover;
+    // background-position: center;
+    // background-repeat: no-repeat;
+    opacity: 0.1;
+    z-index: 1;
+  }
+  
+  > * {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.footer {
+  min-height: 300px;
+  width: 100%;
+  padding: 90px 0 50px;
+}
+
+.footer ul li {
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.f-logo {
+  .nextImage {
+    width: 100%;
+    height: auto;
+  }
+
+  img {
+    position: relative !important;
+  }
+}
+
+.copright-text {
+  @media (max-width: 769px) {
+    text-align: center;
+    margin-bottom: 6px !important;
+  }
+}
+
+.col-sm {
+  @media (max-width:767px) {
+    flex: 0 0 auto;
+    width: 50%;
+  }
+}
+
+.f-logo img {
+  max-width: 240px !important;
+
+}
+
+.footer-divider {
+  border-top: none;
+  width: 70%;
+  margin-bottom: 3rem;
+  display: block;
+}
+
+.copyright-text {
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  color: hsl(0, 0%, 0%) !important;
+  margin-left: 40px !important;
+
+  @media (max-width: 768px) {
+    margin-left: 0px !important;
+  }
+
+  @media (max-width: 450px) {
+    font-size: 11px !important;
+  }
+
+}
+
+.footer-container {
+  padding: 0 10px;
+  @media (max-width: 768px) {
+    padding: 0 10px;
+  }
+  @media (max-width: 576px) {
+    padding: 0 10px;
+  }
+  @media (max-width: 450px) {
+    padding: 0 20px;
+  }
+}
+
+/* Social Media Icons */
+.footer-social {
+  gap: 10px;
+  justify-content: center;
+  
+  @media (max-width: 768px) {
+    gap: 8px;
+  }
+  
+  @media (max-width: 576px) {
+    gap: 8px;
+  }
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #000;
+  background-color: transparent !important;
+  color: #000;
+  transition: all 0.3s ease;
+  font-size: 25px;
+  padding: 5px !important;
+  
+  &:hover {
+    background-color: #ffc310 !important;
+    color: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  @media (max-width: 768px) {
+    width: 35px;
+    height: 35px;
+    font-size: 24px;
+  }
+  
+  @media (max-width: 576px) {
+    width: 32px;
+    height: 32px;
+    font-size: 20px;
+  }
+}
+
+.footer-logo-card {
+  @media (max-width: 350px) {
+    width:43px !important;
+  }
+}
+
+.master-card {
+  width: 53px;
+  height: 31px;
+  object-fit: contain;
+  margin-right: 10px;
+}
+
+.visa-p {
+  width: 76px;
+  height: 24px;
+  object-fit: contain;
+  margin-right: 10px;
+}
+
+.ammerican-express {
+  width: 67px;
+  height: 27px;
+  object-fit: contain;
+  margin-right: 10px;
+}
+
+.australia {
+  width: 32px;
+  height: 24px;
+  object-fit: contain;
+  margin-right: 10px;
+}
+      
+.recycle {
+  width: 26px;
+  height: 25px;
+  object-fit: contain;
+  margin-right: 10px;
+}
+
+

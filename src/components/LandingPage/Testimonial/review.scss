@@ -1,0 +1,161 @@
+.reviewContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+// Fade wrapper for slider with gradient overlays on sides
+.slider-fade-wrapper {
+  position: relative;
+  overflow: hidden;
+  
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100px;
+    z-index: 10;
+    pointer-events: none;
+  }
+  
+  &::before {
+    left: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+  }
+  
+  &::after {
+    right: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+  }
+  
+  @media (max-width: 768px) {
+    &::before,
+    &::after {
+      width: 50px;
+    }
+  }
+}
+
+.sliderT {
+  @media (max-width: 767px) {
+    display: none;
+  }
+}
+
+.review-marquee-viewport {
+  overflow: hidden;
+  width: 100%;
+  container-type: inline-size;
+  container-name: review-marquee;
+  -webkit-overflow-scrolling: touch;
+  transform: translateZ(0);
+}
+
+.review-marquee-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
+  isolation: isolate;
+
+  @media (prefers-reduced-motion: reduce) {
+    transform: none !important;
+  }
+}
+
+// Match previous slick slidesToShow: 3.5 / 3 / 2 / 1
+.review-marquee-item {
+  flex: 0 0 auto;
+  width: 28.571cqi;
+  padding: 0.25rem;
+  box-sizing: border-box;
+  contain: layout style paint;
+
+  @container review-marquee (max-width: 1024px) {
+    width: 33.333cqi;
+  }
+
+  @container review-marquee (max-width: 768px) {
+    width: 50cqi;
+  }
+
+  @container review-marquee (max-width: 480px) {
+    width: 100cqi;
+  }
+}
+
+// Review card content with dotted background pattern using ::before
+.review-card-content {
+  position: relative;
+  background-color: #f8f9fb;
+  border-radius: 10px;
+  box-shadow: 0 2px 34px rgb(0 0 0 / 20%), 0 1px 3px rgba(0, 0, 0, 0.08);
+  transform: translateZ(0);
+
+  @media (max-width: 768px) {
+    box-shadow: 0 1px 12px rgb(0 0 0 / 12%), 0 1px 2px rgba(0, 0, 0, 0.06);
+  }
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: radial-gradient(circle, rgba(224, 224, 224, 0.3) 2px, transparent 2px);
+    background-size: 10px 10px;
+    background-position: 0 0;
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.5) 72%, rgba(0, 0, 0, 0) 100%);
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.5) 72%, rgba(0, 0, 0, 0) 100%);
+    pointer-events: none;
+    z-index: 0;
+    opacity: 1;
+
+    @media (max-width: 768px) {
+      -webkit-mask-image: none;
+      mask-image: none;
+      opacity: 0.85;
+    }
+  }
+  
+  // Ensure content is above the dotted pattern
+  > * {
+    position: relative;
+    z-index: 1;
+    background-color: transparent;
+  }
+}
+
+.review-text {
+  font-size: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  color: #333;
+  line-height: 20px;
+}
+.review-user-circle {
+  width: 40px;
+  height: 40px;
+}
+
+.card-user {
+  border-bottom : 2px solid #e0e0e0;
+  padding-bottom: 12px;
+  margin-bottom: 30px;
+}
+
+.revieLogo {
+  width: 40px;
+
+  @media (max-width: 350px) {
+    width: 30px !important;
+  }
+}

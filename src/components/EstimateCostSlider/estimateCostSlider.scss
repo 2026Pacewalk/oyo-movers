@@ -1,0 +1,394 @@
+.estimate-cost-modal__title {
+  font-family: Montserrat, sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0 0 0.35rem;
+  padding: 0;
+}
+
+.estimate-cost {
+  --estimate-yellow: #ffce00;
+  --estimate-yellow-bg: #fff8d6;
+
+  &__header {
+    margin: 0;
+    padding: 0;
+  }
+
+  &__breakdown {
+    margin-top: 0;
+    margin-bottom: 2rem;
+  }
+
+  &__line {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 0;
+    min-height: 1.85rem;
+
+    &--total {
+      padding: 0;
+    }
+  }
+
+  &__line-label {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 500;
+    color: #313131;
+    line-height: 1.35;
+
+    span {
+      font-size: 12px;
+      font-weight: 400;
+      color: #BABABA;
+      margin-left: 4px;
+    }
+  }
+
+  &__line--total &__line-label {
+    font-weight: 700;
+    color: #000;
+
+    span {
+      font-weight: 500;
+      color: #666;
+    }
+  }
+
+  &__line-price {
+    flex-shrink: 0;
+    font-size: 15px;
+    font-weight: 500;
+    color: #333;
+
+    &--total {
+      font-size: 20px;
+      font-weight: 700;
+      color: #000;
+      letter-spacing: -0.01em;
+    }
+  }
+
+  &__divider {
+    height: 0;
+    margin: 0;
+
+    &--solid {
+      height: 1px;
+      background: #e0e0e0;
+      margin: 0.85rem 0 0;
+    }
+  }
+
+  &__slider-block {
+    text-align: center;
+    padding-top: 0.25rem;
+  }
+
+  &__slider-scale {
+    position: relative;
+    margin-bottom: 1rem;
+    padding: 0 4px;
+    margin-top: 2rem
+  }
+
+  &__scale-labels {
+    position: relative;
+    height: 18px;
+    margin-bottom: 20px;
+  }
+
+  &__scale-label {
+    position: absolute;
+    transform: translateX(-50%);
+    top: 0;
+    font-size: 12px;
+    font-weight: 400;
+    color: #000;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+
+  &__slider-rail {
+    position: relative;
+    height: 28px;
+    touch-action: none;
+    cursor: pointer;
+  }
+
+  &__tick {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -100%);
+    width: 1px;
+    background: #d0d0d0;
+    pointer-events: none;
+    z-index: 1;
+
+    &--minor {
+      height: 14px;
+    }
+
+    &--major {
+      height: 28px;
+    }
+  }
+
+  &__slider-track {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 4px;
+    border-radius: 999px;
+    background: #e8e8e8;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  &__slider-range {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 4px;
+    border-radius: 999px;
+    background: #ffce00;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  &__slider-thumb {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle at 50% 35%, #ffe566 0%, #ffce00 55%, #e5b800 100%);
+    border: none;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.16);
+    cursor: grab;
+    color: #666;
+    z-index: 3;
+
+    svg {
+      width: 9px;
+      height: 9px;
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.16), 0 0 0 2px rgba(255, 206, 0, 0.4);
+    }
+
+    &:active {
+      cursor: grabbing;
+    }
+  }
+
+  &__time-value {
+    margin: 0 0 0.5rem;
+    font-size: 20px;
+    font-weight: 700;
+    color: #313131;
+    line-height: 1.15;
+  }
+
+  &__time-hint {
+    margin: 0 0 0.25rem;
+    font-size: 12px;
+    font-weight: 400;
+    color: #878686;
+    line-height: 1.4;
+  }
+
+  &--page {
+    .estimate-cost-modal__title {
+      text-align: center;
+      font-size: 40px;
+      color: var(--highlightColor, #4472c4);
+    }
+
+    .estimate-cost__header {
+      margin-bottom: 1rem;
+    }
+
+    .estimate-cost__slider-block {
+      margin-bottom: 2rem;
+    }
+
+    .estimate-cost__breakdown {
+      margin-bottom: 0;
+    }
+
+    .estimate-cost__line {
+      padding: 0;
+      min-height: 2rem;
+    }
+
+    .estimate-cost__line-label {
+      font-size: 20px;
+
+      span {
+        font-size: 16px;
+      }
+    }
+
+    .estimate-cost__line-price {
+      font-size: 20px;
+
+      &--total {
+        font-size: 32px;
+      }
+    }
+
+    .estimate-cost__slider-scale {
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 767px) {
+      .estimate-cost__line-label {
+        span {
+          font-size: 12px;
+        }
+      }
+
+      .estimate-cost__line-price {
+        font-size: 15px;
+
+        &--total {
+          font-size: 24px;
+        }
+      }
+    }
+
+    @media (max-width: 520px) {
+      .estimate-cost__line-price {
+        font-size: 15px;
+
+        &--total {
+          font-size: 20px;
+        }
+      }
+    }
+
+    @media (max-width: 420px) {
+      .estimate-cost__line-price {
+        font-size: 14px;
+
+        &--total {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+
+  &--desktop {
+    .estimate-cost__header {
+      margin-bottom: 1rem;
+    }
+
+    .estimate-cost__slider-block {
+      margin-bottom: 1rem;
+    }
+
+    .estimate-cost__breakdown {
+      margin-bottom: 0;
+    }
+
+    .estimate-cost__slider-scale {
+      margin-top: 0.35rem;
+    }
+  }
+
+  &__vehicle-banner {
+    position: relative;
+    background: #fad307;
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin-bottom: 1.25rem;
+    overflow: hidden;
+
+    .mostPopularRibbon {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 3;
+      background: linear-gradient(90deg, #f5a623 0%, #e67e00 50%, #d35400 100%);
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: 0.02em;
+      padding: 5px 12px;
+      border-radius: 12px 0 10px 0;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      pointer-events: none;
+    }
+
+    .estimate-cost--desktop & {
+      padding: 12px 16px;
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__vehicle-banner-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    min-height: 72px;
+  }
+
+  &__vehicle-img {
+    width: 140px;
+    max-width: 45%;
+    height: auto;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+
+  &__vehicle-meta {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    min-width: 0;
+  }
+
+  &__vehicle-name {
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    font-size: 22px;
+    font-weight: 800;
+    color: #000;
+    line-height: 1.2;
+  }
+
+  &__men-badge {
+    display: inline-flex;
+    align-items: center;
+    background: #000;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+}

@@ -1,0 +1,26 @@
+.accountTabs {
+  overflow: hidden;
+  border-bottom: 1px solid #dee2e6 !important;
+  li {
+    border-bottom: 1px solid #dee2e6 !important;
+
+    button {
+      color: grey !important;
+      border-top: none !important;
+      border-left: none !important;
+      border-right: none !important;
+      background-color: transparent !important;
+    }
+    .active {
+      color: #000 !important;
+      font-weight: bold;
+      border-bottom: 1px solid #000 !important;
+    }
+  }
+}
+.accountSetting{
+  h4{
+    font-size: 24px;
+    font-weight: bold;
+  }
+}

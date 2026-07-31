@@ -1,0 +1,61 @@
+.profileCard {
+  box-shadow: 0px 2px 10px 3px rgba(0, 0, 0, 0.06);
+  padding: 20px;
+  border: none;
+  overflow: hidden;
+
+  &__inner {
+    @media (max-width: 991px) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    &__cardImg {
+      width: 160px !important;
+      height: 150px !important;
+      overflow: hidden;
+      margin: 0 auto;  
+      border-radius: 4px;
+      img {
+        object-fit: cover;
+      }
+    }
+  }
+  .cardHead {
+    padding: 4px 18px;
+    width: 90%;
+    @media (max-width: 991px) {
+      padding: 0;
+      width: 100%;
+    }
+  }
+  .card-title {
+    font-size: 14px;
+    font-weight: bold;
+  }
+  p {
+    font-size: 14px;
+    max-width: 225px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .card-body {
+    padding: 0;
+    margin-top: 20px;
+  }
+  .profileField{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .list-group-item {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px 0;
+    h5 {
+      flex-basis: 75%;
+      font-size: 16px;
+    }
+  }
+}

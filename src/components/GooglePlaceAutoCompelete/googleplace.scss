@@ -1,0 +1,58 @@
+.editablePickupField {
+  position: relative;
+
+  .pickupIcon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    width: 22px;
+    height: 22px;
+    z-index: 2;
+    pointer-events: none;
+
+    @media (max-width: 350px) {
+      width: 22px !important;
+    }
+  }
+
+  .address-marker {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    pointer-events: none;
+
+    &--pickup {
+      left: 14px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #22c55e;
+    }
+
+    &--dropoff {
+      left: 12px;
+      font-size: 16px;
+      color: #ef4444;
+    }
+  }
+
+  &--marker {
+    input {
+      padding-left: 36px !important;
+    }
+
+    label {
+      padding-left: 36px;
+    }
+  }
+
+  input {
+    padding-left: 30px !important;
+  }
+
+  label {
+    padding-left: 30px;
+  }
+}

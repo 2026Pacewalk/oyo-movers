@@ -1,0 +1,383 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+body {   
+  font-family: "Montserrat", sans-serif;
+} 
+  
+  html {
+    scroll-behavior: smooth;
+  }
+
+  .content-section > div[id] {
+    scroll-margin-top: 15vh;
+  }
+
+  #customer-terms {
+    margin-top: 80px;
+    
+    .container-1 {
+      margin: 0 20px;
+      // max-width: 1400px;
+    }
+    
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #000;
+      margin-bottom: 12px;
+      position: relative;
+      line-height: 1.2;
+      margin-top: 3rem;
+      
+      @media (max-width: 768px) {
+        font-size: 1.8rem;
+      }
+    }
+    
+    .divider {
+      height: 5px;
+      background-color: #ffe147;
+      width: 180px;
+      border-radius: 2px;
+    }
+    
+    h6.underline {
+      font-size: 0.95rem;
+      font-weight: 400;
+      margin-bottom: 1rem;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      color: #222222 !important;
+    }
+    
+    h6.normal-heading {
+      font-size: 1rem;
+      color: #333;
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+    
+    p {
+      font-size: 18px;
+      line-height: 1.5;
+      color: #666;
+      font-weight: 500;
+      margin-bottom: 0.8rem;
+      
+      &.text-justify {
+        text-align: justify;
+      }
+      
+      &.text-black {
+        color: #000 !important;
+        font-weight: 500;
+      }
+      
+      &.text-secondary {
+        color: #666 !important;
+        font-style: italic;
+        font-size: 16px;
+        line-height: 1.4;
+      }
+    }
+    
+    h5 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #000;
+      margin-top: 1.5rem;
+      margin-bottom: 0.8rem;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+      
+      @media (max-width: 768px) {
+        font-size: 1.2rem;
+      }
+      
+      small {
+        font-weight: 500;
+        text-transform: none;
+
+      }
+    }
+    
+    .points {
+      margin-bottom: 1.2rem;
+      padding-left: 28px;
+      
+      p {
+        margin-bottom: 0.4rem;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 1.4;
+        
+        span:first-child {
+          font-weight: 700;
+          color: #666;
+          min-width: 25px;
+          margin-right: 6px;
+          font-size: 18px;
+        }
+        
+        span:last-child {
+          flex: 1;
+          line-height: 1.4;
+          // font-weight: 600;
+        }
+        
+        .text-black {
+          font-weight: 600;
+          color: #666 !important;
+        }
+      }
+      
+      ul {
+        list-style: none;
+        padding-left: 0;
+        
+        li {
+          margin-bottom: 0.4rem;
+          font-size: 18px;
+          font-weight: 500;
+          line-height: 1.4;
+          color: #666;
+          
+          span:first-child {
+            font-weight: 600;
+            color: #666;
+            min-width: 25px;
+            margin-right: 6px;
+            font-size: 18px;
+            font-weight: 500;
+          }
+          
+          span:last-child {
+            flex: 1;
+            line-height: 1.4;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+    
+    .padd {
+      padding-left: 37px;
+    }
+
+    // Table of Contents Styling
+    .table-of-contents {
+      border: 1px solid #b9b9b9;
+      border-radius: 20px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      max-width: 85%;
+      max-height: 580px;
+    overflow: scroll;
+      
+      span {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #000;
+        margin-bottom: 1rem;
+        display: block;
+      }
+      
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        
+        li {
+          margin-bottom: 0.5rem;
+          
+          a {
+            color: #666;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            line-height: 1.4;
+            transition: color 0.3s ease;
+            
+            &:hover {
+              color: #666;
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+    
+    .content-section {
+      padding: 2rem;
+      max-height: 900px;
+      overflow: scroll;
+      margin-bottom: 5rem;
+      padding-right: 6rem;
+      
+      @media (max-width: 768px) {
+        padding: 1.5rem;
+      }
+    }
+    
+    .text-uppercase {
+      text-transform: uppercase;
+    }
+    
+    .font-weight-normal {
+      font-weight: 400;
+    }
+    
+    .font-weight-500 {
+      font-weight: 500;
+    }
+    
+    .font-weight-600 {
+      font-weight: 600;
+    }
+    
+    .font-weight-bold {
+      font-weight: 700;
+    }
+    
+    .d-flex {
+      display: flex;
+    }
+    
+    .mb-1 {
+      margin-bottom: 0.2rem;
+    }
+    
+    .mb-2 {
+      margin-bottom: 0.4rem;
+    }
+    
+    .mb-3 {
+      margin-bottom: 0.8rem;
+    }
+    
+    .mb-4 {
+      margin-bottom: 1.2rem;
+    }
+    
+    .mt-3 {
+      margin-top: 0.8rem;
+    }
+    
+    .mx-0 {
+      margin-left: 0;
+      margin-right: 0;
+    }
+    
+    .pl-3 {
+      padding-left: 0.8rem;
+    }
+    
+    .pl-md-4 {
+      @media (min-width: 768px) {
+        padding-left: 1.2rem;
+      }
+    }
+    
+    .pt-3 {
+      padding-top: 1rem;
+    }
+    
+    .py-4 {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+    
+    a {
+      color: #666;
+      text-decoration: underline;
+      
+      &:hover {
+        color: #666;
+      }
+      
+      &.text-black {
+        color: #000 !important;
+      }
+      
+      &.text-primary {
+        color: #007bff !important;
+      }
+    }
+    
+    // Links styling
+    .links {
+      color: #007bff !important;
+      text-decoration: none;
+      font-weight: 500;
+      
+      &:hover {
+        color: #0056b3 !important;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  // Responsive adjustments
+  @media (max-width: 768px) {
+    #customer-terms {
+      .container {
+        padding: 0 15px;
+      }
+      
+      h2 {
+        font-size: 1.6rem;
+      }
+      
+      h5 {
+        font-size: 1.1rem;
+      }
+      
+      .points p {
+        font-size: 16px;
+      }
+      
+      .content-section {
+        padding: 1rem;
+      }
+      
+      .table-of-contents {
+        padding: 1rem;
+      }
+    }
+  }
+
+  @media (max-width: 576px) {
+    #customer-terms {
+      h2 {
+        font-size: 1.4rem;
+      }
+      
+      .content-section {
+        padding: 0.8rem;
+      }
+      
+      h5 {
+        font-size: 1rem;
+      }
+      
+      p {
+        font-size: 16px;
+      }
+      
+      .points p {
+        font-size: 15px;
+      }
+    }
+  }
+
+  // Responsive margin-top for header compensation
+  @media (max-width: 991px) {
+    #customer-terms {
+      margin-top: 80px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    #customer-terms {
+      margin-top: 70px;
+    }
+  }

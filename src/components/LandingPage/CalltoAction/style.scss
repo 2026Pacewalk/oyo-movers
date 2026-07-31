@@ -1,0 +1,221 @@
+.about-service-section {
+  position: relative;
+  padding: 3rem 1rem;
+  background: #fff;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+// CTA Image Container
+.cta-image-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 1;
+
+   @media (max-width: 768px) {
+    margin-bottom: 0;
+  }
+
+}
+
+.cta-main-image {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  
+  @media (max-width: 768px) {
+    max-width: 100%;
+  }
+  
+  @media (max-width: 480px) {
+    max-width: 100%;
+  }
+
+  @media (max-width: 350px) {
+    width: 95% !important;
+  }
+}
+
+// Download Section
+.download {
+  // position: relative;
+  z-index: 2;
+  // margin-top: -180px;
+  
+  @media (max-width: 768px) {
+    margin-top: -50px;
+  }
+  
+  @media (max-width: 480px) {
+    margin-top: -30px;
+  }
+}
+
+// Headlines
+.callheading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #000;
+  margin: 0 auto 1rem;
+  line-height: 1.2;
+  
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 1.75rem;
+  }
+}
+
+.download-heading {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: #000 !important;
+  margin: 0 auto 1rem;
+  line-height: 1.1;
+  
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 2rem;
+  }
+}
+
+.callsub-heading {
+  font-size: 1.1rem;
+  color: #666666;
+  margin-bottom: 2rem;
+  font-weight: 500;
+  text-align: center;
+  
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 0.9rem;
+  }
+}
+
+// App Download Buttons
+.app-download-buttons {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  
+  @media (max-width: 480px) {
+    flex-direction: row;
+    gap: 1rem;
+  }
+}
+
+.app-store-btn,
+.google-play-btn {
+  display: inline-block;
+  transition: transform 0.3s ease;
+  
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.download-badge {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+  
+  @media (max-width: 768px) {
+    height: 41px;
+  }
+  
+  @media (max-width: 480px) {
+    height: 42px;
+    width: 100% !important;
+  }
+}
+
+// Phone Contact
+.phone-contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.phone-icon {
+  margin-right: 1rem;
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.1));
+  max-width: 500px;
+  height: auto;
+
+  @media (max-width: 768px) {
+    width: 400px !important;
+  }
+
+  @media (max-width: 480px) {
+    width: 250px !important;
+  }
+}
+
+.phone-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #e74c3c;
+  text-decoration: none;
+  
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 1.25rem;
+  }
+}
+
+// Legacy styles (keeping commented code intact)
+// .phones-images {
+//   display: flex;
+//   justify-content: center;
+//   margin-bottom: 1.5rem;
+// }
+
+// .phone-img {
+//   margin: 0 0.5rem;
+//   max-width: 500px;
+//   height: auto;
+//   opacity: 0.9;
+// }
+
+// .callBg {
+//   background-image: linear-gradient(
+//     0deg,
+//     rgba(255, 255, 255, 1) 20%,
+//     rgba(255, 255, 255, 0) 96%
+//   );
+
+//   position: absolute;
+//   height: 440px;
+//   z-index: 1;
+//   width: 100%;
+// }
+// .callBg1 {
+//   background-image: linear-gradient(
+//     0deg,
+//     rgba(255, 255, 255, 1) 0%,
+//     rgba(255, 255, 255, 0) 63%
+//   );
+//   height: 300px;
+//   z-index: 1;
+//   width: 100%;
+//   position: absolute;
+//   top: 20%;
+// }

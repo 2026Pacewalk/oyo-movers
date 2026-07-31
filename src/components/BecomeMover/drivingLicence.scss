@@ -1,0 +1,183 @@
+.driving-licence-wrapper {
+  .custmDatePicker label,
+  .custmDatePicker input,
+  .custmDatePicker .react-datepicker-wrapper input {
+    color: #555 !important;
+    font-size: 13px !important; 
+    font-weight: 500 !important;
+    margin-bottom: 6px !important;
+  }
+}
+
+// Custom styles for Driver License component
+
+.driving-licence-wrapper {
+  // Adjust font sizes for labels
+  .form-label {
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    margin-bottom: 6px !important;
+    color: #555 !important;
+    display: block !important;
+    height: 20px !important;
+    line-height: 20px !important;
+  }
+  
+  // Fix spacing between fields
+  .mb-3 {
+    margin-bottom: 6px !important;
+    color: #747474 !important;
+
+  }
+  .mt-1{
+    margin-top: 0rem !important;
+  }
+  
+  // Simple text-only error message styling
+  .text-danger,
+  .errorMessage {
+    margin-top: 4px !important;
+    margin-bottom: 8px !important;
+    font-size: 12px !important;
+    padding: 0 !important;
+    background-color: transparent !important;
+    border: none !important;
+    color: #dc3545 !important;
+    display: block !important;
+    clear: both !important;
+    position: relative !important;
+    z-index: 5 !important;
+  }
+  
+  // Improve Select component appearance
+  .mainSelect {
+    margin-bottom: 16px !important;
+    position: relative !important;
+    z-index: 1 !important;
+    
+    .form-label {
+      font-size: 13px !important;
+      font-weight: 500 !important;
+      margin-bottom: 6px !important;
+      display: block !important;
+    }
+    
+    .form-select {
+      font-size: 14px !important;
+      padding: 8px 10px !important;
+      height: auto !important;
+      width: 100% !important;
+      height: 36px !important;
+      border: 1px solid #ced4da !important;
+      border-radius: 4px !important;
+      transition: border-color 0.15s ease-in-out !important;
+      
+      &:focus {
+        border-color: var(--secondaryColor) !important;
+        box-shadow: 0 0 0 0.25rem rgba(var(--secondaryColor-rgb), 0.25) !important;
+      }
+    }
+  }
+  
+  // Ensure datePickerOverview has same height as Select
+  .datePickerOverview {
+   
+      height: 36px !important;
+  }
+  
+  // Improve document upload section
+  .uploadSection {
+    margin-top: 15px !important;
+    margin-bottom: 15px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 15px !important;
+    border: 2px dashed #ccc !important;
+    border-radius: 8px !important;
+    
+    .uploadfile {
+      width: 50px !important;
+      height: 50px !important;
+      margin: 0 auto !important;
+      display: block !important;
+      cursor: pointer !important;
+    }
+    
+    h4 {
+      font-size: 15px !important;
+      font-weight: 600 !important;
+      margin: 8px 0 !important;
+    }
+    
+    span {
+      font-size: 12px !important;
+      color: #666 !important;
+    }
+  }
+  
+  // Section headings
+  h5 {
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    margin-bottom: 10px !important;
+    color: #747474 !important;
+  }
+  
+  // Form sections
+  .form-section {
+    background-color: #fff !important;
+    border-radius: 8px !important;
+    padding: 18px !important;
+    margin-bottom: 18px !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+    border: 1px solid #e9ecef !important;
+    transition: box-shadow 0.2s ease, border-color 0.2s ease, transform 0.2s ease !important;
+
+    &:hover {
+      border-color: var(--secondaryColor) !important;
+      box-shadow: 0 2px 8px rgba(16, 24, 40, 0.06) !important; // softer shadow
+      transform: none !important;
+    }
+  }
+  
+  // Form header
+  .form-header {
+    margin-bottom: 18px !important;
+    
+    h3 {
+      font-size: 18px !important;
+      font-weight: 700 !important;
+      margin-bottom: 6px !important;
+      color: #333 !important;
+    }
+    
+    .form-description {
+      font-size: 13px !important;
+      color: #666 !important;
+    }
+  }
+  
+  // License images section
+  .license-images-section {
+    display: grid;
+    grid-template-columns: 1fr; // single column full width
+    gap: 16px;
+    width: 100%;
+    align-items: stretch;
+    justify-content: stretch;
+    
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    
+    .license-image-container {
+      width: 100%;
+      grid-column: 1 / -1; // span full width
+    }
+  }
+}
+

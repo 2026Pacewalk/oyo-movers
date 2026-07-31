@@ -1,0 +1,212 @@
+// Custom styles for VEVO Check component
+
+.vevo-check-wrapper {
+  // Reset initial validation state
+  .errorMessage,
+  .text-danger {
+    display: none !important;
+  }
+  
+  // Only show errors after field is touched or form is submitted
+  &.field-touched .errorMessage,
+  &.field-touched .text-danger,
+  &.form-submitted .errorMessage,
+  &.form-submitted .text-danger {
+    display: block !important;
+  }
+  // Adjust font sizes
+  .form-label {
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    margin-bottom: 6px !important;
+  }
+  
+  // Fix spacing between fields (override Bootstrap mb-3 only within VEVO)
+  .mb-3 {
+    margin-bottom: 6px !important;
+  }
+  
+  // Simple text-only error message styling
+  .text-danger,
+  .errorMessage {
+    margin-top: 4px !important;
+    margin-bottom: 8px !important;
+    font-size: 12px !important;
+    padding: 0 !important;
+    background-color: transparent !important;
+    border: none !important;
+    color: #dc3545 !important;
+    display: block !important;
+    clear: both !important;
+    position: relative !important;
+    z-index: 5 !important;
+  }
+  
+  // Improve Select component appearance
+  .mainSelect {
+    margin-bottom: 8px !important;
+    position: relative !important;
+    z-index: 1 !important;
+    
+    .form-label { font-size: 14px !important; font-weight: 500 !important; margin-bottom: 4px !important; display: block !important; }
+    
+    .form-select {
+      font-size: 14px !important;
+      padding: 8px 10px !important;
+      height: 36px !important;
+      width: 100% !important;
+      border: 1px solid #ced4da !important;
+      border-radius: 4px !important;
+      transition: border-color 0.15s ease-in-out !important;
+      
+      &:focus {
+        border-color: var(--secondaryColor) !important;
+        box-shadow: 0 0 0 0.25rem rgba(var(--secondaryColor-rgb), 0.25) !important;
+      }
+    }
+    
+    .errorMessage { margin-top: 6px !important; font-size: 13px !important; position: relative !important; z-index: 5 !important; }
+  }
+  
+  // Improve DatePicker appearance
+  .react-datepicker-wrapper {
+    width: 100% !important;
+    margin-bottom: 8px !important;
+    
+    input { font-size: 12.5px !important; padding: 4px 8px !important; height: 28px !important; }
+  }
+
+  /* Compact the custom datepicker visuals only inside VEVO */
+  .custmDatePicker {
+    margin-bottom: 6px !important;
+    .datePickerOverview {
+      padding: 6px !important;
+      font-size: 13px !important;
+      border-radius: 4px !important;
+      button {
+        svg { width: 16px !important; height: 16px !important; }
+      }
+      input { font-size: 12.5px !important; }
+    }
+    label { font-size: 13px !important;color:#747474 !important; margin-bottom: 4px !important; }
+  }
+  
+  // Improve document upload section
+  .uploadSection {
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 10px !important;
+    border: 2px dashed #ccc !important;
+    border-radius: 8px !important;
+    
+    .uploadfile {
+      width: 60px !important;
+      height: 60px !important;
+      margin: 0 auto !important;
+      display: block !important;
+      cursor: pointer !important;
+    }
+    
+    h4 { font-size: 15px !important; font-weight: 600 !important; margin: 6px 0 !important; }
+    
+    span { font-size: 12px !important; color: #666 !important; }
+  }
+  
+  // Citizenship status buttons
+  .buttonClassVevo {
+    font-size: 14px !important;
+    padding: 6px 10px !important;
+    
+    &.activeClass {
+      background-color: var(--secondaryColor) !important;
+      color: white !important;
+      border-color: var(--secondaryColor) !important;
+    }
+  }
+  /* Smaller footer action button */
+  .footerBtn button {
+    width: 120px;
+    max-width: 120px;
+    height: 36px;
+    font-size: 13px !important;
+    padding: 6px 12px !important;
+    gap: 8px !important;
+  }
+  
+  // Section headings
+  h5 { font-size: 15px !important; font-weight: 600 !important; margin-bottom: 6px !important; color: #747474 !important; }
+  
+  // Form sections
+  .form-section { background-color: #fff !important; border-radius: 8px !important; padding: 10px !important; margin-bottom: 10px !important; box-shadow: 0 1px 2px rgba(0,0,0,0.06) !important; }
+
+  /* Themed info card used for guidance text */
+  .info-card {
+    margin-bottom: 10px !important;
+    padding: 6px 10px !important;
+    border-radius: 8px !important;
+    background: rgba(var(--secondaryColor-rgb, 255, 193, 7), 0.08) !important;
+    border: 1px solid rgba(var(--secondaryColor-rgb, 255, 193, 7), 0.35) !important;
+    color: var(--primaryColor, #333) !important;
+
+    ul {
+      margin: 0 0 0 18px !important;
+      padding: 0 !important;
+      li { margin-bottom: 4px !important; }
+    }
+  }
+  
+  // Form header
+  .form-header {
+    margin-bottom: 10px !important;
+    
+    h3 {
+      font-size: 20px !important;
+      font-weight: 700 !important;
+      margin-bottom: 8px !important;
+      color: #333 !important;
+    }
+    
+    .form-description {
+      font-size: 14px !important;
+      color: #666 !important;
+    }
+  }
+
+  // Terms and conditions links styling
+  .terms-link {
+    color: var(--primaryColor, #007bff) !important;
+    text-decoration: underline !important;
+    font-weight: 500 !important;
+    transition: color 0.2s ease !important;
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: inline !important;
+    
+    &:hover {
+      color: var(--highlightColor, #0056b3) !important;
+      text-decoration: underline !important;
+      background: none !important;
+      border: none !important;
+    }
+    
+    &:focus {
+      outline: none !important;
+      background: none !important;
+      border: none !important;
+      color: var(--highlightColor, #0056b3) !important;
+    }
+    
+    &:active {
+      background: none !important;
+      border: none !important;
+      outline: none !important;
+    }
+  }
+}

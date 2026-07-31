@@ -1,0 +1,2023 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {   
+   font-family: "Montserrat", sans-serif;
+ }
+
+// .heading {
+//   h1::after {
+//     width: 137px !important;
+//   }
+//   h2 {
+//     font-weight: 400;
+//     margin: 0px 0px 12px;
+//     font-size: 20px;
+//   }
+//   span {
+//     font-size: 14px;
+//   }
+// }     
+.imageCard {
+  cursor: pointer;
+  position: relative;
+
+  a {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 499px;
+    height: 110px;
+    display: flex;
+    align-items: center;
+    gap: 19px;
+    border: 1px solid #cdcdcd;
+    border-radius: 10px;
+    margin: 10px 0 16px;
+    padding: 8px 16px;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    background: #fff;
+
+    &:hover:not(.active) {
+      background: #fafafa;
+    }
+
+    &.active {
+      background: #ffde53 !important;
+      border-color: #e6cf4a;
+    }
+
+    .mostPopularRibbon {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 3;
+      background: linear-gradient(90deg, #f5a623 0%, #e67e00 50%, #d35400 100%);
+      color: #fff !important;
+      font-size: 0.7rem;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: 0.02em;
+      padding: 5px 12px;
+      border-radius: 10px 0 8px 0;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      pointer-events: none;
+      text-decoration: none;
+    }
+
+    @media (min-width: 1201px) and (max-width: 1300px) {
+        padding: 9px 0px;
+    }
+    
+    @media (max-width: 1140px) {
+      .text-black {
+        font-size: 12px !important;
+      }
+      margin: 10px 0;
+    }
+
+    @media (max-width: 991px) {
+      max-width: 100%;
+      height: 110px;
+      min-height: 110px;
+      gap: 19px;
+      padding: 8px 14px;
+    }
+
+    @media (max-width: 767px) {
+      flex-direction: row;
+      gap: 10px;
+      padding: 10px;
+      margin: 8px 0 15px;
+    }
+
+    @media (max-width: 520px) {
+      flex-direction: column;
+      height: auto;
+      padding: 15px 10px;
+      gap: 10px;
+      align-items: center;
+    }
+  }
+
+  .nextImage {
+    width: 188px;
+    height: 69px;
+
+    @media (max-width: 767px) {
+      width: 150px;
+      height: 60px;
+    }
+  }
+
+  .nav-link {
+    background: #fafbfb !important;
+  }
+
+  a:hover .content-wrapper h6 span {
+    background-color: #ffffff;
+  }
+
+  .prices-vehicle-card__content {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+    gap: 5px;
+  }
+
+  .prices-vehicle-card__title-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 0;
+  }
+
+  .prices-vehicle-card__title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #000;
+    line-height: 1.1;
+  }
+
+  .prices-vehicle-card__men-badge {
+    display: inline-flex;
+    align-items: center;
+    background: #000;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1;
+    padding: 4px 10px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+
+  .prices-vehicle-card__price-row {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .prices-vehicle-card__was-price {
+    position: relative;
+    font-size: 16px;
+    font-weight: 300;
+    color: #666;
+    margin-right: 10px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: -1px;
+      right: -2px;
+      top: 52%;
+      height: 2px;
+      background-color: #ff3d00;
+      transform: translateY(-50%) rotate(345deg);
+      transform-origin: center;
+    }
+  }
+
+  .prices-vehicle-card__now-price {
+    font-size: 20px;
+    font-weight: 700;
+    color: #000;
+    line-height: 1;
+  }
+
+  .prices-vehicle-card__duration {
+    font-size: 10px;
+    font-weight: 400;
+    color: #666;
+  }
+
+  .prices-vehicle-card__info {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    color: #1976d2;
+    cursor: pointer;
+    margin-left: 4px;
+    margin-top: 7px;
+  }
+
+  a.active .prices-vehicle-card__info {
+    color: #1565c0;
+  }
+
+  .prices-vehicle-card__desc {
+    margin: 0;
+    font-size: 10px;
+    font-weight: 400;
+    color: #2c2c2c;
+    line-height: 1.2;
+  }
+}
+
+// .truckInfo {
+//   width: 1310px;
+//   height: 440px;
+//   @media (max-width: 767px) {
+//     width: 100%;
+//     height: 100%;
+//   }
+//   .nextImage {
+//     width: 380px;
+//     height: 135px;
+//     @media (max-width: 1024px) {
+//       width: 260px;
+//       height: 90px;
+//     }
+//     @media (max-width: 767px) {
+//       width: 260px;
+//       height: 90px;
+//     }
+//   }
+//   .callOutChart {
+//     width: 554px;
+//     height: 416px;
+//   }
+// }
+// .bookinfoBg {
+//   font-size: 14px;
+//   color: #000000;
+
+//   svg {
+//     height: 22px;
+//     width: 26px;
+//     fill: #000000;
+//   }
+//   div {
+//     padding: 6px 50px 6px 10px;
+//     font-weight: 500;
+//   }
+// }
+// .infoLabels {
+//   gap: 100px;
+// }
+
+.oyo-pricing-page {
+  // font-family: "Lexend", sans-serif;
+  font-family: "Montserrat", sans-serif;
+  scroll-behavior: smooth !important;
+  letter-spacing: 0.4px;
+  --prices-side-spacing: 48px;
+  margin: 0 var(--prices-side-spacing);
+
+  @media (max-width: 991px) {
+    --prices-side-spacing: 32px;
+    margin: 0 var(--prices-side-spacing);
+  }
+
+  @media (max-width: 767px) {
+    --prices-side-spacing: 8px;
+    margin: 0 var(--prices-side-spacing);
+  }
+
+  #how-much-pricing .container,
+  .prices-page-section .container {
+    padding-left: 20px;
+    padding-right: 20px;
+
+    @media (max-width: 767px) {
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .prices-page-main.row {
+      --bs-gutter-x: 0;
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .prices-page-main > .col-12 {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  .pricePage {
+    background-color: #fff !important;
+    padding: 12px 0;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100px;
+    box-shadow: 5px 5px 10px #d9d9d9 !important;
+    margin-top: -50px;
+    overflow: hidden;
+
+    .row {
+      width: 100%;
+      height: 55px;
+      justify-content: center;
+
+      @media (max-width: 991px) {
+        gap: 20px;
+      }
+
+      @media (max-width: 769px) {
+        padding: 0 16px 0;
+        height: auto;
+      }
+
+      .location-time {
+        font-size: 13px;
+        gap: 5px;
+        color: #222;
+      }
+    }
+
+    .addressfields .addressCard {
+      background-color: #FFCE00 !important;
+    }
+
+    .query-heading {
+      font-size: 25px;
+
+      @media (max-width: 1200px) {
+        font-size: 20px;
+      }
+    }
+
+    @media (max-width: 991px) {
+      height: 100px;
+    }
+
+    @media (max-width: 769px) {
+      padding: 0 24px 24px;
+    }
+  }
+
+  #how-much-pricing,
+  .prices-page-section {
+    padding-top: 9rem;
+
+    @media (max-width: 991px) {
+      padding-top: 8rem;
+    }
+
+    @media (max-width: 767px) {
+      padding-top: 7rem;
+    }
+
+    @media (max-width: 520px) {
+      padding-top: 6.5rem;
+    }
+  }
+
+  .prices-page-intro {
+    margin-bottom: 0.25rem;
+
+    @media (max-width: 991px) {
+      margin-bottom: 0.2rem;
+    }
+
+    @media (max-width: 767px) {
+      margin-top: 1.5rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  #how-much-pricing .container.pb-4 {
+    padding-bottom: 1rem !important;
+  }
+
+  .prices-page-main {
+    margin-top: 0;
+  }
+
+  .prices-page-layout {
+    --prices-heading-offset: 3rem;
+    --prices-heading-gap: 0.9rem;
+    --prices-coupon-gap: 0.65rem;
+    --prices-coupon-height: calc(11px + 7px + 2px + 13px * 1.25);
+    --prices-column-gap: 12px;
+    // Match .limited-time-deals top padding so text lines up with coupon label
+    --prices-top-row-align: 11px;
+    width: 100%;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+
+    @media (max-width: 991px) {
+      margin-top: 1.5rem;
+    }
+
+    @media (max-width: 767px) {
+      margin-top: 0.5rem;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      margin-top: 0.5rem;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: var(--prices-column-gap);
+      align-items: start;
+    }
+  }
+
+  .prices-page-vehicles {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 12px;
+
+    @media (max-width: 767px) {
+      padding-left: 0;
+    }
+
+    .limited-time-deals {
+      margin-top: 0;
+      margin-bottom: var(--prices-coupon-gap);
+
+      @media (min-width: 768px) {
+        // Same vertical start as "Enter addresses..." heading on the right
+        margin-top: var(--prices-heading-offset);
+      }
+    }
+
+    @media (min-width: 768px) {
+      .prices-page-vehicles__cards {
+        // Fine-tune: card row vs inputs when coupon/heading heights differ slightly
+        margin-top: calc(
+          var(--prices-top-row-align) + max(
+            0px,
+            var(--prices-heading-gap) + (24px * 1.18) - var(--prices-coupon-gap) -
+              var(--prices-coupon-height)
+          )
+        );
+      }
+    }
+
+    @media (max-width: 767px) {
+      .prices-page-vehicles__cards {
+        margin-top: 0;
+      }
+
+      .limited-time-deals {
+        margin-top: 0;
+      }
+    }
+
+    .prices-page-vehicles__cards {
+      width: 100%;
+    }
+  }
+
+  .prices-page-estimate {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-right: 12px;
+
+    @media (max-width: 767px) {
+      padding-right: 0;
+    }
+
+    @media (min-width: 768px) {
+      align-items: flex-start;
+    }
+
+    > .prices-address-heading.prices-address-heading--aligned {
+      width: 100%;
+      max-width: 100%;
+      margin: var(--prices-heading-offset) 0 var(--prices-heading-gap);
+      padding-top: 0;
+      font-family: Lexend, sans-serif;
+      font-size: 24px !important;
+      font-weight: 500;
+      line-height: 1.18 !important;
+      color: #a0a0a0;
+      white-space: nowrap;
+      text-align: center;
+
+      @media (min-width: 768px) {
+        padding-top: var(--prices-top-row-align);
+      }
+
+      @media (max-width: 1200px) {
+        max-width: 100%;
+      }
+
+      @media (max-width: 991px) {
+        font-size: 24px !important;
+        line-height: 1.18 !important;
+        white-space: normal;
+      }
+
+      @media (max-width: 767px) {
+        display: none !important;
+        margin: 0 !important;
+      }
+    }
+  }
+
+  .prices-page-estimate-container {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .prices-page-estimate__inputs {
+    width: 100%;
+  }
+
+  .prices-page-estimate__results {
+    width: 100%;
+  }
+
+  .prices-page-subhead-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-top: 3.25rem;
+    margin-bottom: 0.9rem;
+    width: 100%;
+
+    &__left {
+      flex: 0 0 50%;
+      max-width: 50%;
+      display: flex;
+      align-items: center;
+    }
+
+    &__right {
+      flex: 0 0 50%;
+      max-width: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .prices-address-heading {
+        max-width: none;
+      }
+    }
+
+    .limited-time-deals {
+      margin-top: 0;
+    }
+
+    .prices-address-heading.prices-address-heading--aligned {
+      margin: 0;
+      font-family: Lexend, sans-serif;
+      font-size: 24px !important;
+      font-weight: 500;
+      line-height: 1.18 !important;
+      color: #a0a0a0;
+      white-space: nowrap;
+
+      @media (max-width: 991px) {
+        font-size: 24px !important;
+        line-height: 1.18 !important;
+        white-space: normal;
+      }
+    }
+
+    @media (max-width: 991px) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+      margin-top: 2rem;
+
+      &__left,
+      &__right {
+        flex: 0 0 100%;
+        max-width: 100%;
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 767px) {
+      gap: 12px;
+      margin-top: 0.55rem;
+      margin-bottom: 0.5rem;
+
+      &__left,
+      &__right {
+        justify-content: flex-start;
+      }
+
+      &__left {
+        margin-top: 0;
+      }
+
+      &__right {
+        display: block;
+        width: 100%;
+        margin-top: 4px;
+      }
+
+      .prices-address-heading.prices-address-heading--aligned {
+        font-size: 16px !important;
+        font-weight: 500;
+        line-height: 1.35 !important;
+        color: #7f7f7f;
+        display: none !important;
+        margin: 0 !important;
+        text-align: left;
+      }
+    }
+  }
+
+  .prices-page-main .price-list .imageCard:first-child a,
+  .prices-page-vehicles__cards .imageCard:first-child a {
+    margin-top: 0;
+  }
+
+  @media (min-width: 768px) {
+    .prices-page-estimate__inputs .prices-address-block {
+      margin-top: 0;
+      padding-top: 0;
+    }
+  }
+
+  #how-much-pricing {
+    ul {
+      padding: 0;
+      width: 100%;
+
+      @media (max-width: 769px) {
+        display: flex;
+        flex-wrap: wrap;
+        // row-gap: 16px;
+      }
+
+      li {
+        list-style-type: none;
+        width: 100%;
+
+        a {
+
+          // margin-right: auto;
+          @media (max-width: 1200px) {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+          }
+        }
+      }
+    }
+  }
+
+  // .cmptBookingMain {
+  //   padding-top: 90px;
+  //   @media (max-width: 1200px) {
+  //     padding-top: 110px;
+  //   }
+  //   .cmptBooking {
+  //     max-width: 300px !important;
+  //     border-color: #2654a6 !important;
+  //     background-color: #2654a6 !important;
+  //   }
+  // }
+  .botton-bld {
+    font-weight: 700;
+  }
+
+  .totalfarebody {
+    .progessLabel {
+      display: flex;
+      justify-content: center;
+      gap: 38px;
+      margin-top: 12px;
+      margin-bottom: 39px;
+    
+      @media (max-width: 1300px) {
+        gap: 33px;
+      }
+    
+      @media (max-width: 1200px ){
+        gap: 25px;
+      }
+    
+      @media (max-width: 991px) {
+        gap: 45px;
+      }
+    
+      @media (max-width: 768px) {
+        gap: 28px;
+      }
+    
+      @media (max-width: 520px) {
+        gap: 24px;
+      }
+    
+      @media (max-width: 480px) {
+        gap: 21px;
+      }
+    
+      @media (max-width: 460px) {
+        gap: 19px;
+      }
+    
+      @media (max-width: 440px) {
+        gap: 17px;
+      }
+    
+      @media (max-width: 420px) {
+        gap: 16px;
+      }
+    
+      @media (max-width: 400px) {
+        gap: 14px;
+      }
+    
+      @media (max-width: 380px) {
+        gap: 12px;
+      }
+    
+      @media (max-width: 360px) {
+        gap: 9px;
+      }
+    }
+  }
+
+  // .bookinfoBg {
+  //   background: transparent;
+  //   b {
+  //     font-size: 22px;
+  //   }
+  //   .alert {
+  //     max-width: 570px;
+  //     width: 100%;
+  //   }
+  //   p {
+  //     font-size: 12px !important;
+  //   }
+  // }
+
+  // Prices page only — override custom.scss `p { font-weight: normal !important }`
+  .estimate-cost--page .estimate-cost__time-value {
+    font-size: 20px !important;
+    font-weight: 700 !important;
+  }
+
+  .estimate-cost--page .estimate-cost__time-hint {
+    font-size: 12px !important;
+    color: #878686 !important;
+    font-weight: 500 !important;
+  }
+
+  .estimate-cost--page .estimate-cost__line-label span,
+  .estimate-cost--page .estimate-cost__line--total .estimate-cost__line-label span {
+    color: #878686 !important;
+    font-weight: 500 !important;
+  }
+
+  @media (max-width: 767px) {
+    .estimate-cost--page .estimate-cost__line-label span,
+    .estimate-cost--page .estimate-cost__line--total .estimate-cost__line-label span {
+      font-size: 12px !important;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .estimate-cost--page .estimate-cost-modal__title {
+      font-size: 40px !important;
+    }
+
+    .prices-page-disclaimer__line--secondary {
+      font-size: 14px !important;
+    }
+  }
+
+  .estimate-cost--page .estimate-cost__breakdown {
+    .estimate-cost__line:not(.estimate-cost__line--total) {
+      .estimate-cost__line-label {
+        font-weight: 500 !important;
+      }
+
+      .estimate-cost__line-price {
+        font-weight: 500 !important;
+      }
+    }
+
+    .estimate-cost__line--total {
+      .estimate-cost__line-label {
+        font-weight: 700 !important;
+      }
+
+      .estimate-cost__line-label span {
+        font-weight: 500 !important;
+      }
+
+      .estimate-cost__line-price,
+      .estimate-cost__line-price--total {
+        font-weight: 700 !important;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .estimate-cost__line-label {
+        font-size: 20px !important;
+
+        span {
+          font-size: 16px !important;
+          color: #878686 !important;
+          font-weight: 500 !important;
+        }
+      }
+
+      .estimate-cost__line:not(.estimate-cost__line--total) .estimate-cost__line-price {
+        font-size: 20px !important;
+      }
+
+      .estimate-cost__line-price--total {
+        font-size: 32px !important;
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    .imageCard .prices-vehicle-card__desc {
+      font-size: 11px !important;
+      font-weight: 500 !important;
+      line-height: 1.2;
+      color: #2c2c2c;
+    }
+  }
+
+  .imageCard a {
+    &:hover:not(.active) {
+      border-color: #4472c4;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .prices-page-section {
+      padding-bottom: 1rem !important;
+    }
+
+    #how-much-pricing .container.pb-4 {
+      padding-bottom: 0.5rem !important;
+    }
+
+    .price-list {
+      margin-bottom: 0;
+    }
+
+    .continue-booking-wrapper {
+      margin-bottom: 0;
+    }
+
+    .prices-page-vehicles__cards .imageCard:last-child a {
+      margin-bottom: 8px;
+    }
+  }
+}
+
+.priceLoader .serviceLoading {
+  height: 150px;
+}
+
+.price-list {
+  @media (max-width: 991px) {
+    width: 100%;
+    margin-bottom: 50px;
+    margin-top: 0;
+  }
+
+  @media (max-width: 767px) {
+    margin-bottom: 30px;
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    @media (max-width: 991px) {
+      width: 100%;
+    }
+  }
+}
+
+.estimateslider-wrapper {
+  @media (max-width: 991px) {
+    width: 100%;
+  }
+}
+
+.estimateslider-data,
+.prices-page-estimate-container {
+  max-width: 600px;
+
+  @media (max-width: 1200px) {
+    max-width: 100%;
+  }
+
+  @media (max-width: 1024px) {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+.headingPrice {
+  h1 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #000;
+    margin: 0;
+    line-height: 1.2;
+
+    @media (max-width: 991px) {
+      font-size: 28px;
+    }
+
+    @media (max-width: 767px) {
+      font-size: 24px;
+    }
+  }
+
+  h2 {
+    font-size: 26px;
+
+    @media (max-width: 1140px) {
+      font-size: 22px;
+    }
+
+    @media (max-width: 991px) {
+      font-size: 18px;
+    }
+
+    .dealPer {
+      color: #d02b25;
+    }
+  }
+
+  .heading-with-gst {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    position: relative;
+
+    @media (max-width: 768px) {
+      flex-direction: row;
+      // align-items: f;
+      gap: 10px;
+    }
+
+    .heading-wrapper {
+      position: relative;
+      display: inline-block;
+      padding-bottom: 8px;
+      color: #000000;
+
+      h1 {
+        position: relative;
+        z-index: 2;
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        line-height: 1.2;
+        color: #000000 !important;
+      }
+
+      .our-word {
+        position: relative;
+        z-index: 3;
+        color: #000000;
+      }
+
+      // .blue-underline {
+      //   position: absolute;
+      //   bottom: 0;
+      //   left: 0;
+      //   right: 0;
+      //   height: 4px;
+      //   background-color: #1976D2;
+      //   z-index: 1;
+      // }
+
+      .yellow-underline {
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        width: 85px;
+        height: 4px;
+        background-color: #ffe001;
+        z-index: 2;
+        border-radius: 20px;  
+
+        @media (max-width: 768px) {
+          width: 50px;
+          bottom: -4px;
+        }
+      }
+    }
+
+    // .gst-separator {
+    //   width: 0;
+    //   height: 30px;
+    //   border-left: 2px dashed #87CEEB;
+    //   flex-shrink: 0;
+    //   margin: 0 10px;
+
+    //   @media (max-width: 768px) {
+    //     display: none;
+    //   }
+    // }
+
+    .includes-gst {
+      font-size: 14px;
+      color: rgba(51, 51, 51, 1);
+      font-weight: 400;
+      white-space: nowrap;
+      // align-self: flex-start;
+      // margin-top: 5px;
+
+      @media (max-width: 768px) {
+        margin-top: 0;
+        font-size: 12px;
+      }
+    }
+  }
+
+  @media (max-width: 520px) {
+    margin-bottom: 2px;
+
+    .heading-with-gst {
+      gap: 8px;
+      align-items: center;
+    }
+  }
+}
+
+.price-stop {
+  border-radius: 20px;
+  border: 1px solid var(--highlightColor) !important;
+  color: var(--highlightColor) !important;
+  background-color: #fff !important;
+  box-shadow: none !important;
+}
+
+.addLink {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  a {
+    color: var(--highlightColor);
+  }
+
+  p {
+    color: #000;
+
+    span {
+      font-size: 12px;
+      color: #6c757d;
+    }
+  }
+}
+
+.sliderRootRangeWrapper {
+  @media(max-width:991px) {
+    margin-top: 33px !important;
+  }
+
+  @media (max-width: 520px) {
+    margin-top: 33px !important;
+  }
+}
+
+.limited-time-deals {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  max-width: fit-content;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 11px 16px 7px;
+  border-radius: 4px !important;
+  background-color: #fff5e1;
+  border: 1px solid #f9d6a0;
+  box-sizing: border-box;
+
+  &__icon {
+    flex-shrink: 0;
+    color: #f59e0b;
+    font-size: 15px;
+    transform: rotate(-18deg);
+  }
+
+  &__text {
+    font-family: Montserrat, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.25;
+    color: #1a1a1a;
+    letter-spacing: 0.01em;
+  }
+
+  .dealPer {
+    color: #ff5722;
+    font-weight: 700;
+  }
+
+  @media (max-width: 767px) {
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+    gap: 8px;
+    padding: 8px 12px 7px;
+    border-radius: 3px;
+
+    &__icon {
+      font-size: 14px;
+    }
+
+    &__text {
+      font-size: 12px;
+    }
+  }
+
+  @media (max-width: 520px) {
+    width: 100%;
+    max-width: 100%;
+    justify-content: flex-start;
+  }
+}
+
+.sub-head {
+  font-size: 20px;
+  font-weight: 600;
+  color: #000;
+  background-color: #DEDEDD;
+  max-width: fit-content;
+  padding: 7px 20px;
+  border-radius: 20px;
+  text-transform: uppercase;
+
+  @media (max-width: 991px) {
+    font-size: 18px;
+    padding: 6px 18px;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 16px;
+    padding: 6px 15px;
+  }
+
+  @media (max-width: 520px) {
+    font-size: 14px;
+    padding: 5px 12px;
+    margin-bottom: 15px;
+  }
+
+  .dealPer {
+    @media (max-width: 520px) {
+      font-size: 14px;
+    }
+  }
+}
+
+.content-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @media (max-width: 520px) {
+    width: 100%;
+  }
+
+  h6 {
+    font-size: 20px !important;
+    font-weight: 600;
+    color: #222222;
+    margin-bottom: 4px !important;
+
+    @media (max-width: 991px) {
+      font-size: 18px !important;
+    }
+
+    @media (max-width: 767px) {
+      font-size: 16px !important;
+    }
+
+    @media (max-width: 520px) {
+      font-size: 14px !important;
+      margin-bottom: 8px !important;
+    }
+
+    span {
+      background-color: #FFDE53;
+      padding: 5px 10px;
+      border-radius: 15px;
+      max-width: fit-content;
+      margin-left: 10px;
+
+      @media (max-width: 767px) {
+        padding: 4px 8px;
+        font-size: 12px;
+        margin-left: 5px;
+      }
+
+
+      .active & {
+        background-color: #ffffff;
+      }
+    }
+  }
+
+  p {
+    font-size: 10px !important;
+    font-weight: 400 !important;
+    color: #2C2C2C;
+    margin-bottom: 6px;
+
+    @media (max-width: 520px) {
+      font-size: 9px !important;
+      margin-bottom: 8px;
+    }
+  }
+
+  .btn {
+    @media (max-width: 767px) {
+      padding: 6px 10px;
+      font-size: 12px;
+    }
+
+    @media (max-width: 520px) {
+      padding: 5px 8px;
+      font-size: 11px;
+    }
+
+    h5 {
+      @media (max-width: 767px) {
+        font-size: 16px;
+      }
+
+      @media (max-width: 520px) {
+        font-size: 14px;
+      }
+    }
+
+    p {
+      @media (max-width: 767px) {
+        font-size: 11px !important;
+      }
+
+      @media (max-width: 520px) {
+        font-size: 10px !important;
+      }
+    }
+
+    .svgIcon {
+      @media (max-width: 520px) {
+        width: 12px;
+        height: 12px;
+      }
+    }
+  }
+}
+
+// Price Display Design
+.price-display-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 4px 12px;
+  border-radius: 8px;
+  margin-top: 0;
+
+  @media (max-width: 767px) {
+    padding: 6px 12px;
+    gap: 8px;
+  }
+
+  @media (max-width: 520px) {
+    padding: 5px 10px;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .price-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    @media (max-width: 767px) {
+      gap: 40px;
+    }
+
+    @media (max-width: 520px) {
+      gap: 35px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+
+  .was-price-wrapper {
+    display: flex;
+    align-items: baseline;
+    gap: 2px;
+    position: relative;
+
+    .was-label {
+      font-size: 10px;
+      font-weight: 500;
+      color: #999;
+      text-transform: uppercase;
+
+      @media (max-width: 767px) {
+        font-size: 9px;
+      }
+
+      @media (max-width: 520px) {
+        font-size: 8px;
+      }
+    }
+
+    .was-price {
+      font-size: 20px;
+      font-weight: 300;
+      color: #666;
+      position: relative;
+      display: inline-block;
+
+      &::after {
+        content: "";
+    position: absolute;
+    left: -1px;
+    right: -2px;
+    top: 52%;
+    height: 2px;
+    background-color: #FF3D00;
+    transform: translateY(-50%) rotate(345deg);
+    transform-origin: center;
+
+        @media (max-width: 767px) {
+          height: 2px;
+        }
+
+        @media (max-width: 520px) {
+          height: 1.5px;
+        }
+      }
+
+      @media (max-width: 767px) {
+        font-size: 18px;
+      }
+
+      @media (max-width: 520px) {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .now-price-wrapper {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+
+    @media (max-width: 520px) {
+      gap: 3px;
+    }
+  }
+
+  .now-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: #000;
+    text-transform: uppercase;
+
+    @media (max-width: 767px) {
+      font-size: 10px;
+    }
+
+    @media (max-width: 520px) {
+      font-size: 9px;
+    }
+  }
+
+  .now-price {
+    font-size: 22px;
+    font-weight: 700;
+    color: #000;
+
+    @media (max-width: 767px) {
+      font-size: 20px;
+    }
+
+    @media (max-width: 520px) {
+      font-size: 18px;
+    }
+  }
+
+  .price-duration {
+    font-size: 10px;
+    font-weight: 400;
+    color: #666;
+    white-space: nowrap;
+
+    @media (max-width: 767px) {
+      font-size: 9px;
+    }
+
+    @media (max-width: 520px) {
+      font-size: 8px;
+    }
+  }
+
+  .info-icon {
+    width: 16px;
+    height: 16px;
+    color: #1976D2;
+    cursor: pointer;
+    flex-shrink: 0;
+    margin-left: 4px;
+    margin-top: 7px;
+
+    @media (max-width: 520px) {
+      width: 14px;
+      height: 14px;
+    }
+  }
+}
+
+.prices-address-block {
+  width: 100%;
+  margin-bottom: 2.5rem;
+  padding-bottom: 0 !important;
+  padding-top: 0;
+}
+
+.prices-address-heading {
+  margin: 0 0 28px;
+  font-family: Lexend, sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.18;
+  color: #a0a0a0;
+
+  &--aligned {
+    margin-bottom: 0;
+  }
+
+  &--mobile {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .prices-page-estimate > .prices-address-heading.prices-address-heading--aligned {
+    margin-top: var(--prices-heading-offset) !important;
+    margin-bottom: var(--prices-heading-gap) !important;
+    padding-top: var(--prices-top-row-align) !important;
+    font-size: 24px;
+    line-height: 1.18;
+  }
+}
+
+@media (max-width: 767px) {
+  .oyo-pricing-page .estimateslider-data p.prices-address-heading.prices-address-heading--mobile {
+    display: block !important;
+    width: 100%;
+    margin: 1rem 0 16px !important;
+    padding: 0;
+    font-family: Lexend, sans-serif !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    line-height: 1.2 !important;
+    color: #5a5a5a !important;
+    text-align: center !important;
+    white-space: nowrap;
+  }
+}
+
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media (max-width: 440px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &.prices-address-fields {
+    flex-wrap: nowrap;
+    gap: 16px;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    @media (max-width: 440px) {
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+  }
+}
+
+.section-heading .address-input-wrapper,
+.prices-address-fields .address-input-wrapper {
+  flex: 0 0 304px;
+  width: 304px;
+  max-width: 304px;
+
+  .editablePickupField {
+    display: flex;
+    align-items: center;
+    height: 55px;
+    min-height: 55px;
+  }
+
+  .customInput {
+    width: 100%;
+    height: 55px;
+    min-height: 55px;
+
+    input,
+    .form-control {
+      height: 55px !important;
+      min-height: 55px !important;
+      padding: 0 12px 0 36px !important;
+      font-size: 14px !important;
+      line-height: 55px !important;
+      box-sizing: border-box;
+      border: 1px solid #d2d2d2;
+      border-radius: 11px !important;
+      color: #333;
+
+      &::placeholder {
+        color: #9a9a9a;
+        font-weight: 500;
+        opacity: 1;
+      }
+    }
+  }
+
+  .editablePickupField--marker {
+    .address-marker {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .address-marker--pickup {
+      left: 14px;
+    }
+
+    .address-marker--dropoff {
+      left: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+    }
+  }
+
+  @media (max-width: 680px) {
+    flex: 1 1 calc(50% - 8px);
+    width: calc(50% - 8px);
+    max-width: calc(50% - 8px);
+  }
+
+  @media (max-width: 440px) {
+    flex: 1 1 100%;
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+
+.price-card-image {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &--dimensionless {
+    width: 194px;
+    max-width: 42%;
+    min-height: 88px;
+    margin-right: 4px;
+
+    .next-Image {
+      width: auto !important;
+      max-width: 100%;
+      height: 88px;
+    }
+
+    @media (max-width: 991px) {
+      width: 180px;
+      min-height: 80px;
+
+      .next-Image {
+        height: 80px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      width: 160px;
+      min-height: 72px;
+
+      .next-Image {
+        height: 72px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      width: 152px;
+      max-width: 152px;
+      min-height: 62px;
+      margin-right: 0;
+
+      .next-Image {
+        height: 62px;
+      }
+    }
+  }
+
+  &--med.price-card-image--dimensionless {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 12%;
+      right: 12%;
+      bottom: 4px;
+      height: 1px;
+      background: #222;
+      border-radius: 1px;
+      z-index: 1;
+      pointer-events: none;
+    }
+  }
+}
+
+.next-Image {
+  width: 194px;
+  height: 92px;
+  object-fit: contain;
+
+  @media (max-width: 1200px) {
+    width: 180px;
+    height: 90px;
+  }
+
+  @media (max-width: 991px) {
+    width: 200px !important;
+    height: 105px;
+  }
+
+  @media (max-width: 767px) {
+    width: 180px !important;
+    height: 95px;
+  }
+
+  @media (max-width: 520px) {
+    width: 150px !important;
+    height: 72px;
+  }
+}
+
+.imageCard {
+  @media (max-width: 520px) {
+    a {
+      padding: 12px 10px;
+      gap: 8px;
+    }
+  }
+
+  .prices-vehicle-card__content {
+    @media (max-width: 520px) {
+      align-items: center;
+      text-align: center;
+      gap: 4px;
+    }
+  }
+
+  .prices-vehicle-card__title-row {
+    @media (max-width: 520px) {
+      justify-content: center;
+      gap: 6px;
+    }
+  }
+
+  .prices-vehicle-card__title {
+    @media (max-width: 520px) {
+      font-size: 20px;
+      line-height: 1;
+    }
+  }
+
+  .prices-vehicle-card__men-badge {
+    @media (max-width: 520px) {
+      font-size: 10px;
+      padding: 3px 8px;
+    }
+  }
+
+  .prices-vehicle-card__price-row {
+    @media (max-width: 520px) {
+      justify-content: center;
+      gap: 3px;
+    }
+  }
+
+  .prices-vehicle-card__was-price {
+    @media (max-width: 520px) {
+      margin-right: 6px;
+      font-size: 12px;
+    }
+  }
+
+  .prices-vehicle-card__now-price {
+    @media (max-width: 520px) {
+      font-size: 20px;
+      line-height: 1;
+    }
+  }
+
+  .prices-vehicle-card__duration {
+    @media (max-width: 520px) {
+      font-size: 8px;
+    }
+  }
+
+  .prices-vehicle-card__info {
+    @media (max-width: 520px) {
+      margin-top: 2px;
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+  .prices-vehicle-card__desc {
+    @media (max-width: 520px) {
+      font-size: 8px;
+      text-align: center;
+    }
+  }
+}
+
+// Continue Booking Button Styles
+.btn-book-now-1 {
+  background: #ffde53 !important;
+    color: #000 !important;
+    border: 1px solid #ccc !important;
+    border-radius: 25px !important;
+    padding: 9px 80px !important;
+    font-weight: 500 !important;
+    font-size: 20px !important;
+    text-decoration: none !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+    white-space: nowrap;
+
+  @media (max-width: 767px) {
+    width: 100%;
+    justify-content: center;
+    font-size: 18px !important;
+    padding: 10px 24px !important;
+  }
+
+  @media (max-width: 520px) {
+    font-size: 16px !important;
+    padding: 10px 18px !important;
+  }
+}
+
+  @media (max-width: 991px) {
+
+  svg {
+    @media (max-width: 520px) {
+      width: 12px;
+      height: 12px;
+    }
+  }
+}
+
+// Button container
+.price-list {
+  .d-flex.justify-content-end {
+    @media (max-width: 991px) {
+      justify-content: center !important;
+      margin-top: 10px;
+    }
+
+    @media (max-width: 767px) {
+      width: 100%;
+    }
+  }
+}
+
+
+
+.continue-booking-wrapper {
+  max-width: 499px;
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+  }
+}
+
+.prices-page-disclaimer {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 10px;
+  text-align: left;
+  background: #e8f4fc;
+  border: 1px solid #90caf9;
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-top: 1.25rem;
+
+  &__icon {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    color: #1976d2;
+    margin-top: 3px;
+  }
+
+  &__copy {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+  }
+
+  &__line {
+    margin: 0;
+    line-height: 1.45;
+
+    &--primary {
+      font-size: 16px;
+      font-weight: 500;
+      color: #0d47a1;
+    }
+
+    &--secondary {
+      font-size: 14px;
+      font-weight: 400;
+      color: #555;
+    }
+  }
+
+  &__link {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    color: inherit;
+  }
+
+  @media (max-width: 520px) {
+    gap: 8px;
+    padding: 9px 10px;
+    margin-top: 2rem !important;
+
+    &__icon {
+      width: 14px;
+      height: 14px;
+      margin-top: 2px;
+    }
+
+    &__line {
+      line-height: 1.25;
+      white-space: normal;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+
+      &--primary {
+        font-size: 11px !important;
+      }
+
+      &--secondary {
+        font-size: 11px !important;
+      }
+    }
+  }
+}
+
+@media (max-width: 520px) {
+  .oyo-pricing-page .estimate-cost--page {
+    .estimate-cost__line-label {
+      font-size: 12px;
+
+      span {
+        font-size: 12px;
+      }
+    }
+
+    .estimate-cost__line-price {
+      font-size: 12px;
+
+      &--total {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+@media (max-width: 420px) {
+  .oyo-pricing-page .estimate-cost--page {
+    .estimate-cost__line-label {
+      font-size: 16px;
+
+      span {
+        font-size: 12px;
+      }
+    }
+
+    .estimate-cost__line-price {
+      font-size: 11px;
+
+      &--total {
+        font-size: 15px;
+      }
+    }
+  }
+
+  .prices-page-disclaimer {
+    padding: 8px 9px;
+
+    &__line {
+      white-space: normal;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+
+      &--primary {
+        font-size: 11px;
+      }
+
+      &--secondary {
+        font-size: 11px;
+      }
+    }
+  }
+}
+
+// Most Popular Badge Styling Only
+.most-popular-badge {
+  position: absolute;
+  top: 6px;
+  left: 8px;
+  background: #fff;
+  border-radius: 4px;
+  padding: 3px 8px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  z-index: 10;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+
+  @media (max-width: 767px) {
+    top: 4px;
+    left: 4px;
+    padding: 3px 8px;
+    gap: 3px;
+  }
+
+  @media (max-width: 520px) {
+    top: 4px;
+    left: 6px;
+    padding: 2px 8px;
+    gap: 2px;
+  }
+
+  .star-icon {
+    width: 10px;
+    height: 10px;
+    color: #ff3d00;
+    flex-shrink: 0;
+  }
+
+  .badge-text {
+    color: #ff3d00;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1.2;
+    white-space: nowrap;
+
+    @media (max-width: 520px) {
+      font-size: 9px;
+    }
+  }
+}

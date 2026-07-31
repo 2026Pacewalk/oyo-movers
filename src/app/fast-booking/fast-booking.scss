@@ -1,0 +1,20 @@
+.bookingFormWrapper {
+  max-width: 700px;
+  width: 100%;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  .addressCard {
+    padding: 0;
+  }
+  .inputFieldBookingForm{
+    margin-bottom: 16px;
+  }
+  .buttonClassFastBooking{
+    background: var(--secondaryColor) !important;
+    align-items: center;
+    border: none;
+  }
+}

@@ -1,0 +1,51 @@
+.modal-header {
+  button {
+    box-shadow: none !important;
+  }
+}
+
+.modal-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #000 !important;
+}
+.modal-body {
+  max-height: calc(100vh - 150px);
+  overflow: auto;
+  color: #000 !important;
+  
+  &::-webkit-scrollbar {
+    width: 5px;
+    height: 8px;
+    background-color: #aaa; 
+  }
+  
+  // Ensure all text in modals is black
+  p, h1, h2, h3, h4, h5, h6, span, div, li {
+    color: #000;
+  }
+}
+
+// Fare / estimate modals use an empty title but must keep Bootstrap’s close control visible (top-right).
+.fareModalwrapper {
+  .modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    border-bottom: none;
+    padding: 0.5rem 0.75rem 0;
+    background-color: #fff;
+
+    .btn-close {
+      padding: 0.75rem;
+      margin: 0;
+      flex-shrink: 0;
+      opacity: 0.85;
+
+      &:hover,
+      &:focus {
+        opacity: 1;
+      }
+    }
+  }
+}

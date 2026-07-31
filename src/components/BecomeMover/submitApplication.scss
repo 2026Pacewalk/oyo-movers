@@ -1,0 +1,128 @@
+// Styles specific to Submit Application step
+
+.submit-application-wrapper {
+  // Remove gray/background from card sections
+  .form-section {
+    // Keep a clean white card with yellow border
+    background-color: #ffffff !important;
+    border: 1px solid var(--secondaryColor, #ffc107) !important; // yellow border by default
+    box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04) !important; // light elevation
+    border-radius: 8px !important;
+    padding: 18px !important;
+    transition: box-shadow 0.2s ease, border-color 0.2s ease, transform 0.2s ease !important;
+
+    &:hover {
+      border-color: var(--secondaryColor, #ffc107) !important; // keep yellow border
+      box-shadow: 0 2px 8px rgba(16, 24, 40, 0.06) !important; // lighter, neutral shadow
+      transform: none !important; // remove lift to avoid strong glow effect
+    }
+  }
+  
+  // Fix checkbox alignment and spacing - match registration step (workcheckBox)
+  .emergency-checkbox-container {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 8px !important; // Same as workcheckBox in registration step
+    margin-bottom: 12px !important;
+    
+    // Make wrapper inline for checkbox (same as workcheckBox)
+    .moverInputWrapper {
+      display: inline-block !important;
+      width: auto !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      flex-shrink: 0 !important;
+    }
+    
+    .moverCustomInput {
+      margin: 0 !important;
+      padding: 0 !important;
+      flex-shrink: 0 !important;
+      
+      input[type="checkbox"] {
+        width: 16px !important;
+        height: 16px !important;
+        min-width: 16px !important;
+        min-height: 16px !important;
+        margin: 0 !important;
+        margin-top: 3px !important; // Align with text baseline (same as workcheckBox)
+        padding: 0 !important;
+        cursor: pointer !important;
+        flex-shrink: 0 !important;
+        vertical-align: top !important; // Same as workcheckBox
+      }
+      
+      label {
+        display: none !important; // Hide default label, we use custom label
+      }
+    }
+    
+    .emergency-checkbox-label {
+      flex: 1 !important;
+      font-size: 14px !important;
+      font-weight: 400 !important;
+      line-height: 1.5 !important;
+      margin: 0 !important;
+      margin-left: 0 !important; // No left margin (same as workcheckBox .terms-label)
+      padding: 0 !important;
+      padding-left: 0 !important; // No left padding (same as workcheckBox .terms-label)
+      color: #333 !important;
+      cursor: pointer !important;
+      align-self: flex-start !important; // Align with checkbox (same as workcheckBox)
+      
+      .terms-link {
+        color: #0d6efd !important;
+        text-decoration: underline !important;
+        font-weight: 400 !important;
+        
+        &:hover {
+          color: #0056b3 !important;
+        }
+      }
+    }
+  }
+
+  // Terms and conditions links styling
+  .terms-link {
+    color: var(--primaryColor, #007bff) !important;
+    text-decoration: underline !important;
+    font-weight: 500 !important;
+    transition: color 0.2s ease !important;
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: inline !important;
+    
+    &:hover {
+      color: var(--highlightColor, #0056b3) !important;
+      text-decoration: underline !important;
+      background: none !important;
+      border: none !important;
+    }
+    
+    &:focus {
+      outline: none !important;
+      background: none !important;
+      border: none !important;
+      color: var(--highlightColor, #0056b3) !important;
+    }
+    
+    &:active {
+      background: none !important;
+      border: none !important;
+      outline: none !important;
+    }
+  }
+
+}
+
+/* Smaller Submit Application button */
+.submit-application-wrapper .footerBtn button {
+  width: 120px;
+  max-width: 120px;
+  height: 36px;
+  font-size: 13px !important;
+  padding: 6px 12px !important;
+  gap: 8px !important;
+}

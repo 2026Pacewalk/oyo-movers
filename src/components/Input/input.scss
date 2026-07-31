@@ -1,0 +1,135 @@
+.customInput {
+  input {
+    border: 1px solid #eaebef;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 14px;
+    display: block;
+    width: 100%;
+    box-shadow: none !important;
+    padding-right: 35px !important;
+    outline: none !important;
+    background-color: #fff !important;
+    &:focus {
+      border-color: var(--highlightColor);
+    }
+
+    /* Prevent mobile zoom on input focus - font-size must be at least 16px */
+    @media (max-width: 768px) {
+      font-size: 16px !important;
+    }
+  }
+  textarea {
+    border: 1px solid #eaebef;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1rem;
+    display: block;
+    width: 100%;
+    box-shadow: none !important;
+    outline: none !important;
+  }
+
+  /* Also prevent zoom for Form.Control (FloatingLabel inputs) */
+  .form-control {
+    @media (max-width: 768px) {
+      font-size: 16px !important;
+    }
+  }
+}
+.editField {
+  line-height: 10px;
+  position: relative;
+  
+  /* Edit icon (handelClear) - only show when not password */
+  > span:not(.eye-icon) {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+    svg {
+      width: 14px;
+      height: 14px;
+    }
+  }
+  
+  label{
+    font-size: 14px;
+    color: #999;
+  }
+
+  /* Prevent mobile zoom for Form.Control inputs */
+  .form-control {
+    @media (max-width: 768px) {
+      font-size: 16px !important;
+    }
+  }
+
+  /* Password field with eye icon */
+  &.has-password-icon {
+    .form-control {
+      padding-right: 45px !important;
+    }
+    
+    .eye-icon {
+      position: absolute;
+      top: 50%;
+      right: 12px;
+      transform: translateY(-50%);
+      cursor: pointer;
+      z-index: 15;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      
+      img {
+        width: 18px;
+        height: 18px;
+        object-fit: contain;
+      }
+    }
+  }
+}
+.passwordWrapper {
+  position: relative;
+  input {
+    padding-right: 40px;
+  }
+  .eye-icon {
+    position: absolute;
+    top: 11px;
+    right: 10px;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    img {
+      width: 18px;
+      height: 18px;
+      object-fit: contain;
+    }
+  }
+}
+.selceted-label {
+  background-color: #fff;
+}
+
+.character-counter {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 5px;
+  font-size: 12px;
+  color: #666;
+  
+  span {
+    &.warning {
+      color: #ff6b35;
+      font-weight: 500;
+    }
+  }
+}

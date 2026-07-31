@@ -1,0 +1,21 @@
+.faqsection {
+  max-width: 800px;
+  margin: 0 auto;
+  .accordion-header {
+    font-size: 16px;
+    font-weight: 500;
+    button {
+      font-weight: 600 !important;
+      box-shadow: none !important;
+    }
+  }
+}
+
+.faq-accordion-item {
+  background-color: #f5f7fa;
+}
+
+.faq-accordion-button {
+  background-color: #f5f7fa;
+  font-size: 18px !important;
+}

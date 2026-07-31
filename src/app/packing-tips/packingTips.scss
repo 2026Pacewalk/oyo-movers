@@ -1,0 +1,363 @@
+@import "../../styles/variables.scss";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {  
+  font-family: "Montserrat", sans-serif;
+}
+
+.packing-tips-page {
+  .hero-banner {
+    position: relative;
+    width: 100%;
+    background-color: #f8f9fa;
+    display: flex;
+    align-items: center;
+    margin-top: 80px;
+    
+    .hero-content {
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
+
+  .breadcrumb-section {
+    background-color: #e9ecef;
+    padding: 15px 0;
+    
+    .breadcrumb {
+      margin: 0;
+      padding: 0 20px;
+      margin: 0 50px;
+      background: none;
+      
+      .breadcrumb-item {
+        font-size: 17px;
+        
+        a {
+          color: #000;
+          text-decoration: none;
+          
+          &:hover {
+            color: var(--secondaryColor, #ffe147);
+          }
+        }
+        
+        &.active {
+          color: #666;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  .packing-tips-section {
+    background: #fff;
+    padding: 60px 0;
+    margin-bottom: 50px;
+    
+    .packing-tips-container {
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .packing-tips-title {
+        font-size: 3rem;
+        font-weight: 700;
+        color: #000 !important;
+        text-align: center;
+        margin-top: 2rem;
+        margin-bottom: 20px;
+    }
+    
+    .packing-tips-divider {
+      width: 90px;
+      height: 4px;
+      background: #fcd947;
+      margin: 0 auto 40px;
+    }
+    
+    .intro-text {
+      margin-bottom: 40px;
+      
+      .intro-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 20px;
+        font-size: 16px;
+        line-height: 1.5;
+        
+        .bullet-icon {
+          color: #000;
+          font-size: 8px;
+          margin-right: 12px;
+          margin-top: 9px;
+          flex-shrink: 0;
+        }
+        
+        span {
+            color: #666;
+            flex: 1 1;
+            font-size: 18px;
+            font-weight: 600;
+        
+        }
+      }
+      
+      .moving-checklist-link {
+        color: #007bff;
+        text-decoration: none;
+        font-style: italic;
+        margin-left: 20px;
+        
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    
+
+    .packing-tips-wrapper {
+      // width: 60%;
+      margin: 0 auto;
+    }
+
+    .packing-tips-wrapper {
+      .packing-tips-item {
+        background: #fff;
+        margin-bottom: 0;
+        border-radius: 0;
+        
+        .packing-tips-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 15px 25px;
+          cursor: pointer;
+          border-bottom: 1.2px solid #d9d9d9;
+          transition: background-color 0.3s ease;
+          
+          &:hover {
+            background-color: #f8f9fa;
+          }
+          
+          .packing-tips-title-text {
+            font-size: 21px;
+            font-weight: 600;
+            color: #000;
+          }
+          
+          .packing-tips-icon {
+            font-size: 30px;
+            font-weight: 600;
+            color: #000;
+            transition: transform 0.3s ease;
+          }
+          
+          &.active {
+            .packing-tips-icon {
+              transform: rotate(90deg);
+            }
+          }
+        }
+        
+        .packing-tips-content {
+          padding: 0;
+          background: #fff;
+          
+          .packing-tips-list {
+            margin: 0;
+            padding: 20px 25px;
+            list-style: none;
+            border-bottom: 4px solid #f8dd49;
+            
+            .packing-tips-task {
+              display: flex;
+              align-items: flex-start;
+              margin-bottom: 12px;
+              font-size: 16px;
+              line-height: 1.5;
+              
+              .task-bullet {
+                color: #000;
+                font-size: 10px;
+                margin-right: 12px;
+                margin-top: 6.5px;
+                flex-shrink: 0;
+              }
+
+              .task-bullet-check {
+                color: #28a745;
+                font-size: 16px;
+                margin-right: 12px;
+                margin-top: 2px;
+                flex-shrink: 0;
+                font-weight: 700; 
+              }
+
+              .task-bullet-cross {
+                color: #d02b25;
+                font-size: 11px;
+                margin-right: 12px;
+                margin-top: 2px;
+                flex-shrink: 0;
+                font-weight: 700; 
+                border: 1px solid #d02b25;
+                padding: 0 3px;
+                border-radius: 50%;
+              }
+              
+              .task-text {
+                color: #666;
+                flex: 1;
+                font-size: 18px;
+                font-weight: 600;
+              }
+
+              strong {
+                color: #000;
+                font-weight: 700 !important;
+              }
+              
+              &:last-child {
+                margin-bottom: 0;
+              }
+            }
+          }
+          
+          .packing-tips-text {
+            padding: 20px 25px;
+            border-bottom: 2px solid #fcd947;
+            margin: 0;
+            color: #666;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 1.5;
+          }
+          
+          h4 {
+            color: #000;
+            font-size: 28px;
+            font-weight: 700;
+            margin: 10px 12px 7px;
+          }
+        }
+      }
+    }
+    
+    @media (max-width: 768px) {
+      padding: 40px 0;
+      
+      .packing-tips-container {
+        padding: 0 15px;
+      }
+      
+      .packing-tips-title {
+        font-size: 28px;
+      }
+      
+      .packing-tips-wrapper {
+        .packing-tips-item {
+          .packing-tips-header {
+            padding: 15px 20px;
+            
+            .packing-tips-title-text {
+              font-size: 16px;
+            }
+            
+            .packing-tips-icon {
+              font-size: 20px;
+            }
+          }
+          
+          .packing-tips-content {
+            .packing-tips-list {
+              padding: 15px 20px;
+              
+              .packing-tips-task {
+                font-size: 14px;
+                margin-bottom: 10px;
+              }
+            }
+            
+            .packing-tips-text {
+              padding: 15px 20px;
+              font-size: 14px;
+            }
+            
+            h4 {
+              font-size: 18px;
+              margin: 15px 20px 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Additional responsive styles for mobile
+@media (max-width: 576px) {
+  .packing-tips-page {
+    .packing-tips-section {
+      padding: 30px 0;
+      
+      .packing-tips-container {
+        padding: 0 10px;
+      }
+      
+      .packing-tips-title {
+        font-size: 24px;
+      }
+      
+      .packing-tips-wrapper {
+        .packing-tips-item {
+          .packing-tips-header {
+            padding: 12px 15px;
+            
+            .packing-tips-title-text {
+              font-size: 14px;
+            }
+            
+            .packing-tips-icon {
+              font-size: 18px;
+            }
+          }
+          
+          .packing-tips-content {
+            .packing-tips-list {
+              padding: 12px 15px;
+              
+              .packing-tips-task {
+                font-size: 13px;
+                margin-bottom: 8px;
+              }
+            }
+            
+            .packing-tips-text {
+              padding: 12px 15px;
+              font-size: 13px;
+            }
+            
+            h4 {
+              font-size: 16px;
+              margin: 12px 15px 8px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Responsive margin-top for header compensation
+@media (max-width: 991px) {
+  .packing-tips-page .hero-banner {
+    margin-top: 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  .packing-tips-page .hero-banner {
+    margin-top: 70px;
+  }
+}

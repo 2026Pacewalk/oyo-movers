@@ -1,0 +1,433 @@
+// Import global styles
+@import '../../styles/variables.scss';
+
+// Container
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+// Hero Section
+.hero-section {
+  padding: 40px 0;
+  margin-top: 80px;
+  
+  .hero-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    
+    .hero-image {
+      flex: 0 0 230px;
+      
+      img {
+        // width: 100%;
+        height: auto;
+        width: 180px;
+      }
+    }
+    
+    .hero-text {
+      // flex: 1;
+      text-align: center;
+      
+      h1 {
+        font-size: 2.6rem;
+        font-weight: 700;
+        color: var(--primaryColor) !important;
+        margin-bottom: 20px;
+        line-height: 1.2;
+        margin-top: 30px;
+      }
+      
+      .divider {
+        width: 80px;
+        height: 4px;
+        background-color: #ffe001;
+        margin: 0 auto 20px;
+      }
+      
+      p {
+        font-size: 1.25rem;
+        color: #666;
+        margin-bottom: 30px;
+        line-height: 1.6;
+        font-weight: 600;
+      }
+      
+      .hero-buttons {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        margin-top: 20px;
+        
+        .btn {
+          padding: 8px 24px;
+          border-radius: 6px;
+          font-weight: 600;
+          text-decoration: none;
+          display: inline-block;
+          transition: all 0.3s ease;
+          cursor: pointer;
+          border-radius: 40px;
+          font-size: 17px;
+          font-weight: 700;
+          
+          &.btn-primary {
+            background-color: transparent;
+            color: var(--primaryColor);
+            border: 2px solid var(--primaryColor);
+           
+            
+            &:hover {
+              background-color: #f0f0f0;
+              color: var(--primaryColor);
+            }
+          }
+          
+          &.btn-secondary {
+            background-color: var(--primaryColor);
+            color: white;
+            border: 2px solid var(--primaryColor);
+            
+            &:hover {
+              background-color: #2a2a2a;
+              color: white;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Tables Section
+.tables-section {
+  padding: 60px 0;
+  // background-color: #f8f9fa;
+}
+
+// Cost Table
+.cost-table {
+  margin-bottom: 50px;
+  // background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  // box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
+  .table-header {
+    background-color: var(--secondaryColor);
+    padding: 30px;
+    text-align: center;
+    
+    h2 {
+      font-size: 2.4rem;
+      font-weight: 600;
+      color: var(--primaryColor);
+      margin-bottom: 10px;
+      
+      .highlight {
+        font-weight: 700;
+        color: var(--primaryColor);
+      }
+    }
+    
+    p {
+      font-size: 1.1rem;
+      color: #666;
+      font-weight: 600;
+      margin: 0;
+    }
+  }
+  
+  .table-wrapper {
+    overflow-x: auto;
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0;
+      
+      thead {
+        background-color: #212529;
+        
+        th {
+          padding: 35px 15px 15px 15px;
+          text-align: center;
+          font-weight: 700;
+          color: white;
+          font-size: 1rem;
+          border: none;
+        }
+      }
+      
+      tbody {
+        tr {
+          border-bottom: 1px solid #e9ecef;
+          
+          &:nth-child(even) {
+            // background-color: #f8f9fa;
+          }
+          
+          &:hover {
+            background-color: #e9ecef;
+          }
+          
+          td {
+            padding: 20px 6px;
+            text-align: center;
+            color: var(--fontColor);
+            font-size: 1rem;
+            border: none;
+            font-weight: 600;
+
+            @media (max-width: 768px) {
+              font-size: 13px !important;
+            }
+
+            @media (max-width: 480px) {
+              font-size: 12px !important;
+            }
+
+            @media (max-width: 450px) {
+              font-size: 11px !important;
+            }
+
+            @media (max-width: 380px) {
+              font-size: 10px !important;
+            }
+            
+            .tip-fee {
+              color: #6c757d;
+              font-size: 0.9rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Factors Section
+.factors-section {
+  margin-top: 50px;
+  
+  .factors-header {
+    background-color: #212529;
+    padding: 20px;
+    text-align: center;
+    
+    h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: white;
+      margin: 0;
+    }
+  }
+  
+  .factors-content {
+    padding: 20px 40px;
+    
+    .factors-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      
+      .factor-column {
+        ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          
+          li {
+            padding: 5px 0;
+            color: #666;
+            font-size: 1.2rem;
+            position: relative;
+            padding-left: 20px;
+            font-weight: 600;
+            
+            &::before {
+              content: "○";
+              font-weight: bold;
+              position: absolute;
+              left: 0;
+              margin-top: 9px;
+              font-size: 10px;  
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 30px 0;
+    
+    .hero-content {
+      flex-direction: column;
+      text-align: center;
+      gap: 30px;
+      
+      .hero-image {
+        flex: none;
+        max-width: 150px;
+      }
+      
+      .hero-text {
+        h1 {
+          font-size: 2rem;
+        }
+        
+        p {
+          font-size: 1.1rem;
+        }
+        
+        .hero-buttons {
+          flex-direction: column;
+          align-items: center;
+          
+          .btn {
+            width: 200px;
+          }
+        }
+      }
+    }
+  }
+  
+  .tables-section {
+    padding: 40px 0;
+  }
+  
+  .cost-table {
+    margin-bottom: 30px;
+    
+    .table-header {
+      padding: 20px;
+      
+      h2 {
+        font-size: 1.5rem;
+      }
+      
+      p {
+        font-size: 1rem;
+      }
+    }
+    
+    .table-wrapper {
+      table {
+        thead th {
+          padding: 15px 10px;
+          font-size: 0.9rem;
+        }
+        
+        tbody td {
+          padding: 15px 10px;
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+  
+  .factors-section {
+    .factors-content {
+      padding: 30px 20px;
+      
+      .factors-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding: 0 15px;
+  }
+  
+  .hero-section {
+    .hero-text {
+      h1 {
+        font-size: 1.75rem;
+      }
+      
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+  
+  .cost-table {
+    .table-header {
+      padding: 15px;
+      
+      h2 {
+        font-size: 1.25rem;
+      }
+    }
+    
+    .table-wrapper {
+      table {
+        thead th {
+          padding: 12px 8px;
+          font-size: 0.8rem;
+        }
+        
+        tbody td {
+          padding: 12px 8px;
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+  
+  .factors-section {
+    .factors-content {
+      padding: 20px 15px;
+      
+      .factors-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+    }
+    
+    .factors-header h3 {
+      font-size: 1.25rem;
+    }
+  }
+}
+
+// Image responsive
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+.table-container {
+  padding: 0 25px;
+  width: 85%;
+    margin: 0 auto;
+
+  @media (max-width: 768px) {
+    width: 100% !important;
+    padding: 0 10px !important;
+  }
+}
+
+// Responsive margin-top for header compensation
+@media (max-width: 991px) {
+  .hero-section {
+    margin-top: 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    margin-top: 70px;
+  }
+}

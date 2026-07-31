@@ -1,0 +1,162 @@
+.circleSliderIcon {
+    background: #FFCE00;
+    // background: linear-gradient(to right, #e76f51, #f4a261);
+    border: 0;
+    height: 47px;
+    width: 47px;
+    position: relative;
+    border-radius: 50%;
+    top:-20px;
+    cursor: pointer;
+}
+
+.estimateListings {
+    .estimateListingsLeft {
+        h4 {
+
+            font-size: 18px;
+            @media (max-width: 767px) {
+                font-size: 16px;
+            }
+            span {
+                color: grey;
+                font-weight: 400;
+                font-size: 12px;
+            }
+        }
+
+        h3 {
+            font-size: 24px;
+        }
+    }
+
+    .estimateListingsRight {
+        h6 {
+            font-size: 22px !important;
+            color: #222 !important;
+            font-weight: bold !important;
+        }
+
+        h3 {
+            font-size: 30px;
+            font-weight: bold !important;
+        }
+    }
+}
+
+.timeDescription {
+    width: 300px;
+    position: absolute;
+    top: 50px;
+
+    @media (max-width: 1300px) {
+        width: 150px;
+    }
+
+    @media (max-width: 991px) {
+        width: 300px;
+    }
+
+    @media (max-width: 620px) {
+        width: 150px;
+    }
+
+    h6 {
+        color: #222 !important;
+        font-size: 12px !important;
+        font-weight: 400 !important;
+
+        @media (max-width: 1300px) {
+            font-size: 10px !important;
+        }
+
+        @media (max-width: 620px) {
+            font-size: 10px !important;
+        }
+    }
+}
+.totalFareCustom{
+    h2{
+        color: #0B47C3;
+        font-size: 47px;
+        font-weight: 700;
+        white-space: nowrap;
+        margin: 20px auto;
+        text-align: center;
+
+        @media (max-width: 1400px) {
+            font-size: 45px;
+        }
+
+        @media (max-width: 1300px) {
+            font-size: 40px;
+        }
+
+        @media (max-width: 1200px) {
+            font-size: 35px;
+        }
+        @media (max-width: 991px) {
+            font-size: 30px;
+        }
+        @media (max-width: 767px) {
+            font-size: 27px;
+        }
+        @media (max-width: 520px) {
+            font-size: 20px;
+        }
+    }
+}
+.sliderRootRangeWrapper {
+    height: 10px;
+    position: relative;
+    display: flex;
+    border-radius: 10px;
+    background: #edeef1;
+
+    .sliderRootRangeInput {
+        height: 10px;
+        display: flex;
+        border-radius: 10px;
+        background: #edeef1;
+
+        .sliderRootRangeInputInner {
+            background: #FFCE00;
+            // background: linear-gradient(to right, #e76f51, #f4a261);
+            position: absolute;
+            left: 0;
+            height: 100%;
+            border-radius: 10px;
+        }
+    }
+}
+.bookingAmountInfoSlider {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    background: #F7F7F7;
+    
+    padding:20px 20px;
+    p {
+      color: black !important;
+      font-size: 14px !important;
+      font-weight: bold !important;
+      display: flex;
+      align-items: center;
+      span {
+        color: #595959 !important;
+        font-weight: 500;
+        margin-left: 5px;
+      }
+    }
+    h6 {
+      color: #737373 !important;
+      font-size: 11px !important;
+      font-weight: 500 !important;
+    }
+    span {
+      color: #1976D2 !important;
+      font-size: 11px !important;
+      font-weight: 500 !important;
+    }
+  }

@@ -1,0 +1,1252 @@
+.workdetailsContainer {
+  box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.06);
+  max-width: 720px;
+  width: 100%;
+  padding: 12px;
+  background: #fff;
+
+  h2,
+  .form-label {
+    font-size: 14px; // Consistent heading size
+    margin-bottom: 8px;
+    font-weight: 600;
+    line-height: 20px;
+  }
+
+  .form-floating>label {
+    top: 0px;
+  }
+}
+
+/* Unified look for legacy tab containers so all steps match theme */
+.tabContainer {
+  box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.06);
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+
+  h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--primaryColor, #333);
+    margin-bottom: 12px;
+  }
+
+  p {
+    font-size: 16px;
+    color: var(--fontColor, #333);
+  }
+
+  .tabFooter,
+  .footerBtn {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e9ecef;
+    text-align: right;
+  }
+}
+
+/* Ensure uniform checkbox size across all steps (More About Yourself, ABN, Initial Registration) */
+.emergency-checkbox {
+  width: 16px !important;
+  height: 16px !important;
+}
+
+/* Simple text-only error style across steps */
+.errorMessage,
+.text-danger {
+  color: #dc3545 !important;
+  font-size: 12px !important;
+  font-weight: 400;
+  margin-top: 4px !important;
+  margin-bottom: 12px !important;
+  /* Increased from 8px to 12px for better spacing */
+  padding: 0 !important;
+  background-color: transparent !important;
+  border: none !important;
+  display: block !important;
+  line-height: 1.4 !important;
+  /* Increased from 1.3 for better readability */
+  min-height: 18px !important;
+  /* Reserve space to prevent overlap */
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* Ensure each input block reserves vertical space so errors don't overlap next fields */
+.profile-form-wrapper .moverCustomInput,
+.tabContainer .moverCustomInput,
+.workdetailsContainer .moverCustomInput {
+  margin-bottom: 0px !important;
+  /* Keep at 0, spacing handled by error message */
+}
+
+/* Reserve space for phone input wrapper to prevent movement when error appears */
+.registration-wrapper .moverInputWrapper {
+  margin-bottom: 6px !important; /* Reduced to 6px: reserve space for error (4px margin-top + 18px min-height) */
+  position: relative !important;
+}
+
+/* Ensure phone input row doesn't break alignment */
+.registration-wrapper .d-flex.align-items-start {
+  align-items: flex-start !important;
+  
+  .moverInputWrapper {
+    flex: 1 !important;
+    min-width: 0 !important;
+    width: auto !important;
+  }
+}
+
+/* Reserve space for error messages even when hidden to prevent layout shift */
+.profile-form-wrapper .moverCustomInput:has(+ .errorMessage),
+.tabContainer .moverCustomInput:has(+ .errorMessage),
+.workdetailsContainer .moverCustomInput:has(+ .errorMessage) {
+  margin-bottom: 0 !important;
+}
+
+/* Ensure form labels have proper spacing from previous elements */
+.profile-form-wrapper .form-label,
+.tabContainer .form-label,
+.workdetailsContainer .form-label {
+  margin-top: 0 !important;
+  margin-bottom: 8px !important;
+  display: block !important;
+  line-height: 1.4 !important;
+  position: relative !important;
+  z-index: 0 !important;
+}
+
+/* Ensure radio buttons in d-flex containers stay horizontal */
+.d-flex .moverInputWrapper,
+.d-flex .moverCustomInput[type="radio"],
+.d-flex .moverCustomInput:has(input[type="radio"]) {
+  display: inline-flex !important;
+  width: auto !important;
+  flex-shrink: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* Fix for tabRadioWraper - ensure radio buttons are horizontal */
+.tabRadioWraper .d-flex {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  gap: 16px !important;
+  /* gap-4 = 16px */
+
+  >* {
+    flex-shrink: 0 !important;
+  }
+
+  .moverInputWrapper,
+  .moverCustomInput {
+    display: inline-flex !important;
+    width: auto !important;
+    flex-shrink: 0 !important;
+    margin: 0 !important;
+  }
+}
+
+/* Universal fix: Any div with d-flex containing MoverInput should display horizontally */
+.d-flex.gap-4,
+.d-flex.gap-3,
+.d-flex.gap-2 {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+
+  >* {
+    flex-shrink: 0 !important;
+  }
+
+  >.moverInputWrapper {
+    display: inline-block !important;
+    width: auto !important;
+    margin-right: 0 !important;
+    flex-shrink: 0 !important;
+  }
+
+  >.moverCustomInput {
+    display: inline-flex !important;
+    width: auto !important;
+    margin-right: 0 !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* Target MoverInput wrapper when it contains radio buttons */
+  >div:has(.moverCustomInput input[type="radio"]) {
+    display: inline-block !important;
+    width: auto !important;
+    flex-shrink: 0 !important;
+  }
+}
+
+/* Direct fix for registration wrapper radio buttons */
+.registration-wrapper .tabRadioWraper .d-flex {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 16px !important;
+
+  >div {
+    display: inline-block !important;
+    width: auto !important;
+    flex-shrink: 0 !important;
+  }
+}
+
+/* Compact mode for shorter layout */
+.profile-form-wrapper.compact {
+  .form-header {
+    margin-bottom: 12px;
+    padding-bottom: 2px;
+  }
+
+  .form-description {
+    margin-bottom: 6px;
+  }
+
+  .form-section {
+    margin-bottom: 10px !important;
+    /* add a bit more breathing room between cards */
+    padding: 8px;
+  }
+
+  .moverCustomInput {
+    margin-bottom: 10px !important;
+  }
+
+  .tabRadioWraper {
+    margin-bottom: 6px !important;
+
+    /* slight vertical spacing under radio groups */
+    p {
+      margin-bottom: 4px !important;
+      font-size: 14px !important;
+    }
+  }
+
+  .errorMessage {
+    margin-top: 4px !important;
+    margin-bottom: 12px !important;
+    /* Increased from 8px */
+    min-height: 18px !important;
+    /* Reserve space */
+  }
+
+  .footerBtn {
+    margin-top: 8px;
+  }
+
+  // Reduce spacing in rows
+  .row {
+    margin-left: -5px;
+    margin-right: -5px;
+  }
+
+  /* add gentle spacing between successive rows inside the same card */
+  .row+.row {
+    margin-top: 8px;
+  }
+
+  .col-md-6,
+  .col-12,
+  .col-lg-6 {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  // Compact headings
+  h6 {
+    font-size: 14px !important;
+    margin-bottom: 4px !important;
+    font-weight: 600 !important;
+    color: #747474;
+
+  }
+
+  // Reduce gap between radio buttons
+  .d-flex.gap-3 {
+    gap: 8px !important;
+  }
+
+  // Fix radio button overlapping issues (Safari/MacBook fix)
+  .tabRadioWraper {
+    .moverCustomInput {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+      margin: 0 !important;
+      flex-shrink: 0 !important;
+
+      input[type="radio"] {
+        width: 16px !important;
+        height: 16px !important;
+        min-width: 16px !important;
+        min-height: 16px !important;
+        max-width: 16px !important;
+        max-height: 16px !important;
+        max-width: 16px !important;
+        max-height: 16px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        flex-shrink: 0 !important;
+        position: relative !important;
+        z-index: 1 !important;
+        -webkit-appearance: radio !important;
+        appearance: radio !important;
+      }
+
+      label {
+        display: inline-block !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        white-space: nowrap !important;
+        position: relative !important;
+        z-index: 0 !important;
+        flex-shrink: 0 !important;
+      }
+    }
+  }
+
+  // Compact emergency contact section
+  .emergency-checkbox-container {
+    margin-bottom: 8px !important;
+  }
+
+  .emergency-contact-section {
+    margin-top: 8px !important;
+  }
+
+  /* ensure selects have a tiny space below when stacked */
+  .mainSelect {
+    margin-bottom: 6px !important;
+  }
+}
+
+/* Consistent input field heights for Initial Registration */
+.registration-wrapper {
+  /* Match Select component spacing to input wrapper spacing */
+  .mainSelect {
+    margin-bottom: 6px !important; /* Same as moverInputWrapper spacing */
+  }
+
+  /* Phone input prefix +61 */
+  .input-group-text {
+    height: 36px !important;
+    padding: 8px 10px !important;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  /* Make input labels gray for initial registration */
+  .form-label {
+    color: #747474 !important;
+  }
+
+  /* Text, email, password, tel fields */
+  .moverCustomInput input[type="text"],
+  .moverCustomInput input[type="email"],
+  .moverCustomInput input[type="password"],
+  .moverCustomInput input[type="tel"],
+  .moverCustomInput .form-control {
+    height: 36px !important;
+    min-height: 36px !important;
+    padding: 8px 10px !important;
+    box-sizing: border-box;
+  }
+
+  /* DOB selects */
+  .dateSelection {
+    gap: 8px !important;
+    /* Ensure consistent gap between selects */
+    flex-wrap: wrap;
+    /* Allow wrapping on smaller screens */
+  }
+
+  .dateSelection .mainSelect {
+    flex-shrink: 0;
+    /* Prevent shrinking */
+  }
+
+  .dateSelection .mainSelect select {
+    height: 36px !important;
+    min-height: 36px !important;
+    padding: 8px 10px !important;
+    line-height: 1.2;
+    font-size: 14px;
+  }
+
+  /* Specific width adjustments for day and year selects */
+  .dateSelection .mainSelect:first-child select,
+  /* Day select */
+  .dateSelection .mainSelect:last-child select {
+    /* Year select */
+    min-width: 70px !important;
+    width: 70px !important;
+  }
+
+  /* Month select can remain flexible */
+  .dateSelection .mainSelect:nth-child(2) select {
+    /* Month select */
+    min-width: 100px !important;
+    width: 100px !important;
+  }
+
+  /* Medium screen adjustments */
+  @media (max-width: 991px) {
+    .dateSelection {
+      gap: 6px !important;
+    }
+
+    .dateSelection .mainSelect:first-child select,
+    /* Day select */
+    .dateSelection .mainSelect:last-child select {
+      /* Year select */
+      min-width: 65px !important;
+      width: 65px !important;
+    }
+
+    .dateSelection .mainSelect:nth-child(2) select {
+      /* Month select */
+      min-width: 90px !important;
+      width: 90px !important;
+    }
+  }
+
+  /* Work area and vehicle type selects */
+  .mainSelect select {
+    height: 36px !important;
+    min-height: 36px !important;
+    padding: 8px 10px !important;
+    line-height: 1.2;
+    font-size: 0.95rem;
+  }
+}
+
+/* Make labels gray in More About Yourself (CompleteProfile) */
+.profile-form-wrapper .form-label {
+  color: #747474 !important;
+}
+
+/* Terms and conditions links styling */
+.terms-label {
+  font-size: 14px !important;
+  color: #747474 !important;
+  line-height: 1.4 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  padding-left: 0 !important;
+  cursor: pointer !important;
+}
+
+/* Reduce gap for terms checkbox specifically */
+.workcheckBox .terms-label {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+.terms-link {
+  color: var(--primaryColor, #007bff) !important;
+  text-decoration: underline !important;
+  font-weight: 500 !important;
+  transition: color 0.2s ease !important;
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: inline !important;
+
+  &:hover {
+    color: var(--highlightColor, #0056b3) !important;
+    text-decoration: underline !important;
+    background: none !important;
+    border: none !important;
+  }
+
+  &:focus {
+    outline: none !important;
+    background: none !important;
+    border: none !important;
+    color: var(--highlightColor, #0056b3) !important;
+  }
+
+  &:active {
+    background: none !important;
+    border: none !important;
+    outline: none !important;
+  }
+}
+
+/* Add extra spacing when an error is immediately followed by another input */
+.profile-form-wrapper .errorMessage+.moverCustomInput,
+.profile-form-wrapper .text-danger+.moverCustomInput,
+.tabContainer .errorMessage+.moverCustomInput,
+.tabContainer .text-danger+.moverCustomInput,
+.workdetailsContainer .errorMessage+.moverCustomInput,
+.workdetailsContainer .text-danger+.moverCustomInput {
+  margin-top: 12px !important;
+  /* Increased from 8px */
+}
+
+/* Add spacing when error is followed by a label (form-label) */
+.profile-form-wrapper .errorMessage+.form-label,
+.profile-form-wrapper .text-danger+.form-label,
+.tabContainer .errorMessage+.form-label,
+.tabContainer .text-danger+.form-label,
+.workdetailsContainer .errorMessage+.form-label,
+.workdetailsContainer .text-danger+.form-label,
+.profile-form-wrapper .errorMessage~.form-label,
+.profile-form-wrapper .text-danger~.form-label,
+.tabContainer .errorMessage~.form-label,
+.tabContainer .text-danger~.form-label,
+.workdetailsContainer .errorMessage~.form-label,
+.workdetailsContainer .text-danger~.form-label {
+  margin-top: 12px !important;
+}
+
+/* Universal fix: Ensure rows have proper spacing when they contain errors */
+.row {
+  margin-bottom: 4px !important;
+  /* Add base spacing between rows */
+}
+
+/* When a row contains an error, ensure next row has extra spacing */
+.row+.row {
+  margin-top: 8px !important;
+}
+
+/* Ensure form labels in new rows have proper top spacing */
+.row .form-label:first-child {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Ensure form sections have proper spacing */
+.form-section {
+  margin-bottom: 20px !important;
+}
+
+/* Mobile-specific spacing adjustments */
+@media (max-width: 768px) {
+
+  .errorMessage,
+  .text-danger {
+    margin-bottom: 16px !important;
+    /* more space on mobile */
+    padding: 0 !important;
+    /* Remove padding that was causing issues */
+    font-size: 13px !important;
+    min-height: 20px !important;
+    /* Reserve more space on mobile */
+    line-height: 1.5 !important;
+  }
+
+  .profile-form-wrapper .moverCustomInput,
+  .tabContainer .moverCustomInput,
+  .workdetailsContainer .moverCustomInput {
+    margin-bottom: 18px !important;
+  }
+
+  .form-section {
+    margin-bottom: 24px !important;
+  }
+
+  /* Ensure labels don't overlap with errors on mobile */
+  .form-label {
+    margin-top: 4px !important;
+    margin-bottom: 8px !important;
+  }
+}
+
+.editablePickupField {
+  margin-bottom: 0px;
+}
+
+.workdetailsWraper {
+  /* Let page height drive scrolling to enable sticky */
+  min-height: auto;
+  display: grid;
+  grid-template-columns: minmax(0, 720px);
+  /* single column now that side stepper is removed */
+  gap: 24px;
+  justify-content: center;
+  align-items: start;
+  padding: 24px 16px;
+  // overflow-x: hidden; /* prevent horizontal spill on tiny screens */
+
+  // // medium screens: allow the right column to be fluid
+  // @media (max-width: 1200px) {
+  //   grid-template-columns: minmax(0, 1fr);
+  // }
+
+  // small screens: stack stepper and form
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    padding: 0;
+    /* remove outer padding on small screens */
+  }
+
+  .workcheckBox {
+    display: flex;
+    align-items: flex-start;
+    /* Changed from baseline to flex-start for better alignment */
+    gap: 8px !important;
+    /* Small gap between checkbox and text */
+    margin: 8px 0;
+
+    /* Make wrapper inline for checkbox */
+    .moverInputWrapper {
+      display: inline-block !important;
+      width: auto !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      flex-shrink: 0 !important;
+    }
+
+    .moverCustomInput {
+      margin: 0 !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      /* Center align for better vertical alignment */
+      gap: 0 !important;
+      width: auto !important;
+
+      input[type="checkbox"] {
+        margin-top: 3px !important;
+        /* Align checkbox with first line of text */
+        margin-right: 0 !important;
+        /* Gap handled by parent flex gap */
+        margin-left: 0 !important;
+        margin-bottom: 0 !important;
+        vertical-align: top !important;
+      }
+
+      label {
+        display: none !important;
+        /* Hide internal label since we use external label */
+      }
+    }
+
+    /* Ensure terms label has no left margin and aligns properly */
+    .terms-label {
+      margin-left: 0 !important;
+      padding-left: 0 !important;
+      flex: 1;
+      line-height: 1.5 !important;
+      /* Better line height for text alignment */
+      margin-top: 0 !important;
+    }
+
+    p {
+      font-size: 14px; // Smaller text for checkbox labels
+      line-height: 1.4;
+      margin: 0; // Remove any default margins
+    }
+
+    .customInput {
+      height: 16px;
+      margin-bottom: 0px;
+
+      input {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+
+  .footerBtn {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    width: 100%;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+
+    button {
+      max-width: 160px;
+      width: 160px;
+      height: 48px;
+      display: flex !important;
+      justify-content: center !important;
+      gap: 10px !important;
+      align-items: center !important;
+      background-color: var(--secondaryColor) !important;
+      border-color: var(--secondaryColor) !important;
+      color: var(--fontColor) !important;
+      font-size: 14px !important;
+      /* unify button text size across steps */
+      transition: all 0.2s ease;
+      padding: 8px 16px !important;
+      font-weight: 500 !important;
+      border-radius: 999px !important;
+      /* pill shape overrides other rules */
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      &.back-button {
+        background-color: #ffffff !important;
+        border: 1px solid #dee2e6 !important;
+        color: #495057 !important;
+        width: 120px !important;
+        max-width: 160px !important;
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        margin-right: 0 !important;
+        /* Remove auto margin */
+
+        &:hover {
+          background-color: #f8f9fa !important;
+          border-color: #ced4da !important;
+        }
+      }
+
+      .icon {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+      }
+    }
+
+    /* Mobile-friendly button layout: prevent merging, make full-width */
+    @media (max-width: 576px) {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 12px;
+
+      button {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-height: 44px !important;
+      }
+    }
+  }
+
+  /* Smaller Next Step button specifically for initial registration */
+  .registration-wrapper .footerBtn button {
+    width: 120px;
+    max-width: 120px;
+    height: 36px;
+    font-size: 13px !important;
+    padding: 6px 12px !important;
+    gap: 8px !important;
+  }
+
+  /* Smaller Next Step button for More About Yourself (CompleteProfile) */
+  .profile-form-wrapper.compact .footerBtn button {
+    width: 120px;
+    max-width: 120px;
+    height: 36px;
+    font-size: 13px !important;
+    padding: 6px 12px !important;
+    gap: 8px !important;
+  }
+}
+
+/* Dedicated two-column layout for stepper pages */
+.workdetailsWraper.stepper-layout {
+  grid-template-columns: 280px minmax(0, 720px);
+
+  @media (max-width: 1200px) {
+    grid-template-columns: 260px minmax(0, 1fr);
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    padding: 0;
+  }
+}
+
+/* Lightweight captcha popup styles */
+.captchaOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1050;
+  /* above page content */
+}
+
+.captchaBox {
+  background: #fff;
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+
+.stepperLeft {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.06);
+  padding: 16px;
+  height: fit-content;
+
+  /* Hide left stepper only on small screens; keep it on md and above */
+  @media (max-width: 768px) {
+    display: none;
+  }
+
+  h3 {
+    font-size: 20px; // Consistent with other h3 elements
+    font-weight: 700;
+    color: var(--primaryColor);
+
+    @media (max-width: 768px) {
+      display: none; // save space on mobile
+    }
+  }
+
+  .stepItem {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 8px;
+    border-radius: 8px;
+    color: #495057;
+    transition: all 0.2s ease;
+
+    &+.stepItem {
+      margin-top: 2px;
+    }
+
+    @media (max-width: 768px) {
+      display: inline-flex;
+      /* inline chips */
+      white-space: nowrap;
+      /* prevent wrapping */
+      margin-top: 0;
+      /* reset vertical spacing for horizontal list */
+      margin-right: 8px;
+      /* spacing between chips */
+      padding: 8px;
+    }
+
+    .stepIndex {
+      width: 28px;
+      height: 28px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: #e9ecef;
+      color: #495057;
+      font-weight: 700;
+      font-size: 14px;
+      transition: all 0.2s ease;
+
+      @media (max-width: 768px) {
+        width: 24px;
+        height: 24px;
+        font-size: 12px;
+      }
+    }
+
+    .stepLabel {
+      font-size: 14px; // Consistent with form labels
+      font-weight: 600;
+      transition: all 0.2s ease;
+
+      @media (max-width: 768px) {
+        font-size: 12px;
+      }
+    }
+
+    &.active {
+      color: #ffc107;
+
+      .stepIndex {
+        background: #ffc107;
+        /* yellow circle for active */
+        color: #212529;
+      }
+    }
+
+    &.disabled {
+      opacity: 0.6;
+    }
+
+    &.clickable {
+      cursor: pointer;
+
+      &:hover {
+        background: rgba(0, 0, 0, 0.04);
+        transform: translateX(2px);
+
+        .stepIndex {
+          transform: scale(1.05);
+        }
+
+        .stepLabel {
+          color: var(--secondaryColor);
+        }
+      }
+
+      &:focus {
+        outline: 2px solid rgba(0, 123, 255, 0.25);
+        outline-offset: 2px;
+      }
+    }
+
+    &.completed.clickable {
+      opacity: 0.6;
+      /* reduce overall visibility */
+      color: #5c4c0b;
+
+      .stepIndex {
+        background: #ffec99;
+        /* dull yellow circle for completed */
+        color: #5c4c0b;
+        opacity: 0.9;
+      }
+    }
+
+    /* also style completed non-clickable items (e.g., Registration step) */
+    &.completed {
+      opacity: 0.6;
+      color: #5c4c0b;
+
+      .stepIndex {
+        background: #ffec99;
+        color: #5c4c0b;
+        opacity: 0.9;
+      }
+    }
+  }
+}
+
+.vehiclesComplteing {
+  color: #000;
+}
+
+// fine-tune form responsiveness
+@media (max-width: 768px) {
+  .workdetailsContainer {
+    max-width: 100%;
+    // padding: 18px; /* a bit more inner padding on mobile */
+  }
+
+  .dateSelection {
+    gap: 8px !important;
+  }
+}
+
+/* Extra small devices: keep date selects from forcing horizontal scroll */
+@media (max-width: 380px) {
+  .dateSelection {
+    flex-wrap: wrap;
+    row-gap: 8px;
+  }
+
+  .dateSelection .mainSelect {
+    min-width: 100px;
+  }
+}
+
+// Simple styles for More About Yourself - following existing theme
+.profile-form-wrapper {
+  .success-section {
+    margin-bottom: 0px !important;
+    background: #fff !important;
+    border-radius: 12px !important;
+    padding: 2.5rem 2rem !important;
+    box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.06) !important;
+    border: 1px solid #e9ecef !important;
+    transition: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    
+    &:hover {
+      border-color: #e9ecef !important;
+      box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.06) !important;
+      transform: none !important;
+    }
+    
+    // Container for icon and text
+    > div {
+      width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+      overflow: hidden !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      text-align: center !important;
+      
+      // Icon container - center at top
+      > div:first-child {
+        margin: 0 auto !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+      }
+      
+      // Text container - prevent overflow
+      > div:last-child {
+        width: 100% !important;
+        max-width: 100% !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+        box-sizing: border-box !important;
+        text-align: center !important;
+      }
+    }
+    
+    // Heading styling
+    h4 {
+      margin: 0 !important;
+      color: #333 !important;
+      font-weight: 700 !important;
+      font-size: 20px !important;
+      margin-bottom: 0.75rem !important;
+      line-height: 1.3 !important;
+      word-wrap: break-word !important;
+      overflow-wrap: break-word !important;
+      max-width: 100% !important;
+    }
+    
+    // Body text styling
+    p {
+      margin: 0 !important;
+      color: #666 !important;
+      line-height: 1.6 !important;
+      font-size: 15px !important;
+      font-weight: 400 !important;
+      word-wrap: break-word !important;
+      overflow-wrap: break-word !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+      
+      // Resend email link styling
+      .terms-link,
+      button.terms-link {
+        color: #0d6efd !important;
+        text-decoration: underline !important;
+        cursor: pointer !important;
+        background: none !important;
+        border: none !important;
+        padding: 0 !important;
+        margin-left: 6px !important;
+        font-size: 15px !important;
+        font-weight: 400 !important;
+        display: inline !important;
+        white-space: nowrap !important;
+        
+        &:hover {
+          color: #0056b3 !important;
+          text-decoration: underline !important;
+        }
+        
+        &:disabled {
+          opacity: 0.6;
+          cursor: not-allowed !important;
+        }
+      }
+    }
+  }
+
+  .form-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #e9ecef;
+
+    h3 {
+      color: var(--primaryColor, #333);
+      font-size: 20px; // Consistent with existing h3 size
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .form-description {
+      color: #666;
+      font-size: 16px; // Standard body text size
+      margin: 0;
+    }
+  }
+
+  .form-section {
+    background: #f8f9fa;
+    border-radius: 6px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #e9ecef;
+    transition: all 0.2s ease;
+
+    &:hover {
+      border-color: var(--secondaryColor, #007bff);
+      box-shadow: 0 2px 4px rgba(0, 123, 255, 0.1);
+    }
+
+    &.emergency-contact-section {
+      background: #f1f3f4;
+      border: 1px solid #dee2e6;
+
+      h5 {
+        font-size: 16px; // Consistent with form labels
+        font-weight: 600;
+        margin-bottom: 0.75rem;
+      }
+
+      // Ensure proper font sizes for emergency contact inputs
+      .form-floating>label {
+        font-size: 14px; // Smaller than card title
+        font-weight: 500; // Lighter weight than card title
+      }
+
+      .form-control {
+        font-size: 14px; // Smaller input text
+      }
+
+      .form-select {
+        font-size: 14px; // Smaller select text
+      }
+
+      // Target Select component labels specifically
+      .form-label {
+        font-size: 14px !important; // Smaller than card title
+        font-weight: 500 !important; // Lighter weight than card title
+      }
+    }
+
+    // Specific styling for emergency contact checkbox
+    .emergency-checkbox-container {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      // margin: 16px 0;
+
+      .emergency-checkbox {
+        margin: 0;
+        margin-top: 2px; // Align with text baseline
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+        flex-shrink: 0; // Prevent checkbox from shrinking
+      }
+
+      .emergency-checkbox-label {
+        font-size: 13px; // Smaller text for checkbox labels
+        font-weight: 500; // Slightly lighter weight
+        margin: 0;
+        line-height: 1.4;
+        cursor: pointer;
+        color: #747474;
+        flex: 1; // Allow label to take remaining space
+      }
+    }
+  }
+
+  .errorMessage {
+    color: #dc3545;
+    font-size: 14px; // Standard error message size
+    font-weight: 500;
+    margin-top: 0.5rem;
+    display: block;
+    padding: 0.5rem;
+    background: rgba(220, 53, 69, 0.1);
+    border-radius: 4px;
+    border-left: 3px solid #dc3545;
+  }
+
+  .footerBtn {
+    margin-top: .5rem;
+    padding-top: .5rem;
+    border-top: 1px solid #e9ecef;
+    text-align: center;
+
+    button {
+      background: var(--secondaryColor, #007bff);
+      border: none;
+      border-radius: 6px;
+      padding: 0.75rem 2rem;
+      font-size: 16px; // Standard button text size
+      font-weight: 600;
+      color: white;
+      transition: all 0.2s ease;
+
+      &:hover {
+        background: #0056b3;
+        transform: translateY(-1px);
+      }
+    }
+  }
+}
+
+// Mobile responsiveness
+@media (max-width: 768px) {
+  .profile-form-wrapper {
+    .form-section {
+      padding: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .form-header {
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+
+      h3 {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+.vivoCheckHeading {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Override gray card backgrounds for Complete Your Profile only */
+.profile-form-wrapper.complete-profile-wrapper {
+  .form-section {
+    background: #ffffff !important;
+    border: 1px solid #e9ecef !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+  }
+
+  .form-section.emergency-contact-section {
+    background: #ffffff !important;
+    border: 1px solid #e9ecef !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+  }
+}
+
+// reCAPTCHA styles
+.recaptcha-section {
+  // margin: 16px 0;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.recaptcha-error {
+  color: #d93025;
+  font-size: 12px;
+  margin-top: 8px;
+  padding-left: 4px;
+}
+
+// Mobile responsiveness for reCAPTCHA
+@media (max-width: 768px) {
+  .recaptcha-section {
+    margin: 12px 0;
+    justify-content: center;
+  }
+
+  // Scale down reCAPTCHA on mobile
+  .g-recaptcha {
+    transform: scale(0.85);
+    transform-origin: left top;
+  }
+}

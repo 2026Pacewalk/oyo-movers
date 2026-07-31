@@ -1,0 +1,69 @@
+# Node modules
+node_modules/
+
+# Build output
+.next/
+out/
+.env
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+bun-debug.log*
+*.log
+
+# Dependency directories
+.pnpm/
+.bun/
+
+
+
+# OS files
+.DS_Store
+Thumbs.db
+# Windows reserved name — can be created accidentally by CLI tools (e.g. sass output to "nul")
+/nul
+
+# Testing / coverage
+coverage/
+.nyc_output/
+
+
+# VSCode settings
+.vscode/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Optional package artifacts
+*.tgz
+
+# Linting / formatting
+.eslintcache
+
+# IDEs
+.idea/
+*.sw?
+
+
+# Archives (do not push zip files)
+*.zip
+**/*.zip
+*.rar
+*.7z
+*.tar
+*.tar.gz
+*.tgz
+
+
+# Optional: lockfiles (if you use only one package manager, keep the relevant one)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+# bun.lockb
+
+# Optional: Ignore next-env.d.ts (if regenerated automatically)
+# next-env.d.ts
+node_modules
