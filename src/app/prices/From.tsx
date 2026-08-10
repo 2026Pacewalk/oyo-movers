@@ -70,7 +70,7 @@ const From = ({ vehicalData }: any) => {
 
   // Load service areas
   useEffect(() => {
-    if (areaZone.length === 0) {
+    if (!areaZone || areaZone.length === 0) {
       getCustomerBookingZone();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -78,12 +78,12 @@ const From = ({ vehicalData }: any) => {
 
   const getCustomerBookingZone = async () => {
     const zones: any = await getServiceArea();
-    setAreaZone(zones?.data?.serviceAreas);
+    setAreaZone(zones?.data?.serviceAreas || []);
   };
 
   // Validate existing addresses when component loads
   useEffect(() => {
-    if (areaZone.length > 0) {
+    if (areaZone && areaZone.length > 0) {
       if (jobBooking.pickUpLocation?.address?.latitude) {
         validateAddress(jobBooking.pickUpLocation.address, 'pickup');
       }

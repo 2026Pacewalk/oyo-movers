@@ -7,10 +7,25 @@ import { Container, Row } from "react-bootstrap";
 import Image from "../Image";
 import UserMenu from "./UserMenu";
 import ToggleDrawerButton from "./ToggleDrawerButton";
-import { FaPhoneVolume, FaTruck, FaUser } from "react-icons/fa6";
-import { IoMenuSharp } from "react-icons/io5";
+import { FaPhoneVolume, FaTruck, FaUser, FaTiktok } from "react-icons/fa6";
+import { IoMenuSharp, IoClose } from "react-icons/io5";
 import { BiSolidPhoneCall } from "react-icons/bi";
+import {
+  FaThLarge,
+  FaUserPlus,
+  FaFileInvoiceDollar,
+  FaRegQuestionCircle,
+  FaEnvelope,
+  FaSignInAlt,
+  FaChevronRight,
+  FaMapMarkerAlt,
+  FaFacebookF,
+  FaInstagram,
+  FaTwitter,
+} from "react-icons/fa";
 import { s3ImageBaseUrl, tokenKey } from "@/config";
+import ServicesMegaMenu from "@/components/Services/ServicesMegaMenu";
+import { servicesMenu } from "@/components/Services/servicesData";
 const bookingPage = [
   "/profile",
   "/account-settings",
@@ -148,7 +163,8 @@ const Navbar = ({ isLogedIn, data }: any) => {
   if (
     pathName === "/quick-booking" ||
     pathName.startsWith("/quick-booking/") ||
-    pathName.startsWith("/rate-mover")
+    pathName.startsWith("/rate-mover") ||
+    pathName.startsWith("/app-home")
   ) {
     return null;
   }
@@ -243,6 +259,17 @@ export const WebNavbar = ({ isLogedIn, data }: any) => {
     };
   }, []);
 
+  // Lock background scroll while the mobile drawer is open
+  useEffect(() => {
+    document.body.style.overflow = showTabs ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [showTabs]);
+
+  const closeDrawer = () => setShowTabs(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+
   return (
     <>
       <nav className={`navbar navbar-expand-lg navbar-light ${scrollPosition !== 0 ? "sticky" : ""} ${showHeader ? "show" : "hide"}`} id="navbar">
@@ -317,17 +344,7 @@ export const WebNavbar = ({ isLogedIn, data }: any) => {
           <div className={`collapse navbar-collapse ${showTabs ? "showTab" : ""}`} id="navbarSupportedContent">
             {/* Left Side - Services Dropdown */}
             <div className="navbar-left">
-              <ul className="navbar-nav">
-                <li className="nav-item">
-                  <Link
-                    className="nav-link"
-                    href="/#services-section"
-                    onClick={handleServicesClick}
-                  >
-                    Services
-                  </Link>
-                </li>
-              </ul>
+              <ServicesMegaMenu />
 
               {/* Commented out Services Dropdown */}
               {/* <ul className="navbar-nav">
@@ -538,102 +555,110 @@ export const WebNavbar = ({ isLogedIn, data }: any) => {
         </div>
       </nav>
       {/* Right Side Drawer */}
-      <div className={`drawer-overlay ${showTabs ? "show" : ""}`} onClick={() => setShowTabs(false)}></div>
-      <div className={`right-drawer ${showTabs ? "open" : ""}`}>
+      <div className={`drawer-overlay ${showTabs ? "show" : ""}`} onClick={closeDrawer}></div>
+      <aside className={`right-drawer ${showTabs ? "open" : ""}`} role="dialog" aria-modal="true" aria-label="Menu">
         <div className="drawer-content">
-          <button className="btn-close-drawer" onClick={() => setShowTabs(false)}>
-            ×
-          </button>
+          {/* Header */}
+          <div className="drawer-header">
+            <Link href="/" className="drawer-logo" onClick={closeDrawer}>
+              <img src="/images/Oyo-Black.png" alt="OYO Movers" />
+            </Link>
+            <button className="btn-close-drawer" onClick={closeDrawer} aria-label="Close menu">
+              <IoClose />
+            </button>
+          </div>
 
-          <ul className="navbar-nav mx-auto">
-            <li className="nav-item">
-              <Link
-                className="nav-link"
-                href="/#services-section"
-                onClick={handleServicesClick}
-              >
-                Services
-              </Link>
-            </li>
+          {/* Primary CTAs */}
+          <div className="drawer-cta">
+            <a href="/booking" className="drawer-book" onClick={closeDrawer}>
+              <FaTruck /> Book Now
+            </a>
+            <a href="tel:1300013131" className="drawer-call" aria-label="Call OYO Movers">
+              <BiSolidPhoneCall />
+            </a>
+          </div>
 
-            {/* Commented out Mobile Services Dropdown */}
-            {/* <li className="nav-item dropdown ">
-              <Link
-                className="nav-link dropdown-toggle"
-                href="/"
-                id="navbarDropdownMenuLink"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
+          {/* Navigation */}
+          <nav className="drawer-nav">
+            <div className="drawer-services">
+              <button
+                type="button"
+                className={`drawer-services-toggle ${mobileServicesOpen ? "open" : ""}`}
+                onClick={() => setMobileServicesOpen((v) => !v)}
+                aria-expanded={mobileServicesOpen}
               >
-                Services
-              </Link>
-              <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li>
-                  <Link className="dropdown-item text-black d-flex gap-3" href="/house-moving">
-                    <Image src={s3ImageBaseUrl + "/house-moving.png"} className="img-fluid" alt="img" /> House Moving
-                  </Link>
-                </li>
-                <li>
-                  <Link className="dropdown-item text-black d-flex gap-3" href="/store-delivery">
-                    <Image src={s3ImageBaseUrl + "/store-delivery.png"} alt="img" /> Store Delivery{" "}
-                  </Link>
-                </li>
-                <li>
-                  <Link className="dropdown-item text-black d-flex gap-3" href="/move-a-few-items">
-                    <Image src={s3ImageBaseUrl + "/move-a-few-items.png"} alt="img" /> Moving Few Items
-                  </Link>
-                </li>
-                <li>
-                  <Link className="dropdown-item text-black d-flex gap-3" href="/office-relocation">
-                    <Image src={s3ImageBaseUrl + "/office-relocation-icon.png"} alt="img" /> Office Relocation
-                  </Link>
-                </li>
-                <li>
-                  <Link className="dropdown-item text-black d-flex gap-3" href="/donation-run">
-                    <Image src={s3ImageBaseUrl + "/donation-run.png"} alt="img" /> Donation Run
-                  </Link>
-                </li>
-                <li>
-                  <Link className="dropdown-item text-black d-flex gap-3" href="/storage-removals">
-                    <Image src={s3ImageBaseUrl + "/storage-removals.png"} alt="img" /> Storage Removals
-                  </Link>
-                </li>
-                <li>
-                  <Link className="dropdown-item text-black d-flex gap-3" href="/junk-removal">
-                    {" "}
-                    <Image src={s3ImageBaseUrl + "/junk-removal.png"} alt="img" /> Junk Removal
-                  </Link>
-                </li>
-                <li>
-                  <Link className="dropdown-item text-black d-flex gap-3" href="/apartment-moves">
-                    <Image src={s3ImageBaseUrl + "/apartment-moves.png"} alt="img" /> Apartment Move{" "}
-                  </Link>
-                </li>
-                <li>
+                <span className="drawer-link-ic"><FaThLarge /></span>
+                <span className="drawer-link-label">Services</span>
+                <FaChevronRight className="drawer-services-caret" />
+              </button>
+              <div className={`drawer-services-list ${mobileServicesOpen ? "open" : ""}`}>
+                {servicesMenu.map((s) => (
                   <Link
-                    className="dropdown-item text-black d-flex gap-3"
-                    href="https://oyomovers.com/new/helping-hands.php"
+                    key={s.slug}
+                    href={s.href}
+                    className="drawer-subitem"
+                    onClick={closeDrawer}
                   >
-                    <Image src={s3ImageBaseUrl + "/apartment-moves.png"} alt="img" /> Helping Hands{" "}
+                    <span
+                      className="drawer-subitem-ic"
+                      style={{ background: `${s.color}1f`, color: s.color }}
+                    >
+                      {s.icon}
+                    </span>
+                    {s.label}
                   </Link>
-                </li>
-              </ul>
-            </li> */}
-
-            <li className="nav-item">
-              <a className="nav-link" href="/become-mover" onClick={handleBecomeMoverClick}>
-                Become a Mover{" "}
-              </a>
-            </li>
-            {/* <li className="nav-item">
-              <Link className="nav-link" href="/faqs">
-                {"FAQ's"}
+                ))}
+              </div>
+            </div>
+            <a className="drawer-link" href="/become-mover" onClick={(e) => { handleBecomeMoverClick(e); closeDrawer(); }}>
+              <span className="drawer-link-ic"><FaUserPlus /></span>
+              <span className="drawer-link-label">Become a Mover</span>
+              <FaChevronRight className="drawer-link-chevron" />
+            </a>
+            <Link className="drawer-link" href="/prices" onClick={closeDrawer}>
+              <span className="drawer-link-ic"><FaFileInvoiceDollar /></span>
+              <span className="drawer-link-label">Get Estimate</span>
+              <FaChevronRight className="drawer-link-chevron" />
+            </Link>
+            <Link className="drawer-link" href="/faqs" onClick={closeDrawer}>
+              <span className="drawer-link-ic"><FaRegQuestionCircle /></span>
+              <span className="drawer-link-label">FAQ&apos;s</span>
+              <FaChevronRight className="drawer-link-chevron" />
+            </Link>
+            <Link className="drawer-link" href="/contact-us" onClick={closeDrawer}>
+              <span className="drawer-link-ic"><FaEnvelope /></span>
+              <span className="drawer-link-label">Contact us</span>
+              <FaChevronRight className="drawer-link-chevron" />
+            </Link>
+            {!isLogedIn && (
+              <Link className="drawer-link" href="/login" onClick={closeDrawer}>
+                <span className="drawer-link-ic"><FaSignInAlt /></span>
+                <span className="drawer-link-label">Sign in</span>
+                <FaChevronRight className="drawer-link-chevron" />
               </Link>
-            </li> */}
-          </ul>
+            )}
+          </nav>
+
+          {/* Footer: contact + social */}
+          <div className="drawer-footer">
+            <a className="drawer-contact" href="tel:1300013131">
+              <BiSolidPhoneCall /> <span>1300 01 31 31</span>
+            </a>
+            <a className="drawer-contact" href="mailto:support@oyomovers.com.au">
+              <FaEnvelope /> <span>support@oyomovers.com.au</span>
+            </a>
+            <div className="drawer-contact drawer-address">
+              <FaMapMarkerAlt /> <span>470 St Kilda Road, Melbourne VIC 3004</span>
+            </div>
+            <ul className="drawer-social">
+              <li><a href="#" aria-label="Facebook"><FaFacebookF /></a></li>
+              <li><a href="#" aria-label="TikTok"><FaTiktok /></a></li>
+              <li><a href="#" aria-label="Twitter"><FaTwitter /></a></li>
+              <li><a href="#" aria-label="Instagram"><FaInstagram /></a></li>
+            </ul>
+          </div>
         </div>
-      </div>
+      </aside>
     </>
   );
 };

@@ -1,16 +1,36 @@
 "use client";
 import React, { useState } from "react";
-import { Card } from "react-bootstrap";
 
 import { reviewData } from "../../../utils/helper";
 import "./review.scss";
 import { s3ImageBaseUrl } from "@/config";
 import HeadingSection from "../Heading";
 import { useReviewMarquee } from "./useReviewMarquee";
+import { FaGoogle, FaFacebookF, FaStar } from "react-icons/fa";
+
+/* Aggregate rating + platform trust data (from Google Business + review sites). */
+const WRITE_REVIEW_URL = "https://g.page/r/CfGsZ5PhGz0WEBM/review";
+
+const RATING = { score: "4.9", total: 196 };
+
+const trustAvatars = [
+  { i: "R", c: "#f59e0b" },
+  { i: "S", c: "#ec4899" },
+  { i: "M", c: "#10b981" },
+];
+
+const platforms = [
+  { name: "Google", score: "4.9", suffix: "/5", count: "196 reviews", color: "#4285F4", icon: <FaGoogle /> },
+  { name: "Facebook", score: "5", suffix: "/5", count: "7 votes", color: "#1877F2", icon: <FaFacebookF /> },
+  { name: "Sirelo", score: "10", suffix: "/10", count: "79 reviews", color: "#00B67A", icon: <span className="rs-plat-letter">S</span> },
+  { name: "Product Review", score: "5", suffix: "/5", count: "19 reviews", color: "#E8672F", icon: <FaStar /> },
+];
 
 type ReviewItem = (typeof reviewData)[number];
 
-const duplicatedReviews = [...reviewData, ...reviewData];
+// Show the latest 10 reviews, duplicated once for a seamless single-row loop
+const latestReviews = reviewData.slice(0, 10);
+const duplicatedReviews = [...latestReviews, ...latestReviews];
 
 const StarRating = () => (
   <>
@@ -31,42 +51,113 @@ const StarRating = () => (
   </>
 );
 
-const ReviewCard = ({ item }: { item: ReviewItem }) => (
-  <Card className="review-card mx-2 h-100">
-    <div className="review-card-content p-4 h-100 d-flex flex-column-reverse justify-content-between">
-      <div className="d-flex align-items-center">
-        <img
-          src={s3ImageBaseUrl + `/${item.logo}`}
-          className="revieLogo me-2"
-          alt=""
-          loading="lazy"
-          decoding="async"
-        />
-        <div className="d-flex">
+const avatarColors = [
+  "#6366f1",
+  "#0ea5e9",
+  "#f59e0b",
+  "#ec4899",
+  "#10b981",
+  "#8b5cf6",
+  "#ef4444",
+  "#14b8a6",
+];
+const colorFor = (name: string) =>
+  avatarColors[(name.charCodeAt(0) || 0) % avatarColors.length];
+
+const ReviewCard = ({
+  item,
+  onReadMore,
+}: {
+  item: ReviewItem;
+  onReadMore: (item: ReviewItem) => void;
+}) => (
+  <div className="review-card2">
+    <div className="review-head">
+      <div className="review-avatar" style={{ background: colorFor(item.user) }}>
+        {item.user.charAt(0)}
+      </div>
+      <div className="review-meta">
+        <span className="review-name">{item.user}</span>
+        <div className="review-stars">
           <StarRating />
         </div>
       </div>
-      <p className="review-text text-dark mb-4 flex-grow-1">{item.review}</p>
-      <div className="d-flex align-items-center card-user">
-        <div
-          className="review-user-circle rounded-circle text-white d-flex align-items-center justify-content-center me-3"
-          style={{ backgroundColor: "#48a0ff" }}
-        >
+    </div>
+
+    <p className="review-text">{item.review}</p>
+
+    {item.review.length > 120 && (
+      <button
+        type="button"
+        className="review-readmore"
+        onClick={() => onReadMore(item)}
+      >
+        Read more
+      </button>
+    )}
+
+    <div className="review-foot">
+      <img
+        src={s3ImageBaseUrl + `/${item.logo}`}
+        className="review-source"
+        alt=""
+        loading="lazy"
+        decoding="async"
+      />
+      <span className="review-source-label">Verified review</span>
+    </div>
+  </div>
+);
+
+const ReviewModal = ({
+  item,
+  onClose,
+}: {
+  item: ReviewItem;
+  onClose: () => void;
+}) => (
+  <div className="review-modal-overlay" onClick={onClose}>
+    <div
+      className="review-modal"
+      role="dialog"
+      aria-modal="true"
+      onClick={(e) => e.stopPropagation()}
+    >
+      <button className="review-modal-close" onClick={onClose} aria-label="Close">
+        ×
+      </button>
+      <div className="review-head">
+        <div className="review-avatar" style={{ background: colorFor(item.user) }}>
           {item.user.charAt(0)}
         </div>
-        <span className="fw-semibold">{item.user}</span>
+        <div className="review-meta">
+          <span className="review-name">{item.user}</span>
+          <div className="review-stars">
+            <StarRating />
+          </div>
+        </div>
+      </div>
+      <p className="review-modal-text">{item.review}</p>
+      <div className="review-foot">
+        <img
+          src={s3ImageBaseUrl + `/${item.logo}`}
+          className="review-source"
+          alt=""
+        />
+        <span className="review-source-label">Verified review</span>
       </div>
     </div>
-  </Card>
+  </div>
 );
 
 type ReviewMarqueeProps = {
   direction: "left" | "right";
   itemClassName: string;
   wrapperClassName?: string;
+  onReadMore: (item: ReviewItem) => void;
 };
 
-const ReviewMarquee = ({ direction, itemClassName, wrapperClassName = "" }: ReviewMarqueeProps) => {
+const ReviewMarquee = ({ direction, itemClassName, wrapperClassName = "", onReadMore }: ReviewMarqueeProps) => {
   const [paused, setPaused] = useState(false);
   const trackRef = useReviewMarquee(direction, paused);
 
@@ -84,7 +175,7 @@ const ReviewMarquee = ({ direction, itemClassName, wrapperClassName = "" }: Revi
         >
           {duplicatedReviews.map((item, index) => (
             <div key={`${item.user}-${index}`} className={`review-marquee-item ${itemClassName}`}>
-              <ReviewCard item={item} />
+              <ReviewCard item={item} onReadMore={onReadMore} />
             </div>
           ))}
         </div>
@@ -93,9 +184,79 @@ const ReviewMarquee = ({ direction, itemClassName, wrapperClassName = "" }: Revi
   );
 };
 
+const ReviewsSummary = () => (
+  <div className="reviews-summary">
+    <div className="rs-left">
+      <div className="rs-score-row">
+        <span className="rs-score">{RATING.score}</span>
+        <div className="rs-score-meta">
+          <div className="rs-stars">
+            <StarRating />
+          </div>
+          <span className="rs-count">
+            <FaGoogle className="rs-google" /> Based on {RATING.total} Google reviews
+          </span>
+        </div>
+      </div>
+      <span className="rs-badge">Excellent</span>
+
+      <a
+        className="rs-trust"
+        href={WRITE_REVIEW_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        title="See our reviews & leave one on Google"
+      >
+        <span className="rs-trust-avatars">
+          {trustAvatars.map((a, i) => (
+            <span key={i} className="rs-av" style={{ background: a.c }}>
+              {a.i}
+            </span>
+          ))}
+          <span className="rs-av rs-av-more">200+</span>
+        </span>
+        <span className="rs-trust-card">
+          <img
+            src={s3ImageBaseUrl + "/google-logo.png"}
+            alt="Google"
+            className="rs-trust-g"
+          />
+          <span className="rs-trust-info">
+            <span className="rs-trust-stars">
+              <StarRating />
+              <b>{RATING.score}</b>
+            </span>
+            <span className="rs-trust-label">Trusted By 200+ Families</span>
+          </span>
+        </span>
+      </a>
+    </div>
+
+    <div className="rs-platforms">
+      {platforms.map((p) => (
+        <div className="rs-platform" key={p.name}>
+          <span className="rs-plat-icon" style={{ background: p.color }}>
+            {p.icon}
+          </span>
+          <div className="rs-plat-info">
+            <span className="rs-plat-name">{p.name}</span>
+            <span className="rs-plat-score">
+              {p.score}
+              <small>{p.suffix}</small>
+            </span>
+          </div>
+          <span className="rs-plat-count">{p.count}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+);
+
 const ReviewService = () => {
+  const [active, setActive] = useState<ReviewItem | null>(null);
+
   return (
-    <div className="reviewContainer py-5">
+    <div className="reviewContainer reviews-compact py-4">
       <div className="container">
         <HeadingSection
           buttonLabel=" Our Testimonials"
@@ -103,9 +264,17 @@ const ReviewService = () => {
           subHeading="See how OYO has helped their clients"
         />
 
-        <ReviewMarquee direction="left" itemClassName="pt-5" />
-        <ReviewMarquee direction="right" itemClassName="pb-5" wrapperClassName="sliderT mb-2" />
+        <ReviewsSummary />
+
+        <ReviewMarquee
+          direction="left"
+          itemClassName=""
+          wrapperClassName="reviews-single-row"
+          onReadMore={setActive}
+        />
       </div>
+
+      {active && <ReviewModal item={active} onClose={() => setActive(null)} />}
     </div>
   );
 };

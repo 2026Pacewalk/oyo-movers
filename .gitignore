@@ -67,3 +67,6 @@ coverage/
 # Optional: Ignore next-env.d.ts (if regenerated automatically)
 # next-env.d.ts
 node_modules
+
+# local env files
+.env*.local

@@ -1,20 +1,31 @@
 import React from "react";
 import Link from "next/link";
-import Header from "@/components/Header";
 import Footer from "@/components/WebAppWrapper/Footer";
-import "./customer-terms.scss";
+import "@/styles/legal.scss";
 import { FaEnvelope, FaPhoneVolume } from "react-icons/fa6";
 export default function CustomerTermsPage() {
   return (
-    <div>
-      <Header />
-      <section id="customer-terms" className="py-4">
+    <div className="legal-page">
+      <section id="customer-terms">
+        <div className="pt-hero">
+          <div className="pt-hero-inner">
+            <nav className="pt-crumbs" aria-label="Breadcrumb">
+              <Link href="/">Home</Link>
+              <span>/</span>
+              <span>Legal</span>
+              <span>/</span>
+              <span>Customer Terms</span>
+            </nav>
+            <span className="pt-badge">Legal</span>
+            <h1 className="pt-title">Customer Terms of Use</h1>
+            <div className="divider"></div>
+            <p className="pt-hero-sub">
+              The terms that apply when you book a move with OYO Movers.
+            </p>
+          </div>
+        </div>
         <div className="container-1">
           <div className="row">
-            <div className="col-md-12 pb-4">
-              <h2>Customer Terms of Use</h2>
-              <div className="divider mb-3 mx-0"></div>
-            </div>
 
             {/* Table of Contents */}
             <div className="col-md-4 col-lg-4 col-xl-4 col-xxl-3">

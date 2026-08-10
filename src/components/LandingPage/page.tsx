@@ -20,6 +20,8 @@ import ServicingArea from "./ServicingArea";
 import OnDemand from "./OnDemand";
 import ServicesLatest from "./services-latest/Services-latest";
 import BusinessBanner from "./Business-banner/banner";
+import SectionDivider from "./SectionDivider";
+import AreasWeCover from "@/components/Locations/AreasWeCover";
 
 const LandingPage = () => {
   useEffect(() => {
@@ -51,9 +53,12 @@ const LandingPage = () => {
      <ServicesLatest />
      <div data-aos="fade-up"><LandingServicesSlider /></div>
       <div data-aos="fade-up"><HowItsWork /></div>
+      <SectionDivider />
       <div data-aos="fade-up"><OnDemand /></div>
       <div data-aos="fade-up"><ReviewService /></div>
+      <SectionDivider />
       <div data-aos="fade-up"><OurClients /></div>
+      <AreasWeCover />
       {/* <div data-aos="fade-up"><HomeFAQ/></div> */}
       {/* <div data-aos="fade-up"><ServicingArea/></div> */}
       {/* <div data-aos="fade-up"><CallToAction/></div> */}

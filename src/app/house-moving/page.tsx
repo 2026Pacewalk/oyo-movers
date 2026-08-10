@@ -1,9 +1,10 @@
-import React from "react";
-import "./houseMoving.scss";
-import MovingServiceWrapper from "@/components/MovingServiceWrapper";
+import ServicePageTemplate from "@/components/Services/ServicePageTemplate";
+import { serviceContent, serviceMetadata } from "@/components/Services/serviceContent";
 
-const HouseMoving = () => {
-  return <MovingServiceWrapper service={"houseMoving"} />;
-};
+const content = serviceContent["house-moving"];
 
-export default HouseMoving;
+export const metadata = serviceMetadata(content);
+
+export default function HouseMoving() {
+  return <ServicePageTemplate content={content} />;
+}

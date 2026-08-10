@@ -1,6 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { FaPlus, FaXmark } from 'react-icons/fa6';
 import Footer from '@/components/WebAppWrapper/Footer';
 import './faqs.scss';
 
@@ -208,19 +210,18 @@ You can also call us at 1300 013 131 to start the claims process. Please keep al
     <>
       {/* FAQ Section */}
       <section className="faq-section">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-12">
-              <div className="section-heading text-center mb-3">
-                <span className="mini-title">
-                  <i className="fa-regular fa-star"></i>&nbsp; FAQ&apos;s
-                </span>
-                <h2 className="text-center h1 text-uppercase heading-md">
-                  Frequently Asked Questions
-                </h2>
-              </div>
-            </div>
+        <div className="faq-hero">
+          <div className="faq-hero-inner">
+            <span className="faq-badge">FAQs</span>
+            <h1 className="faq-title">Frequently Asked Questions</h1>
+            <div className="faq-divider"></div>
+            <p className="faq-sub">
+              Everything you need to know about booking and moving with OYO Movers.
+              Can&apos;t find your answer? Call our friendly team on 1300 01 31 31.
+            </p>
           </div>
+        </div>
+        <div className="container">
           <div className="row mt-3">
             <div className="col-md-12">
               <div className="accordion mb-4" id="accordionExample">
@@ -236,7 +237,7 @@ You can also call us at 1300 013 131 to start the claims process. Please keep al
                       >
                         {item.question}
                         <span className="toggle-icon">
-                          {activeItem === item.id ? '×' : '+'}
+                          {activeItem === item.id ? <FaXmark /> : <FaPlus />}
                         </span>
                       </a>
                     </div>
@@ -252,6 +253,15 @@ You can also call us at 1300 013 131 to start the claims process. Please keep al
                     </div>
                   </div>
                 ))}
+              </div>
+
+              <div className="faq-cta">
+                <h3>Still have questions?</h3>
+                <p>Our friendly team is here to help, seven days a week.</p>
+                <div className="faq-cta-actions">
+                  <a href="tel:1300013131" className="faq-btn-primary">Call 1300 01 31 31</a>
+                  <Link href="/contact-us" className="faq-btn-ghost">Contact us</Link>
+                </div>
               </div>
             </div>
           </div>

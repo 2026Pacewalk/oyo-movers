@@ -154,7 +154,7 @@ Payments are released once the job is completed without any issue and the custom
   ];
 
   return (
-    <>
+    <div className="bam-page">
       {/* Hero Section */}
       <section className="hero-section">
         <div className="container">
@@ -405,6 +405,6 @@ Payments are released once the job is completed without any issue and the custom
 
       {/* Footer */}
       <Footer />
-    </>
+    </div>
   );
 }

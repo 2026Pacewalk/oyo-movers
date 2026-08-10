@@ -1,8 +1,10 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { FaPlus, FaXmark } from 'react-icons/fa6';
 import Footer from '@/components/WebAppWrapper/Footer';
-import './movers-faqs.scss';
+import '../faqs/faqs.scss';
 
 export default function MoversFAQs() {
   const [activeItem, setActiveItem] = useState<string | null>('headingOne');
@@ -169,19 +171,18 @@ Cancelling Job may reduce your acceptance rating and impact your priority for fu
     <>
       {/* FAQ Section */}
       <section className="faq-section">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-12">
-              <div className="section-heading text-center mb-3">
-                <span className="mini-title">
-                  <i className="fa-regular fa-star"></i>&nbsp; Movers FAQ&apos;s
-                </span>
-                <h2 className="text-center h1 text-uppercase heading-md">
-                  Frequently Asked Questions
-                </h2>
-              </div>
-            </div>
+        <div className="faq-hero">
+          <div className="faq-hero-inner">
+            <span className="faq-badge">Movers FAQs</span>
+            <h1 className="faq-title">Movers — Frequently Asked Questions</h1>
+            <div className="faq-divider"></div>
+            <p className="faq-sub">
+              Everything you need to know about driving, accepting jobs and getting paid with
+              OYO Movers. Still have a question? We&apos;re here to help.
+            </p>
           </div>
+        </div>
+        <div className="container">
           <div className="row mt-3">
             <div className="col-md-12">
               <div className="accordion mb-4" id="accordionExample">
@@ -197,7 +198,7 @@ Cancelling Job may reduce your acceptance rating and impact your priority for fu
                       >
                         {item.question}
                         <span className="toggle-icon">
-                          {activeItem === item.id ? '×' : '+'}
+                          {activeItem === item.id ? <FaXmark /> : <FaPlus />}
                         </span>
                       </a>
                     </div>
@@ -213,6 +214,15 @@ Cancelling Job may reduce your acceptance rating and impact your priority for fu
                     </div>
                   </div>
                 ))}
+              </div>
+
+              <div className="faq-cta">
+                <h3>Ready to earn with OYO?</h3>
+                <p>Turn your truck or van into income — work whenever you want.</p>
+                <div className="faq-cta-actions">
+                  <Link href="/become-a-mover" className="faq-btn-primary">Become a Mover</Link>
+                  <a href="tel:1300013131" className="faq-btn-ghost">Call 1300 01 31 31</a>
+                </div>
               </div>
             </div>
           </div>

@@ -1,0 +1,311 @@
+/* ============================================================
+   OYO Movers — Native app-style Home screen
+   Mobile-first; on desktop it centers in a phone-width frame.
+   All rules scoped under .app-home.
+   ============================================================ */
+
+$ah-yellow: #ffe147;
+$ah-yellow-2: #ffd000;
+$ah-dark: #18181b;
+$ah-page: #f2f3f5;
+$ah-muted: #8a8d93;
+$ah-nav-h: 74px;
+
+.app-home {
+  min-height: 100vh;
+  background: #dfe1e5;
+  display: flex;
+  justify-content: center;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  .app-home-screen {
+    position: relative;
+    width: 100%;
+    max-width: 440px;
+    min-height: 100vh;
+    background: $ah-page;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+  }
+
+  /* ---------- Header ---------- */
+  .ah-header {
+    background: linear-gradient(135deg, $ah-yellow 0%, $ah-yellow-2 100%);
+    padding: 20px 20px 46px;
+    border-radius: 0 0 28px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .ah-user {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .ah-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    flex-shrink: 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .ah-welcome {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+
+    span {
+      font-size: 13px;
+      color: #6b5e12;
+      font-weight: 500;
+    }
+    strong {
+      font-size: 19px;
+      color: $ah-dark;
+      font-weight: 800;
+    }
+  }
+
+  .ah-bell {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $ah-dark;
+    font-size: 18px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  /* ---------- Body ---------- */
+  .ah-body {
+    flex: 1;
+    padding: 0 16px calc(#{$ah-nav-h} + 24px);
+    overflow-y: auto;
+  }
+
+  /* Pickup card (overlaps header) */
+  .ah-pickup {
+    width: 100%;
+    margin-top: -28px;
+    background: #fff;
+    border: 1px solid #eef0f2;
+    border-radius: 16px;
+    padding: 14px 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-align: left;
+    cursor: pointer;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+  }
+
+  .ah-pin {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: rgba(34, 164, 93, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .ah-pickup-text {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+  }
+  .ah-pickup-label {
+    font-size: 12px;
+    color: $ah-muted;
+    font-weight: 500;
+  }
+  .ah-pickup-addr {
+    font-size: 14.5px;
+    color: $ah-dark;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .ah-pickup-caret {
+    color: $ah-muted;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+
+  /* Category grid */
+  .ah-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 18px;
+  }
+
+  .ah-cat {
+    background: #fff;
+    border: 1px solid #eef0f2;
+    border-radius: 18px;
+    padding: 14px 14px 8px;
+    display: flex;
+    flex-direction: column;
+    min-height: 128px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover,
+    &:active {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .ah-cat-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .ah-cat-label {
+    font-size: 15px;
+    font-weight: 700;
+    color: $ah-dark;
+  }
+  .ah-cat-caret {
+    color: $ah-dark;
+    font-size: 12px;
+  }
+  .ah-cat-img {
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-top: 6px;
+
+    img {
+      max-width: 100%;
+      max-height: 74px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+    }
+  }
+
+  /* Promo banner */
+  .ah-banner {
+    display: flex;
+    flex-direction: column;
+    margin-top: 16px;
+    background: linear-gradient(135deg, #fff2b0 0%, $ah-yellow 100%);
+    border-radius: 18px;
+    padding: 18px 20px;
+    box-shadow: 0 8px 20px rgba(255, 208, 0, 0.25);
+
+    .ah-banner-sm {
+      font-size: 14px;
+      font-weight: 600;
+      color: #6b5e12;
+    }
+    .ah-banner-lg {
+      font-size: 22px;
+      font-weight: 800;
+      color: $ah-dark;
+    }
+    &:hover {
+      filter: brightness(1.02);
+    }
+  }
+
+  /* ---------- Bottom nav ---------- */
+  .ah-nav {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 440px;
+    height: $ah-nav-h;
+    background: #fff;
+    border-top: 1px solid #eef0f2;
+    border-radius: 22px 22px 0 0;
+    box-shadow: 0 -6px 24px rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 10px;
+    z-index: 50;
+  }
+
+  .ah-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    color: $ah-muted;
+    font-size: 11px;
+    font-weight: 500;
+    flex: 1;
+    transition: color 0.2s ease;
+
+    svg {
+      font-size: 21px;
+    }
+
+    &.active {
+      color: $ah-dark;
+      font-weight: 700;
+
+      svg {
+        color: #d9a400;
+      }
+    }
+
+    &:hover {
+      color: $ah-dark;
+    }
+  }
+
+  .ah-fab {
+    flex-shrink: 0;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, $ah-yellow 0%, $ah-yellow-2 100%);
+    color: $ah-dark;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    margin-top: -26px;
+    border: 4px solid #fff;
+    box-shadow: 0 8px 18px rgba(255, 208, 0, 0.45);
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: translateY(-2px) scale(1.03);
+    }
+  }
+}

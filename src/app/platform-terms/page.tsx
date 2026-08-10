@@ -1,21 +1,32 @@
 import React from "react";
 import Link from "next/link";
-import Header from "@/components/Header";
 import { FaEnvelope, FaPhoneVolume } from "react-icons/fa6";
 import Footer from "@/components/WebAppWrapper/Footer";
-import "./platform-terms.scss";
+import "@/styles/legal.scss";
 
 export default function PlatformTermsPage() {
   return (
-    <div>
-      <Header />
-      <section id="platform-terms" className="py-4">
+    <div className="legal-page">
+      <section id="platform-terms">
+        <div className="pt-hero">
+          <div className="pt-hero-inner">
+            <nav className="pt-crumbs" aria-label="Breadcrumb">
+              <Link href="/">Home</Link>
+              <span>/</span>
+              <span>Legal</span>
+              <span>/</span>
+              <span>Platform Terms</span>
+            </nav>
+            <span className="pt-badge">Legal</span>
+            <h1 className="pt-title">Platform Terms of Use</h1>
+            <div className="divider"></div>
+            <p className="pt-hero-sub">
+              The terms that govern your access to and use of the OYO Movers platform.
+            </p>
+          </div>
+        </div>
         <div className="container-1">
           <div className="row">
-            <div className="col-md-12 pb-4">
-              <h2>Platform Terms of Use</h2>
-              <div className="divider mb-3 mx-0"></div>
-            </div>
 
             {/* Table of Contents */}
             <div className="col-md-4 col-lg-4 col-xl-4 col-xxl-3 ">

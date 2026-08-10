@@ -3,9 +3,17 @@ import "@/styles/globals.scss";
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import NextTopLoader from "nextjs-toploader";
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  display: "swap",
+  variable: "--font-montserrat",
+});
 import Header from "@/components/Header";
 import ToastProvider from "@/components/ToastProvider";
 import NotificationsHandler from "@/components/NotificationsHandler";
+import MobileTabBar from "@/components/MobileTabBar";
 
 
 export const metadata: Metadata = {
@@ -30,7 +38,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={montserrat.variable}>
       <head>
         <meta
           name="viewport"
@@ -43,6 +51,7 @@ export default function RootLayout({
           <NextTopLoader showSpinner={false} color="#ffe147" />
           <Header />
           {children}
+          <MobileTabBar />
         </ToastProvider>
       </body>
     </html>

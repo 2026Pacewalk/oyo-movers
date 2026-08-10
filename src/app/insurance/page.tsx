@@ -1,22 +1,33 @@
 import React from 'react';
 import Link from 'next/link';
-import Header from '@/components/Header';
 import Footer from '@/components/WebAppWrapper/Footer';
-import './insurance.scss';
+import "@/styles/legal.scss";
 import { FaEnvelope } from "react-icons/fa6";
 import { FaPhoneVolume } from "react-icons/fa6";
 export default function InsurancePage() {
   return (
-    <div>
-      <Header />
-      <section id="insurance" className="py-4">
+    <div className="legal-page">
+      <section id="insurance">
+        <div className="pt-hero">
+          <div className="pt-hero-inner">
+            <nav className="pt-crumbs" aria-label="Breadcrumb">
+              <Link href="/">Home</Link>
+              <span>/</span>
+              <span>Legal</span>
+              <span>/</span>
+              <span>Insurance</span>
+            </nav>
+            <span className="pt-badge">Legal</span>
+            <h1 className="pt-title">Insurance Policy</h1>
+            <div className="divider"></div>
+            <p className="pt-hero-sub">
+              How cover works for your move with OYO Movers.
+            </p>
+          </div>
+        </div>
         <div className="container-1 insurance-container">
           <div className="row">
-            <div className="col-md-12 pb-4">
-              <h2>Insurance Policy</h2>
-              <div className="divider mb-3 mx-0"></div>
-            </div>
-            
+
             {/* Table of Contents */}
             <div className="col-md-4 col-lg-4 col-xl-4 col-xxl-3">
               <div className="table-of-contents">

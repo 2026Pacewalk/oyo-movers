@@ -1250,3 +1250,219 @@
     transform-origin: left top;
   }
 }
+/* ============================================================
+   Become a Mover — application page: hero + form split layout
+   (overrides the single-column .workdetailsWraper for wd-split)
+   ============================================================ */
+.workdetailsWraper.wd-split {
+  grid-template-columns: 1fr 1.02fr;
+  max-width: 1160px;
+  margin: 0 auto;
+  gap: 44px;
+  align-items: start;
+  padding: 120px 24px 60px;
+  background-color: #fafbfc;
+  background-image: radial-gradient(rgba(18, 18, 65, 0.05) 1.3px, transparent 1.3px);
+  background-size: 20px 20px;
+
+  @media (max-width: 991px) {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 100px 18px 44px;
+  }
+
+  .wd-hero {
+    position: sticky;
+    top: 100px;
+    background: linear-gradient(160deg, #ffe75c 0%, #fcd947 100%);
+    border-radius: 22px;
+    padding: 34px 30px;
+    box-shadow: 0 20px 44px rgba(252, 208, 0, 0.32);
+    color: #14141a;
+
+    @media (max-width: 991px) { position: static; top: auto; }
+  }
+
+  .wd-badge {
+    display: inline-block;
+    background: #18181b;
+    color: #ffe147;
+    font-weight: 800;
+    font-size: 11.5px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 50px;
+    margin-bottom: 18px;
+  }
+  .wd-hero-title {
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 1.15;
+    color: #14141a !important;
+    margin: 0 0 14px !important;
+    padding: 0 !important;
+    @media (max-width: 576px) { font-size: 25px; }
+  }
+  .wd-hero-sub {
+    font-size: 15px;
+    line-height: 1.65;
+    color: #5a5323;
+    margin: 0 0 22px;
+  }
+  .wd-points {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 24px;
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      font-size: 14.5px;
+      font-weight: 600;
+      color: #2a2612;
+      margin-bottom: 12px;
+    }
+    .wd-tick {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #18181b;
+      color: #ffe147;
+      font-size: 11px;
+      flex-shrink: 0;
+    }
+  }
+  .wd-stats {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    padding-top: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.12);
+
+    .wd-stat {
+      display: flex;
+      flex-direction: column;
+      strong { font-size: 20px; font-weight: 800; color: #14141a; line-height: 1; }
+      span { font-size: 12px; color: #5a5323; font-weight: 500; margin-top: 3px; }
+    }
+  }
+
+  /* Form card polish */
+  .workdetailsContainer {
+    max-width: 100%;
+    border: 1px solid #eef0f3;
+    border-radius: 20px;
+    padding: 30px 28px;
+    box-shadow: 0 20px 45px rgba(17, 17, 26, 0.07);
+
+    @media (max-width: 576px) { padding: 22px 18px; }
+  }
+  .form-title {
+    font-size: 22px !important;
+    color: #18181b !important;
+    font-weight: 800 !important;
+    text-align: left !important;
+    margin-bottom: 18px !important;
+  }
+}
+
+/* ---- Mobile usability: larger touch targets on the application form ---- */
+@media (max-width: 768px) {
+  .workdetailsWraper.wd-split {
+    .registration-wrapper .moverCustomInput input[type="text"],
+    .registration-wrapper .moverCustomInput input[type="email"],
+    .registration-wrapper .moverCustomInput input[type="password"],
+    .registration-wrapper .moverCustomInput input[type="tel"],
+    .registration-wrapper .moverCustomInput .form-control,
+    .registration-wrapper .form-select,
+    .registration-wrapper select {
+      height: 46px !important;
+      min-height: 46px !important;
+      font-size: 16px !important; /* prevents iOS zoom-on-focus */
+      padding: 11px 12px !important;
+    }
+
+    .registration-wrapper .input-group-text {
+      height: 46px !important;
+      font-size: 15px !important;
+      padding: 8px 12px !important;
+    }
+
+    .form-label {
+      font-size: 14px !important;
+      margin-bottom: 6px !important;
+    }
+
+    /* comfortable spacing between fields */
+    .registration-wrapper .moverInputWrapper,
+    .registration-wrapper .mainSelect,
+    .dateSelection {
+      margin-bottom: 14px !important;
+    }
+
+    /* big, easy submit button + clear the mobile tab bar */
+    .signupButton,
+    .footerBtn button,
+    .footerBtn .signupButton {
+      min-height: 52px !important;
+      font-size: 16px !important;
+      border-radius: 12px !important;
+    }
+    .workdetailsContainer { padding: 20px 16px 26px !important; }
+    .form-title { font-size: 20px !important; text-align: center !important; }
+
+    /* hero: tighter on phones */
+    .wd-hero { padding: 26px 22px; }
+    .wd-hero-title { font-size: 23px !important; }
+    .wd-stats { gap: 10px; }
+  }
+}
+
+/* ---- Date of Birth: equal-width, properly aligned selects ---- */
+.workdetailsWraper.wd-split .registration-wrapper .dateSelection {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px !important;
+
+  .mainSelect {
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    width: auto !important;
+  }
+  .mainSelect select,
+  .mainSelect:first-child select,
+  .mainSelect:nth-child(2) select,
+  .mainSelect:last-child select {
+    width: 100% !important;
+    min-width: 0 !important;
+    padding: 10px 30px 10px 12px !important; /* room for the caret */
+    text-overflow: ellipsis;
+    appearance: none;
+    -webkit-appearance: none;
+  }
+
+  @media (max-width: 768px) {
+    gap: 8px !important;
+    .mainSelect select { height: 46px !important; font-size: 16px !important; }
+  }
+}
+
+/* ---- Desktop: give Date of Birth its own full-width row so the
+   Day / Month / Year selects aren't cramped ---- */
+@media (min-width: 769px) {
+  .workdetailsWraper.wd-split .row:has(.dateSelection) > [class*="col-md-6"] {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+  .workdetailsWraper.wd-split .registration-wrapper .dateSelection .mainSelect select {
+    padding-right: 28px !important;
+    font-size: 14px !important;
+    height: 40px !important;
+    min-height: 40px !important;
+  }
+}

@@ -3,6 +3,7 @@
 import { s3ImageBaseUrl } from "@/config";
 // import { Card } from "react-bootstrap";
 import HeadingSection from "../Heading";
+import Link from "next/link";
 import './style.scss'
 
 const OurClients = () => {
@@ -73,10 +74,8 @@ const OurClients = () => {
 
   return (
     <section className="clients ourclients py-5">
-     
-        
- <HeadingSection buttonLabel="
-Our Clients "  mainHeading="Our Clients"  subHeading=""/>
+
+ <HeadingSection buttonLabel="Our Clients"  mainHeading="Trusted by Australia's Best"  subHeading="From national retailers to fast-growing local businesses, leading brands rely on OYO Movers for seamless, on-time, stress-free relocations."/>
            
               {/* <Slider
                 slidesToShow={6}
@@ -142,7 +141,14 @@ Our Clients "  mainHeading="Our Clients"  subHeading=""/>
                   ))}
                 </div>
               </div>
-        
+
+              <div className="clients-cta">
+                <p>Ready to move your home or business with a team the best brands trust?</p>
+                <Link href="/prices" className="clients-cta-btn">
+                  Get a Free Quote
+                </Link>
+              </div>
+
     </section>
   );
 };

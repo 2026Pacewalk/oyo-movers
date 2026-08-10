@@ -1,19 +1,32 @@
 import React from "react";
 import Link from "next/link";
 import Footer from "@/components/WebAppWrapper/Footer";
-import "./cancellation.scss";
+import "@/styles/legal.scss";
 
 export default function CancellationTermPage() {
   return (
-    <div>
-      <section id="privacy" className="py-4">
+    <div className="legal-page">
+      <section id="privacy">
+        <div className="pt-hero">
+          <div className="pt-hero-inner">
+            <nav className="pt-crumbs" aria-label="Breadcrumb">
+              <Link href="/">Home</Link>
+              <span>/</span>
+              <span>Legal</span>
+              <span>/</span>
+              <span>Cancellations &amp; Changes</span>
+            </nav>
+            <span className="pt-badge">Legal</span>
+            <h1 className="pt-title">Cancellations &amp; Changes Policy</h1>
+            <div className="divider"></div>
+            <p className="pt-hero-sub">
+              How cancellations, rescheduling and refunds are handled at OYO Movers.
+            </p>
+          </div>
+        </div>
         <div className="container">
           <div className="row">
             <div className="col-md-10 offset-md-1 pt-3">
-              <div className="col-md-12 pb-2 pl-0">
-                <h2 className="">Cancellations & Changes Policy</h2>
-                <div className="divider mb-3 mx-0"></div>
-              </div>
 
               <h6 className="underline font-weight-normal mb-3">
                 <span style={{ fontWeight: "bold", color: "black" }}>Last Updated:</span> 08.04.2026

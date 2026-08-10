@@ -1,0 +1,94 @@
+/* ============================================================
+   Moving-themed section divider — animated road + driving truck
+   ============================================================ */
+.section-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  max-width: 780px;
+  margin: 14px auto;
+  padding: 10px 24px;
+  overflow: hidden;
+
+  .sd-road {
+    flex: 1;
+    height: 5px;
+    border-radius: 4px;
+    background-image: repeating-linear-gradient(
+      90deg,
+      #e2e4e8 0,
+      #e2e4e8 16px,
+      transparent 16px,
+      transparent 30px
+    );
+    background-size: 30px 5px;
+    animation: sdRoadMove 0.9s linear infinite;
+  }
+
+  /* fade the outer ends so the road blends into the page */
+  .sd-road-left {
+    -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 45%);
+    mask-image: linear-gradient(90deg, transparent 0, #000 45%);
+  }
+  .sd-road-right {
+    -webkit-mask-image: linear-gradient(270deg, transparent 0, #000 45%);
+    mask-image: linear-gradient(270deg, transparent 0, #000 45%);
+  }
+
+  .sd-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #ffd000;
+    flex-shrink: 0;
+  }
+
+  .sd-truck {
+    flex-shrink: 0;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ffe147 0%, #ffd000 100%);
+    border: 3px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #18181b;
+    font-size: 23px;
+    box-shadow: 0 8px 20px rgba(255, 208, 0, 0.45);
+    animation: sdTruckBob 1.6s ease-in-out infinite;
+  }
+
+  @media (max-width: 576px) {
+    max-width: 92%;
+    .sd-truck {
+      width: 44px;
+      height: 44px;
+      font-size: 19px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .sd-road,
+    .sd-truck {
+      animation: none;
+    }
+  }
+}
+
+@keyframes sdRoadMove {
+  to {
+    background-position-x: -30px;
+  }
+}
+
+@keyframes sdTruckBob {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-3px) rotate(-1.5deg);
+  }
+}

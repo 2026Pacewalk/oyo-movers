@@ -8,7 +8,7 @@ import MoverInput from "./MoverInput";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { createMover } from "@/lib/serverAction";
-import { FaArrowAltCircleRight } from "react-icons/fa";
+import { FaArrowAltCircleRight, FaCheck } from "react-icons/fa";
 import IconButton from "../IconButton";
 import { errorToast, successToast } from "@/lib/toaster";
 import { resendVerificationEmail } from "@/lib/serverAction/becomeMoverActions";
@@ -404,7 +404,28 @@ const WorkDetails = ({ helper }: { helper?: boolean }) => {
   const noErrors = Object.keys(errors || {}).length === 0;
   const canProceed = requiredFilled && noErrors && !isSubmitting;
   return (
-    <div className="workdetailsWraper">
+    <div className="workdetailsWraper wd-split">
+      <aside className="wd-hero">
+        <span className="wd-badge">Movers Wanted</span>
+        <h1 className="wd-hero-title">
+          Earn great money with your truck or van
+        </h1>
+        <p className="wd-hero-sub">
+          Join Melbourne&apos;s trusted moving platform. Choose your own hours, accept
+          confirmed jobs, and get paid fast — no quoting, no chasing leads.
+        </p>
+        <ul className="wd-points">
+          <li><span className="wd-tick"><FaCheck /></span> Flexible work — you choose the jobs</li>
+          <li><span className="wd-tick"><FaCheck /></span> Regular, confirmed bookings 7 days</li>
+          <li><span className="wd-tick"><FaCheck /></span> Reliable, on-time payments</li>
+          <li><span className="wd-tick"><FaCheck /></span> 100% supported by our team</li>
+        </ul>
+        <div className="wd-stats">
+          <div className="wd-stat"><strong>$2,000+</strong><span>weekly potential</span></div>
+          <div className="wd-stat"><strong>4.9★</strong><span>rated on Google</span></div>
+          <div className="wd-stat"><strong>1000s</strong><span>of moves done</span></div>
+        </div>
+      </aside>
       <div className="workdetailsContainer registration-wrapper">
         {/* Inline success view replaces form after successful submission */}
         {submitted ? (

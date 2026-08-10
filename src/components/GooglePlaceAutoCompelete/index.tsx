@@ -6,20 +6,7 @@ import Input from "../Input";
 import { useEffect, useRef } from "react";
 import { FaMapMarkerAlt } from "react-icons/fa";
 
-const AddressInput = ({
-  label,
-  onSelectAddress,
-  error,
-  isFloting,
-  value,
-  handleFocus,
-  handleBlur,
-  becomeMoverFlow,
-  placeholder,
-  hideIcon,
-  addressType,
-  iconVariant = "arrow",
-}: {
+type AddressInputProps = {
   label: string;
   onSelectAddress: any;
   error?: string;
@@ -35,72 +22,47 @@ const AddressInput = ({
   hideIcon?: boolean;
   addressType?: "pickup" | "dropoff";
   iconVariant?: "arrow" | "marker";
-}) => {
-  const { ref }: any = usePlacesWidget({
-    apiKey: googleApiKey,
-    inputAutocompleteValue: "new-password",
-    onPlaceSelected: (place: any) => handelOnSelect(extractAddress(place)),
-    options: {
-      types: ["geocode"],
-      componentRestrictions: { country: "au" },
-      fields: ["address_components", "geometry.location", "place_id", "formatted_address"],
-    },
-  });
-  const handelOnSelect = async (place: any) => {
-    onSelectAddress(place);
-  };
-  const lastSyncedValue = useRef<string | undefined>(undefined);
+};
 
-  useEffect(() => {
-    if (!ref?.current) return;
-    if (value === lastSyncedValue.current) return;
-    lastSyncedValue.current = value;
-    ref.current.value = value || "";
-  }, [value, ref]);
-  const onFocus = (e: any) => {
-    handleFocus?.();
-  };
-  const onBlur = (e: any) => {
-    handleBlur?.(e);
-  };
+/* Shared visual shell (icon + input + error) so both variants look identical. */
+const AddressField = ({
+  inputRef,
+  props,
+}: {
+  inputRef: any;
+  props: AddressInputProps;
+}) => {
+  const {
+    label,
+    error,
+    isFloting,
+    handleFocus,
+    handleBlur,
+    becomeMoverFlow,
+    placeholder,
+    hideIcon,
+    addressType,
+    iconVariant = "arrow",
+  } = props;
 
   const resolvedType =
     addressType ?? (label.toLowerCase().includes("pickup") ? "pickup" : "dropoff");
 
   const renderIcon = () => {
     if (hideIcon) return null;
-
     if (iconVariant === "marker") {
       if (resolvedType === "pickup") {
-        return (
-          <span
-            className="address-marker address-marker--pickup"
-            aria-hidden
-          />
-        );
+        return <span className="address-marker address-marker--pickup" aria-hidden />;
       }
-      return (
-        <FaMapMarkerAlt
-          className="address-marker address-marker--dropoff"
-          aria-hidden
-        />
-      );
+      return <FaMapMarkerAlt className="address-marker address-marker--dropoff" aria-hidden />;
     }
-
     const iconName =
       resolvedType === "pickup"
         ? "up-arrow-icon"
         : becomeMoverFlow
           ? "location"
           : "down-arrow-icon";
-
-    return (
-      <img
-        src={`/icon/${iconName}.svg`}
-        alt=""
-        className="pickupIcon"
-      />
-    );
+    return <img src={`/icon/${iconName}.svg`} alt="" className="pickupIcon" />;
   };
 
   return (
@@ -108,11 +70,11 @@ const AddressInput = ({
       className={`editablePickupField${iconVariant === "marker" ? " editablePickupField--marker" : ""}`}
     >
       <Input
-        inputRef={ref as any}
+        inputRef={inputRef as any}
         isFloating={isFloting || false}
         label={label}
-        onFocus={onFocus}
-        onBlur={onBlur}
+        onFocus={() => handleFocus?.()}
+        onBlur={(e: any) => handleBlur?.(e)}
         placeholder={placeholder ?? (becomeMoverFlow ? "Address" : " ")}
         autoComplete="new-password"
       />
@@ -121,6 +83,54 @@ const AddressInput = ({
     </div>
   );
 };
+
+/* Google Places-powered variant (used when an API key is configured). */
+const GoogleAddressInput = (props: AddressInputProps) => {
+  const { value, onSelectAddress } = props;
+  const { ref }: any = usePlacesWidget({
+    apiKey: googleApiKey,
+    inputAutocompleteValue: "new-password",
+    onPlaceSelected: (place: any) => onSelectAddress(extractAddress(place)),
+    options: {
+      types: ["geocode"],
+      componentRestrictions: { country: "au" },
+      fields: ["address_components", "geometry.location", "place_id", "formatted_address"],
+    },
+  });
+
+  const lastSyncedValue = useRef<string | undefined>(undefined);
+  useEffect(() => {
+    if (!ref?.current) return;
+    if (value === lastSyncedValue.current) return;
+    lastSyncedValue.current = value;
+    ref.current.value = value || "";
+  }, [value, ref]);
+
+  return <AddressField inputRef={ref} props={props} />;
+};
+
+/* Plain fallback (no autocomplete) — renders when no Google key is set so the
+   page still works instead of crashing. Add NEXT_PUBLIC_GOOGLE_MAPS_API_KEY to
+   enable address autocomplete. */
+const PlainAddressInput = (props: AddressInputProps) => {
+  const { value } = props;
+  const ref = useRef<HTMLInputElement | null>(null);
+  const lastSyncedValue = useRef<string | undefined>(undefined);
+  useEffect(() => {
+    if (!ref?.current) return;
+    if (value === lastSyncedValue.current) return;
+    lastSyncedValue.current = value;
+    ref.current.value = value || "";
+  }, [value]);
+
+  return <AddressField inputRef={ref} props={props} />;
+};
+
+const AddressInput = (props: AddressInputProps) => {
+  return googleApiKey ? <GoogleAddressInput {...props} /> : <PlainAddressInput {...props} />;
+};
+
+export default AddressInput;
 
 function extractAddress(place: any) {
   const { lat: letTemp, lng: latTemp } = place?.geometry?.location;
@@ -134,12 +144,10 @@ function extractAddress(place: any) {
   }
   const tempAddress = { ...addressData, latitude: lat, longitude: lng };
 
-  // Remove country name from the end of the address
   let formattedAddress = place.formatted_address;
   if (addressData.country) {
-    // Remove ", Country" from the end of the address
     const countryPattern = new RegExp(`,\\s*${addressData.country}\\s*$`);
-    formattedAddress = formattedAddress.replace(countryPattern, '');
+    formattedAddress = formattedAddress.replace(countryPattern, "");
   }
 
   tempAddress.addressLine1 = formattedAddress;
@@ -149,4 +157,3 @@ function extractAddress(place: any) {
 
   return tempAddress;
 }
-export default AddressInput;
