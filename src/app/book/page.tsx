@@ -27,6 +27,9 @@ const chips = [
 export default function BookQuote() {
   const [selected, setSelected] = useState("trucks");
 
+  // Removalists has its own property-detail flow; trucks/vans/delivery share the standard flow.
+  const continueHref = selected === "removalists" ? "/book/removalist" : "/book/locations";
+
   return (
     <div className="fig-home bk-page">
       <div className="fh-screen">
@@ -85,7 +88,7 @@ export default function BookQuote() {
             </Link>
           </div>
 
-          <Link href="/book/locations" className="bk-continue">Continue <FaArrowRight /></Link>
+          <Link href={continueHref} className="bk-continue">Continue <FaArrowRight /></Link>
 
           {/* Same Day Movers banner */}
           <div className="bk-banner">
