@@ -74,6 +74,16 @@
       align-items: center;
       justify-content: center;
     }
+    .bk-chip-dot {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: #ffce00;
+      box-shadow: 0 0 0 2px #fff;
+    }
     .bk-chip-label { font-size: 12px; font-weight: 700; color: #111827; }
     .bk-chip-img {
       height: 34px;
@@ -118,8 +128,75 @@
       font-size: 18px;
       &.pin { color: #22c55e; }
     }
-    .bk-field-label { flex: 1; color: #8a8d93; font-size: 15px; }
-    .bk-field-trail { color: #111827; font-size: 14px; }
+    .bk-field-label { flex: 1; color: #8a8d93; font-size: 15px; text-align: left; }
+    .bk-field-label.filled { color: #111827; font-weight: 600; }
+    .bk-field-trail { color: #111827; font-size: 14px; flex-shrink: 0; }
+  }
+
+  /* Button-style field (opens a modal) */
+  .bk-field--btn {
+    width: 100%;
+    cursor: pointer;
+    font: inherit;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  /* Next-move + Rooms two-column row */
+  .bk-field-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    &.with-rooms { grid-template-columns: 1.7fr 1fr; }
+    .bk-field--rooms { min-width: 0; padding-left: 12px; padding-right: 12px; }
+    .bk-field--rooms .bk-field-ic { color: #f5a623; }
+  }
+  .bk-field-row + .bk-field { margin-top: 12px; }
+
+  /* Assembly checkbox */
+  .bk-assembly {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    width: 100%;
+    margin-top: 16px;
+    padding: 0;
+    background: none;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+
+    .bk-assembly-box {
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
+      margin-top: 1px;
+      border-radius: 6px;
+      border: 2px solid #cfd2d8;
+      background: #fff;
+      color: #111;
+      font-size: 11px;
+    }
+    &.on .bk-assembly-box { border-color: #ffce00; background: #ffce00; }
+
+    .bk-assembly-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      strong {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 13.5px;
+        font-weight: 700;
+        color: #111827;
+        .bk-assembly-ic { color: #6b7280; font-size: 12px; }
+      }
+      small { font-size: 11.5px; color: #9aa0a6; line-height: 1.4; }
+    }
   }
 
   /* Continue button */
@@ -186,3 +263,157 @@
     .bk-body { max-width: 620px; }
   }
 }
+
+/* ============================================================
+   mv3 quote screen: dark nav with trust strip + category modal
+   ============================================================ */
+.fig-home.bk-page {
+  /* extra bottom clearance for taller nav (trust strip + icons) */
+  .bk-body { padding-bottom: 150px; }
+
+  /* Banner: match mv3 (no extra paragraph, tighter) */
+  .bk-banner { margin-top: 18px; align-items: flex-end; }
+  .bk-banner .bk-banner-text h3 { font-size: 24px; }
+
+  /* Dark bottom nav: trust strip on top, icon row below */
+  .bk-bottomnav {
+    height: auto;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    padding: 0 0 env(safe-area-inset-bottom, 0px);
+    overflow: visible;
+  }
+  .bk-trust-strip {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 6px;
+    padding: 8px 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    span {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 10.5px;
+      font-weight: 500;
+      color: #e7e8ea;
+      white-space: nowrap;
+      svg { font-size: 11px; }
+      &:nth-child(1) svg { color: #34d399; }
+      &:nth-child(2) svg { color: #ffce00; }
+      &:nth-child(3) svg { color: #60a5fa; }
+    }
+  }
+  .bk-nav-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 64px;
+  }
+  /* keep the raised + button popping above the row */
+  .bk-nav-row .fh-nav-book { margin-top: -22px; }
+  .bk-nav-row .fh-nav-item span { font-size: 9.5px; }
+
+  /* Category / rooms bottom sheet */
+  .bk-sheet-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    background: rgba(17, 24, 39, 0.55);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    animation: bkFade 0.18s ease;
+  }
+  .bk-sheet {
+    position: relative;
+    width: 100%;
+    max-width: 440px;
+    background: #fff;
+    border-radius: 22px 22px 0 0;
+    padding: 26px 18px calc(26px + env(safe-area-inset-bottom, 0px));
+    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.25);
+    animation: bkSlide 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .bk-sheet-close {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border: none;
+    border-radius: 50%;
+    background: #f4f5f7;
+    color: #111827;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  .bk-sheet-title {
+    margin: 8px 0 4px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 800;
+    color: #2563eb;
+  }
+  .bk-sheet-sub {
+    margin: 0 0 18px;
+    text-align: center;
+    font-size: 13px;
+    color: #6b7280;
+  }
+  .bk-sheet-options { display: flex; flex-direction: column; gap: 12px; }
+  .bk-sheet-opt {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    padding: 15px 15px;
+    background: #fff;
+    border: 1.5px solid #e2e4e8;
+    border-radius: 14px;
+    text-align: left;
+    cursor: pointer;
+    transition: border-color 0.15s ease, background 0.15s ease;
+
+    &.selected { border-color: #ffce00; background: #fffdf0; }
+
+    .bk-sheet-opt-ic {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: #f4f5f7;
+      color: #111827;
+      font-size: 18px;
+    }
+    .bk-sheet-opt-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      strong { font-size: 15px; color: #111827; }
+      small { font-size: 12px; color: #6b7280; }
+    }
+  }
+  .bk-sheet-chips { display: flex; flex-wrap: wrap; gap: 10px; }
+  .bk-sheet-chip {
+    padding: 11px 18px;
+    background: #fff;
+    border: 1.5px solid #e2e4e8;
+    border-radius: 24px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #374151;
+    cursor: pointer;
+    &.on { border-color: #ffce00; background: #fffdf0; color: #111827; }
+  }
+}
+
+@keyframes bkFade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes bkSlide { from { transform: translateY(100%); } to { transform: translateY(0); } }

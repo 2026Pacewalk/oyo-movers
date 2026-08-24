@@ -14,21 +14,42 @@ import {
   FaLocationArrow,
   FaChevronDown,
   FaArrowRight,
+  FaHome,
+  FaBuilding,
+  FaBoxOpen,
+  FaCheck,
+  FaTimes,
+  FaBed,
+  FaTools,
 } from "react-icons/fa";
 import { FiShield, FiMapPin, FiCalendar, FiTruck, FiFileText } from "react-icons/fi";
 
 const chips = [
   { key: "trucks", label: "Trucks", movers: "1-3 Movers", img: "/figma/home/truck.png" },
   { key: "vans", label: "Vans", movers: "1-2 Movers", img: "/figma/home/van.png" },
-  { key: "removalists", label: "Removalists", movers: "2-3 Movers", img: "/figma/home/removalists-sofa.png" },
-  { key: "delivery", label: "Delivery", movers: "1-2 Movers", img: "/figma/home/helpers.png" },
+  { key: "removalists", label: "Removalists", movers: "1-3 Movers", img: "/figma/home/helpers.png" },
+  { key: "delivery", label: "Delivery", movers: "1-2 Movers", img: "/figma/home/removalists-sofa.png" },
 ];
 
-export default function BookQuote() {
-  const [selected, setSelected] = useState("trucks");
+const moveTypes = [
+  { key: "house", label: "House or Apartment", sub: "Whole House, 1 BR, 2BR or Studio", icon: <FaHome /> },
+  { key: "office", label: "Office Move", sub: "Small or Commercial Space", icon: <FaBuilding /> },
+  { key: "fewitems", label: "Just Few Items", sub: "Small Move / Bulky Items", icon: <FaBoxOpen /> },
+  { key: "delivery", label: "Store Delivery", sub: "Storage Moves, Marketplace or Store Delivery", icon: <FaTruck /> },
+];
 
-  // Removalists has its own property-detail flow; trucks/vans/delivery share the standard flow.
-  const continueHref = selected === "removalists" ? "/book/removalist" : "/book/locations";
+const roomOptions = ["Studio", "1 BR", "2 BR", "3 BR", "4 BR+"];
+
+export default function BookQuote() {
+  const [selected, setSelected] = useState("removalists");
+  const [moveType, setMoveType] = useState<string | null>(null);
+  const [rooms, setRooms] = useState("1 BR");
+  const [assembly, setAssembly] = useState(true);
+  const [modal, setModal] = useState<null | "move" | "rooms">(null);
+
+  const activeMove = moveTypes.find((m) => m.key === moveType);
+  const showMoveFields = selected === "removalists";
+  const showRooms = showMoveFields && (moveType === "house" || moveType === "office");
 
   return (
     <div className="fig-home bk-page">
@@ -57,7 +78,7 @@ export default function BookQuote() {
                 className={`bk-chip ${selected === c.key ? "selected" : ""}`}
                 onClick={() => setSelected(c.key)}
               >
-                {selected === c.key && <span className="bk-chip-check">✓</span>}
+                {selected === c.key && <span className="bk-chip-dot" />}
                 <span className="bk-chip-label">{c.label}</span>
                 <span className="bk-chip-img"><img src={c.img} alt={c.label} /></span>
                 <span className="bk-chip-movers"><FaRegUser /> {c.movers}</span>
@@ -67,6 +88,25 @@ export default function BookQuote() {
 
           {/* Fields */}
           <div className="bk-fields">
+            {showMoveFields && (
+              <div className={`bk-field-row ${showRooms ? "with-rooms" : ""}`}>
+                <button type="button" className="bk-field bk-field--btn" onClick={() => setModal("move")}>
+                  <span className="bk-field-ic">{activeMove ? activeMove.icon : <FaHome />}</span>
+                  <span className={`bk-field-label ${activeMove ? "filled" : ""}`}>
+                    {activeMove ? activeMove.label : "What's Your Next Move?"}
+                  </span>
+                  <FaChevronDown className="bk-field-trail" />
+                </button>
+                {showRooms && (
+                  <button type="button" className="bk-field bk-field--btn bk-field--rooms" onClick={() => setModal("rooms")}>
+                    <span className="bk-field-ic"><FaBed /></span>
+                    <span className="bk-field-label filled">{rooms}</span>
+                    <FaChevronDown className="bk-field-trail" />
+                  </button>
+                )}
+              </div>
+            )}
+
             <Link href="/book/locations" className="bk-field">
               <span className="bk-field-ic pin"><FiMapPin /></span>
               <span className="bk-field-label">Enter Locations</span>
@@ -88,7 +128,22 @@ export default function BookQuote() {
             </Link>
           </div>
 
-          <Link href={continueHref} className="bk-continue">Continue <FaArrowRight /></Link>
+          {/* Assembly checkbox */}
+          {showMoveFields && (
+            <button
+              type="button"
+              className={`bk-assembly ${assembly ? "on" : ""}`}
+              onClick={() => setAssembly((a) => !a)}
+            >
+              <span className="bk-assembly-box">{assembly && <FaCheck />}</span>
+              <span className="bk-assembly-text">
+                <strong><FaTools className="bk-assembly-ic" /> Need furniture assembly or disassembly?</strong>
+                <small>No additional fees, just adds to moving time. Change anytime.</small>
+              </span>
+            </button>
+          )}
+
+          <Link href="/book/locations" className="bk-continue">Continue <FaArrowRight /></Link>
 
           {/* Same Day Movers banner */}
           <div className="bk-banner">
@@ -96,32 +151,76 @@ export default function BookQuote() {
               <span className="bk-banner-city">Melbourne | Geelong</span>
               <h3>Same Day Movers</h3>
               <span className="bk-banner-tag">Australia&apos;s Tech Enabled Platform</span>
-              <p>Quick, Affordable movers at your doorstep</p>
             </div>
-            <img className="bk-banner-photo" src="/images/men.png" alt="OYO mover" />
-          </div>
-
-          {/* Trust badges */}
-          <div className="fh-trust">
-            <span className="fh-trust-item"><FiShield className="fh-trust-ic no" /> No Hidden Fee</span>
-            <span className="fh-trust-item"><FaStar className="fh-trust-ic star" /> 5.0 Rating</span>
-            <span className="fh-trust-item"><FaRegClock className="fh-trust-ic clock" /> Booking in Mins</span>
-          </div>
-
-          <div className="fh-hiw">
-            <h2>HOW IT WORKS</h2>
-            <span className="fh-hiw-underline" />
+            <img className="bk-banner-photo" src="/images/2men.png" alt="OYO movers" />
           </div>
         </main>
 
-        {/* Dark bottom nav */}
-        <nav className="fh-bottomnav" aria-label="Primary">
-          <Link href="/become-mover" className="fh-nav-item"><FaTruck /><span>Movers</span></Link>
-          <Link href="/#services-section" className="fh-nav-item"><FaThLarge /><span>Services</span></Link>
-          <Link href="/booking" className="fh-nav-book" aria-label="Book"><img src="/figma/home/nav-plus.svg" alt="" /></Link>
-          <Link href="/prices" className="fh-nav-item"><FaTag /><span>Prices</span></Link>
-          <Link href="/login" className="fh-nav-item"><FaRegUser /><span>Account</span></Link>
+        {/* Dark bottom nav with trust strip */}
+        <nav className="fh-bottomnav bk-bottomnav" aria-label="Primary">
+          <div className="bk-trust-strip">
+            <span><FiShield /> No Hidden Fee</span>
+            <span><FaStar /> 5.0 Rating</span>
+            <span><FaRegClock /> Booking in Mins</span>
+          </div>
+          <div className="bk-nav-row">
+            <Link href="/become-mover" className="fh-nav-item"><FaTruck /><span>Become Mover</span></Link>
+            <Link href="/#services-section" className="fh-nav-item"><FaThLarge /><span>Services</span></Link>
+            <Link href="/booking" className="fh-nav-book" aria-label="Book"><img src="/figma/home/nav-plus.svg" alt="" /></Link>
+            <Link href="/prices" className="fh-nav-item"><FaTag /><span>Prices</span></Link>
+            <Link href="/login" className="fh-nav-item"><FaRegUser /><span>Account</span></Link>
+          </div>
         </nav>
+
+        {/* Category modal (mv3.2–mv6.1) */}
+        {modal === "move" && (
+          <div className="bk-sheet-overlay" onClick={() => setModal(null)}>
+            <div className="bk-sheet" onClick={(e) => e.stopPropagation()}>
+              <button type="button" className="bk-sheet-close" aria-label="Close" onClick={() => setModal(null)}><FaTimes /></button>
+              <h2 className="bk-sheet-title">What&apos;s your next move?</h2>
+              <p className="bk-sheet-sub">Select a Category and we&apos;ll get you moving</p>
+              <div className="bk-sheet-options">
+                {moveTypes.map((m) => (
+                  <button
+                    key={m.key}
+                    type="button"
+                    className={`bk-sheet-opt ${moveType === m.key ? "selected" : ""}`}
+                    onClick={() => { setMoveType(m.key); setModal(null); }}
+                  >
+                    <span className="bk-sheet-opt-ic">{m.icon}</span>
+                    <span className="bk-sheet-opt-text">
+                      <strong>{m.label}</strong>
+                      <small>{m.sub}</small>
+                    </span>
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Rooms modal */}
+        {modal === "rooms" && (
+          <div className="bk-sheet-overlay" onClick={() => setModal(null)}>
+            <div className="bk-sheet" onClick={(e) => e.stopPropagation()}>
+              <button type="button" className="bk-sheet-close" aria-label="Close" onClick={() => setModal(null)}><FaTimes /></button>
+              <h2 className="bk-sheet-title">How many rooms?</h2>
+              <p className="bk-sheet-sub">Pick the size that best matches your place</p>
+              <div className="bk-sheet-chips">
+                {roomOptions.map((r) => (
+                  <button
+                    key={r}
+                    type="button"
+                    className={`bk-sheet-chip ${rooms === r ? "on" : ""}`}
+                    onClick={() => { setRooms(r); setModal(null); }}
+                  >
+                    {r}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
