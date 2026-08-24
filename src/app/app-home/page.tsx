@@ -3,110 +3,122 @@
 import "./appHome.scss";
 import Link from "next/link";
 import React from "react";
-import { FaBell, FaChevronRight, FaChevronDown, FaPlus } from "react-icons/fa";
-import { HiOutlineHome } from "react-icons/hi2";
-import { IoReceiptOutline, IoSwapHorizontal, IoPersonOutline } from "react-icons/io5";
 
-/* NOTE: name & address are static placeholders — no backend is wired here.
-   This screen is a UI shell that mirrors the native app design. */
-const USER = { name: "Sam Smith", avatar: "/images/avtar.jpg" };
-const PICKUP = "101 Collins St, Melbourne, VIC 3000";
+/* Mobile Homepage — built to match Figma "Homepage" (node 2003:1869).
+   Static placeholder text (address) — no backend wired here. */
 
 const categories = [
-  { label: "Trucks", img: "/images/large-truckn.png", href: "/prices" },
-  { label: "Vans", img: "/images/1vann.png", href: "/prices" },
-  { label: "Removalists", img: "/images/2men.png", href: "/house-moving" },
-  { label: "Delivery", img: "/images/1man.png", href: "/store-delivery" },
+  { label: "Trucks", img: "/figma/home/truck.png", href: "/prices", cls: "cat-truck" },
+  { label: "Vans", img: "/figma/home/van.png", href: "/prices", cls: "cat-van" },
+  { label: "Removalists", img: "/figma/home/removalists-sofa.png", sub: "/figma/home/removalists-washer.png", href: "/house-moving", cls: "cat-removalists" },
+  { label: "Helpers Only", img: "/figma/home/helpers.png", href: "/labour-only", cls: "cat-helpers" },
 ];
 
-const AppHome = () => {
+export default function AppHome() {
   return (
-    <div className="app-home">
-      <div className="app-home-screen">
-        {/* Header */}
-        <header className="ah-header">
-          <div className="ah-user">
-            <span className="ah-avatar">
-              <img src={USER.avatar} alt={USER.name} />
-            </span>
-            <div className="ah-welcome">
-              <span>Welcome</span>
-              <strong>{USER.name}</strong>
-            </div>
-          </div>
-          <Link href="/notification" className="ah-bell" aria-label="Notifications">
-            <FaBell />
+    <div className="fig-home">
+      <div className="fh-screen">
+        {/* Desktop web navigation (shown on large screens) */}
+        <header className="fh-webnav">
+          <Link href="/" className="fh-webnav-logo" aria-label="OYO Movers home">
+            <img src="/figma/home/logo.png" alt="OYO Movers" />
           </Link>
+          <nav className="fh-webnav-links">
+            <Link href="/app-home" className="active">Home</Link>
+            <Link href="/booking-list">My Orders</Link>
+            <Link href="/contact-us">Messages</Link>
+            <Link href="/profile">Profile</Link>
+          </nav>
+          <div className="fh-webnav-actions">
+            <a href="tel:1300013131" className="fh-webnav-phone">
+              <img src="/figma/home/phone.svg" alt="" /> 1300 01 31 31
+            </a>
+            <Link href="/booking" className="fh-webnav-book">Book Now</Link>
+          </div>
         </header>
 
-        {/* Scrollable body */}
-        <main className="ah-body">
+        {/* Top bar (mobile / tablet) */}
+        <header className="fh-topbar">
+          <Link href="/" className="fh-logo" aria-label="OYO Movers home">
+            <img src="/figma/home/logo.png" alt="OYO Movers" />
+          </Link>
+          <div className="fh-top-actions">
+            <a href="tel:1300013131" className="fh-phone" aria-label="Call OYO Movers">
+              <img src="/figma/home/phone.svg" alt="" />
+            </a>
+            <Link href="/booking" className="fh-book-pill">Book</Link>
+            <Link href="/login" className="fh-profile" aria-label="Account">
+              <span />
+            </Link>
+            <button className="fh-menu" aria-label="Menu" type="button">
+              <img src="/figma/home/menu.svg" alt="" />
+            </button>
+          </div>
+        </header>
+
+        {/* Body with map background */}
+        <main className="fh-body">
+          <span className="fh-map" aria-hidden="true" />
+
           {/* Pickup card */}
-          <button type="button" className="ah-pickup">
-            <span className="ah-pin">
-              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
-                <path
-                  fill="#22a45d"
-                  d="M12 2C7.9 2 4.5 5.4 4.5 9.5c0 5.3 6.6 11.6 6.9 11.9.3.3.9.3 1.2 0 .3-.3 6.9-6.6 6.9-11.9C19.5 5.4 16.1 2 12 2zm0 10.2a2.7 2.7 0 110-5.4 2.7 2.7 0 010 5.4z"
-                />
-              </svg>
+          <button type="button" className="fh-pickup">
+            <span className="fh-pin">
+              <img src="/figma/home/pin.svg" alt="" />
             </span>
-            <span className="ah-pickup-text">
-              <span className="ah-pickup-label">Pickup from</span>
-              <span className="ah-pickup-addr">{PICKUP}</span>
+            <span className="fh-pickup-text">
+              <span className="fh-pickup-label">Pickup from</span>
+              <span className="fh-pickup-addr">Current Address Show here</span>
             </span>
-            <FaChevronDown className="ah-pickup-caret" />
+            <img className="fh-pickup-caret" src="/figma/home/chevron-down.svg" alt="" />
           </button>
 
           {/* Category grid */}
-          <div className="ah-grid">
+          <div className="fh-grid">
             {categories.map((c) => (
-              <Link href={c.href} key={c.label} className="ah-cat">
-                <div className="ah-cat-top">
-                  <span className="ah-cat-label">{c.label}</span>
-                  <FaChevronRight className="ah-cat-caret" />
+              <Link href={c.href} key={c.label} className={`fh-cat ${c.cls}`}>
+                <div className="fh-cat-top">
+                  <span className="fh-cat-label">{c.label}</span>
+                  <img className="fh-cat-caret" src="/figma/home/chevron-right.svg" alt="" />
                 </div>
-                <div className="ah-cat-img">
-                  <img src={c.img} alt={c.label} />
+                <div className="fh-cat-img">
+                  {c.sub && <img className="fh-cat-sub" src={c.sub} alt="" />}
+                  <img className="fh-cat-main" src={c.img} alt={c.label} />
                 </div>
               </Link>
             ))}
           </div>
 
           {/* Promo banner */}
-          <Link href="/prices" className="ah-banner">
-            <span className="ah-banner-sm">On-Demand Movers</span>
-            <span className="ah-banner-lg">Pay As You Go!</span>
+          <Link href="/prices" className="fh-banner">
+            <span className="fh-banner-sm">On-Demand Movers</span>
+            <span className="fh-banner-lg">Pay as you go!</span>
           </Link>
         </main>
 
-        {/* Bottom nav */}
-        <nav className="ah-nav">
-          <Link href="/app-home" className="ah-nav-item active">
-            <HiOutlineHome />
+        {/* Bottom navigation */}
+        <nav className="fh-bottomnav" aria-label="Primary">
+          <Link href="/app-home" className="fh-nav-item active">
+            <img src="/figma/home/nav-home.svg" alt="" />
             <span>Home</span>
           </Link>
-          <Link href="/booking-list" className="ah-nav-item">
-            <IoReceiptOutline />
+          <Link href="/booking-list" className="fh-nav-item">
+            <img src="/figma/home/nav-orders.svg" alt="" />
             <span>My Orders</span>
           </Link>
-
-          <Link href="/prices" className="ah-fab" aria-label="New move">
-            <FaPlus />
+          <Link href="/booking" className="fh-nav-book" aria-label="Book a move">
+            <img src="/figma/home/nav-plus.svg" alt="" />
+            <span>Book</span>
           </Link>
-
-          <Link href="/booking-list" className="ah-nav-item">
-            <IoSwapHorizontal />
-            <span>Transaction</span>
+          <Link href="/contact-us" className="fh-nav-item">
+            <img src="/figma/home/nav-messages.svg" alt="" />
+            <span>Messages</span>
           </Link>
-          <Link href="/profile" className="ah-nav-item">
-            <IoPersonOutline />
+          <Link href="/profile" className="fh-nav-item">
+            <img src="/figma/home/nav-profile.svg" alt="" />
             <span>Profile</span>
           </Link>
         </nav>
       </div>
     </div>
   );
-};
-
-export default AppHome;
+}

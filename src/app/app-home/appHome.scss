@@ -1,311 +1,407 @@
 /* ============================================================
-   OYO Movers — Native app-style Home screen
-   Mobile-first; on desktop it centers in a phone-width frame.
-   All rules scoped under .app-home.
+   Mobile Homepage — matches Figma "Homepage" (2003:1869)
+   Mobile-exact; centers in an app column on larger screens.
    ============================================================ */
+$fh-dark: #111827;
+$fh-muted: #64748b;
+$fh-green: #22c55e;
+$fh-yellow: #ffce00;
+$fh-border: #a0a0a0;
+$fh-nav-h: 68px;
 
-$ah-yellow: #ffe147;
-$ah-yellow-2: #ffd000;
-$ah-dark: #18181b;
-$ah-page: #f2f3f5;
-$ah-muted: #8a8d93;
-$ah-nav-h: 74px;
-
-.app-home {
+.fig-home {
   min-height: 100vh;
-  background: #dfe1e5;
+  background: #e8e9ee;
   display: flex;
   justify-content: center;
+  font-family: var(--font-montserrat), "Montserrat", sans-serif;
 
-  * {
-    box-sizing: border-box;
-  }
+  * { box-sizing: border-box; }
 
-  .app-home-screen {
+  .fh-screen {
     position: relative;
     width: 100%;
     max-width: 440px;
     min-height: 100vh;
-    background: $ah-page;
+    min-height: 100dvh;
+    background: #fff;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 0 40px rgba(0, 0, 0, 0.12);
-    overflow: hidden;
+    overflow-x: hidden;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.12);
   }
 
-  /* ---------- Header ---------- */
-  .ah-header {
-    background: linear-gradient(135deg, $ah-yellow 0%, $ah-yellow-2 100%);
-    padding: 20px 20px 46px;
-    border-radius: 0 0 28px 28px;
+  /* ---------- Top bar ---------- */
+  .fh-topbar {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    height: 64px;
+    flex-shrink: 0;
+    background: #fff;
+    box-shadow: 0 4px 7.5px -2px rgba(0, 0, 0, 0.25);
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0 18px;
   }
-
-  .ah-user {
+  .fh-logo img { height: 26px; width: auto; display: block; }
+  .fh-top-actions {
     display: flex;
     align-items: center;
     gap: 12px;
   }
-
-  .ah-avatar {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 2px solid rgba(255, 255, 255, 0.8);
-    flex-shrink: 0;
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+  .fh-phone img { width: 20px; height: 20px; display: block; }
+  .fh-book-pill {
+    display: inline-flex;
+    align-items: center;
+    background: $fh-yellow;
+    border: 0.5px solid rgba(0, 0, 0, 0.21);
+    color: #000;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 15px;
+    border-radius: 27px;
+    text-decoration: none;
   }
-
-  .ah-welcome {
-    display: flex;
-    flex-direction: column;
-    line-height: 1.2;
-
-    span {
-      font-size: 13px;
-      color: #6b5e12;
-      font-weight: 500;
-    }
-    strong {
-      font-size: 19px;
-      color: $ah-dark;
-      font-weight: 800;
-    }
-  }
-
-  .ah-bell {
-    width: 44px;
-    height: 44px;
+  .fh-profile {
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
-    background: #fff;
+    border: 1.5px solid #cfd2d8;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: $ah-dark;
-    font-size: 18px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
-    transition: transform 0.2s ease;
-
-    &:hover {
-      transform: scale(1.05);
+    span {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: transparent;
+      border: 1.6px solid #7b7f88;
+      position: relative;
     }
+  }
+  .fh-menu {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    img { width: 25px; height: 25px; display: block; }
   }
 
   /* ---------- Body ---------- */
-  .ah-body {
+  .fh-body {
+    position: relative;
     flex: 1;
-    padding: 0 16px calc(#{$ah-nav-h} + 24px);
-    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 16px 14px calc(#{$fh-nav-h} + 26px);
   }
+  .fh-map {
+    position: absolute;
+    inset: 0;
+    background-image: url("/figma/home/map.png");
+    background-size: cover;
+    background-position: center top;
+    opacity: 0.24;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .fh-body > *:not(.fh-map) { position: relative; z-index: 1; }
 
-  /* Pickup card (overlaps header) */
-  .ah-pickup {
-    width: 100%;
-    margin-top: -28px;
-    background: #fff;
-    border: 1px solid #eef0f2;
-    border-radius: 16px;
-    padding: 14px 14px;
+  /* ---------- Pickup card ---------- */
+  .fh-pickup {
     display: flex;
     align-items: center;
     gap: 12px;
+    width: 100%;
+    background: #fff;
+    border: 1.5px solid $fh-green;
+    border-radius: 16px;
+    padding: 12px 14px;
     text-align: left;
     cursor: pointer;
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
   }
-
-  .ah-pin {
-    width: 38px;
-    height: 38px;
-    border-radius: 10px;
-    background: rgba(34, 164, 93, 0.1);
+  .fh-pin {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
+    img { width: 40px; height: 40px; }
   }
-
-  .ah-pickup-text {
+  .fh-pickup-text {
     display: flex;
     flex-direction: column;
     flex: 1;
     min-width: 0;
   }
-  .ah-pickup-label {
-    font-size: 12px;
-    color: $ah-muted;
-    font-weight: 500;
-  }
-  .ah-pickup-addr {
-    font-size: 14.5px;
-    color: $ah-dark;
-    font-weight: 700;
+  .fh-pickup-label { font-size: 14px; font-weight: 600; color: $fh-dark; line-height: 20px; }
+  .fh-pickup-addr {
+    font-size: 14px;
+    color: $fh-muted;
+    line-height: 20px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
-  .ah-pickup-caret {
-    color: $ah-muted;
-    font-size: 14px;
-    flex-shrink: 0;
-  }
+  .fh-pickup-caret { width: 16px; height: 16px; flex-shrink: 0; }
 
-  /* Category grid */
-  .ah-grid {
+  /* ---------- Category grid ---------- */
+  .fh-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 14px;
+    gap: 13px;
     margin-top: 18px;
   }
-
-  .ah-cat {
-    background: #fff;
-    border: 1px solid #eef0f2;
-    border-radius: 18px;
-    padding: 14px 14px 8px;
+  .fh-cat {
     display: flex;
     flex-direction: column;
-    min-height: 128px;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+    min-height: 148px;
+    background: #fff;
+    border: 1px solid $fh-border;
+    border-radius: 16px;
+    padding: 12px 12px 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    text-decoration: none;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 
-    &:hover,
-    &:active {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
-    }
+    &:active { transform: scale(0.98); }
+    &:hover { box-shadow: 0 8px 26px rgba(0, 0, 0, 0.12); }
   }
-
-  .ah-cat-top {
+  .fh-cat-top {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
-  .ah-cat-label {
-    font-size: 15px;
-    font-weight: 700;
-    color: $ah-dark;
-  }
-  .ah-cat-caret {
-    color: $ah-dark;
-    font-size: 12px;
-  }
-  .ah-cat-img {
+  .fh-cat-label { font-size: 14px; font-weight: 600; color: $fh-dark; }
+  .fh-cat-caret { width: 16px; height: 16px; }
+  .fh-cat-img {
+    position: relative;
     flex: 1;
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    padding-top: 6px;
-
-    img {
+    padding-top: 4px;
+    .fh-cat-main {
       max-width: 100%;
-      max-height: 74px;
+      max-height: 92px;
       width: auto;
       height: auto;
       object-fit: contain;
     }
+    .fh-cat-sub {
+      position: absolute;
+      left: 2px;
+      bottom: 0;
+      width: 34px;
+      height: auto;
+      object-fit: contain;
+    }
   }
+  .cat-removalists .fh-cat-main { max-height: 84px; }
+  .cat-helpers .fh-cat-main { max-height: 90px; }
 
-  /* Promo banner */
-  .ah-banner {
+  /* ---------- Promo banner ---------- */
+  .fh-banner {
     display: flex;
     flex-direction: column;
-    margin-top: 16px;
-    background: linear-gradient(135deg, #fff2b0 0%, $ah-yellow 100%);
-    border-radius: 18px;
-    padding: 18px 20px;
-    box-shadow: 0 8px 20px rgba(255, 208, 0, 0.25);
-
-    .ah-banner-sm {
-      font-size: 14px;
-      font-weight: 600;
-      color: #6b5e12;
-    }
-    .ah-banner-lg {
-      font-size: 22px;
-      font-weight: 800;
-      color: $ah-dark;
-    }
-    &:hover {
-      filter: brightness(1.02);
-    }
+    margin-top: 18px;
+    background: linear-gradient(90deg, #fbec21 0%, #fffbbe 100%);
+    border-radius: 16px;
+    padding: 16px 20px;
+    text-decoration: none;
+    box-shadow: 0 8px 30px rgba(124, 58, 237, 0.18);
+    .fh-banner-sm { font-size: 22px; font-weight: 700; color: #696969; line-height: 30px; }
+    .fh-banner-lg { font-size: 22px; font-weight: 800; color: #1a1a1a; line-height: 30px; }
   }
 
   /* ---------- Bottom nav ---------- */
-  .ah-nav {
+  .fh-bottomnav {
     position: fixed;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
     max-width: 440px;
-    height: $ah-nav-h;
+    height: $fh-nav-h;
+    height: calc(#{$fh-nav-h} + env(safe-area-inset-bottom, 0px));
+    padding-bottom: env(safe-area-inset-bottom, 0px);
     background: #fff;
     border-top: 1px solid #eef0f2;
-    border-radius: 22px 22px 0 0;
-    box-shadow: 0 -6px 24px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 -4px 18px rgba(0, 0, 0, 0.08);
     display: flex;
     align-items: center;
     justify-content: space-around;
-    padding: 0 10px;
-    z-index: 50;
+    z-index: 40;
   }
-
-  .ah-nav-item {
+  .fh-nav-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 3px;
-    color: $ah-muted;
-    font-size: 11px;
-    font-weight: 500;
+    gap: 4px;
     flex: 1;
-    transition: color 0.2s ease;
+    text-decoration: none;
+    color: #403e3e;
+    font-size: 10px;
 
-    svg {
-      font-size: 21px;
-    }
+    img { width: 20px; height: 20px; opacity: 0.85; }
+    span { line-height: 1; }
 
     &.active {
-      color: $ah-dark;
-      font-weight: 700;
+      color: #1a73e8;
+      img { opacity: 1; }
+    }
+  }
+  .fh-nav-book {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    text-decoration: none;
+    color: #403e3e;
+    font-size: 10px;
+    margin-top: -26px;
 
-      svg {
-        color: #d9a400;
+    img {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: $fh-yellow;
+      padding: 16px;
+      border: 4px solid #fff;
+      box-shadow: 0 6px 16px rgba(255, 206, 0, 0.5);
+    }
+    span { line-height: 1; }
+  }
+}
+
+/* ============================================================
+   Desktop web navigation + responsive expansion
+   ============================================================ */
+.fig-home {
+  .fh-webnav { display: none; }
+
+  /* ---- Tablet: wider app column, larger cards ---- */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .fh-screen { max-width: 640px; }
+    .fh-grid { gap: 18px; margin-top: 22px; }
+    .fh-cat { min-height: 180px; }
+    .fh-cat-img .fh-cat-main { max-height: 120px; }
+    .fh-banner { padding: 22px 26px; }
+    .fh-banner .fh-banner-sm,
+    .fh-banner .fh-banner-lg { font-size: 26px; line-height: 34px; }
+  }
+
+  /* ---- Desktop: full web layout ---- */
+  @media (min-width: 1024px) {
+    background: #fff;
+
+    .fh-screen {
+      max-width: none;
+      width: 100%;
+      box-shadow: none;
+    }
+
+    .fh-topbar,
+    .fh-bottomnav { display: none; }
+
+    .fh-webnav {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      height: 74px;
+      padding: 0 40px;
+      background: #fff;
+      border-bottom: 1px solid #eef0f2;
+      box-shadow: 0 2px 14px rgba(0, 0, 0, 0.05);
+
+      .fh-webnav-logo img { height: 30px; width: auto; display: block; }
+
+      .fh-webnav-links {
+        display: flex;
+        gap: 34px;
+        a {
+          color: #444;
+          text-decoration: none;
+          font-size: 15px;
+          font-weight: 500;
+          transition: color 0.2s ease;
+          &:hover { color: #000; }
+          &.active { color: #000; font-weight: 700; }
+        }
+      }
+
+      .fh-webnav-actions {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+
+        .fh-webnav-phone {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          color: #18181b;
+          font-weight: 700;
+          font-size: 14.5px;
+          text-decoration: none;
+          img { width: 18px; height: 18px; }
+        }
+        .fh-webnav-book {
+          background: $fh-yellow;
+          color: #000;
+          font-weight: 700;
+          font-size: 15px;
+          padding: 10px 26px;
+          border-radius: 50px;
+          border: 1.5px solid #000;
+          text-decoration: none;
+          transition: transform 0.2s ease;
+          &:hover { transform: translateY(-1px); }
+        }
       }
     }
 
-    &:hover {
-      color: $ah-dark;
+    .fh-body {
+      max-width: 1160px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 40px 24px 60px;
     }
-  }
+    .fh-map { opacity: 0.1; }
 
-  .ah-fab {
-    flex-shrink: 0;
-    width: 58px;
-    height: 58px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, $ah-yellow 0%, $ah-yellow-2 100%);
-    color: $ah-dark;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 22px;
-    margin-top: -26px;
-    border: 4px solid #fff;
-    box-shadow: 0 8px 18px rgba(255, 208, 0, 0.45);
-    transition: transform 0.2s ease;
+    .fh-pickup {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 16px 20px;
+    }
 
-    &:hover {
-      transform: translateY(-2px) scale(1.03);
+    .fh-grid {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+      margin-top: 30px;
+    }
+    .fh-cat {
+      min-height: 210px;
+      padding: 16px 16px 12px;
+    }
+    .fh-cat-label { font-size: 16px; }
+    .fh-cat-img .fh-cat-main { max-height: 130px; }
+    .cat-removalists .fh-cat-img .fh-cat-main { max-height: 120px; }
+
+    .fh-banner {
+      margin-top: 30px;
+      padding: 30px 40px;
+      align-items: flex-start;
+      .fh-banner-sm { font-size: 28px; line-height: 38px; }
+      .fh-banner-lg { font-size: 28px; line-height: 38px; }
     }
   }
 }
