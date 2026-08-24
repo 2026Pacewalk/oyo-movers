@@ -35,15 +35,21 @@
     .bk-subhead-spacer { width: 38px; }
   }
 
-  /* Category chips */
+  /* Category chips (scrollable row — fits 4, 5th peeks) */
   .bk-chips {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
     gap: 8px;
     margin-top: 6px;
+    overflow-x: auto;
+    padding-bottom: 3px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar { display: none; }
   }
   .bk-chip {
     position: relative;
+    flex: 0 0 auto;
+    width: 80px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -84,7 +90,7 @@
       background: #ffce00;
       box-shadow: 0 0 0 2px #fff;
     }
-    .bk-chip-label { font-size: 12px; font-weight: 700; color: #111827; }
+    .bk-chip-label { font-size: 11.5px; font-weight: 700; color: #111827; white-space: nowrap; }
     .bk-chip-img {
       height: 34px;
       display: flex;
@@ -196,6 +202,11 @@
         .bk-assembly-ic { color: #6b7280; font-size: 12px; }
       }
       small { font-size: 11.5px; color: #9aa0a6; line-height: 1.4; }
+    }
+
+    &.bk-assembly--simple {
+      align-items: center;
+      .bk-assembly-text strong { font-size: 15px; }
     }
   }
 

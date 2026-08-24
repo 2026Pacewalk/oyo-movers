@@ -21,6 +21,8 @@ import {
   FaTimes,
   FaBed,
   FaTools,
+  FaDolly,
+  FaCouch,
 } from "react-icons/fa";
 import { FiShield, FiMapPin, FiCalendar, FiTruck, FiFileText } from "react-icons/fi";
 
@@ -29,6 +31,7 @@ const chips = [
   { key: "vans", label: "Vans", movers: "1-2 Movers", img: "/figma/home/van.png" },
   { key: "removalists", label: "Removalists", movers: "1-3 Movers", img: "/figma/home/helpers.png" },
   { key: "delivery", label: "Delivery", movers: "1-2 Movers", img: "/figma/home/removalists-sofa.png" },
+  { key: "helper", label: "Helper", movers: "1-2 Helpers", img: "/figma/home/helpers.png" },
 ];
 
 const moveTypes = [
@@ -38,18 +41,35 @@ const moveTypes = [
   { key: "delivery", label: "Store Delivery", sub: "Storage Moves, Marketplace or Store Delivery", icon: <FaTruck /> },
 ];
 
+const helpTypes = [
+  { key: "samebuilding", label: "Same Building Move", sub: "Move items within one building", icon: <FaBuilding /> },
+  { key: "loadunload", label: "Load / Unload a Truck", sub: "You have a truck, need muscle", icon: <FaDolly /> },
+  { key: "rearrange", label: "Rearrange Furniture", sub: "Shift heavy items around", icon: <FaCouch /> },
+  { key: "packing", label: "Packing Help", sub: "Box up and wrap your things", icon: <FaBoxOpen /> },
+];
+
 const roomOptions = ["Studio", "1 BR", "2 BR", "3 BR", "4 BR+"];
+const helperOptions = ["1 Helper", "2 Helpers", "3 Helpers", "4 Helpers"];
 
 export default function BookQuote() {
   const [selected, setSelected] = useState("removalists");
   const [moveType, setMoveType] = useState<string | null>(null);
   const [rooms, setRooms] = useState("1 BR");
+  const [helpType, setHelpType] = useState<string | null>(null);
+  const [helpers, setHelpers] = useState("1 Helper");
   const [assembly, setAssembly] = useState(true);
-  const [modal, setModal] = useState<null | "move" | "rooms">(null);
+  const [sameAddress, setSameAddress] = useState(true);
+  const [modal, setModal] = useState<null | "move" | "rooms" | "help" | "helpers">(null);
+
+  const isRemovalist = selected === "removalists";
+  const isHelper = selected === "helper";
+  const richFlow = isRemovalist || isHelper;
 
   const activeMove = moveTypes.find((m) => m.key === moveType);
-  const showMoveFields = selected === "removalists";
-  const showRooms = showMoveFields && (moveType === "house" || moveType === "office");
+  const activeHelp = helpTypes.find((h) => h.key === helpType);
+  const showRooms = isRemovalist && (moveType === "house" || moveType === "office");
+  const showHelpers = isHelper && !!helpType;
+  const showSecond = showRooms || showHelpers;
 
   return (
     <div className="fig-home bk-page">
@@ -88,19 +108,32 @@ export default function BookQuote() {
 
           {/* Fields */}
           <div className="bk-fields">
-            {showMoveFields && (
-              <div className={`bk-field-row ${showRooms ? "with-rooms" : ""}`}>
-                <button type="button" className="bk-field bk-field--btn" onClick={() => setModal("move")}>
-                  <span className="bk-field-ic">{activeMove ? activeMove.icon : <FaHome />}</span>
-                  <span className={`bk-field-label ${activeMove ? "filled" : ""}`}>
-                    {activeMove ? activeMove.label : "What's Your Next Move?"}
+            {richFlow && (
+              <div className={`bk-field-row ${showSecond ? "with-rooms" : ""}`}>
+                <button
+                  type="button"
+                  className="bk-field bk-field--btn"
+                  onClick={() => setModal(isHelper ? "help" : "move")}
+                >
+                  <span className="bk-field-ic">
+                    {isHelper ? (activeHelp ? activeHelp.icon : <FaHome />) : (activeMove ? activeMove.icon : <FaHome />)}
+                  </span>
+                  <span className={`bk-field-label ${(isHelper ? activeHelp : activeMove) ? "filled" : ""}`}>
+                    {isHelper
+                      ? (activeHelp ? activeHelp.label : "What Help do You Need?")
+                      : (activeMove ? activeMove.label : "What's Your Next Move?")}
                   </span>
                   <FaChevronDown className="bk-field-trail" />
                 </button>
-                {showRooms && (
-                  <button type="button" className="bk-field bk-field--btn bk-field--rooms" onClick={() => setModal("rooms")}>
-                    <span className="bk-field-ic"><FaBed /></span>
-                    <span className="bk-field-label filled">{rooms}</span>
+
+                {showSecond && (
+                  <button
+                    type="button"
+                    className="bk-field bk-field--btn bk-field--rooms"
+                    onClick={() => setModal(isHelper ? "helpers" : "rooms")}
+                  >
+                    <span className="bk-field-ic">{isHelper ? <FaRegUser /> : <FaBed />}</span>
+                    <span className="bk-field-label filled">{isHelper ? helpers : rooms}</span>
                     <FaChevronDown className="bk-field-trail" />
                   </button>
                 )}
@@ -128,8 +161,8 @@ export default function BookQuote() {
             </Link>
           </div>
 
-          {/* Assembly checkbox */}
-          {showMoveFields && (
+          {/* Checkbox: assembly (removalist) or same-address (helper) */}
+          {isRemovalist && (
             <button
               type="button"
               className={`bk-assembly ${assembly ? "on" : ""}`}
@@ -142,6 +175,18 @@ export default function BookQuote() {
               </span>
             </button>
           )}
+          {isHelper && (
+            <button
+              type="button"
+              className={`bk-assembly bk-assembly--simple ${sameAddress ? "on" : ""}`}
+              onClick={() => setSameAddress((a) => !a)}
+            >
+              <span className="bk-assembly-box">{sameAddress && <FaCheck />}</span>
+              <span className="bk-assembly-text">
+                <strong>Same Address / Internal Move</strong>
+              </span>
+            </button>
+          )}
 
           <Link href="/book/locations" className="bk-continue">Continue <FaArrowRight /></Link>
 
@@ -151,13 +196,13 @@ export default function BookQuote() {
               <span className="bk-banner-city">Melbourne | Geelong</span>
               <h3>Same Day Movers</h3>
               <span className="bk-banner-tag">Australia&apos;s Tech Enabled Platform</span>
-              {!showMoveFields && <p>Quick, Affordable movers at your doorstep</p>}
+              {!richFlow && <p>Quick, Affordable movers at your doorstep</p>}
             </div>
             <img className="bk-banner-photo" src="/images/2men.png" alt="OYO movers" />
           </div>
 
           {/* Truck / Vans / Delivery flow (mv1 / mv7): light trust + HOW IT WORKS */}
-          {!showMoveFields && (
+          {!richFlow && (
             <>
               <div className="fh-trust">
                 <span className="fh-trust-item"><FiShield className="fh-trust-ic no" /> No Hidden Fee</span>
@@ -174,8 +219,8 @@ export default function BookQuote() {
 
         {/* Dark bottom nav */}
         <nav className="fh-bottomnav bk-bottomnav" aria-label="Primary">
-          {/* Removalist flow (mv3): trust strip inside the dark nav */}
-          {showMoveFields && (
+          {/* Removalist / Helper flow (mv3 / mv8): trust strip inside the dark nav */}
+          {richFlow && (
             <div className="bk-trust-strip">
               <span><FiShield /> No Hidden Fee</span>
               <span><FaStar /> 5.0 Rating</span>
@@ -183,7 +228,7 @@ export default function BookQuote() {
             </div>
           )}
           <div className="bk-nav-row">
-            <Link href="/become-mover" className="fh-nav-item"><FaTruck /><span>{showMoveFields ? "Become Mover" : "Mover"}</span></Link>
+            <Link href="/become-mover" className="fh-nav-item"><FaTruck /><span>{richFlow ? "Become Mover" : "Mover"}</span></Link>
             <Link href="/#services-section" className="fh-nav-item"><FaThLarge /><span>Services</span></Link>
             <Link href="/booking" className="fh-nav-book" aria-label="Book"><img src="/figma/home/nav-plus.svg" alt="" /></Link>
             <Link href="/prices" className="fh-nav-item"><FaTag /><span>Prices</span></Link>
@@ -191,7 +236,7 @@ export default function BookQuote() {
           </div>
         </nav>
 
-        {/* Category modal (mv3.2–mv6.1) */}
+        {/* Move-type modal (mv3.2–mv6.1) */}
         {modal === "move" && (
           <div className="bk-sheet-overlay" onClick={() => setModal(null)}>
             <div className="bk-sheet" onClick={(e) => e.stopPropagation()}>
@@ -207,10 +252,31 @@ export default function BookQuote() {
                     onClick={() => { setMoveType(m.key); setModal(null); }}
                   >
                     <span className="bk-sheet-opt-ic">{m.icon}</span>
-                    <span className="bk-sheet-opt-text">
-                      <strong>{m.label}</strong>
-                      <small>{m.sub}</small>
-                    </span>
+                    <span className="bk-sheet-opt-text"><strong>{m.label}</strong><small>{m.sub}</small></span>
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Help-type modal (mv8) */}
+        {modal === "help" && (
+          <div className="bk-sheet-overlay" onClick={() => setModal(null)}>
+            <div className="bk-sheet" onClick={(e) => e.stopPropagation()}>
+              <button type="button" className="bk-sheet-close" aria-label="Close" onClick={() => setModal(null)}><FaTimes /></button>
+              <h2 className="bk-sheet-title">What help do you need?</h2>
+              <p className="bk-sheet-sub">Pick a task and we&apos;ll send the right helpers</p>
+              <div className="bk-sheet-options">
+                {helpTypes.map((h) => (
+                  <button
+                    key={h.key}
+                    type="button"
+                    className={`bk-sheet-opt ${helpType === h.key ? "selected" : ""}`}
+                    onClick={() => { setHelpType(h.key); setModal(null); }}
+                  >
+                    <span className="bk-sheet-opt-ic">{h.icon}</span>
+                    <span className="bk-sheet-opt-text"><strong>{h.label}</strong><small>{h.sub}</small></span>
                   </button>
                 ))}
               </div>
@@ -227,14 +293,23 @@ export default function BookQuote() {
               <p className="bk-sheet-sub">Pick the size that best matches your place</p>
               <div className="bk-sheet-chips">
                 {roomOptions.map((r) => (
-                  <button
-                    key={r}
-                    type="button"
-                    className={`bk-sheet-chip ${rooms === r ? "on" : ""}`}
-                    onClick={() => { setRooms(r); setModal(null); }}
-                  >
-                    {r}
-                  </button>
+                  <button key={r} type="button" className={`bk-sheet-chip ${rooms === r ? "on" : ""}`} onClick={() => { setRooms(r); setModal(null); }}>{r}</button>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Helpers count modal (mv8) */}
+        {modal === "helpers" && (
+          <div className="bk-sheet-overlay" onClick={() => setModal(null)}>
+            <div className="bk-sheet" onClick={(e) => e.stopPropagation()}>
+              <button type="button" className="bk-sheet-close" aria-label="Close" onClick={() => setModal(null)}><FaTimes /></button>
+              <h2 className="bk-sheet-title">How many helpers?</h2>
+              <p className="bk-sheet-sub">Most jobs are done comfortably with 2 helpers</p>
+              <div className="bk-sheet-chips">
+                {helperOptions.map((h) => (
+                  <button key={h} type="button" className={`bk-sheet-chip ${helpers === h ? "on" : ""}`} onClick={() => { setHelpers(h); setModal(null); }}>{h}</button>
                 ))}
               </div>
             </div>
