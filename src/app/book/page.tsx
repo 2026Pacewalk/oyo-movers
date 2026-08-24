@@ -151,20 +151,39 @@ export default function BookQuote() {
               <span className="bk-banner-city">Melbourne | Geelong</span>
               <h3>Same Day Movers</h3>
               <span className="bk-banner-tag">Australia&apos;s Tech Enabled Platform</span>
+              {!showMoveFields && <p>Quick, Affordable movers at your doorstep</p>}
             </div>
             <img className="bk-banner-photo" src="/images/2men.png" alt="OYO movers" />
           </div>
+
+          {/* Truck / Vans / Delivery flow (mv1 / mv7): light trust + HOW IT WORKS */}
+          {!showMoveFields && (
+            <>
+              <div className="fh-trust">
+                <span className="fh-trust-item"><FiShield className="fh-trust-ic no" /> No Hidden Fee</span>
+                <span className="fh-trust-item"><FaStar className="fh-trust-ic star" /> 5.0 Rating</span>
+                <span className="fh-trust-item"><FaRegClock className="fh-trust-ic clock" /> Booking in Mins</span>
+              </div>
+              <div className="fh-hiw">
+                <h2>HOW IT WORKS</h2>
+                <span className="fh-hiw-underline" />
+              </div>
+            </>
+          )}
         </main>
 
-        {/* Dark bottom nav with trust strip */}
+        {/* Dark bottom nav */}
         <nav className="fh-bottomnav bk-bottomnav" aria-label="Primary">
-          <div className="bk-trust-strip">
-            <span><FiShield /> No Hidden Fee</span>
-            <span><FaStar /> 5.0 Rating</span>
-            <span><FaRegClock /> Booking in Mins</span>
-          </div>
+          {/* Removalist flow (mv3): trust strip inside the dark nav */}
+          {showMoveFields && (
+            <div className="bk-trust-strip">
+              <span><FiShield /> No Hidden Fee</span>
+              <span><FaStar /> 5.0 Rating</span>
+              <span><FaRegClock /> Booking in Mins</span>
+            </div>
+          )}
           <div className="bk-nav-row">
-            <Link href="/become-mover" className="fh-nav-item"><FaTruck /><span>Become Mover</span></Link>
+            <Link href="/become-mover" className="fh-nav-item"><FaTruck /><span>{showMoveFields ? "Become Mover" : "Mover"}</span></Link>
             <Link href="/#services-section" className="fh-nav-item"><FaThLarge /><span>Services</span></Link>
             <Link href="/booking" className="fh-nav-book" aria-label="Book"><img src="/figma/home/nav-plus.svg" alt="" /></Link>
             <Link href="/prices" className="fh-nav-item"><FaTag /><span>Prices</span></Link>
