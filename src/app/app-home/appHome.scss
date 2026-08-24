@@ -31,15 +31,17 @@ $fh-nav-h: 68px;
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.12);
   }
 
-  /* ---------- Top bar ---------- */
+  /* ---------- Top bar (floating capsule) ---------- */
   .fh-topbar {
     position: sticky;
-    top: 0;
+    top: 8px;
     z-index: 20;
-    height: 64px;
+    height: 54px;
     flex-shrink: 0;
+    margin: 10px 12px 2px;
+    border-radius: 40px;
     background: #fff;
-    box-shadow: 0 4px 7.5px -2px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.14);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -218,7 +220,52 @@ $fh-nav-h: 68px;
     .fh-banner-lg { font-size: 22px; font-weight: 800; color: #1a1a1a; line-height: 30px; }
   }
 
-  /* ---------- Bottom nav ---------- */
+  /* ---------- Trust badges ---------- */
+  .fh-trust {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-top: 14px;
+    padding: 0 4px;
+
+    .fh-trust-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #333;
+      white-space: nowrap;
+    }
+    .fh-trust-ic { font-size: 13px; }
+    .fh-trust-ic.no { color: #e5162a; }
+    .fh-trust-ic.star { color: #ffb800; }
+    .fh-trust-ic.clock { color: #1a73e8; }
+  }
+
+  /* ---------- How it works heading ---------- */
+  .fh-hiw {
+    text-align: center;
+    margin-top: 18px;
+    h2 {
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      color: #111;
+      margin: 0;
+    }
+    .fh-hiw-underline {
+      display: block;
+      width: 70px;
+      height: 4px;
+      border-radius: 3px;
+      background: #ffce00;
+      margin: 8px auto 0;
+    }
+  }
+
+  /* ---------- Bottom nav (dark) ---------- */
   .fh-bottomnav {
     position: fixed;
     bottom: 0;
@@ -229,9 +276,9 @@ $fh-nav-h: 68px;
     height: $fh-nav-h;
     height: calc(#{$fh-nav-h} + env(safe-area-inset-bottom, 0px));
     padding-bottom: env(safe-area-inset-bottom, 0px);
-    background: #fff;
-    border-top: 1px solid #eef0f2;
-    box-shadow: 0 -4px 18px rgba(0, 0, 0, 0.08);
+    background: #111114;
+    border-radius: 22px 22px 0 0;
+    box-shadow: 0 -6px 22px rgba(0, 0, 0, 0.28);
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -244,38 +291,32 @@ $fh-nav-h: 68px;
     gap: 4px;
     flex: 1;
     text-decoration: none;
-    color: #403e3e;
+    color: #cfd1d6;
     font-size: 10px;
 
-    img { width: 20px; height: 20px; opacity: 0.85; }
+    svg { font-size: 18px; }
     span { line-height: 1; }
 
-    &.active {
-      color: #1a73e8;
-      img { opacity: 1; }
-    }
+    &.active,
+    &:hover { color: #ffce00; }
   }
   .fh-nav-book {
     flex-shrink: 0;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 4px;
+    justify-content: center;
     text-decoration: none;
-    color: #403e3e;
-    font-size: 10px;
-    margin-top: -26px;
+    margin-top: -24px;
 
     img {
-      width: 58px;
-      height: 58px;
+      width: 56px;
+      height: 56px;
       border-radius: 50%;
       background: $fh-yellow;
-      padding: 16px;
-      border: 4px solid #fff;
-      box-shadow: 0 6px 16px rgba(255, 206, 0, 0.5);
+      padding: 15px;
+      border: 4px solid #111114;
+      box-shadow: 0 6px 16px rgba(255, 206, 0, 0.45);
     }
-    span { line-height: 1; }
   }
 }
 

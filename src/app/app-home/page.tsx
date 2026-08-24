@@ -3,6 +3,8 @@
 import "./appHome.scss";
 import Link from "next/link";
 import React from "react";
+import { FaTruck, FaThLarge, FaTag, FaRegUser, FaStar, FaRegClock } from "react-icons/fa";
+import { FiShield } from "react-icons/fi";
 
 /* Mobile Homepage — built to match Figma "Homepage" (node 2003:1869).
    Static placeholder text (address) — no backend wired here. */
@@ -93,29 +95,41 @@ export default function AppHome() {
             <span className="fh-banner-sm">On-Demand Movers</span>
             <span className="fh-banner-lg">Pay as you go!</span>
           </Link>
+
+          {/* Trust badges */}
+          <div className="fh-trust">
+            <span className="fh-trust-item"><FiShield className="fh-trust-ic no" /> No Hidden Fee</span>
+            <span className="fh-trust-item"><FaStar className="fh-trust-ic star" /> 5.0 Rating</span>
+            <span className="fh-trust-item"><FaRegClock className="fh-trust-ic clock" /> Booking in Mins</span>
+          </div>
+
+          {/* How it works heading */}
+          <div className="fh-hiw">
+            <h2>HOW IT WORKS</h2>
+            <span className="fh-hiw-underline" />
+          </div>
         </main>
 
-        {/* Bottom navigation */}
+        {/* Bottom navigation (dark) */}
         <nav className="fh-bottomnav" aria-label="Primary">
-          <Link href="/app-home" className="fh-nav-item active">
-            <img src="/figma/home/nav-home.svg" alt="" />
-            <span>Home</span>
+          <Link href="/become-mover" className="fh-nav-item">
+            <FaTruck />
+            <span>Movers</span>
           </Link>
-          <Link href="/booking-list" className="fh-nav-item">
-            <img src="/figma/home/nav-orders.svg" alt="" />
-            <span>My Orders</span>
+          <Link href="/#services-section" className="fh-nav-item">
+            <FaThLarge />
+            <span>Services</span>
           </Link>
           <Link href="/booking" className="fh-nav-book" aria-label="Book a move">
             <img src="/figma/home/nav-plus.svg" alt="" />
-            <span>Book</span>
           </Link>
-          <Link href="/contact-us" className="fh-nav-item">
-            <img src="/figma/home/nav-messages.svg" alt="" />
-            <span>Messages</span>
+          <Link href="/prices" className="fh-nav-item">
+            <FaTag />
+            <span>Prices</span>
           </Link>
-          <Link href="/profile" className="fh-nav-item">
-            <img src="/figma/home/nav-profile.svg" alt="" />
-            <span>Profile</span>
+          <Link href="/login" className="fh-nav-item">
+            <FaRegUser />
+            <span>Account</span>
           </Link>
         </nav>
       </div>

@@ -1,0 +1,95 @@
+/* Select Vehicle step */
+.fig-home.veh-page {
+  .veh-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 10px;
+  }
+  .veh-card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 14px 40px 14px 14px;
+    background: #fff;
+    border: 1.5px solid #d9d9d9;
+    border-radius: 16px;
+    text-align: left;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+
+    &.selected {
+      border-color: #ffce00;
+      background: linear-gradient(180deg, #fffff2 0%, #fcf7e6 100%);
+      box-shadow: 0 6px 18px rgba(224, 200, 0, 0.18);
+      .veh-check { background: #ffce00; color: #111; opacity: 1; transform: translateY(-50%) scale(1); }
+    }
+
+    .veh-popular {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: linear-gradient(90deg, #f5a623 0%, #e67e00 100%);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 14px 0 12px 0;
+    }
+    .veh-img {
+      flex-shrink: 0;
+      width: 84px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img { max-width: 100%; max-height: 64px; object-fit: contain; }
+    }
+    .veh-info { flex: 1; min-width: 0; }
+    .veh-top {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 8px;
+      .veh-name { font-size: 15px; font-weight: 700; color: #111827; }
+      .veh-price { font-size: 17px; font-weight: 800; color: #111827; }
+    }
+    .veh-dims { display: block; font-size: 11px; color: #9aa0a6; margin: 2px 0 6px; }
+    .veh-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      .veh-movers {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 12px;
+        font-weight: 600;
+        color: #111827;
+        svg { font-size: 10px; color: #6b7280; }
+      }
+      .veh-best { font-size: 12px; color: #6b7280; }
+    }
+    .veh-check {
+      position: absolute;
+      top: 50%;
+      right: 12px;
+      transform: translateY(-50%) scale(0.9);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: #eef0f2;
+      color: transparent;
+      font-size: 11px;
+      opacity: 0.6;
+      transition: all 0.15s ease;
+    }
+  }
+
+  .bk-continue { margin-top: 26px; }
+}

@@ -164,7 +164,9 @@ const Navbar = ({ isLogedIn, data }: any) => {
     pathName === "/quick-booking" ||
     pathName.startsWith("/quick-booking/") ||
     pathName.startsWith("/rate-mover") ||
-    pathName.startsWith("/app-home")
+    pathName.startsWith("/app-home") ||
+    pathName === "/book" ||
+    pathName.startsWith("/book/")
   ) {
     return null;
   }

@@ -18,6 +18,7 @@ const HIDE_ON = [
   "/quick-booking",
   "/rate-mover",
   "/app-home",
+  "/book",
   "/login",
   "/signup",
   "/mover-login",

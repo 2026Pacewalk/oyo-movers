@@ -1,0 +1,188 @@
+/* ============================================================
+   Booking / Quote screen — matches Figma "Truck & Vans Flow"
+   Reuses .fig-home header/nav/trust/hiw from appHome.scss.
+   ============================================================ */
+.fig-home.bk-page {
+  .bk-body { padding-top: 10px; }
+
+  /* Shared sub-screen header (back + title) */
+  .bk-subhead {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+    padding: 0 14px;
+    background: #fff;
+    border-bottom: 1px solid #eef0f2;
+
+    .bk-back {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      color: #111827;
+      font-size: 16px;
+      background: #f4f5f7;
+      text-decoration: none;
+    }
+    .bk-subhead-title { font-size: 17px; font-weight: 700; color: #111827; }
+    .bk-subhead-spacer { width: 38px; }
+  }
+
+  /* Category chips */
+  .bk-chips {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-top: 6px;
+  }
+  .bk-chip {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    background: #fff;
+    border: 1.5px solid #d9d9d9;
+    border-radius: 12px;
+    padding: 9px 4px 7px;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background 0.2s ease;
+
+    &.selected {
+      border-color: #ffce00;
+      background: #fffdf0;
+    }
+
+    .bk-chip-check {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #ffce00;
+      color: #000;
+      font-size: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .bk-chip-label { font-size: 12px; font-weight: 700; color: #111827; }
+    .bk-chip-img {
+      height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img { max-height: 34px; max-width: 100%; object-fit: contain; }
+    }
+    .bk-chip-movers {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      font-size: 9px;
+      color: #666;
+      svg { font-size: 8px; }
+    }
+  }
+
+  /* Input fields */
+  .bk-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+  }
+  .bk-field {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #fff;
+    border: 1px solid #d9d9d9;
+    border-radius: 12px;
+    padding: 14px 14px;
+    text-decoration: none;
+    transition: border-color 0.2s ease;
+
+    &:hover { border-color: #b9b9b9; }
+
+    .bk-field-ic {
+      display: flex;
+      color: #111827;
+      font-size: 18px;
+      &.pin { color: #22c55e; }
+    }
+    .bk-field-label { flex: 1; color: #8a8d93; font-size: 15px; }
+    .bk-field-trail { color: #111827; font-size: 14px; }
+  }
+
+  /* Continue button */
+  .bk-continue {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: #ffce00;
+    color: #111;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 15px;
+    border-radius: 30px;
+    margin-top: 22px;
+    text-decoration: none;
+    box-shadow: 0 6px 16px rgba(255, 206, 0, 0.35);
+    svg { font-size: 15px; }
+  }
+
+  /* Same Day Movers banner */
+  .bk-banner {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    margin-top: 20px;
+    padding: 14px 12px 0;
+    overflow: hidden;
+    border-top: 1px solid #eef0f2;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url("/figma/home/map.png");
+      background-size: cover;
+      background-position: center;
+      opacity: 0.35;
+      pointer-events: none;
+    }
+
+    .bk-banner-text {
+      position: relative;
+      z-index: 1;
+      flex: 1;
+      .bk-banner-city { font-size: 12px; font-weight: 600; color: #333; }
+      h3 { font-size: 22px; font-weight: 800; color: #111; margin: 2px 0; line-height: 1.1; }
+      .bk-banner-tag { font-size: 12px; font-weight: 700; color: #111; }
+      p { font-size: 12px; color: #444; margin: 4px 0 0; }
+    }
+    .bk-banner-photo {
+      position: relative;
+      z-index: 1;
+      width: 108px;
+      height: auto;
+      object-fit: contain;
+      align-self: flex-end;
+    }
+  }
+
+  /* Desktop: constrain the quote column like a form */
+  @media (min-width: 1024px) {
+    .bk-body { max-width: 620px; }
+  }
+}
