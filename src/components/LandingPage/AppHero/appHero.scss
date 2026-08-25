@@ -1,0 +1,95 @@
+/* Landing hero wrapper — neutralise the app "phone frame" so the
+   app-home first-part sits inside the normal website layout. */
+.landing-app-hero.fig-home {
+  min-height: auto;
+  background: transparent;
+  display: block;
+
+  .fh-screen {
+    max-width: none;
+    width: 100%;
+    min-height: auto;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  /* no map background on the landing hero */
+  .fh-map { display: none; }
+
+  /* clear the fixed site header at the top, drop the app bottom-nav clearance */
+  .fh-body {
+    padding-top: 96px;
+    padding-bottom: 22px;
+  }
+
+  /* category cards are buttons here — reset + selected state */
+  .fh-cat {
+    width: 100%;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+    &.active {
+      border-color: #ffce00;
+      box-shadow: 0 8px 26px rgba(255, 206, 0, 0.22);
+    }
+  }
+
+  /* revealed booking form */
+  .hero-book-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 18px;
+    animation: heroFormIn 0.22s ease;
+
+    .bk-continue { margin-top: 8px; }
+  }
+  /* Desktop: lay the revealed form out as a horizontal search bar
+     spanning the same width as the card row. */
+  @media (min-width: 1024px) {
+    .hero-book-form {
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: stretch;
+      gap: 14px;
+      margin-top: 24px;
+
+      .bk-field {
+        flex: 1 1 200px;
+        min-width: 0;
+        margin: 0;
+      }
+      .bk-continue {
+        flex: 0 0 auto;
+        width: auto;
+        margin: 0;
+        padding-left: 40px;
+        padding-right: 40px;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  /* Mobile: keep it as a centred app column like /app-home */
+  @media (max-width: 767px) {
+    .fh-screen {
+      max-width: 440px;
+      margin: 0 auto;
+    }
+  }
+
+  /* Desktop: wide web hero (matches /app-home desktop) */
+  @media (min-width: 1024px) {
+    .fh-body {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 120px 24px 34px;
+    }
+    .fh-map { opacity: 0.12; }
+  }
+}
+
+@keyframes heroFormIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}

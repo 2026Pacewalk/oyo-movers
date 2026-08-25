@@ -23,6 +23,8 @@ import {
   FaTools,
   FaDolly,
   FaCouch,
+  FaPen,
+  FaExclamationCircle,
 } from "react-icons/fa";
 import { FiShield, FiMapPin, FiCalendar, FiTruck, FiFileText } from "react-icons/fi";
 
@@ -60,6 +62,15 @@ export default function BookQuote() {
   const [assembly, setAssembly] = useState(true);
   const [sameAddress, setSameAddress] = useState(true);
   const [modal, setModal] = useState<null | "move" | "rooms" | "help" | "helpers">(null);
+
+  /* Field values come from the backend once wired. They're seeded here
+     as example values purely to render the filled / error field UI.
+     Empty string => the field falls back to its placeholder style. */
+  const [pickup] = useState("101 collins Street, Melbourne");
+  const [dropoff] = useState("454 Victoria Street, Richmond");
+  const [dateTime] = useState("Sun, 23 Aug · 6:00 AM – 8:00 AM");
+  const [vehicle] = useState("");
+  const notesMissing = true; // demo of the "Field Missing" error state
 
   const isRemovalist = selected === "removalists";
   const isHelper = selected === "helper";
@@ -140,25 +151,64 @@ export default function BookQuote() {
               </div>
             )}
 
-            <Link href="/book/locations" className="bk-field">
-              <span className="bk-field-ic pin"><FiMapPin /></span>
-              <span className="bk-field-label">Enter Locations</span>
-              <FaLocationArrow className="bk-field-trail" />
-            </Link>
-            <Link href="/book/schedule" className="bk-field">
-              <span className="bk-field-ic"><FiCalendar /></span>
-              <span className="bk-field-label">Date &amp; Time</span>
-              <FaChevronDown className="bk-field-trail" />
-            </Link>
-            <Link href="/book/vehicle" className="bk-field">
-              <span className="bk-field-ic"><FiTruck /></span>
-              <span className="bk-field-label">Select Vehicle</span>
-              <FaChevronDown className="bk-field-trail" />
-            </Link>
-            <Link href="/book/details" className="bk-field">
-              <span className="bk-field-ic"><FiFileText /></span>
-              <span className="bk-field-label">Add Notes or Imp Instructions</span>
-            </Link>
+            {/* Enter Locations — filled shows pickup/drop-off + Edit */}
+            {pickup ? (
+              <div className="bk-field bk-field--filled bk-loc">
+                <div className="bk-loc-head">
+                  <span className="bk-loc-cap">Enter Locations</span>
+                  <Link href="/book/locations" className="bk-loc-edit"><FaPen /> Edit</Link>
+                </div>
+                <div className="bk-loc-row"><span className="bk-loc-dot green" />{pickup}</div>
+                {dropoff && <div className="bk-loc-row"><span className="bk-loc-dot red" />{dropoff}</div>}
+              </div>
+            ) : (
+              <Link href="/book/locations" className="bk-field">
+                <span className="bk-field-ic pin"><FiMapPin /></span>
+                <span className="bk-field-label">Enter Locations</span>
+                <FaLocationArrow className="bk-field-trail" />
+              </Link>
+            )}
+
+            {/* Date & Time */}
+            {dateTime ? (
+              <Link href="/book/schedule" className="bk-field bk-field--filled">
+                <span className="bk-field-ic"><FiCalendar /></span>
+                <span className="bk-field-value"><small>Date &amp; Time</small><strong>{dateTime}</strong></span>
+                <FaChevronDown className="bk-field-trail" />
+              </Link>
+            ) : (
+              <Link href="/book/schedule" className="bk-field">
+                <span className="bk-field-ic"><FiCalendar /></span>
+                <span className="bk-field-label">Date &amp; Time</span>
+                <FaChevronDown className="bk-field-trail" />
+              </Link>
+            )}
+
+            {/* Select Vehicle */}
+            {vehicle ? (
+              <Link href="/book/vehicle" className="bk-field bk-field--filled">
+                <span className="bk-field-ic"><FiTruck /></span>
+                <span className="bk-field-value"><small>Select Vehicle</small><strong>{vehicle}</strong></span>
+                <FaChevronDown className="bk-field-trail" />
+              </Link>
+            ) : (
+              <Link href="/book/vehicle" className="bk-field">
+                <span className="bk-field-ic"><FiTruck /></span>
+                <span className="bk-field-label">Select Vehicle</span>
+                <FaChevronDown className="bk-field-trail" />
+              </Link>
+            )}
+
+            {/* Add Notes — with "Field Missing" error state */}
+            <div className={`bk-field-wrap ${notesMissing ? "has-error" : ""}`}>
+              {notesMissing && (
+                <span className="bk-field-missing"><FaExclamationCircle /> Field Missing</span>
+              )}
+              <Link href="/book/details" className={`bk-field ${notesMissing ? "bk-field--error" : ""}`}>
+                <span className="bk-field-ic"><FiFileText /></span>
+                <span className="bk-field-label">Add Notes or Imp Instructions</span>
+              </Link>
+            </div>
           </div>
 
           {/* Checkbox: assembly (removalist) or same-address (helper) */}

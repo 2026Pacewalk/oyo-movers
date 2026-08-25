@@ -3,14 +3,8 @@
 import "./style.scss";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React from "react";
-import { HiOutlineHome } from "react-icons/hi2";
-import { FaPlus } from "react-icons/fa";
-import {
-  IoGridOutline,
-  IoPricetagsOutline,
-  IoPersonOutline,
-} from "react-icons/io5";
+import React, { useEffect, useRef, useState } from "react";
+import { FaTruck, FaThLarge, FaTag, FaRegUser, FaPlus } from "react-icons/fa";
 
 /* Routes where the app-style bottom bar should NOT appear
    (dedicated full-screen flows or the app-home which has its own bar). */
@@ -28,6 +22,28 @@ const HIDE_ON = [
 
 const MobileTabBar = () => {
   const pathname = usePathname() || "/";
+  const [visible, setVisible] = useState(false);
+  const lastY = useRef(0);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const y = window.scrollY || document.documentElement.scrollTop;
+      if (y < 120) {
+        // near the very top: keep it tucked away
+        setVisible(false);
+      } else if (y < lastY.current - 4) {
+        // scrolling up → reveal
+        setVisible(true);
+      } else if (y > lastY.current + 4) {
+        // scrolling down → hide
+        setVisible(false);
+      }
+      lastY.current = y;
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   if (HIDE_ON.some((p) => pathname === p || pathname.startsWith(p + "/"))) {
     return null;
@@ -39,17 +55,23 @@ const MobileTabBar = () => {
   };
 
   return (
-    <nav className="mobile-tabbar" aria-label="Primary">
-      <Link href="/" className={`mtb-item ${isActive("/") ? "active" : ""}`}>
-        <HiOutlineHome />
-        <span>Home</span>
+    <nav
+      className={`mobile-tabbar ${visible ? "is-visible" : "is-hidden"}`}
+      aria-label="Primary"
+    >
+      <Link
+        href="/become-a-mover"
+        className={`mtb-item ${isActive("/become-a-mover") || isActive("/become-mover") ? "active" : ""}`}
+      >
+        <FaTruck />
+        <span>Mover</span>
       </Link>
 
       <Link
         href="/#services-section"
         className={`mtb-item ${pathname.includes("services") ? "active" : ""}`}
       >
-        <IoGridOutline />
+        <FaThLarge />
         <span>Services</span>
       </Link>
 
@@ -61,7 +83,7 @@ const MobileTabBar = () => {
         href="/prices"
         className={`mtb-item ${isActive("/prices") ? "active" : ""}`}
       >
-        <IoPricetagsOutline />
+        <FaTag />
         <span>Prices</span>
       </Link>
 
@@ -73,7 +95,7 @@ const MobileTabBar = () => {
             : ""
         }`}
       >
-        <IoPersonOutline />
+        <FaRegUser />
         <span>Account</span>
       </Link>
     </nav>

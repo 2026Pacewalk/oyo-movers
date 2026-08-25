@@ -22,6 +22,7 @@ import ServicesLatest from "./services-latest/Services-latest";
 import BusinessBanner from "./Business-banner/banner";
 import SectionDivider from "./SectionDivider";
 import AreasWeCover from "@/components/Locations/AreasWeCover";
+import AppHero from "./AppHero";
 
 const LandingPage = () => {
   useEffect(() => {
@@ -49,7 +50,8 @@ const LandingPage = () => {
 
   return (
     <WebAppWrapper>
-     {/* <Services /> */}
+     {/* App-home style hero (Pickup + category grid + On-Demand banner) */}
+     <div data-aos="fade-up"><AppHero /></div>
      <ServicesLatest />
      <div data-aos="fade-up"><LandingServicesSlider /></div>
       <div data-aos="fade-up"><HowItsWork /></div>
