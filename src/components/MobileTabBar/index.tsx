@@ -4,7 +4,7 @@ import "./style.scss";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
-import { FaTruck, FaThLarge, FaTag, FaRegUser, FaPlus } from "react-icons/fa";
+import { FaDropbox, FaTag, FaRegUser, FaRegUserCircle, FaPlus } from "react-icons/fa";
 
 /* Routes where the app-style bottom bar should NOT appear
    (dedicated full-screen flows or the app-home which has its own bar). */
@@ -63,7 +63,7 @@ const MobileTabBar = () => {
         href="/become-a-mover"
         className={`mtb-item ${isActive("/become-a-mover") || isActive("/become-mover") ? "active" : ""}`}
       >
-        <FaTruck />
+        <FaRegUser />
         <span>Mover</span>
       </Link>
 
@@ -71,7 +71,7 @@ const MobileTabBar = () => {
         href="/#services-section"
         className={`mtb-item ${pathname.includes("services") ? "active" : ""}`}
       >
-        <FaThLarge />
+        <FaDropbox />
         <span>Services</span>
       </Link>
 
@@ -95,7 +95,7 @@ const MobileTabBar = () => {
             : ""
         }`}
       >
-        <FaRegUser />
+        <FaRegUserCircle />
         <span>Account</span>
       </Link>
     </nav>

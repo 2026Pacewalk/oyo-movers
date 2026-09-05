@@ -15,24 +15,22 @@ $mtb-muted: #cfd1d6;
 @media (max-width: 991px) {
   .mobile-tabbar {
     position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 68px;
-    height: calc(68px + env(safe-area-inset-bottom, 0px));
-    padding-bottom: env(safe-area-inset-bottom, 0px);
+    bottom: calc(14px + env(safe-area-inset-bottom, 0px));
+    left: 14px;
+    right: 14px;
+    height: 66px;
     background: $mtb-dark;
-    border-radius: 22px 22px 0 0;
-    box-shadow: 0 -6px 22px rgba(0, 0, 0, 0.28);
+    border-radius: 40px; /* fully rounded floating pill */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
     display: flex;
     align-items: center;
     justify-content: space-around;
-    padding-left: 6px;
-    padding-right: 6px;
+    padding-left: 8px;
+    padding-right: 8px;
     z-index: 1035;
 
     /* reveal-on-scroll */
-    transform: translateY(120%);
+    transform: translateY(160%);
     opacity: 0;
     transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
     will-change: transform;
@@ -50,25 +48,32 @@ $mtb-muted: #cfd1d6;
     justify-content: center;
     gap: 4px;
     flex: 1;
+    margin: 0 2px;
+    padding: 7px 2px;
+    border-radius: 18px;
     color: $mtb-muted;
     font-size: 10px;
     font-weight: 500;
     line-height: 1;
     text-decoration: none;
-    transition: color 0.2s ease;
+    transition: color 0.2s ease, background 0.2s ease, transform 0.12s ease;
 
     svg {
       font-size: 19px;
     }
 
+    /* selected item — highlighted pill behind icon + label */
     &.active {
+      background: rgba(255, 255, 255, 0.16);
       color: $mtb-yellow;
       font-weight: 700;
       svg { color: $mtb-yellow; }
     }
 
+    /* press feedback */
     &:active {
-      transform: scale(0.94);
+      background: rgba(255, 255, 255, 0.1);
+      transform: scale(0.96);
     }
   }
 
@@ -93,9 +98,9 @@ $mtb-muted: #cfd1d6;
     }
   }
 
-  /* Keep page content (and footer) clear of the fixed bar */
+  /* Keep page content (and footer) clear of the floating bar */
   body {
-    padding-bottom: 68px;
-    padding-bottom: calc(68px + env(safe-area-inset-bottom, 0px));
+    padding-bottom: 96px;
+    padding-bottom: calc(96px + env(safe-area-inset-bottom, 0px));
   }
 }

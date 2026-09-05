@@ -54,7 +54,6 @@ const LandingPage = () => {
      <div data-aos="fade-up"><AppHero /></div>
       {/* HOW IT WORKS — right after the hero */}
       <HowItsWork />
-     <ServicesLatest />
      <div data-aos="fade-up"><LandingServicesSlider /></div>
       <SectionDivider />
       <div data-aos="fade-up"><OnDemand /></div>
