@@ -93,3 +93,186 @@
   from { opacity: 0; transform: translateY(-6px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* ============================================================
+   Desktop hero — Figma "Same Day Movers" (>=1024px)
+   ============================================================ */
+.dhero { display: none; }
+
+@media (min-width: 1024px) {
+  /* desktop uses the yellow hero; hide the mobile app-cards + old hero */
+  .landing-app-hero { display: none !important; }
+  .services-section { display: none !important; }
+
+  .dhero {
+    display: block;
+    position: relative;
+    background: #ffd21a;
+    padding-top: 92px;
+    overflow: hidden;
+  }
+
+  /* Composite hero scene (yellow + skyline + truck + mover) from Figma */
+  .dhero-scene {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+  .dhero-bg {
+    display: block;
+    width: 100%;
+    height: auto;
+    transform: scale(1.06); /* zoom to crop the exported white rounded border */
+    transform-origin: center center;
+  }
+  .dhero-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    z-index: 2;
+  }
+  .dhero-copy {
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 24px;
+    /* keep copy in the left half so it never overlaps the mover */
+    max-width: 1240px;
+    .dhero-copy-inner { max-width: 560px; }
+  }
+  .dhero-badge {
+    display: inline-block;
+    background: #fff;
+    color: #1a1a1a;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 9px 22px;
+    border-radius: 30px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  }
+  .dhero-title {
+    font-size: 64px;
+    font-weight: 800;
+    color: #111 !important;
+    line-height: 1.04;
+    letter-spacing: -0.5px;
+    margin: 18px 0 12px;
+  }
+  .dhero-sub {
+    font-size: 22px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 0 0 26px;
+  }
+  .dhero-trust {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    .dhero-trust-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      color: #1a1a1a;
+      svg { font-size: 16px; }
+      svg.no { color: #e5162a; }
+      svg.star { color: #ff9d00; }
+    }
+    .dhero-sep { width: 1px; height: 18px; background: rgba(0, 0, 0, 0.25); }
+  }
+  /* Choose a Service card overlapping the hero bottom */
+  .dhero-choose {
+    position: relative;
+    z-index: 3;
+    max-width: 1212px;
+    margin: -46px auto 0;
+    background: #fff;
+    border-radius: 22px;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.12);
+    padding: 22px 26px 26px;
+  }
+  .dhero-choose-head {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    .dhero-loc {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #fff7cc;
+      color: #1a1a1a;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 20px;
+      svg { color: #22c55e; }
+    }
+    .dhero-choose-title {
+      flex: 1;
+      text-align: center;
+      margin-right: 150px; /* balance the loc pill so the title sits centered */
+      font-size: 20px;
+      font-weight: 800;
+      color: #111;
+      i { display: block; width: 74px; height: 5px; border-radius: 3px; background: #ffce00; margin: 6px auto 0; }
+    }
+  }
+  .dhero-services {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr) 150px;
+    gap: 16px;
+  }
+  .dhero-service {
+    display: flex;
+    flex-direction: column;
+    min-height: 190px;
+    padding: 16px 18px;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    background: #fff;
+    text-decoration: none;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+    &:hover { box-shadow: 0 10px 26px rgba(0, 0, 0, 0.1); transform: translateY(-2px); }
+    .dhero-service-name { font-size: 18px; font-weight: 700; color: #111; }
+    .dhero-service-desc { font-size: 13px; color: #6b7280; margin-top: 2px; }
+    .dhero-service-img {
+      flex: 1;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-top: 8px;
+      img { max-height: 118px; max-width: 100%; object-fit: contain; }
+    }
+  }
+  .dhero-estimate {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    background: #111114;
+    color: #fff;
+    border-radius: 16px;
+    padding: 18px;
+    text-decoration: none;
+    strong { font-size: 22px; font-weight: 800; line-height: 1.12; }
+    .dhero-estimate-time { display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; color: #cfd1d6; }
+    .dhero-estimate-arrow {
+      position: absolute;
+      right: 16px;
+      bottom: 14px;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s ease;
+    }
+    &:hover .dhero-estimate-arrow { background: rgba(255, 255, 255, 0.14); }
+  }
+}
+

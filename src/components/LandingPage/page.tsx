@@ -52,9 +52,10 @@ const LandingPage = () => {
     <WebAppWrapper>
      {/* App-home style hero (Pickup + category grid + On-Demand banner) */}
      <div data-aos="fade-up"><AppHero /></div>
+      {/* HOW IT WORKS — right after the hero */}
+      <HowItsWork />
      <ServicesLatest />
      <div data-aos="fade-up"><LandingServicesSlider /></div>
-      <div data-aos="fade-up"><HowItsWork /></div>
       <SectionDivider />
       <div data-aos="fade-up"><OnDemand /></div>
       <div data-aos="fade-up"><ReviewService /></div>
