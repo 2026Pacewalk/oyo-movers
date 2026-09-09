@@ -11,8 +11,8 @@ import { FiMapPin, FiClock, FiChevronRight } from "react-icons/fi";
    - Mobile (<1024px): Melbourne|Geelong + Choose a Service cards + yellow Same-Day Movers banner. */
 
 const services = [
-  { key: "trucks", label: "Trucks", desc: "2T to 10T Trucks", img: "/figma/home/truck.png", href: "/book" },
-  { key: "vans", label: "Vans", desc: "Ideal for small moves", img: "/figma/home/van.png", href: "/book" },
+  { key: "trucks", label: "Trucks", desc: "2T to 10T Trucks", img: "/images/card-truck.png", href: "/book" },
+  { key: "vans", label: "Vans", desc: "Ideal for small moves", img: "/images/card-van.png", href: "/book" },
   { key: "removalists", label: "Removalists", desc: "Truck + Movers", img: "/figma/home/removalists-sofa.png", href: "/book" },
   { key: "helpers", label: "Helpers Only", desc: "Need extra hands", img: "/figma/home/helpers.png", href: "/book" },
 ];
@@ -77,35 +77,22 @@ const AppHero = () => {
                 <FiChevronRight className="mhero-card-caret" />
               </div>
               <span className="mhero-card-desc">{s.desc}</span>
-              <span className="mhero-card-img"><img src={s.img} alt={s.label} /></span>
+              <span className={`mhero-card-img mhero-card-img--${s.key}`}><img src={s.img} alt={s.label} /></span>
             </Link>
           ))}
         </div>
 
-        {/* Same-Day Movers yellow banner */}
-        <Link href="/book" className="mhero-banner">
-          <div className="mhero-banner-text">
-            <span className="mhero-badge-row">
-              <span className="mhero-badge">On-Demand Moving</span>
-              <img className="mhero-swoosh" src="/images/banner-swoosh.svg" alt="" />
-            </span>
-            <h2 className="mhero-title">Same-Day Movers</h2>
-            <p className="mhero-sub">Stress-Free Moving • Pay As You Go!</p>
-            <span className="mhero-estimate">
-              <span className="mhero-estimate-lines">
-                <strong>Get Estimate</strong>
-                <small>in 60 seconds</small>
-              </span>
-              <FaArrowRight />
-            </span>
-          </div>
-          <img className="mhero-mover" src="/images/ServiceImg-1.png" alt="OYO mover" />
+        {/* Same-Day Movers banner — exact Figma composite (1:1) */}
+        <Link href="/book" className="mhero-banner" aria-label="Same-Day Movers — Get Estimate">
+          <img className="mhero-banner-img" src="/images/mhero-banner.svg" alt="Same-Day Movers — Stress-Free Moving, Pay As You Go. Get Estimate in 60 seconds." />
         </Link>
 
         {/* Trust row */}
         <div className="mhero-trust">
           <span><FaBan className="no" /> No Hidden Fees</span>
+          <i className="mhero-trust-sep" />
           <span><FaStar className="star" /> 4.9 Rating</span>
+          <i className="mhero-trust-sep" />
           <span><FiClock /> Start at Pickup</span>
         </div>
       </div>

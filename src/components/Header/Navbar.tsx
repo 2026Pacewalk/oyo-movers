@@ -307,14 +307,6 @@ export const WebNavbar = ({ isLogedIn, data }: any) => {
                 <button className="btn btn-theme rounded-pill ">Book</button>
               </a>
 
-              {isLogedIn ? (
-                <UserMenu user={data?.user} />
-              ) : (
-                <a className="btn btn-user" href="/login">
-                  <FaUser />
-                </a>
-              )}
-
               <button
                 className="navbar-toggler border-0"
                 type="button"

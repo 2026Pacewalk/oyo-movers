@@ -5,7 +5,7 @@
   display: block;
   max-width: 460px;
   margin: 0 auto;
-  padding: 88px 16px 8px;
+  padding: 104px 16px 8px;
   font-family: var(--font-montserrat), "Montserrat", sans-serif;
 
   * { box-sizing: border-box; }
@@ -18,7 +18,7 @@
     background: #fff7cc;
     color: #1a1a1a;
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 400;
     padding: 9px 14px;
     border-radius: 10px;
     svg { color: #22c55e; }
@@ -40,102 +40,56 @@
   .mhero-card {
     display: flex;
     flex-direction: column;
-    min-height: 150px;
-    padding: 12px 12px 8px;
+    min-height: 200px;
+    padding: 14px 14px 12px;
     background: #fff;
-    border: 1px solid #e5e7eb;
+    border: 1.5px solid #cbcdd2;
     border-radius: 16px;
-    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
     text-decoration: none;
 
     .mhero-card-top {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      .mhero-card-name { font-size: 15px; font-weight: 700; color: #111; }
+      .mhero-card-name { font-size: 16px; font-weight: 700; color: #111; }
       .mhero-card-caret { color: #111; font-size: 15px; }
     }
     .mhero-card-desc { font-size: 11px; color: #6b7280; margin-top: 1px; }
     .mhero-card-img {
       flex: 1;
       display: flex;
-      align-items: flex-end;
+      align-items: center;
       justify-content: center;
-      padding-top: 6px;
-      img { max-height: 78px; max-width: 100%; object-fit: contain; }
+      padding-top: 8px;
+      overflow: hidden;
+      img { max-height: 128px; max-width: 100%; object-fit: contain; }
+    }
+    /* Helpers art has wide empty margins — zoom into the figures to fill the card */
+    .mhero-card-img--helpers img {
+      transform: scale(1.95);
+      transform-origin: 51% 56%;
     }
   }
 
-  /* Yellow Same-Day Movers banner (Figma homepage-4) */
+  /* Same-Day Movers banner — exact Figma composite rendered as one SVG (1:1) */
   .mhero-banner {
-    position: relative;
     display: block;
     margin-top: 16px;
-    padding: 18px 16px 20px;
-    min-height: 200px;
-    background: #ffdb00; /* exact Figma yellow */
-    border-radius: 18px;
-    overflow: hidden;
+    line-height: 0;
     text-decoration: none;
-
-    .mhero-banner-text { position: relative; z-index: 2; max-width: 70%; }
-
-    .mhero-badge-row { display: flex; align-items: center; gap: 10px; }
-    .mhero-badge {
-      display: inline-block;
-      background: #fff;
-      color: #1a1a1a;
-      font-size: 12px;
-      font-weight: 700;
-      padding: 6px 15px;
-      border-radius: 20px;
-      white-space: nowrap;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-    }
-    .mhero-swoosh {
-      height: 22px;
-      width: auto;
-    }
-
-    .mhero-title {
-      font-size: 23px;
-      font-weight: 800;
-      color: #111 !important;
-      line-height: 1.05;
-      margin: 12px 0 6px;
-      white-space: nowrap;
-    }
-    .mhero-sub { font-size: 12.5px; font-weight: 600; color: #565656; margin: 0 0 16px; max-width: 66%; }
-
-    .mhero-estimate {
-      display: inline-flex;
-      align-items: center;
-      gap: 16px;
-      background: #111114;
-      color: #fff;
-      padding: 10px 16px;
-      border-radius: 12px;
-      .mhero-estimate-lines { display: flex; flex-direction: column; line-height: 1.15; text-align: left; }
-      strong { font-size: 15px; font-weight: 800; }
-      small { font-size: 11px; font-weight: 400; color: #cfd1d6; }
-      svg { font-size: 13px; }
-    }
-
-    .mhero-mover {
-      position: absolute;
-      right: -6px;
-      bottom: 0;
-      height: 200px;
-      width: auto;
-      z-index: 1;
-    }
+  }
+  .mhero-banner-img {
+    width: 100%;
+    height: auto;
+    display: block;
   }
 
   .mhero-trust {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 6px;
+    justify-content: center;
+    gap: 10px;
     margin-top: 16px;
     padding: 0 2px;
     span {
@@ -149,6 +103,12 @@
       svg { font-size: 13px; }
       svg.no { color: #e5162a; }
       svg.star { color: #ff9d00; }
+    }
+    .mhero-trust-sep {
+      flex: 0 0 auto;
+      width: 1px;
+      height: 16px;
+      background: #d9d9d9;
     }
   }
 }

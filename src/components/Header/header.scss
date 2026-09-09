@@ -1174,6 +1174,7 @@ $drawer-dark: #18181b;
     z-index: 1000 !important;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
     padding: 7px 20px !important;
+    border: 1.5px solid #111114 !important;
   }
 
   .navbar.show {
@@ -1203,9 +1204,10 @@ $drawer-dark: #18181b;
   // }
 
   .navbar {
-    padding: 7px 15px !important;
-    width: calc(100% - 30px) !important;
-    margin: 15px auto !important;
+    padding: 8px 16px !important;
+    width: calc(100% - 36px) !important;
+    margin: 18px auto !important;
+    border: 1.5px solid #111114 !important;
   }
 
   .navbar-center .logo {
@@ -1219,8 +1221,8 @@ $drawer-dark: #18181b;
   .navbar.sticky {
     background: white !important;
     border-radius: 50px !important;
-    width: calc(100% - 30px) !important;
-    margin: 15px auto !important;
+    width: calc(100% - 36px) !important;
+    margin: 18px auto !important;
     position: fixed !important;
     top: 0 !important;
     left: 50% !important;
@@ -1229,6 +1231,7 @@ $drawer-dark: #18181b;
     transition: transform 0.3s ease-in-out, visibility 0.3s ease-in-out !important;
     visibility: visible !important;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
+    border: 1.5px solid #111114 !important;
   }
 
   .navbar.sticky.show {

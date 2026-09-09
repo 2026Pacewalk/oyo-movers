@@ -22,15 +22,15 @@ const HIDE_ON = [
 
 const MobileTabBar = () => {
   const pathname = usePathname() || "/";
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(true);
   const lastY = useRef(0);
 
   useEffect(() => {
     const onScroll = () => {
       const y = window.scrollY || document.documentElement.scrollTop;
-      if (y < 120) {
-        // near the very top: keep it tucked away
-        setVisible(false);
+      if (y < 60) {
+        // at the top (hero / first preview): show the menu
+        setVisible(true);
       } else if (y < lastY.current - 4) {
         // scrolling up → reveal
         setVisible(true);
