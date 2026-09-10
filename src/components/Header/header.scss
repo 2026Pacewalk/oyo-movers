@@ -1171,31 +1171,33 @@ $drawer-dark: #18181b;
 
 /* Mobile Responsive */
 @media (max-width: 991px) {
+  /* Plain white full-width header (Figma Homepage-4.1) */
   .navbar {
     position: fixed !important;
     top: 0 !important;
-    left: 50% !important;
-    right: auto !important;
-    width: calc(100% - 40px) !important;
-    max-width: 900px !important;
-    margin: 20px auto !important;
-    border-radius: 50px !important;
-    transform: translateX(-50%) !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    transform: none !important;
     transition: transform 0.3s ease-in-out, visibility 0.3s ease-in-out !important;
     visibility: visible !important;
     z-index: 1000 !important;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
-    padding: 7px 20px !important;
-    border: 1.5px solid #111114 !important;
+    background: #fff !important;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06) !important;
+    padding: 12px 16px !important;
+    border: none !important;
   }
 
   .navbar.show {
-    transform: translateX(-50%) translateY(0) !important;
+    transform: translateY(0) !important;
     visibility: visible !important;
   }
 
   .navbar.hide {
-    transform: translateX(-50%) translateY(-100%) !important;
+    transform: translateY(-100%) !important;
     visibility: hidden !important;
   }
 
@@ -1210,16 +1212,55 @@ $drawer-dark: #18181b;
   }
 }
 
+/* Mobile header action controls (phone ring, Book button, burger) */
+@media (max-width: 991px) {
+  .mnav-actions { gap: 14px; }
+
+  .mnav-phone {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 2px solid #111114;
+    color: #111114;
+    background: #fff;
+    svg { width: 22px; height: 22px; }
+  }
+
+  .mnav-book {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffd21e;
+    color: #111114;
+    font-weight: 800;
+    font-size: 17px;
+    padding: 11px 26px;
+    border-radius: 12px;
+    text-decoration: none;
+    line-height: 1;
+    &:hover { background: #f4c400; color: #111114; }
+  }
+
+  .mnav-burger {
+    padding: 0 2px !important;
+    color: #111114 !important;
+    svg { width: 30px !important; height: 30px !important; }
+  }
+}
+
 @media (max-width: 768px) {
   // body {
   //   padding-top: 70px;
   // }
 
   .navbar {
-    padding: 8px 16px !important;
-    width: calc(100% - 36px) !important;
-    margin: 18px auto !important;
-    border: 1.5px solid #111114 !important;
+    padding: 12px 16px !important;
+    width: 100% !important;
+    margin: 0 !important;
+    border: none !important;
   }
 
   .navbar-center .logo {
@@ -1232,27 +1273,27 @@ $drawer-dark: #18181b;
 @media (max-width: 768px) {
   .navbar.sticky {
     background: white !important;
-    border-radius: 50px !important;
-    width: calc(100% - 36px) !important;
-    margin: 18px auto !important;
+    border-radius: 0 !important;
+    width: 100% !important;
+    margin: 0 !important;
     position: fixed !important;
     top: 0 !important;
-    left: 50% !important;
-    right: auto !important;
-    transform: translateX(-50%) !important;
+    left: 0 !important;
+    right: 0 !important;
+    transform: none !important;
     transition: transform 0.3s ease-in-out, visibility 0.3s ease-in-out !important;
     visibility: visible !important;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
-    border: 1.5px solid #111114 !important;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06) !important;
+    border: none !important;
   }
 
   .navbar.sticky.show {
-    transform: translateX(-50%) translateY(0) !important;
+    transform: translateY(0) !important;
     visibility: visible !important;
   }
 
   .navbar.sticky.hide {
-    transform: translateX(-50%) translateY(-100%) !important;
+    transform: translateY(-100%) !important;
     visibility: hidden !important;
   }
 }

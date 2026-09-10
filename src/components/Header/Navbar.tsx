@@ -299,16 +299,16 @@ export const WebNavbar = ({ isLogedIn, data }: any) => {
             </div>
 
             {/* Right side - Actions */}
-            <div className="d-flex align-items-center gap-2">
-              <a className="nav-link  text-size-36 text-theme-2" href="tel:1300 01 31 31">
+            <div className="d-flex align-items-center mnav-actions">
+              <a className="mnav-phone" href="tel:1300 01 31 31" aria-label="Call OYO Movers">
                 <BiSolidPhoneCall />
               </a>
-              <a href="/booking">
-                <button className="btn btn-theme rounded-pill ">Book</button>
+              <a href="/booking" className="mnav-book">
+                Book
               </a>
 
               <button
-                className="navbar-toggler border-0"
+                className="navbar-toggler border-0 mnav-burger"
                 type="button"
                 data-toggle="collapse"
                 data-target="#navbarSupportedContent"
