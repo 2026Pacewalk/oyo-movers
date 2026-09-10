@@ -1013,11 +1013,11 @@ $drawer-dark: #18181b;
 }
 
 .btn-book-now {
-  background: #fcd947 !important;
-  color: #000 !important;
-  border: 1px solid #ccc !important;
+  background: #111114 !important;
+  color: #ffffff !important;
+  border: none !important;
   border-radius: 25px !important;
-  padding: 7px 20px !important;
+  padding: 8px 22px !important;
   font-weight: 700 !important;
   font-size: 16px !important;
   text-decoration: none !important;
@@ -1025,16 +1025,15 @@ $drawer-dark: #18181b;
   align-items: center !important;
   gap: 8px !important;
   transition: all 0.3s ease !important;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18) !important;
   white-space: nowrap;
 }
 
 .btn-book-now:hover {
-  background: #000000 !important;
-  // background: #e6b10a !important;
+  background: #2a2a2e !important;
   color: #ffffff !important;
   transform: translateY(-1px) !important;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15) !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.22) !important;
 }
 
 .btn-phone{
@@ -1086,6 +1085,19 @@ $drawer-dark: #18181b;
   background: #fcd947 !important;
   transform: translateY(-1px) !important;
 }
+
+.btn-menu-desktop {
+  background: transparent !important;
+  border: none !important;
+  color: #111 !important;
+  font-size: 26px !important;
+  padding: 4px 6px !important;
+  display: flex !important;
+  align-items: center !important;
+  cursor: pointer;
+  transition: opacity 0.2s ease !important;
+}
+.btn-menu-desktop:hover { opacity: 0.65 !important; }
 
 /* Dropdown Styles */
 .dropdown-menu {

@@ -433,7 +433,7 @@ export const WebNavbar = ({ isLogedIn, data }: any) => {
 
               <div className="navbar-actions">
                 <a className="btn btn-book-now" href="/booking">
-                  <FaTruck /> Book Now
+                  Book Now
                 </a>
                 <a className="btn btn-phone" href="tel:1300 01 31 31">
                   <FaPhoneVolume /><span>1300 01 31 31</span>
@@ -445,6 +445,14 @@ export const WebNavbar = ({ isLogedIn, data }: any) => {
                     <FaUser />
                   </a>
                 )}
+                <button
+                  type="button"
+                  className="btn btn-menu-desktop"
+                  aria-label="Menu"
+                  onClick={() => setShowTabs(!showTabs)}
+                >
+                  <IoMenuSharp />
+                </button>
               </div>
             </div>
 

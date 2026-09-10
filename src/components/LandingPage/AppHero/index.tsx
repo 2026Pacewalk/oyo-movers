@@ -3,7 +3,7 @@
 import "./appHero.scss";
 import Link from "next/link";
 import React from "react";
-import { FaArrowRight, FaStar, FaBan } from "react-icons/fa";
+import { FaArrowRight, FaStar, FaBan, FaTruck, FaShuttleVan, FaUsers, FaUser } from "react-icons/fa";
 import { FiMapPin, FiClock, FiChevronRight } from "react-icons/fi";
 
 /* Landing hero.
@@ -11,10 +11,10 @@ import { FiMapPin, FiClock, FiChevronRight } from "react-icons/fi";
    - Mobile (<1024px): Melbourne|Geelong + Choose a Service cards + yellow Same-Day Movers banner. */
 
 const services = [
-  { key: "trucks", label: "Trucks", desc: "2T to 10T Trucks", img: "/images/card-truck.png", href: "/book" },
-  { key: "vans", label: "Vans", desc: "Ideal for small moves", img: "/images/card-van.png", href: "/book" },
-  { key: "removalists", label: "Removalists", desc: "Truck + Movers", img: "/figma/home/removalists-sofa.png", href: "/book" },
-  { key: "helpers", label: "Helpers Only", desc: "Need extra hands", img: "/figma/home/helpers.png", href: "/book" },
+  { key: "trucks", label: "Trucks", desc: "2T to 10T Trucks", img: "/images/card-truck.png", href: "/book", icon: <FaTruck /> },
+  { key: "vans", label: "Vans", desc: "Ideal for small moves", img: "/images/card-van.png", href: "/book", icon: <FaShuttleVan /> },
+  { key: "removalists", label: "Removalists", desc: "Truck + Movers", img: "/figma/home/removalists-sofa.png", href: "/book", icon: <FaUsers /> },
+  { key: "helpers", label: "Helpers Only", desc: "Need extra hands", img: "/figma/home/helpers.png", href: "/book", icon: <FaUser /> },
 ];
 
 const AppHero = () => {
@@ -23,11 +23,17 @@ const AppHero = () => {
       {/* ---------- Desktop hero (Figma "Same Day Movers") ---------- */}
       <section className="dhero" aria-label="Same Day Movers">
         <div className="dhero-scene">
-          <img className="dhero-bg" src="/images/hero-scene.png" alt="OYO mover with truck" />
+          <span className="dhero-skyline" aria-hidden="true" />
+          <span className="dhero-mover-wrap">
+            <img src="/images/hero-mover.png" alt="OYO mover" />
+          </span>
           <div className="dhero-overlay">
             <div className="dhero-copy">
               <div className="dhero-copy-inner">
-                <span className="dhero-badge">On-Demand Moving</span>
+                <div className="dhero-badge-row">
+                  <span className="dhero-badge">On-Demand Moving</span>
+                  <img className="dhero-swoosh" src="/images/banner-swoosh.svg" alt="" />
+                </div>
                 <h1 className="dhero-title">Same Day Movers</h1>
                 <p className="dhero-sub">Stress-Free Moving • Pay as you Go!</p>
                 <div className="dhero-trust">
@@ -50,7 +56,11 @@ const AppHero = () => {
           <div className="dhero-services">
             {services.map((s) => (
               <Link href={s.href} key={s.key} className="dhero-service">
-                <span className="dhero-service-name">{s.label}</span>
+                <div className="dhero-service-top">
+                  <span className="dhero-service-icon">{s.icon}</span>
+                  <span className="dhero-service-name">{s.label}</span>
+                  <FiChevronRight className="dhero-service-caret" />
+                </div>
                 <span className="dhero-service-desc">{s.desc}</span>
                 <span className="dhero-service-img"><img src={s.img} alt={s.label} /></span>
               </Link>

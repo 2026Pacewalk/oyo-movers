@@ -127,26 +127,58 @@
   .dhero {
     display: block;
     position: relative;
-    background: #ffd21a;
+    background: #ffdb00; /* flat Figma yellow */
     padding-top: 92px;
     overflow: hidden;
   }
 
-  /* Composite hero scene (yellow + skyline + truck + mover) from Figma */
+  /* Flat-yellow hero scene (mover + faint skyline, no truck) — Figma "STAGE 2
+     HOMEPAGE 40". Figma frame is 1440 wide; hero yellow area 1440×820, mover
+     placed at x542 y127 w599 h588. Positions below are those numbers as % of
+     1440 so the scene scales proportionally. The mover's lower body is left
+     un-clipped so it sits behind the Choose-a-Service card (higher z-index). */
   .dhero-scene {
     position: relative;
     width: 100%;
-    height: 520px;
-    overflow: hidden;
+    /* 620/1440 keeps the yellow band in Figma proportion (hero 820 tall minus
+       the ~200 the card overlaps) */
+    height: 43vw;
+    max-height: 560px;
+    min-height: 430px;
+    overflow: visible;
   }
-  .dhero-bg {
-    display: block;
-    width: 100%;
+  .dhero-skyline {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 66%;
     height: 100%;
-    object-fit: cover;
-    object-position: right center;
-    transform: scale(1.04); /* zoom to crop the exported white rounded border */
-    transform-origin: center center;
+    background: url("/figma/home/skyline.svg") no-repeat right bottom;
+    background-size: contain;
+    opacity: 0.4;
+    z-index: 0;
+    pointer-events: none;
+  }
+  /* Mover — Figma x542 y127 w599 (of a 1440 frame). Anchored to a centred
+     1440-max scene via a wrapper so it lands in the same spot as Figma. */
+  .dhero-mover-wrap {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 100%;
+    max-width: 1440px;
+    height: 100%;
+    transform: translateX(-50%);
+    z-index: 1;
+    pointer-events: none;
+    img {
+      position: absolute;
+      left: 37.6%;   /* 542/1440 */
+      top: 8%;
+      width: 41.6%;  /* 599/1440 */
+      height: auto;
+      object-fit: contain;
+    }
   }
   .dhero-overlay {
     position: absolute;
@@ -164,6 +196,11 @@
     max-width: 1240px;
     .dhero-copy-inner { max-width: 560px; }
   }
+  .dhero-badge-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
   .dhero-badge {
     display: inline-block;
     background: #fff;
@@ -173,6 +210,10 @@
     padding: 9px 22px;
     border-radius: 30px;
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  }
+  .dhero-swoosh {
+    height: 30px;
+    width: auto;
   }
   .dhero-title {
     font-size: 64px;
@@ -184,7 +225,7 @@
   }
   .dhero-sub {
     font-size: 22px;
-    font-weight: 600;
+    font-weight: 800;
     color: #1a1a1a;
     margin: 0 0 26px;
   }
@@ -211,7 +252,7 @@
     position: relative;
     z-index: 3;
     max-width: 1212px;
-    margin: -46px auto 0;
+    margin: -120px auto 0; /* overlaps the mover's lower body (hips down) */
     background: #fff;
     border-radius: 22px;
     box-shadow: 0 18px 50px rgba(0, 0, 0, 0.12);
@@ -252,23 +293,44 @@
     display: flex;
     flex-direction: column;
     min-height: 190px;
-    padding: 16px 18px;
-    border: 1px solid #e5e7eb;
+    padding: 14px 16px 12px;
+    border: 1.5px solid #cbcdd2;
     border-radius: 16px;
     background: #fff;
     text-decoration: none;
     transition: box-shadow 0.2s ease, transform 0.2s ease;
     &:hover { box-shadow: 0 10px 26px rgba(0, 0, 0, 0.1); transform: translateY(-2px); }
-    .dhero-service-name { font-size: 18px; font-weight: 700; color: #111; }
-    .dhero-service-desc { font-size: 13px; color: #6b7280; margin-top: 2px; }
+
+    .dhero-service-top {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      .dhero-service-icon {
+        flex-shrink: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: #ffce00;
+        color: #111;
+        font-size: 11px;
+      }
+      .dhero-service-name { font-size: 16px; font-weight: 700; color: #111; }
+      .dhero-service-caret { margin-left: auto; color: #111; font-size: 16px; flex-shrink: 0; }
+    }
+    .dhero-service-desc { font-size: 12.5px; color: #6b7280; margin-top: 2px; }
     .dhero-service-img {
       flex: 1;
       display: flex;
       align-items: flex-end;
       justify-content: center;
       padding-top: 8px;
-      img { max-height: 118px; max-width: 100%; object-fit: contain; }
+      overflow: hidden;
+      img { max-height: 120px; max-width: 100%; object-fit: contain; }
     }
+    &.dhero-service:nth-child(4) .dhero-service-img img { transform: scale(1.7); transform-origin: 51% 60%; }
   }
   .dhero-estimate {
     position: relative;
