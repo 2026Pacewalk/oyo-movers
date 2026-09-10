@@ -103,9 +103,21 @@ const AppHero = () => {
           ))}
         </div>
 
-        {/* Same-Day Movers banner — exact Figma composite (1:1) */}
-        <Link href="/book" className="mhero-banner" aria-label="Same-Day Movers — Get Estimate">
-          <img className="mhero-banner-img" src="/images/mhero-banner.svg" alt="Same-Day Movers — Stress-Free Moving, Pay As You Go. Get Estimate in 60 seconds." />
+        {/* Same-Day Movers banner (Figma) */}
+        <Link href="/book" className="mhero-banner" aria-label="Same-Day Movers — Get Estimate in 60 seconds">
+          <div className="mhero-banner-copy">
+            <div className="mhero-banner-badge-row">
+              <span className="mhero-banner-badge">On-Demand Moving</span>
+              <img className="mhero-banner-swoosh" src="/images/banner-swoosh.svg" alt="" />
+            </div>
+            <h3 className="mhero-banner-title">Same-Day Movers</h3>
+            <p className="mhero-banner-sub">Stress-Free Moving • Pay As You Go!</p>
+            <span className="mhero-banner-btn">
+              <span className="mhero-banner-btn-main">Get Estimate <FaArrowRight /></span>
+              <span className="mhero-banner-btn-sub">in 60 seconds</span>
+            </span>
+          </div>
+          <img className="mhero-banner-mover" src="/images/hero-mover.png" alt="" />
         </Link>
 
         {/* Trust row */}
