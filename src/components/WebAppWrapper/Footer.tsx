@@ -133,41 +133,15 @@ const Footer = () => {
           <LinkColumn title="Legal" links={legalLinks} />
           <LinkColumn title="Company" links={companyLinks} />
 
-          {/* Contact column */}
-          <div className="footer-col footer-contact">
-            <h4 className="footer-col-title">Get in touch</h4>
-            <ul className="footer-contact-list">
-              <li>
-                <span className="contact-ic">
-                  <FaPhoneAlt />
-                </span>
-                <a href="tel:1300013131">1300 01 31 31</a>
-              </li>
-              <li>
-                <span className="contact-ic">
-                  <FaEnvelope />
-                </span>
-                <a href="mailto:support@oyomovers.com.au">
-                  support@oyomovers.com.au
-                </a>
-              </li>
-              <li>
-                <span className="contact-ic">
-                  <FaMapMarkerAlt />
-                </span>
-                <span>470 St Kilda Road, Melbourne VIC 3004</span>
-              </li>
-            </ul>
-          </div>
         </div>
       </div>
 
       {/* Bottom bar */}
       <div className="footer-bottom">
         <div className="footer-bottom-inner">
-          <p className="copyright-text">
+          <span className="copyright-text">
             Copyright &copy; 2026 OYO Movers | All rights reserved
-          </p>
+          </span>
           <ul className="payment-logos">
             {paymentLogos.map((p) => (
               <li key={p.cls}>
