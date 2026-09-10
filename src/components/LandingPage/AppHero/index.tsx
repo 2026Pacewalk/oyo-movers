@@ -10,11 +10,21 @@ import { FiMapPin, FiClock, FiChevronRight } from "react-icons/fi";
    - Desktop (>=1024px): Figma "Same Day Movers" hero (composite scene + Choose a Service card).
    - Mobile (<1024px): Melbourne|Geelong + Choose a Service cards + yellow Same-Day Movers banner. */
 
-const services = [
+type Service = {
+  key: string;
+  label: string;
+  name?: React.ReactNode;
+  desc: string;
+  img: string;
+  href: string;
+  icon: React.ReactNode;
+};
+
+const services: Service[] = [
   { key: "trucks", label: "Trucks", desc: "2T to 10T Trucks", img: "/images/card-truck.png", href: "/book", icon: <FaTruck /> },
   { key: "vans", label: "Vans", desc: "Ideal for small moves", img: "/images/card-van.png", href: "/book", icon: <FaShuttleVan /> },
   { key: "removalists", label: "Removalists", desc: "Truck + Movers", img: "/figma/home/removalists-sofa.png", href: "/book", icon: <FaUsers /> },
-  { key: "helpers", label: "Helpers Only", desc: "Need extra hands", img: "/images/1man.png", href: "/book", icon: <FaUser /> },
+  { key: "helpers", label: "Helpers Only", name: <>Helpers <span className="thin">Only</span></>, desc: "Need extra hands", img: "/images/1man.png", href: "/book", icon: <FaUser /> },
 ];
 
 const AppHero = () => {
@@ -58,7 +68,7 @@ const AppHero = () => {
               <Link href={s.href} key={s.key} className="dhero-service">
                 <div className="dhero-service-top">
                   <span className="dhero-service-icon">{s.icon}</span>
-                  <span className="dhero-service-name">{s.label}</span>
+                  <span className="dhero-service-name">{s.name ?? s.label}</span>
                   <FiChevronRight className="dhero-service-caret" />
                 </div>
                 <span className="dhero-service-desc">{s.desc}</span>
@@ -84,7 +94,7 @@ const AppHero = () => {
             <Link href={s.href} key={s.key} className="mhero-card">
               <div className="mhero-card-top">
                 <span className="mhero-card-icon">{s.icon}</span>
-                <span className="mhero-card-name">{s.label}</span>
+                <span className="mhero-card-name">{s.name ?? s.label}</span>
                 <span className="mhero-card-caret"><FiChevronRight /></span>
               </div>
               <span className="mhero-card-desc">{s.desc}</span>
