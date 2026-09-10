@@ -1214,19 +1214,19 @@ $drawer-dark: #18181b;
 
 /* Mobile header action controls (phone ring, Book button, burger) */
 @media (max-width: 991px) {
-  .mnav-actions { gap: 14px; }
+  .mnav-actions { gap: 11px; }
 
   .mnav-phone {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 44px;
-    height: 44px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
-    border: 2px solid #111114;
+    border: 1.5px solid #111114;
     color: #111114;
     background: #fff;
-    svg { width: 22px; height: 22px; }
+    svg { width: 17px; height: 17px; }
   }
 
   .mnav-book {
@@ -1236,9 +1236,9 @@ $drawer-dark: #18181b;
     background: #ffd21e;
     color: #111114;
     font-weight: 800;
-    font-size: 17px;
-    padding: 11px 26px;
-    border-radius: 12px;
+    font-size: 14px;
+    padding: 8px 18px;
+    border-radius: 10px;
     text-decoration: none;
     line-height: 1;
     &:hover { background: #f4c400; color: #111114; }
@@ -1247,7 +1247,7 @@ $drawer-dark: #18181b;
   .mnav-burger {
     padding: 0 2px !important;
     color: #111114 !important;
-    svg { width: 30px !important; height: 30px !important; }
+    svg { width: 26px !important; height: 26px !important; }
   }
 }
 
