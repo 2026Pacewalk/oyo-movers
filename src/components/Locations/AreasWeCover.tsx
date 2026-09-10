@@ -20,14 +20,6 @@ const mapPins = [
   { name: "Frankston", slug: "frankston", top: 82, left: 47 },
 ];
 
-/* Split the suburbs into three balanced columns (Lugg-style list). */
-const perCol = Math.ceil(suburbs.length / 3);
-const cols = [
-  suburbs.slice(0, perCol),
-  suburbs.slice(perCol, perCol * 2),
-  suburbs.slice(perCol * 2),
-];
-
 const AreasWeCover = () => {
   return (
     <section className="areas-cover" id="areas">
@@ -63,17 +55,13 @@ const AreasWeCover = () => {
             </div>
           </div>
 
-          {/* Right: 3-column suburb list */}
+          {/* Right: balanced multi-column suburb list */}
           <div className="areas-right">
-            {cols.map((col, ci) => (
-              <div className="areas-col" key={ci}>
-                {col.map((s) => (
-                  <Link key={s.slug} href={locationHref(s)} className="areas-row">
-                    <FaMapMarkerAlt />
-                    <span>{s.name}</span>
-                  </Link>
-                ))}
-              </div>
+            {suburbs.map((s) => (
+              <Link key={s.slug} href={locationHref(s)} className="areas-row">
+                <FaMapMarkerAlt />
+                <span>{s.name}</span>
+              </Link>
             ))}
           </div>
         </div>

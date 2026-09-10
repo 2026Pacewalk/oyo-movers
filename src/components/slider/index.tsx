@@ -60,7 +60,7 @@ const Slider: React.FC<SliderProps> = ({
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 0,
-        speed: 5000,
+        speed: 12000,
         cssEase: "linear",
         infinite: true,
         arrows: false,
