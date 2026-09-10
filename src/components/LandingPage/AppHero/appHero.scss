@@ -136,13 +136,16 @@
   .dhero-scene {
     position: relative;
     width: 100%;
+    height: 520px;
     overflow: hidden;
   }
   .dhero-bg {
     display: block;
     width: 100%;
-    height: auto;
-    transform: scale(1.06); /* zoom to crop the exported white rounded border */
+    height: 100%;
+    object-fit: cover;
+    object-position: right center;
+    transform: scale(1.04); /* zoom to crop the exported white rounded border */
     transform-origin: center center;
   }
   .dhero-overlay {
