@@ -126,14 +126,6 @@ const Footer = () => {
               ))}
             </ul>
 
-            <div className="footer-apps">
-              <a href="#" aria-label="Download on the App Store">
-                <img src="/images/AppleStore.png" alt="Download on the App Store" />
-              </a>
-              <a href="#" aria-label="Get it on Google Play">
-                <img src="/images/GooglePlay.png" alt="Get it on Google Play" />
-              </a>
-            </div>
           </div>
 
           {/* Link columns */}
