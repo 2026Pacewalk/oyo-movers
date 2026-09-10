@@ -367,6 +367,10 @@ $footer-line: #e2e5ea;
         align-items: flex-start;
         text-align: left;
       }
+      .back-to-top {
+        align-self: flex-end;
+        margin-top: -46px; /* sit beside the payment logos, on the right */
+      }
     }
   }
 
