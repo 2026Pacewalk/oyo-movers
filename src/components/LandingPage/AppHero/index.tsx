@@ -14,7 +14,7 @@ const services = [
   { key: "trucks", label: "Trucks", desc: "2T to 10T Trucks", img: "/images/card-truck.png", href: "/book", icon: <FaTruck /> },
   { key: "vans", label: "Vans", desc: "Ideal for small moves", img: "/images/card-van.png", href: "/book", icon: <FaShuttleVan /> },
   { key: "removalists", label: "Removalists", desc: "Truck + Movers", img: "/figma/home/removalists-sofa.png", href: "/book", icon: <FaUsers /> },
-  { key: "helpers", label: "Helpers Only", desc: "Need extra hands", img: "/figma/home/helpers.png", href: "/book", icon: <FaUser /> },
+  { key: "helpers", label: "Helpers Only", desc: "Need extra hands", img: "/images/1man.png", href: "/book", icon: <FaUser /> },
 ];
 
 const AppHero = () => {
@@ -83,8 +83,9 @@ const AppHero = () => {
           {services.map((s) => (
             <Link href={s.href} key={s.key} className="mhero-card">
               <div className="mhero-card-top">
+                <span className="mhero-card-icon">{s.icon}</span>
                 <span className="mhero-card-name">{s.label}</span>
-                <FiChevronRight className="mhero-card-caret" />
+                <span className="mhero-card-caret"><FiChevronRight /></span>
               </div>
               <span className="mhero-card-desc">{s.desc}</span>
               <span className={`mhero-card-img mhero-card-img--${s.key}`}><img src={s.img} alt={s.label} /></span>

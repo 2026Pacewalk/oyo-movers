@@ -34,12 +34,13 @@
 
   .mhero-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: 13px;
   }
   .mhero-card {
     display: flex;
     flex-direction: column;
+    min-width: 0;
     min-height: 200px;
     padding: 14px 14px 12px;
     background: #fff;
@@ -49,13 +50,47 @@
     text-decoration: none;
 
     .mhero-card-top {
+      position: relative;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      .mhero-card-name { font-size: 16px; font-weight: 700; color: #111; }
-      .mhero-card-caret { color: #111; font-size: 15px; }
+      gap: 6px;
+      padding-right: 25px; /* room for the corner caret */
+      min-height: 24px;
+      .mhero-card-icon {
+        flex-shrink: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 22px;
+        height: 22px;
+        border-radius: 7px;
+        background: #ffce00;
+        color: #111;
+        font-size: 11px;
+      }
+      .mhero-card-name {
+        min-width: 0;
+        font-size: 12.5px;
+        font-weight: 700;
+        line-height: 1.15;
+        color: #111;
+      }
+      .mhero-card-caret {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        border: 1.5px solid #d7d9de;
+        color: #111;
+        font-size: 13px;
+      }
     }
-    .mhero-card-desc { font-size: 11px; color: #6b7280; margin-top: 1px; }
+    .mhero-card-desc { font-size: 11px; color: #6b7280; margin-top: 3px; }
     .mhero-card-img {
       flex: 1;
       display: flex;
@@ -65,10 +100,10 @@
       overflow: hidden;
       img { max-height: 128px; max-width: 100%; object-fit: contain; }
     }
-    /* Helpers art has wide empty margins — zoom into the figures to fill the card */
+    /* Helpers art (single man + box) is already tightly framed */
     .mhero-card-img--helpers img {
-      transform: scale(1.95);
-      transform-origin: 51% 56%;
+      transform: scale(1.15);
+      transform-origin: 50% 55%;
     }
   }
 
@@ -331,7 +366,7 @@
       overflow: hidden;
       img { max-height: 120px; max-width: 100%; object-fit: contain; }
     }
-    &.dhero-service:nth-child(4) .dhero-service-img img { transform: scale(1.7); transform-origin: 51% 60%; }
+    &.dhero-service:nth-child(4) .dhero-service-img img { transform: scale(1.05); transform-origin: 50% 60%; }
   }
   .dhero-estimate {
     position: relative;
