@@ -14,7 +14,7 @@ $footer-line: #e2e5ea;
 .footer-section {
   position: relative;
   margin-top: 60px;
-  background: linear-gradient(180deg, $footer-bg 0%, $footer-bg-2 100%);
+  background: $footer-bg;
   color: $footer-text;
   border-top: 1px solid $footer-line;
 
@@ -85,7 +85,8 @@ $footer-line: #e2e5ea;
     @media (max-width: 768px) {
       .footer-cta-inner {
         flex-direction: column;
-        text-align: center;
+        align-items: flex-start;
+        text-align: left;
         padding: 26px 24px;
       }
       .footer-cta-text h3 {
@@ -116,7 +117,7 @@ $footer-line: #e2e5ea;
     }
     @media (max-width: 460px) {
       grid-template-columns: 1fr;
-      text-align: center;
+      text-align: left;
     }
   }
 
@@ -144,8 +145,8 @@ $footer-line: #e2e5ea;
 
     @media (max-width: 460px) {
       .footer-tagline {
-        margin-left: auto !important;
-        margin-right: auto !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
       }
     }
   }
@@ -201,7 +202,7 @@ $footer-line: #e2e5ea;
   @media (max-width: 460px) {
     .footer-social,
     .footer-apps {
-      justify-content: center;
+      justify-content: flex-start;
     }
   }
 
@@ -229,8 +230,8 @@ $footer-line: #e2e5ea;
 
     @media (max-width: 460px) {
       &::after {
-        left: 50%;
-        transform: translateX(-50%);
+        left: 0;
+        transform: none;
       }
     }
   }
@@ -275,7 +276,7 @@ $footer-line: #e2e5ea;
 
   @media (max-width: 460px) {
     .footer-link {
-      justify-content: center;
+      justify-content: flex-start;
     }
   }
 
@@ -317,7 +318,7 @@ $footer-line: #e2e5ea;
 
     @media (max-width: 460px) {
       li {
-        justify-content: center;
+        justify-content: flex-start;
       }
     }
   }
@@ -363,7 +364,8 @@ $footer-line: #e2e5ea;
     @media (max-width: 768px) {
       .footer-bottom-inner {
         flex-direction: column;
-        text-align: center;
+        align-items: flex-start;
+        text-align: left;
       }
     }
   }
