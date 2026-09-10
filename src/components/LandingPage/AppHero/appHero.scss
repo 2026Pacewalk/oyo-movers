@@ -173,7 +173,8 @@
     pointer-events: none;
     img {
       position: absolute;
-      left: 37.6%;   /* 542/1440 */
+      left: auto;
+      right: 4%;     /* anchor to the right per Figma */
       top: 8%;
       width: 41.6%;  /* 599/1440 */
       height: auto;
