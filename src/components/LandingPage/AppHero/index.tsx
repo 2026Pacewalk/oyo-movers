@@ -111,13 +111,13 @@ const AppHero = () => {
               <img className="mhero-banner-swoosh" src="/images/banner-swoosh.svg" alt="" />
             </div>
             <h3 className="mhero-banner-title">Same-Day Movers</h3>
-            <p className="mhero-banner-sub">Stress-Free Moving • Pay As You Go!</p>
+            <span className="mhero-banner-sub">Stress-Free Moving • Pay As You Go!</span>
             <span className="mhero-banner-btn">
               <span className="mhero-banner-btn-main">Get Estimate <FaArrowRight /></span>
               <span className="mhero-banner-btn-sub">in 60 seconds</span>
             </span>
           </div>
-          <img className="mhero-banner-mover" src="/images/hero-mover.png" alt="" />
+          <img className="mhero-banner-mover" src="/images/banner-mover.png" alt="" />
         </Link>
 
         {/* Trust row */}

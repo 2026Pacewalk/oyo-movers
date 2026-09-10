@@ -123,7 +123,7 @@
   .mhero-banner-copy {
     position: relative;
     z-index: 2;
-    max-width: 62%;
+    max-width: 63%;
   }
   .mhero-banner-badge-row {
     display: flex;
@@ -143,15 +143,16 @@
   .mhero-banner-swoosh { height: 14px; width: auto; }
   .mhero-banner-title {
     margin: 11px 0 3px;
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 800;
     color: #111114;
     line-height: 1.04;
     white-space: nowrap;
   }
   .mhero-banner-sub {
+    display: block;
     margin: 0 0 12px;
-    font-size: 10px;
+    font-size: 11px;
     font-weight: 600;
     color: #1a1a1a;
     white-space: nowrap;
@@ -183,10 +184,9 @@
   }
   .mhero-banner-mover {
     position: absolute;
-    right: -8px;
-    bottom: -40px; /* drop the figure so overflow clips the legs (head-to-hips) */
-    width: 38%;
-    max-width: 172px;
+    right: 2px;
+    bottom: 0;
+    width: 118px; /* upper-body crop, sits at the right */
     height: auto;
     z-index: 1;
     pointer-events: none;
