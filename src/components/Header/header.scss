@@ -1233,15 +1233,15 @@ $drawer-dark: #18181b;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: #ffd21e;
-    color: #111114;
+    background: #111114;
+    color: #fff;
     font-weight: 800;
     font-size: 14px;
     padding: 8px 18px;
     border-radius: 10px;
     text-decoration: none;
     line-height: 1;
-    &:hover { background: #f4c400; color: #111114; }
+    &:hover { background: #2a2a2e; color: #fff; }
   }
 
   .mnav-burger {

@@ -465,6 +465,7 @@
   }
   .dhero-estimate {
     position: relative;
+    align-self: center; /* shorter than the service cards (doesn't stretch to row height) */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -472,7 +473,7 @@
     background: #111114;
     color: #fff;
     border-radius: 16px;
-    padding: 18px;
+    padding: 34px 18px 56px;
     text-decoration: none;
     strong { font-size: 22px; font-weight: 800; line-height: 1.12; }
     .dhero-estimate-time { display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; color: #cfd1d6; }
