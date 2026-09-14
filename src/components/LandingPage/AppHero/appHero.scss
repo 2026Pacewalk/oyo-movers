@@ -234,7 +234,15 @@
   .dhero {
     display: block;
     position: relative;
-    background: #ffdb00; /* flat Figma yellow */
+    /* Figma: yellow across the top, then grey behind the lower half of the
+       Choose-a-Service card. Boundary sits at the scene bottom (= card middle). */
+    background: linear-gradient(
+      180deg,
+      #ffdb00 0,
+      #ffdb00 calc(92px + clamp(430px, 43vw, 560px)),
+      #f3f4f6 calc(92px + clamp(430px, 43vw, 560px)),
+      #f3f4f6 100%
+    );
     padding-top: 92px;
     overflow: hidden;
   }
@@ -302,7 +310,7 @@
     padding: 0 24px;
     /* keep copy in the left half so it never overlaps the mover */
     max-width: 1240px;
-    .dhero-copy-inner { max-width: 560px; }
+    .dhero-copy-inner { max-width: 660px; }
   }
   .dhero-badge-row {
     display: flex;
@@ -320,18 +328,20 @@
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
   }
   .dhero-swoosh {
-    height: 30px;
+    height: 46px;
     width: auto;
   }
   .dhero-title {
-    font-size: 64px;
+    font-size: 76px !important;
     font-weight: 800;
     color: #111 !important;
-    line-height: 1.04;
-    letter-spacing: -0.5px;
+    line-height: 1.02;
+    letter-spacing: -1px;
+    white-space: nowrap;
     margin: 18px 0 12px;
   }
   .dhero-sub {
+    display: block;
     font-size: 22px;
     font-weight: 800;
     color: #1a1a1a;
@@ -394,7 +404,7 @@
   }
   .dhero-services {
     display: grid;
-    grid-template-columns: repeat(4, 1fr) 150px;
+    grid-template-columns: repeat(5, 1fr);
     gap: 16px;
   }
   .dhero-service {
@@ -426,7 +436,19 @@
         font-size: 11px;
       }
       .dhero-service-name { font-size: 16px; font-weight: 700; color: #111; white-space: nowrap; .thin { font-weight: 400; } }
-      .dhero-service-caret { margin-left: auto; color: #111; font-size: 16px; flex-shrink: 0; }
+      .dhero-service-caret {
+        margin-left: auto;
+        flex-shrink: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: #eef0f2;
+        color: #111;
+        font-size: 15px;
+      }
     }
     .dhero-service-desc { font-size: 12.5px; color: #6b7280; margin-top: 2px; }
     .dhero-service-img {

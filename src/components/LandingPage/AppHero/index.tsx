@@ -23,8 +23,8 @@ type Service = {
 const services: Service[] = [
   { key: "trucks", label: "Trucks", desc: "2T to 10T Trucks", img: "/images/card-truck.png", href: "/book", icon: <FaTruck /> },
   { key: "vans", label: "Vans", desc: "Ideal for small moves", img: "/images/card-van.png", href: "/book", icon: <FaShuttleVan /> },
-  { key: "removalists", label: "Removalists", desc: "Truck + Movers", img: "/figma/home/removalists-sofa.png", href: "/book", icon: <FaUsers /> },
-  { key: "helpers", label: "Helpers Only", name: <>Helpers <span className="thin">Only</span></>, desc: "Need extra hands", img: "/images/1man.png", href: "/book", icon: <FaUser /> },
+  { key: "removalists", label: "Removalists", desc: "Truck + Movers", img: "/figma/home/removalists-combo.png", href: "/book", icon: <FaUsers /> },
+  { key: "helpers", label: "Helpers Only", name: <>Helpers <span className="thin">Only</span></>, desc: "Extra hands to help", img: "/images/1man.png", href: "/book", icon: <FaUser /> },
 ];
 
 const AppHero = () => {
@@ -45,7 +45,7 @@ const AppHero = () => {
                   <img className="dhero-swoosh" src="/images/banner-swoosh.svg" alt="" />
                 </div>
                 <h1 className="dhero-title">Same Day Movers</h1>
-                <p className="dhero-sub">Stress-Free Moving • Pay as you Go!</p>
+                <span className="dhero-sub">Stress-Free Moving • Pay as you Go!</span>
                 <div className="dhero-trust">
                   <span className="dhero-trust-item"><FiClock /> Time Start at Pickup</span>
                   <i className="dhero-sep" />
