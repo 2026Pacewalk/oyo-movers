@@ -405,7 +405,7 @@
   }
   .dhero-services {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr) 0.8fr;
     gap: 16px;
   }
   .dhero-service {
