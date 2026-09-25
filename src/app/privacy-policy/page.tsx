@@ -16,7 +16,6 @@ export default function PrivacyPolicyPage() {
               <span>/</span>
               <span>Privacy Policy</span>
             </nav>
-            <span className="pt-badge">Legal</span>
             <h1 className="pt-title">Privacy Policy</h1>
             <div className="divider"></div>
             <p className="pt-hero-sub">

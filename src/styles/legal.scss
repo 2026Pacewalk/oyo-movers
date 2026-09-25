@@ -38,7 +38,7 @@ html { scroll-behavior: smooth; }
     font-size: 13px;
     color: #8a8d93;
     margin-bottom: 16px;
-    a { color: #8a8d93; text-decoration: none; &:hover { color: #b58a00; } }
+    a { color: #8a8d93; text-decoration: none; &:hover { color: #4a4a52; } }
     span:last-child { color: #18181b; font-weight: 600; }
   }
   .pt-badge {
@@ -247,7 +247,7 @@ html { scroll-behavior: smooth; }
       margin-bottom: 0.5rem;
       font-size: 16px;
       line-height: 1.6;
-      span:first-child { font-weight: 700; color: #b58a00; margin-right: 6px; }
+      span:first-child { font-weight: 700; color: #4a4a52; margin-right: 6px; }
       .text-black { font-weight: 700; color: #18181b !important; }
     }
     ul { list-style: none; padding-left: 0; }
@@ -256,9 +256,9 @@ html { scroll-behavior: smooth; }
   .padd { padding-left: 20px; }
 
   a {
-    color: #b58a00;
+    color: #4a4a52;
     text-decoration: underline;
-    &:hover { color: #8a6a00; }
+    &:hover { color: #18181b; }
     &.text-black { color: #18181b !important; }
   }
 

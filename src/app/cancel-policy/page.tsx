@@ -16,7 +16,6 @@ export default function CancellationTermPage() {
               <span>/</span>
               <span>Cancellations &amp; Changes</span>
             </nav>
-            <span className="pt-badge">Legal</span>
             <h1 className="pt-title">Cancellations &amp; Changes Policy</h1>
             <div className="divider"></div>
             <p className="pt-hero-sub">

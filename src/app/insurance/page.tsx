@@ -17,7 +17,6 @@ export default function InsurancePage() {
               <span>/</span>
               <span>Insurance</span>
             </nav>
-            <span className="pt-badge">Legal</span>
             <h1 className="pt-title">Insurance Policy</h1>
             <div className="divider"></div>
             <p className="pt-hero-sub">
