@@ -80,14 +80,6 @@ const LocationPageTemplate = ({ suburb }: { suburb: Suburb }) => {
                 <li><FaStar className="star" /> 4.9 Rating</li>
               </ul>
             </div>
-            <div className="sp-hero-right">
-              <div className="sp-cost-card">
-                <FaTruck className="sp-cost-icon" />
-                <span className="sp-cost-label">Local {suburb.name} move from</span>
-                <span className="sp-cost-value">$76/hr</span>
-                <Link href="/prices" className="sp-cost-btn">Get your price</Link>
-              </div>
-            </div>
           </div>
         </div>
       </section>

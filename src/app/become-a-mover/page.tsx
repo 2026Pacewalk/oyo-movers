@@ -313,7 +313,7 @@ Payments are released once the job is completed without any issue and the custom
             </div>
             <div className="perks-column income-column">
               <div className="perk-item income-item">
-                <h3 style={{ marginTop: "40px" }}>Earn Great Income</h3>
+                <h3>Earn Great Income</h3>
                 <p className='margin-pp'>Potential earnings:</p>
                 <ul className="earnings-list">
                   <li><span className="check">✓</span> Single Movers - $2,000+</li>

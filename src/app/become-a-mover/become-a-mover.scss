@@ -417,7 +417,7 @@ $bam-border: #eef0f3;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
-    align-items: start;
+    align-items: stretch; /* all three columns share the same height */
 
     @media (max-width: 900px) {
       grid-template-columns: 1fr 1fr;
@@ -481,11 +481,15 @@ $bam-border: #eef0f3;
     }
   }
 
-  /* Highlighted income card */
+  /* Highlighted income card — fills the column so it aligns top & bottom with the side stacks */
   .income-column {
-    justify-content: center;
+    justify-content: stretch;
   }
   .income-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background: linear-gradient(160deg, #fff8dc 0%, #fff1b0 100%);
     border: 1px solid #ffe08a;
     color: #121241;

@@ -67,14 +67,6 @@ const ServicePageTemplate = ({ content }: { content: ServiceContent }) => {
                 <li><FaStar className="star" /> 4.9 Rating</li>
               </ul>
             </div>
-            <div className="sp-hero-right">
-              <div className="sp-cost-card">
-                <FaTruck className="sp-cost-icon" />
-                <span className="sp-cost-label">{content.hero.avgLabel}</span>
-                <span className="sp-cost-value">{content.hero.avgCost}</span>
-                <Link href="/prices" className="sp-cost-btn">Get your price</Link>
-              </div>
-            </div>
           </div>
         </div>
       </section>
