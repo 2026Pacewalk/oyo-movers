@@ -21,26 +21,19 @@ html { scroll-behavior: smooth; }
 
   /* ---------- Hero ---------- */
   .pt-hero {
-    background: radial-gradient(circle at 50% 0%, #fff7d6 0%, rgba(255, 255, 255, 0) 55%), #fff;
-    border-bottom: 1px solid #eef0f2;
-    padding: 116px 0 44px;
+    background: #fff;
+    border-bottom: none;
+    padding: 116px 0 22px;
 
-    @media (max-width: 991px) { padding: 100px 0 36px; }
+    @media (max-width: 991px) { padding: 100px 0 18px; }
   }
   .pt-hero-inner {
-    max-width: 1160px;
-    margin: 0 auto;
-    padding: 0 24px;
+    max-width: none;
+    margin: 0;
+    padding: 0 40px;
+    @media (max-width: 768px) { padding: 0 20px; }
   }
-  .pt-crumbs {
-    display: flex;
-    gap: 8px;
-    font-size: 13px;
-    color: #8a8d93;
-    margin-bottom: 16px;
-    a { color: #8a8d93; text-decoration: none; &:hover { color: #4a4a52; } }
-    span:last-child { color: #18181b; font-weight: 600; }
-  }
+  .pt-crumbs { display: none; }
   .pt-badge {
     display: inline-block;
     background: #ffe147;
@@ -54,29 +47,30 @@ html { scroll-behavior: smooth; }
     margin-bottom: 14px;
   }
   .pt-title {
-    font-size: 40px;
+    font-size: 46px;
     font-weight: 800;
     color: #18181b !important; /* beat global h1 !important */
-    margin: 0 0 14px !important;
+    margin: 0 0 12px !important;
     padding: 0 !important;
-    line-height: 1.15;
-    @media (max-width: 768px) { font-size: 28px; }
+    line-height: 1.12;
+    @media (max-width: 768px) { font-size: 30px; }
   }
   .divider {
-    display: none; /* removed hero yellow line */
+    display: block;
+    height: 5px;
+    width: 120px;
+    background: #ffe147;
+    border-radius: 3px;
+    margin: 0;
   }
-  .pt-hero-sub {
-    font-size: 16px;
-    color: #5b5b63;
-    margin: 0 !important;
-    max-width: 640px;
-  }
+  .pt-hero-sub { display: none; }
 
   /* ---------- Layout ---------- */
   .container-1 {
-    max-width: 1160px;
-    margin: 34px auto 0;
-    padding: 0 24px;
+    max-width: none;
+    margin: 30px 0 0;
+    padding: 0 40px;
+    @media (max-width: 768px) { padding: 0 20px; }
   }
   .row {
     display: flex;
@@ -128,10 +122,9 @@ html { scroll-behavior: smooth; }
 
     span {
       display: block;
-      font-size: 13px;
+      font-size: 16px;
       font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
+      text-transform: none;
       color: #18181b;
       padding-bottom: 12px;
       margin-bottom: 8px;
@@ -144,7 +137,7 @@ html { scroll-behavior: smooth; }
   .links,
   .table-of-contents li a {
     display: block;
-    color: #5b5b63 !important;
+    color: #2563eb !important;
     text-decoration: none;
     font-size: 14px;
     font-weight: 500;
@@ -154,8 +147,8 @@ html { scroll-behavior: smooth; }
     transition: all 0.2s ease;
 
     &:hover {
-      color: #18181b !important;
-      background: #f1f2f4;
+      color: #1d4ed8 !important;
+      background: #eff4ff;
       text-decoration: none;
     }
   }
@@ -167,7 +160,7 @@ html { scroll-behavior: smooth; }
     overflow: visible;
     padding: 0;
     margin-bottom: 0;
-    max-width: 820px;
+    max-width: none;
 
     > div[id] {
       padding: 8px 0;

@@ -103,11 +103,11 @@ export default function PlatformTermsPage() {
                 <div id="definitions">
                   <h5 className="text-uppercase mt-3">1. Definitions</h5>
                   <div className="points ">
-                    <p className="text-justify d-flex mb-2"><span>•&nbsp;</span><span><span className="font-weight-bold">“We”, “Us”, “Our”, “Oyo”, “Oyo Movers” and “Platform”</span> refers to Oyo Group Pty Ltd (ABN 30 646 236 179).</span></p>
-                    <p className="text-justify d-flex mb-2"><span>•&nbsp;</span><span><span className="font-weight-bold">“Service Provider”</span> refers to Independent Contractors, Movers, Drivers, Helpers, Moving Professionals or Delivery Partners using the Platform to provide services.</span></p>
-                    <p className="text-justify d-flex mb-2"><span>•&nbsp;</span><span><span className="font-weight-bold">“Users”, “You”, “Your” or “Customer”</span> refers to anyone using the platform to request or book services.</span></p>
-                    <p className="text-justify d-flex mb-2"><span>•&nbsp;</span><span><span className="font-weight-bold">“Goods”</span> refers to furniture, household items, office items, junk, or other items being moved, delivered, or removed.</span></p>
-                    <p className="text-justify d-flex mb-2"><span>•&nbsp;</span><span><span className="font-weight-bold">“Service”</span> refers to any moving, delivery, junk removal or related services requested or arranged through OYO Platform.</span></p>
+                    <p className="text-justify d-flex mb-2"><span>1.1&nbsp;</span><span><span className="font-weight-bold">“We”, “Us”, “Our”, “Oyo”, “Oyo Movers” and “Platform”</span> refers to Oyo Group Pty Ltd (ABN 30 646 236 179).</span></p>
+                    <p className="text-justify d-flex mb-2"><span>1.2&nbsp;</span><span><span className="font-weight-bold">“Service Provider”</span> refers to Independent Contractors, Movers, Drivers, Helpers, Moving Professionals or Delivery Partners using the Platform to provide services.</span></p>
+                    <p className="text-justify d-flex mb-2"><span>1.3&nbsp;</span><span><span className="font-weight-bold">“Users”, “You”, “Your” or “Customer”</span> refers to anyone using the platform to request or book services.</span></p>
+                    <p className="text-justify d-flex mb-2"><span>1.4&nbsp;</span><span><span className="font-weight-bold">“Goods”</span> refers to furniture, household items, office items, junk, or other items being moved, delivered, or removed.</span></p>
+                    <p className="text-justify d-flex mb-2"><span>1.5&nbsp;</span><span><span className="font-weight-bold">“Service”</span> refers to any moving, delivery, junk removal or related services requested or arranged through OYO Platform.</span></p>
                   </div>
                 </div>
 
@@ -118,32 +118,32 @@ export default function PlatformTermsPage() {
                       OYO provides a technology platform that connects Customers with independent Service
                       Providers for on-demand moving, delivery and related services.
                     </p>
-                    <p className="text-justify d-flex mb-2"><span>•&nbsp;</span><span><span className="font-weight-bold">Platform Services:</span> Users can request moving, delivery and related services through the Platform. Requests may be sent to available Service Providers.</span></p>
-                    <p className="text-justify d-flex mb-2"><span>•&nbsp;</span><span><span className="font-weight-bold">Payments:</span> OYO may facilitate and collect payments through the Platform. Payment processing may be handled by third-party providers such as Stripe, subject to the applicable Customer and Service Provider Terms.</span></p>
-                    <p className="text-justify d-flex mb-2"><span>•&nbsp;</span><span><span className="font-weight-bold">Independent Service Providers:</span> Service Providers available through the Platform operate as independent contractors or businesses and are responsible for the services they provide, subject to the applicable Terms.</span></p>
-                    <p className="text-justify d-flex mb-2"><span>•&nbsp;</span><span><span className="font-weight-bold">Platform Fees:</span> OYO may charge Service Providers platform or processing fees. Any Customer charges are shown or explained under the applicable Customer Terms.</span></p>
-                    <p className="text-justify d-flex mb-2"><span>•&nbsp;</span><span><span className="font-weight-bold">Privacy:</span> Personal information is handled in accordance with our Privacy Policy.</span></p>
+                    <p className="text-justify d-flex mb-2"><span>2.1&nbsp;</span><span><span className="font-weight-bold">Platform Services:</span> Users can request moving, delivery and related services through the Platform. Requests may be sent to available Service Providers.</span></p>
+                    <p className="text-justify d-flex mb-2"><span>2.2&nbsp;</span><span><span className="font-weight-bold">Payments:</span> OYO may facilitate and collect payments through the Platform. Payment processing may be handled by third-party providers such as Stripe, subject to the applicable Customer and Service Provider Terms.</span></p>
+                    <p className="text-justify d-flex mb-2"><span>2.3&nbsp;</span><span><span className="font-weight-bold">Independent Service Providers:</span> Service Providers available through the Platform operate as independent contractors or businesses and are responsible for the services they provide, subject to the applicable Terms.</span></p>
+                    <p className="text-justify d-flex mb-2"><span>2.4&nbsp;</span><span><span className="font-weight-bold">Platform Fees:</span> OYO may charge Service Providers platform or processing fees. Any Customer charges are shown or explained under the applicable Customer Terms.</span></p>
+                    <p className="text-justify d-flex mb-2"><span>2.5&nbsp;</span><span><span className="font-weight-bold">Privacy:</span> Personal information is handled in accordance with our Privacy Policy.</span></p>
                   </div>
                 </div>
 
                 <div id="creating-account">
                   <h5 className="text-uppercase mt-3">3. Creating an Account</h5>
                   <div className="points ">
-                    <p className="text-justify d-flex mb-2"><span>•&nbsp;</span><span><span className="font-weight-bold">Account Information:</span> When creating an account, you may be required to provide personal information such as your name, address and mobile number.</span></p>
-                    <p className="text-justify d-flex mb-2"><span>•&nbsp;</span><span><span className="font-weight-bold">Account Security:</span> You must keep your password and account details secure. You are responsible for activity under your account.</span></p>
-                    <p className="text-justify d-flex mb-2"><span>•&nbsp;</span><span><span className="font-weight-bold">Unauthorised Use:</span> Notify OYO as soon as possible if you suspect unauthorised use or a security breach.</span></p>
-                    <p className="text-justify d-flex mb-2"><span>•&nbsp;</span><span><span className="font-weight-bold">Accurate Information:</span> Information provided through your account must be accurate, truthful, current and complete.</span></p>
-                    <p className="text-justify d-flex mb-2"><span>•&nbsp;</span><span><span className="font-weight-bold">Account Access:</span> OYO may deny, suspend or restrict an account where reasonably required for safety, security, compliance, misuse or a breach of these Terms.</span></p>
-                    <p className="text-justify d-flex mb-2"><span>•&nbsp;</span><span><span className="font-weight-bold">Electronic Communications:</span> By using the OYO Platform, you agree that OYO may communicate with you about your account, bookings and use of the Platform by email, SMS, app notification or other electronic means.</span></p>
+                    <p className="text-justify d-flex mb-2"><span>3.1&nbsp;</span><span><span className="font-weight-bold">Account Information:</span> When creating an account, you may be required to provide personal information such as your name, address and mobile number.</span></p>
+                    <p className="text-justify d-flex mb-2"><span>3.2&nbsp;</span><span><span className="font-weight-bold">Account Security:</span> You must keep your password and account details secure. You are responsible for activity under your account.</span></p>
+                    <p className="text-justify d-flex mb-2"><span>3.3&nbsp;</span><span><span className="font-weight-bold">Unauthorised Use:</span> Notify OYO as soon as possible if you suspect unauthorised use or a security breach.</span></p>
+                    <p className="text-justify d-flex mb-2"><span>3.4&nbsp;</span><span><span className="font-weight-bold">Accurate Information:</span> Information provided through your account must be accurate, truthful, current and complete.</span></p>
+                    <p className="text-justify d-flex mb-2"><span>3.5&nbsp;</span><span><span className="font-weight-bold">Account Access:</span> OYO may deny, suspend or restrict an account where reasonably required for safety, security, compliance, misuse or a breach of these Terms.</span></p>
+                    <p className="text-justify d-flex mb-2"><span>3.6&nbsp;</span><span><span className="font-weight-bold">Electronic Communications:</span> By using the OYO Platform, you agree that OYO may communicate with you about your account, bookings and use of the Platform by email, SMS, app notification or other electronic means.</span></p>
                   </div>
                 </div>
 
                 <div id="user-eligibility">
                   <h5 className="text-uppercase mt-3">4. User Eligibility</h5>
                   <div className="points ">
-                    <p className="text-justify d-flex mb-2"><span>•&nbsp;</span><span><span className="font-weight-bold">Age:</span> You must be at least 18 years old and have legal capacity to enter into a binding agreement.</span></p>
-                    <p className="text-justify d-flex mb-2"><span>•&nbsp;</span><span><span className="font-weight-bold">Authority:</span> If using an account on behalf of another person or entity, you confirm that you have authority to act on their behalf.</span></p>
-                    <p className="text-justify d-flex mb-2"><span>•&nbsp;</span><span><span className="font-weight-bold">Eligibility:</span> By using the Platform, you confirm that you meet these requirements.</span></p>
+                    <p className="text-justify d-flex mb-2"><span>4.1&nbsp;</span><span><span className="font-weight-bold">Age:</span> You must be at least 18 years old and have legal capacity to enter into a binding agreement.</span></p>
+                    <p className="text-justify d-flex mb-2"><span>4.2&nbsp;</span><span><span className="font-weight-bold">Authority:</span> If using an account on behalf of another person or entity, you confirm that you have authority to act on their behalf.</span></p>
+                    <p className="text-justify d-flex mb-2"><span>4.3&nbsp;</span><span><span className="font-weight-bold">Eligibility:</span> By using the Platform, you confirm that you meet these requirements.</span></p>
                   </div>
                 </div>
 
@@ -151,30 +151,30 @@ export default function PlatformTermsPage() {
                   <h5 className="text-uppercase mt-3">5. Prohibited Conduct</h5>
                   <div className="points ">
                     <p className="text-justify mb-2">You must use the Platform lawfully and respectfully. You must not:</p>
-                    <p className="text-justify d-flex mb-2"><span>•&nbsp;</span><span>Use the Platform or Services for illegal or unauthorised purposes.</span></p>
-                    <p className="text-justify d-flex mb-2"><span>•&nbsp;</span><span>Violate applicable laws, regulations or third-party rights.</span></p>
-                    <p className="text-justify d-flex mb-2"><span>•&nbsp;</span><span>Use the Platform or its content to unlawfully copy, reproduce or compete with OYO.</span></p>
-                    <p className="text-justify d-flex mb-2"><span>•&nbsp;</span><span>Threaten, harass, abuse or defame OYO staff, Service Providers or other Users.</span></p>
-                    <p className="text-justify d-flex mb-2"><span>•&nbsp;</span><span>Access the Platform through unauthorised methods or attempt to gain unauthorised access to accounts or systems.</span></p>
-                    <p className="text-justify d-flex mb-2"><span>•&nbsp;</span><span>Submit false, misleading or fraudulent information.</span></p>
-                    <p className="text-justify d-flex mb-2"><span>•&nbsp;</span><span>Assist another person to misuse the Platform.</span></p>
-                    <p className="text-justify d-flex mb-2"><span>•&nbsp;</span><span>Use contact details obtained through OYO to bypass the Platform or make unauthorised private arrangements for services introduced or arranged through OYO.</span></p>
+                    <p className="text-justify d-flex mb-2"><span>5.1&nbsp;</span><span>Use the Platform or Services for illegal or unauthorised purposes.</span></p>
+                    <p className="text-justify d-flex mb-2"><span>5.2&nbsp;</span><span>Violate applicable laws, regulations or third-party rights.</span></p>
+                    <p className="text-justify d-flex mb-2"><span>5.3&nbsp;</span><span>Use the Platform or its content to unlawfully copy, reproduce or compete with OYO.</span></p>
+                    <p className="text-justify d-flex mb-2"><span>5.4&nbsp;</span><span>Threaten, harass, abuse or defame OYO staff, Service Providers or other Users.</span></p>
+                    <p className="text-justify d-flex mb-2"><span>5.5&nbsp;</span><span>Access the Platform through unauthorised methods or attempt to gain unauthorised access to accounts or systems.</span></p>
+                    <p className="text-justify d-flex mb-2"><span>5.6&nbsp;</span><span>Submit false, misleading or fraudulent information.</span></p>
+                    <p className="text-justify d-flex mb-2"><span>5.7&nbsp;</span><span>Assist another person to misuse the Platform.</span></p>
+                    <p className="text-justify d-flex mb-2"><span>5.8&nbsp;</span><span>Use contact details obtained through OYO to bypass the Platform or make unauthorised private arrangements for services introduced or arranged through OYO.</span></p>
                   </div>
                 </div>
 
                 <div id="booking-process">
                   <h5 className="text-uppercase mt-3">6. Booking Process</h5>
                   <div className="points ">
-                    <p className="text-justify d-flex mb-2"><span>•&nbsp;</span><span><span className="font-weight-bold">Booking Confirmation:</span> A booking is confirmed once accepted by OYO and, where applicable, allocated to a Service Provider.</span></p>
-                    <p className="text-justify d-flex mb-2"><span>•&nbsp;</span><span><span className="font-weight-bold">Mover Details:</span> Customer and Mover contact details may be shared for job coordination, usually before the move.</span></p>
-                    <p className="text-justify d-flex mb-2"><span>•&nbsp;</span><span><span className="font-weight-bold">Mover Unavailable:</span> If an allocated Mover cannot complete the job, OYO will make reasonable efforts to arrange another Service Provider or reschedule the booking. If no alternative is available, the Customer may cancel without penalty.</span></p>
+                    <p className="text-justify d-flex mb-2"><span>6.1&nbsp;</span><span><span className="font-weight-bold">Booking Confirmation:</span> A booking is confirmed once accepted by OYO and, where applicable, allocated to a Service Provider.</span></p>
+                    <p className="text-justify d-flex mb-2"><span>6.2&nbsp;</span><span><span className="font-weight-bold">Mover Details:</span> Customer and Mover contact details may be shared for job coordination, usually before the move.</span></p>
+                    <p className="text-justify d-flex mb-2"><span>6.3&nbsp;</span><span><span className="font-weight-bold">Mover Unavailable:</span> If an allocated Mover cannot complete the job, OYO will make reasonable efforts to arrange another Service Provider or reschedule the booking. If no alternative is available, the Customer may cancel without penalty.</span></p>
                     <p className="text-justify mb-2 font-weight-bold">When making a booking, you may be asked to provide:</p>
                     <div className="pl-md-4" style={{ marginLeft: "16px" }}>
-                      <p className="text-justify d-flex mb-2"><span>•&nbsp;</span><span>Pickup and delivery addresses.</span></p>
-                      <p className="text-justify d-flex mb-2"><span>•&nbsp;</span><span>Vehicle size and number of Movers required.</span></p>
-                      <p className="text-justify d-flex mb-2"><span>•&nbsp;</span><span>Preferred date and arrival time.</span></p>
-                      <p className="text-justify d-flex mb-2"><span>•&nbsp;</span><span>Photos, inventory or a description of the move.</span></p>
-                      <p className="text-justify d-flex mb-2"><span>•&nbsp;</span><span>Payment details.</span></p>
+                      <p className="text-justify d-flex mb-2"><span>6.4&nbsp;</span><span>Pickup and delivery addresses.</span></p>
+                      <p className="text-justify d-flex mb-2"><span>6.5&nbsp;</span><span>Vehicle size and number of Movers required.</span></p>
+                      <p className="text-justify d-flex mb-2"><span>6.6&nbsp;</span><span>Preferred date and arrival time.</span></p>
+                      <p className="text-justify d-flex mb-2"><span>6.7&nbsp;</span><span>Photos, inventory or a description of the move.</span></p>
+                      <p className="text-justify d-flex mb-2"><span>6.8&nbsp;</span><span>Payment details.</span></p>
                     </div>
                   </div>
                 </div>
@@ -186,11 +186,11 @@ export default function PlatformTermsPage() {
                       OYO has a two-way rating and feedback system for Customers and Service Providers.
                       Both can rate each other from 1 to 5 stars.
                     </p>
-                    <p className="text-justify d-flex mb-2"><span>•&nbsp;</span><span><span className="font-weight-bold">Mover Ratings:</span> Customers may rate and review Movers after a completed service. Ratings may be used by OYO to monitor service quality.</span></p>
-                    <p className="text-justify d-flex mb-2"><span>•&nbsp;</span><span><span className="font-weight-bold">Customer Ratings:</span> Movers may rate Customers based on matters such as cooperation, conduct and job accuracy.</span></p>
-                    <p className="text-justify d-flex mb-2"><span>•&nbsp;</span><span><span className="font-weight-bold">Safety & Misconduct:</span> Safety, misconduct or serious service concerns may be reported to OYO Support for review.</span></p>
-                    <p className="text-justify d-flex mb-2"><span>•&nbsp;</span><span><span className="font-weight-bold">Rating Display:</span> OYO may display an average rating while keeping individual ratings private.</span></p>
-                    <p className="text-justify d-flex mb-2"><span>•&nbsp;</span><span><span className="font-weight-bold">Platform Access:</span> Repeated poor conduct or serious rating concerns may result in review, restrictions, suspension or removal from the Platform.</span></p>
+                    <p className="text-justify d-flex mb-2"><span>7.1&nbsp;</span><span><span className="font-weight-bold">Mover Ratings:</span> Customers may rate and review Movers after a completed service. Ratings may be used by OYO to monitor service quality.</span></p>
+                    <p className="text-justify d-flex mb-2"><span>7.2&nbsp;</span><span><span className="font-weight-bold">Customer Ratings:</span> Movers may rate Customers based on matters such as cooperation, conduct and job accuracy.</span></p>
+                    <p className="text-justify d-flex mb-2"><span>7.3&nbsp;</span><span><span className="font-weight-bold">Safety & Misconduct:</span> Safety, misconduct or serious service concerns may be reported to OYO Support for review.</span></p>
+                    <p className="text-justify d-flex mb-2"><span>7.4&nbsp;</span><span><span className="font-weight-bold">Rating Display:</span> OYO may display an average rating while keeping individual ratings private.</span></p>
+                    <p className="text-justify d-flex mb-2"><span>7.5&nbsp;</span><span><span className="font-weight-bold">Platform Access:</span> Repeated poor conduct or serious rating concerns may result in review, restrictions, suspension or removal from the Platform.</span></p>
                   </div>
                 </div>
 
@@ -213,13 +213,13 @@ export default function PlatformTermsPage() {
                       OYO Platform facilitates the booking, dispatch, and management of removal jobs on behalf
                       of a network of trusted third-party businesses, each operating under their own ABN or ACN.
                     </p>
-                    <p className="text-justify d-flex mb-2"><span>•&nbsp;</span><span><span className="font-weight-bold">Independent Businesses:</span> Service Providers operate as independent contractors or businesses under their own ABN or ACN.</span></p>
-                    <p className="text-justify d-flex mb-2"><span>•&nbsp;</span><span><span className="font-weight-bold">Insurance Requirements:</span> OYO may require Service Providers to provide evidence of applicable insurance, licences or other compliance documents before or while using the Platform.</span></p>
-                    <p className="text-justify d-flex mb-2"><span>•&nbsp;</span><span><span className="font-weight-bold">Service Quality:</span> OYO may review Service Provider ratings, conduct, compliance and performance and may restrict or remove access to the Platform where appropriate.</span></p>
-                    <p className="text-justify d-flex mb-2"><span>•&nbsp;</span><span><span className="font-weight-bold">Responsibility for Services:</span> Service Providers are responsible for performing the services they accept, subject to applicable law and the relevant OYO Terms.</span></p>
-                    <p className="text-justify d-flex mb-2"><span>•&nbsp;</span><span><span className="font-weight-bold">Off-Platform Payments:</span> A Service Provider must not request or accept direct payment from a Customer for any booking arranged through the OYO Platform.</span></p>
-                    <p className="text-justify d-flex mb-2"><span>•&nbsp;</span><span><span className="font-weight-bold">Off-Platform Arrangements:</span> A Service Provider must not solicit, encourage or arrange for an OYO Customer to cancel or arrange services outside the OYO Platform for the purpose of avoiding OYO’s Platform Fee or payment system.</span></p>
-                    <p className="text-justify d-flex mb-2"><span>•&nbsp;</span><span><span className="font-weight-bold">Independent Business:</span> Nothing in this clause prevents a Service Provider from operating its own independent business or providing services to customers obtained independently and not introduced through OYO.</span></p>
+                    <p className="text-justify d-flex mb-2"><span>9.1&nbsp;</span><span><span className="font-weight-bold">Independent Businesses:</span> Service Providers operate as independent contractors or businesses under their own ABN or ACN.</span></p>
+                    <p className="text-justify d-flex mb-2"><span>9.2&nbsp;</span><span><span className="font-weight-bold">Insurance Requirements:</span> OYO may require Service Providers to provide evidence of applicable insurance, licences or other compliance documents before or while using the Platform.</span></p>
+                    <p className="text-justify d-flex mb-2"><span>9.3&nbsp;</span><span><span className="font-weight-bold">Service Quality:</span> OYO may review Service Provider ratings, conduct, compliance and performance and may restrict or remove access to the Platform where appropriate.</span></p>
+                    <p className="text-justify d-flex mb-2"><span>9.4&nbsp;</span><span><span className="font-weight-bold">Responsibility for Services:</span> Service Providers are responsible for performing the services they accept, subject to applicable law and the relevant OYO Terms.</span></p>
+                    <p className="text-justify d-flex mb-2"><span>9.5&nbsp;</span><span><span className="font-weight-bold">Off-Platform Payments:</span> A Service Provider must not request or accept direct payment from a Customer for any booking arranged through the OYO Platform.</span></p>
+                    <p className="text-justify d-flex mb-2"><span>9.6&nbsp;</span><span><span className="font-weight-bold">Off-Platform Arrangements:</span> A Service Provider must not solicit, encourage or arrange for an OYO Customer to cancel or arrange services outside the OYO Platform for the purpose of avoiding OYO’s Platform Fee or payment system.</span></p>
+                    <p className="text-justify d-flex mb-2"><span>9.7&nbsp;</span><span><span className="font-weight-bold">Independent Business:</span> Nothing in this clause prevents a Service Provider from operating its own independent business or providing services to customers obtained independently and not introduced through OYO.</span></p>
                   </div>
                 </div>
 
@@ -257,10 +257,10 @@ export default function PlatformTermsPage() {
                 <div id="suspension">
                   <h5 className="text-uppercase mt-3">12. Suspension & Termination</h5>
                   <div className="points ">
-                    <p className="text-justify d-flex mb-2"><span>•&nbsp;</span><span><span className="font-weight-bold">Your Account:</span> You may stop using the Platform at any time or by deleting the app and may request account closure where available.</span></p>
-                    <p className="text-justify d-flex mb-2"><span>•&nbsp;</span><span><span className="font-weight-bold">OYO Suspension or Termination:</span> OYO may suspend, restrict or terminate access where reasonably required to investigate unusual activity, misuse, safety, security, legal, compliance or regulatory concerns, or a breach of these Terms.</span></p>
-                    <p className="text-justify d-flex mb-2"><span>•&nbsp;</span><span><span className="font-weight-bold">Existing Rights:</span> Termination or suspension does not affect rights, payments or liabilities that arose before termination.</span></p>
-                    <p className="text-justify d-flex mb-2"><span>•&nbsp;</span><span>This clause will survive the termination or expiry of these Terms.</span></p>
+                    <p className="text-justify d-flex mb-2"><span>12.1&nbsp;</span><span><span className="font-weight-bold">Your Account:</span> You may stop using the Platform at any time or by deleting the app and may request account closure where available.</span></p>
+                    <p className="text-justify d-flex mb-2"><span>12.2&nbsp;</span><span><span className="font-weight-bold">OYO Suspension or Termination:</span> OYO may suspend, restrict or terminate access where reasonably required to investigate unusual activity, misuse, safety, security, legal, compliance or regulatory concerns, or a breach of these Terms.</span></p>
+                    <p className="text-justify d-flex mb-2"><span>12.3&nbsp;</span><span><span className="font-weight-bold">Existing Rights:</span> Termination or suspension does not affect rights, payments or liabilities that arose before termination.</span></p>
+                    <p className="text-justify d-flex mb-2"><span>12.4&nbsp;</span><span>This clause will survive the termination or expiry of these Terms.</span></p>
                   </div>
                 </div>
 
@@ -313,19 +313,19 @@ export default function PlatformTermsPage() {
                       We use third-party companies for both Short-Term Storage and Long-Term Storage services for
                       all our clients / jobs. Additional charges and terms apply.
                     </p>
-                    <p className="text-justify d-flex mb-2"><span>•&nbsp;</span><span><span className="font-weight-bold">Third-Party Storage:</span> Such Storage services are charged separately and subject to the storage provider’s terms. Customers should consider purchasing appropriate insurance for high-value items.</span></p>
-                    <p className="text-justify d-flex mb-2"><span>•&nbsp;</span><span><span className="font-weight-bold">Storage of Undelivered Goods:</span> The following terms apply:</span></p>
+                    <p className="text-justify d-flex mb-2"><span>16.1&nbsp;</span><span><span className="font-weight-bold">Third-Party Storage:</span> Such Storage services are charged separately and subject to the storage provider’s terms. Customers should consider purchasing appropriate insurance for high-value items.</span></p>
+                    <p className="text-justify d-flex mb-2"><span>16.2&nbsp;</span><span><span className="font-weight-bold">Storage of Undelivered Goods:</span> The following terms apply:</span></p>
                     <div className="pl-md-4" style={{ marginLeft: "16px" }}>
-                      <p className="text-justify d-flex mb-2"><span>•&nbsp;</span><span><span className="font-weight-bold">Storage & Fees:</span> If Goods cannot be unloaded or delivered due to site access issues, customer absence, or non-payment, they may be placed in secure storage. You are liable for all transport, storage, and re-delivery fees. Goods will only be released upon full payment.</span></p>
-                      <p className="text-justify d-flex mb-2"><span>•&nbsp;</span><span><span className="font-weight-bold">Required Notices:</span> If charges remain unpaid, OYO will issue:</span></p>
+                      <p className="text-justify d-flex mb-2"><span>16.3&nbsp;</span><span><span className="font-weight-bold">Storage & Fees:</span> If Goods cannot be unloaded or delivered due to site access issues, customer absence, or non-payment, they may be placed in secure storage. You are liable for all transport, storage, and re-delivery fees. Goods will only be released upon full payment.</span></p>
+                      <p className="text-justify d-flex mb-2"><span>16.4&nbsp;</span><span><span className="font-weight-bold">Required Notices:</span> If charges remain unpaid, OYO will issue:</span></p>
                       <div className="pl-md-4" style={{ marginLeft: "16px" }}>
-                        <p className="text-justify d-flex mb-2"><span>•&nbsp;</span><span><span className="font-weight-bold">First Notice:</span> 28 days to settle all outstanding balances and arrange collection.</span></p>
-                        <p className="text-justify d-flex mb-2"><span>•&nbsp;</span><span><span className="font-weight-bold">Final Notice:</span> 14 days’ written notice prior to scheduled sale or disposal.</span></p>
+                        <p className="text-justify d-flex mb-2"><span>16.5&nbsp;</span><span><span className="font-weight-bold">First Notice:</span> 28 days to settle all outstanding balances and arrange collection.</span></p>
+                        <p className="text-justify d-flex mb-2"><span>16.6&nbsp;</span><span><span className="font-weight-bold">Final Notice:</span> 14 days’ written notice prior to scheduled sale or disposal.</span></p>
                       </div>
-                      <p className="text-justify d-flex mb-2"><span>•&nbsp;</span><span><span className="font-weight-bold">Disposal & Proceeds:</span> If charges remain unpaid after the notice periods expire:</span></p>
+                      <p className="text-justify d-flex mb-2"><span>16.7&nbsp;</span><span><span className="font-weight-bold">Disposal & Proceeds:</span> If charges remain unpaid after the notice periods expire:</span></p>
                       <div className="pl-md-4" style={{ marginLeft: "16px" }}>
-                        <p className="text-justify d-flex mb-2"><span>•&nbsp;</span><span>Goods may be sold (by auction/private sale) or responsibly disposed of if unsaleable.</span></p>
-                        <p className="text-justify d-flex mb-2"><span>•&nbsp;</span><span>Sale proceeds will first pay storage, disposal, and unpaid move charges. Any surplus will be refunded to you or held under statutory unclaimed money regulations.</span></p>
+                        <p className="text-justify d-flex mb-2"><span>16.8&nbsp;</span><span>Goods may be sold (by auction/private sale) or responsibly disposed of if unsaleable.</span></p>
+                        <p className="text-justify d-flex mb-2"><span>16.9&nbsp;</span><span>Sale proceeds will first pay storage, disposal, and unpaid move charges. Any surplus will be refunded to you or held under statutory unclaimed money regulations.</span></p>
                       </div>
                     </div>
                   </div>
@@ -334,10 +334,10 @@ export default function PlatformTermsPage() {
                 <div id="overdue">
                   <h5 className="text-uppercase mt-3">17. Overdue Accounts</h5>
                   <div className="points ">
-                    <p className="text-justify d-flex mb-2"><span>•&nbsp;</span><span><span className="font-weight-bold">Payment Due:</span> Invoices are payable on the date of issue. Late payments incur a fee of $50 for every 7 days the invoice remains unpaid.</span></p>
-                    <p className="text-justify d-flex mb-2"><span>•&nbsp;</span><span><span className="font-weight-bold">Interest:</span> Outstanding amounts may accrue monthly interest at the applicable General Interest Charge (GIC) rate, compounded monthly.</span></p>
-                    <p className="text-justify d-flex mb-2"><span>•&nbsp;</span><span><span className="font-weight-bold">Debt Recovery Costs:</span> OYO may refer overdue accounts to a debt collection agency. The Customer is responsible for applicable debt recovery and other associated legal costs.</span></p>
-                    <p className="text-justify d-flex mb-2"><span>•&nbsp;</span><span><span className="font-weight-bold">Legal Recovery:</span> If an account remains unpaid, OYO may pursue recovery through VCAT or other legal processes. An administration fee of up to $1,100, plus VCAT + other applicable legal fees, may apply.</span></p>
+                    <p className="text-justify d-flex mb-2"><span>17.1&nbsp;</span><span><span className="font-weight-bold">Payment Due:</span> Invoices are payable on the date of issue. Late payments incur a fee of $50 for every 7 days the invoice remains unpaid.</span></p>
+                    <p className="text-justify d-flex mb-2"><span>17.2&nbsp;</span><span><span className="font-weight-bold">Interest:</span> Outstanding amounts may accrue monthly interest at the applicable General Interest Charge (GIC) rate, compounded monthly.</span></p>
+                    <p className="text-justify d-flex mb-2"><span>17.3&nbsp;</span><span><span className="font-weight-bold">Debt Recovery Costs:</span> OYO may refer overdue accounts to a debt collection agency. The Customer is responsible for applicable debt recovery and other associated legal costs.</span></p>
+                    <p className="text-justify d-flex mb-2"><span>17.4&nbsp;</span><span><span className="font-weight-bold">Legal Recovery:</span> If an account remains unpaid, OYO may pursue recovery through VCAT or other legal processes. An administration fee of up to $1,100, plus VCAT + other applicable legal fees, may apply.</span></p>
                   </div>
                 </div>
 
@@ -350,9 +350,9 @@ export default function PlatformTermsPage() {
                       Service Providers, our priority during any unexpected event is to minimise disruption and
                       work quickly to find a solution for you.
                     </p>
-                    <p className="text-justify d-flex mb-2"><span>•&nbsp;</span><span><span className="font-weight-bold">Break-down Before the Job:</span> If a vehicle breaks down before the move, OYO will make reasonable efforts to find another available team. If no replacement is available, the Customer may reschedule or cancel without any penalty.</span></p>
-                    <p className="text-justify d-flex mb-2"><span>•&nbsp;</span><span><span className="font-weight-bold">Break-down During the Job:</span> If a vehicle breaks down during the move and cannot be repaired promptly, OYO will make reasonable efforts to assist with a replacement vehicle or team. Customers will not be charged for breakdown-related waiting time or duplicate work caused solely by the breakdown.</span></p>
-                    <p className="text-justify d-flex mb-2"><span>•&nbsp;</span><span><span className="font-weight-bold">Accidents:</span> If an accident prevents completion, OYO will make reasonable efforts to assist with an alternative team or reschedule the move. Loss or damage claims may need to be handled with the relevant Service Provider, insurer or authorities.</span></p>
+                    <p className="text-justify d-flex mb-2"><span>18.1&nbsp;</span><span><span className="font-weight-bold">Break-down Before the Job:</span> If a vehicle breaks down before the move, OYO will make reasonable efforts to find another available team. If no replacement is available, the Customer may reschedule or cancel without any penalty.</span></p>
+                    <p className="text-justify d-flex mb-2"><span>18.2&nbsp;</span><span><span className="font-weight-bold">Break-down During the Job:</span> If a vehicle breaks down during the move and cannot be repaired promptly, OYO will make reasonable efforts to assist with a replacement vehicle or team. Customers will not be charged for breakdown-related waiting time or duplicate work caused solely by the breakdown.</span></p>
+                    <p className="text-justify d-flex mb-2"><span>18.3&nbsp;</span><span><span className="font-weight-bold">Accidents:</span> If an accident prevents completion, OYO will make reasonable efforts to assist with an alternative team or reschedule the move. Loss or damage claims may need to be handled with the relevant Service Provider, insurer or authorities.</span></p>
                   </div>
                 </div>
 
