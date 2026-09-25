@@ -650,7 +650,7 @@ export const WebNavbar = ({ isLogedIn, data }: any) => {
               <FaEnvelope /> <span>support@oyomovers.com.au</span>
             </a>
             <div className="drawer-contact drawer-address">
-              <FaMapMarkerAlt /> <span>470 St Kilda Road, Melbourne VIC 3004</span>
+              <FaMapMarkerAlt /> <span>Level 1/454 Collins St, Melbourne VIC 3000, Australia</span>
             </div>
             <ul className="drawer-social">
               <li><a href="#" aria-label="Facebook"><FaFacebookF /></a></li>
