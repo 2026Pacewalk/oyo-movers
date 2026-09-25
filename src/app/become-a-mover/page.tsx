@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Footer from '@/components/WebAppWrapper/Footer';
+import FaqAccordion from '@/components/FaqAccordion';
 import './become-a-mover.scss';
 
 export default function BecomeAMover() {
@@ -341,35 +342,17 @@ Payments are released once the job is completed without any issue and the custom
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="faq-section">
-        <div className="container">
-          <h2 className="faq-title">FAQ&apos;s</h2>
-          <div className="divider"></div>
-          <div className="faq-list">
-            {faqData.map((item) => (
-              <div key={item.id} className="faq-item">
-                <div
-                  className="faq-question"
-                  onClick={() => toggleItem(item.id)}
-                >
-                  {item.question}
-                  <span className="faq-toggle">
-                    {expandedItems.has(item.id) ? '−' : '+'}
-                  </span>
-                </div>
-                <div className={`faq-answer ${expandedItems.has(item.id) ? 'show' : ''}`}>
-                  <p dangerouslySetInnerHTML={{ __html: highlightLinks(item.answer) }}></p>
-                </div>
-              </div>
-            ))}
-          </div>
-          <p className="faq-link">
-            Have questions before applying? See more{' '}
-            <Link href="/movers-faqs">Movers FAQ here</Link>
-          </p>
-        </div>
-      </section>
+      {/* FAQ Section — shared accordion UI */}
+      <FaqAccordion
+        items={faqData.map((f) => ({ q: f.question, a: f.answer }))}
+        heading="FAQ's"
+      />
+      <div className="container">
+        <p className="faq-link text-center">
+          Have questions before applying? See more{' '}
+          <Link href="/movers-faqs">Movers FAQ here</Link>
+        </p>
+      </div>
 
       {/* Vehicle Types Section */}
       <section className="vehicle-types">

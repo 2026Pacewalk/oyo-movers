@@ -110,7 +110,7 @@ $bam-border: #eef0f3;
 
   .hero-content {
     text-align: center;
-    max-width: 820px;
+    max-width: 1000px;
     margin: 0 auto 38px;
   }
 
@@ -137,6 +137,7 @@ $bam-border: #eef0f3;
     line-height: 1.15;
     color: #121241 !important; /* beat global h1 { color: var(--highlightColor) !important } */
     margin: 0;
+    white-space: nowrap; /* keep "Earn Money With Your Truck or Van." on one line (desktop) */
 
     span {
       display: inline-block;
@@ -144,10 +145,12 @@ $bam-border: #eef0f3;
       font-weight: 500 !important;
       font-size: 26px !important;
       margin-top: 10px;
+      white-space: normal;
     }
 
     @media (max-width: 992px) {
       font-size: 36px;
+      white-space: normal;
       span {
         font-size: 22px !important;
       }

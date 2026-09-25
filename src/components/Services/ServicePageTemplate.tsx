@@ -6,6 +6,8 @@ import Footer from "@/components/WebAppWrapper/Footer";
 import ReviewService from "@/components/LandingPage/Testimonial";
 import HowItsWork from "@/components/LandingPage/HowItsWork";
 import AreasWeCover from "@/components/Locations/AreasWeCover";
+import { BiSolidPhoneCall } from "react-icons/bi";
+import FaqAccordion from "@/components/FaqAccordion";
 import {
   FaCheck,
   FaTruck,
@@ -58,7 +60,7 @@ const ServicePageTemplate = ({ content }: { content: ServiceContent }) => {
                   Get a Free Quote <FaArrowRight />
                 </Link>
                 <a href="tel:1300013131" className="sp-btn-ghost">
-                  <FaPhoneVolume /> 1300 01 31 31
+                  <BiSolidPhoneCall /> 1300 01 31 31
                 </a>
               </div>
               <ul className="sp-hero-points">
@@ -109,30 +111,8 @@ const ServicePageTemplate = ({ content }: { content: ServiceContent }) => {
       {/* Service areas — same map + suburb list as the home page */}
       <AreasWeCover />
 
-      {/* FAQ (AEO) */}
-      <section className="sp-section">
-        <div className="sp-container sp-faq-wrap">
-          <h2 className="sp-h2">{content.faqTitle}</h2>
-          <div className="sp-faq-list">
-            {content.faqs.map((f, i) => (
-              <div className={`sp-faq ${openFaq === i ? "open" : ""}`} key={i}>
-                <button
-                  type="button"
-                  className="sp-faq-q"
-                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                  aria-expanded={openFaq === i}
-                >
-                  {f.q}
-                  <span className="sp-faq-ic">{openFaq === i ? <FaMinus /> : <FaPlus />}</span>
-                </button>
-                <div className="sp-faq-a">
-                  <p>{f.a}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* FAQ (AEO) — shared accordion UI */}
+      <FaqAccordion items={content.faqs} heading={content.faqTitle} />
 
       {/* CTA band */}
       <section className="sp-cta">
@@ -143,7 +123,7 @@ const ServicePageTemplate = ({ content }: { content: ServiceContent }) => {
           </div>
           <div className="sp-cta-actions">
             <Link href="/prices" className="sp-btn-primary">Get a Free Quote <FaArrowRight /></Link>
-            <a href="tel:1300013131" className="sp-btn-dark"><FaPhoneVolume /> Call us</a>
+            <a href="tel:1300013131" className="sp-btn-dark"><BiSolidPhoneCall /> Call us</a>
           </div>
         </div>
       </section>

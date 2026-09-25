@@ -20,6 +20,8 @@ import {
   FaBan,
   FaStar,
 } from "react-icons/fa";
+import { BiSolidPhoneCall } from "react-icons/bi";
+import FaqAccordion from "@/components/FaqAccordion";
 import { servicesMenu } from "@/components/Services/servicesData";
 import { suburbs, type Suburb } from "./suburbs";
 import { locationFaqs, locationJsonLd } from "./locationSeo";
@@ -72,7 +74,7 @@ const LocationPageTemplate = ({ suburb }: { suburb: Suburb }) => {
               </p>
               <div className="sp-hero-cta">
                 <Link href="/prices" className="sp-btn-primary">Get a Free Quote <FaArrowRight /></Link>
-                <a href="tel:1300013131" className="sp-btn-ghost"><FaPhoneVolume /> 1300 01 31 31</a>
+                <a href="tel:1300013131" className="sp-btn-ghost"><BiSolidPhoneCall /> 1300 01 31 31</a>
               </div>
               <ul className="sp-hero-points">
                 <li><FaRegClock /> Time Start at Pickup</li>
@@ -136,28 +138,8 @@ const LocationPageTemplate = ({ suburb }: { suburb: Suburb }) => {
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="sp-section">
-        <div className="sp-container sp-faq-wrap">
-          <h2 className="sp-h2">Removalists {suburb.name} — FAQs</h2>
-          <div className="sp-faq-list">
-            {faqs.map((f, i) => (
-              <div className={`sp-faq ${openFaq === i ? "open" : ""}`} key={i}>
-                <button
-                  type="button"
-                  className="sp-faq-q"
-                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                  aria-expanded={openFaq === i}
-                >
-                  {f.q}
-                  <span className="sp-faq-ic">{openFaq === i ? <FaMinus /> : <FaPlus />}</span>
-                </button>
-                <div className="sp-faq-a"><p>{f.a}</p></div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* FAQ — shared accordion UI */}
+      <FaqAccordion items={faqs} heading={`Removalists ${suburb.name} — FAQs`} />
 
       {/* CTA */}
       <section className="sp-cta">
@@ -168,7 +150,7 @@ const LocationPageTemplate = ({ suburb }: { suburb: Suburb }) => {
           </div>
           <div className="sp-cta-actions">
             <Link href="/prices" className="sp-btn-primary">Get a Free Quote <FaArrowRight /></Link>
-            <a href="tel:1300013131" className="sp-btn-dark"><FaPhoneVolume /> Call us</a>
+            <a href="tel:1300013131" className="sp-btn-dark"><BiSolidPhoneCall /> Call us</a>
           </div>
         </div>
       </section>
