@@ -3,6 +3,12 @@
    ============================================================ */
 html { scroll-behavior: smooth; }
 
+/* The global "body { overflow-x: hidden }" forces overflow-y:auto on body, which
+   turns body into a scroll container and breaks position:sticky + anchor jumps.
+   overflow-x:clip clips horizontally WITHOUT making overflow-y auto, so the
+   window scrolls normally and the sticky Table of Contents works. */
+body { overflow-x: clip !important; }
+
 .legal-page {
   background: #fafbfc;
   color: #18181b;
