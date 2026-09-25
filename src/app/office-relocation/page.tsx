@@ -1,8 +1,10 @@
-import React from "react";
-import MovingServiceWrapper from "@/components/MovingServiceWrapper";
+import ServicePageTemplate from "@/components/Services/ServicePageTemplate";
+import { serviceContent, serviceMetadata } from "@/components/Services/serviceContent";
 
-const MovingFewItems = () => {
-  return <MovingServiceWrapper service={"officeRelocation"} />;
-};
+const content = serviceContent["office-relocation"];
 
-export default MovingFewItems;
+export const metadata = serviceMetadata(content);
+
+export default function OfficeRelocation() {
+  return <ServicePageTemplate content={content} />;
+}

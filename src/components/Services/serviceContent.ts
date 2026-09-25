@@ -8,6 +8,7 @@ export type ServiceContent = {
   metaDescription: string;
   keywords: string;
   breadcrumb: string;
+  heroImage?: string;
   hero: {
     badge: string;
     h1: string;
@@ -81,6 +82,321 @@ export const serviceContent: Record<string, ServiceContent> = {
     ],
     ctaTitle: "Ready to move house?",
     ctaText: "Get an upfront quote in about 60 seconds and book movers with a truck — same day, seven days a week.",
+  },
+
+  "office-relocation": {
+    slug: "office-relocation",
+    href: "/office-relocation",
+    metaTitle: "Office Relocation Melbourne | After-Hours Office Movers — OYO Movers",
+    metaDescription:
+      "Relocating your office in Melbourne? OYO Movers moves desks, chairs, workstations and IT with minimal downtime — after hours or on weekends. Upfront pricing, no hidden fees. Quote in 60 seconds.",
+    keywords:
+      "office relocation Melbourne, office movers Melbourne, commercial removalists, business relocation, workplace movers",
+    breadcrumb: "Office Relocation",
+    hero: {
+      badge: "Office Relocation",
+      h1: "Office Relocation in Melbourne, Without the Downtime",
+      intro:
+        "Move your workplace with as little disruption as possible. OYO Movers relocates desks, chairs, workstations, filing and IT equipment — small studio offices to large workplaces — after hours or on weekends so your team is back up and running fast. Transparent, pay-as-you-go pricing with no hidden fees.",
+      avgLabel: "Small Office Move (avg.)",
+      avgCost: "From $95/hr",
+    },
+    benefitsTitle: "Everything You Need for a Smooth Office Move",
+    benefitsIntro:
+      "From a single room to a full floor, our movers handle the heavy lifting so your business keeps moving.",
+    benefits: [
+      { title: "After-Hours & Weekends", text: "Move outside business hours so your team's day isn't interrupted and you're ready to work the next morning." },
+      { title: "Desks, Chairs & Workstations", text: "We handle office furniture, partitions, filing cabinets and boxes — disassembled and reassembled where needed." },
+      { title: "Careful with IT & Electronics", text: "Monitors, PCs and equipment moved with blankets and care so nothing arrives damaged." },
+      { title: "Upfront, Fair Pricing", text: "See your estimate before you book. Pay as you go, with no surprise call-out or fuel fees." },
+      { title: "Right Crew & Truck Size", text: "Choose the number of movers and truck size to match your office — no juggling separate hire and helpers." },
+      { title: "Same-Day & 7 Days a Week", text: "Need to move fast? We run seven days a week and can often help the same day." },
+    ],
+    whyTitle: "Why Melbourne Businesses Choose OYO",
+    why: [
+      { title: "Rated 4.9 on Google", text: "Trusted by Melbourne businesses and reviewed to prove it." },
+      { title: "Verified, Local Movers", text: "Every mover is ID-checked and experienced with Melbourne buildings, lifts and loading docks." },
+      { title: "No Quote Runaround", text: "Get an instant price online in about 60 seconds — no waiting days for a site visit." },
+    ],
+    faqTitle: "Office Relocation FAQs",
+    faqs: [
+      { q: "Can you move our office after hours or on weekends?", a: "Yes. Most office moves are booked after hours or on weekends to avoid downtime, and OYO operates seven days a week." },
+      { q: "Do you disassemble and reassemble desks and workstations?", a: "Yes — our movers can dismantle desks, workstations and shelving and reassemble them at the new office. Let us know when booking so we allow time." },
+      { q: "How is office equipment protected?", a: "Movers carry blankets, straps and shrink wrap as standard so furniture, monitors and equipment are protected throughout the move." },
+      { q: "How much does an office move cost in Melbourne?", a: "It depends on the number of movers, truck size, distance and access. You'll see a transparent estimate before you confirm, with no hidden fees." },
+    ],
+    ctaTitle: "Ready to relocate your office?",
+    ctaText: "Get an upfront quote in about 60 seconds and book movers with a truck — after hours, weekends, seven days a week.",
+  },
+
+  "move-a-few-items": {
+    slug: "move-a-few-items",
+    href: "/move-a-few-items",
+    metaTitle: "Move a Few Items Melbourne | Furniture Delivery — OYO Movers",
+    metaDescription:
+      "Just need a few items moved in Melbourne? OYO Movers delivers single items or a few pieces — couch, fridge, desk, bed — with a mover and the right van or truck. Upfront pricing, no hidden fees.",
+    keywords:
+      "move a few items Melbourne, furniture delivery Melbourne, single item movers, couch delivery, fridge delivery",
+    breadcrumb: "Move a Few Items",
+    hero: {
+      badge: "Move a Few Items",
+      h1: "Move a Few Items in Melbourne, the Easy Way",
+      intro:
+        "Don't need a whole truck? OYO Movers is perfect for moving a single item or a few pieces — a couch, fridge, desk, bed or that Marketplace bargain. Pick a mover and the right-sized van or truck, and pay only for what you need. Transparent pricing, no hidden fees.",
+      avgLabel: "Few Items (avg.)",
+      avgCost: "From $76/hr",
+    },
+    benefitsTitle: "The Simple Way to Shift a Few Things",
+    benefitsIntro:
+      "Whether it's one heavy item or a handful of pieces, our movers do the lifting and the driving.",
+    benefits: [
+      { title: "One Item or a Few", text: "Perfect for a fridge, couch, bed, desk or a small batch of items — no need to book a full house move." },
+      { title: "Mover + Van or Truck", text: "Choose the right vehicle and one or two movers for the job so it's done quickly and safely." },
+      { title: "Careful Handling", text: "Blankets, straps and shrink wrap come as standard so your items arrive in the same shape they left." },
+      { title: "Upfront, Fair Pricing", text: "See your estimate before you book and pay as you go — no surprise call-out or fuel fees." },
+      { title: "Same-Day & 7 Days a Week", text: "Grabbed a bargain that needs collecting today? We often move items the same day." },
+      { title: "Pickup & Drop-Off Sorted", text: "Give us the addresses and details and we'll handle the pickup and delivery end to end." },
+    ],
+    whyTitle: "Why Melburnians Choose OYO for Small Moves",
+    why: [
+      { title: "Rated 4.9 on Google", text: "Thousands of quick, hassle-free small moves — and the reviews to show it." },
+      { title: "Verified, Local Movers", text: "Every mover is ID-checked and knows Melbourne's streets, parking and access." },
+      { title: "No Quote Runaround", text: "Get an instant price online in about 60 seconds — book in minutes." },
+    ],
+    faqTitle: "Move a Few Items FAQs",
+    faqs: [
+      { q: "Can I move just one item, like a couch or fridge?", a: "Yes. OYO is ideal for single items or a few pieces. Pick the item and vehicle when booking and you'll only pay for what you need." },
+      { q: "How much does it cost to move a few items in Melbourne?", a: "Small moves start from around $76/hr depending on the mover, vehicle size, distance and access. You'll see a transparent estimate before you confirm." },
+      { q: "Can you collect a Marketplace or store purchase?", a: "Absolutely — give us the pickup and drop-off addresses and item details and we'll handle collection and delivery." },
+      { q: "Do the movers help carry items up stairs?", a: "Yes, our movers do the lifting including stairs and tight access. Let us know about access when booking so we allow time." },
+    ],
+    ctaTitle: "Need a few items moved?",
+    ctaText: "Get an upfront quote in about 60 seconds and book a mover with a van or truck — same day, seven days a week.",
+  },
+
+  "donation-run": {
+    slug: "donation-run",
+    href: "/donation-run",
+    metaTitle: "Donation Run Melbourne | Charity Pickup & Drop-Off — OYO Movers",
+    metaDescription:
+      "Donating unwanted items in Melbourne? OYO Movers collects your goods and drops them at your chosen charity or op-shop. A mover with a van or truck, upfront pricing and no hidden fees.",
+    keywords:
+      "donation run Melbourne, charity pickup Melbourne, op shop drop off, donate furniture Melbourne, goodwill pickup",
+    breadcrumb: "Donation Run",
+    hero: {
+      badge: "Donation Run",
+      h1: "Donation Runs in Melbourne, Done for You",
+      intro:
+        "Give your pre-loved furniture and goods a second home. OYO Movers collects the items you're donating and drops them at your chosen charity or op-shop — no heavy lifting, no borrowing a ute. Transparent, pay-as-you-go pricing with no hidden fees.",
+      avgLabel: "Donation Run (avg.)",
+      avgCost: "From $76/hr",
+    },
+    benefitsTitle: "Declutter for Good, the Easy Way",
+    benefitsIntro:
+      "We load, transport and drop off your donations so someone else can enjoy them.",
+    benefits: [
+      { title: "We Do the Lifting", text: "Furniture, boxes and bulky goods carried out and loaded for you — no strain, no ute hire." },
+      { title: "Drop at Your Charity", text: "We deliver to your chosen op-shop or charity so your items go where you want them to." },
+      { title: "Mover + Van or Truck", text: "Choose the right vehicle and crew for the amount you're donating." },
+      { title: "Upfront, Fair Pricing", text: "See your estimate before you book and pay as you go — no surprise fees." },
+      { title: "Careful Handling", text: "Items are handled with care so they arrive in good, donatable condition." },
+      { title: "Same-Day & 7 Days a Week", text: "Clearing out this weekend? We run seven days and can often help the same day." },
+    ],
+    whyTitle: "Why Melburnians Choose OYO for Donation Runs",
+    why: [
+      { title: "Rated 4.9 on Google", text: "Trusted by Melbourne households clearing space for good." },
+      { title: "Verified, Local Movers", text: "Every mover is ID-checked and knows local charities and op-shops." },
+      { title: "No Quote Runaround", text: "Get an instant price online in about 60 seconds." },
+    ],
+    faqTitle: "Donation Run FAQs",
+    faqs: [
+      { q: "Can you drop my donations at a specific charity?", a: "Yes — tell us your preferred op-shop or charity and we'll deliver there. It helps to check they accept the items and their opening hours." },
+      { q: "How much does a donation run cost in Melbourne?", a: "Donation runs start from around $76/hr depending on the crew, vehicle size and distance. You'll see a transparent estimate before you confirm." },
+      { q: "Do I need to carry items out myself?", a: "No — our movers do the lifting and loading. Just point out what's going." },
+      { q: "Can you help the same day?", a: "Often yes. OYO runs seven days a week and can usually arrange a same-day donation run subject to availability." },
+    ],
+    ctaTitle: "Ready to donate the easy way?",
+    ctaText: "Get an upfront quote in about 60 seconds and book a mover with a van or truck — same day, seven days a week.",
+  },
+
+  "apartment-moves": {
+    slug: "apartment-moves",
+    href: "/apartment-moves",
+    metaTitle: "Apartment Moving Melbourne | Stairs & Lift Movers — OYO Movers",
+    metaDescription:
+      "Moving apartments in Melbourne? OYO Movers handles stairs, lifts and tight corners with the right crew and truck. Studio, 1 or 2 bedroom. Upfront pricing, no hidden fees. Quote in 60 seconds.",
+    keywords:
+      "apartment moving Melbourne, apartment removalists, unit movers Melbourne, stairs movers, small move Melbourne",
+    breadcrumb: "Apartment Moving",
+    hero: {
+      badge: "Apartment Moving",
+      h1: "Apartment Moving in Melbourne, Stairs and All",
+      intro:
+        "Lifts, stairs, tight corners and narrow parking — apartment moves have their own challenges, and OYO Movers handles them every day. From a studio to a two-bedroom unit, get the right crew and truck for a fast, careful move. Transparent, pay-as-you-go pricing with no hidden fees.",
+      avgLabel: "1-Bedroom Apartment (avg.)",
+      avgCost: "$450 – $620",
+    },
+    benefitsTitle: "Built for Melbourne Apartments",
+    benefitsIntro:
+      "Our movers know buildings, lifts and loading zones — so your move goes smoothly from door to door.",
+    benefits: [
+      { title: "Stairs & Lifts Handled", text: "Multi-level walk-ups or lift access — our movers manage the tricky bits carefully." },
+      { title: "Right Crew & Truck", text: "Choose one or two movers and the right van or truck for a studio, 1 or 2 bedroom." },
+      { title: "We Move Everything", text: "Beds, sofas, fridges, wardrobes and boxes — all handled and protected." },
+      { title: "Upfront, Fair Pricing", text: "See your estimate before you book and pay as you go — no hidden fees." },
+      { title: "Careful Handling", text: "Blankets, straps and shrink wrap as standard so nothing gets marked in tight spaces." },
+      { title: "Same-Day & 7 Days a Week", text: "Lease starting suddenly? We run seven days and can often move you the same day." },
+    ],
+    whyTitle: "Why Melburnians Choose OYO for Apartment Moves",
+    why: [
+      { title: "Rated 4.9 on Google", text: "Thousands of smooth apartment moves across Melbourne." },
+      { title: "Verified, Local Movers", text: "Every mover is ID-checked and used to Melbourne apartment buildings and parking." },
+      { title: "No Quote Runaround", text: "Get an instant price online in about 60 seconds." },
+    ],
+    faqTitle: "Apartment Moving FAQs",
+    faqs: [
+      { q: "Can you move me up or down several flights of stairs?", a: "Yes — our movers handle stairs and walk-ups. Tell us the floor and access when booking so we bring the right crew and allow time." },
+      { q: "How much does an apartment move cost in Melbourne?", a: "A 1-bedroom apartment typically runs $450–$620 depending on movers, truck size, distance and access. You'll see a transparent estimate before you confirm." },
+      { q: "Do you book loading zones or lifts?", a: "You'll need to reserve the building lift or loading dock where required; tell us the details and we'll plan the move around them." },
+      { q: "Can I book a same-day apartment move?", a: "Often yes. OYO runs seven days a week and can usually arrange a same-day move subject to availability." },
+    ],
+    ctaTitle: "Ready to move apartments?",
+    ctaText: "Get an upfront quote in about 60 seconds and book movers with a truck — same day, seven days a week.",
+  },
+
+  "storage-removals": {
+    slug: "storage-removals",
+    href: "/storage-removals",
+    metaTitle: "Storage Removals Melbourne | Move Into or Out of Storage — OYO Movers",
+    metaDescription:
+      "Moving items into or out of storage in Melbourne? OYO Movers loads, transports and unloads your goods to or from any storage facility. Upfront pricing, no hidden fees. Quote in 60 seconds.",
+    keywords:
+      "storage removals Melbourne, storage movers, move into storage, self storage delivery Melbourne",
+    breadcrumb: "Storage Removals",
+    hero: {
+      badge: "Storage Removals",
+      h1: "Storage Removals in Melbourne, Into or Out",
+      intro:
+        "Putting things into storage or bringing them home? OYO Movers loads, transports and unloads your goods to or from any storage facility across Melbourne. The right crew and truck, careful handling, and transparent pay-as-you-go pricing with no hidden fees.",
+      avgLabel: "Storage Move (avg.)",
+      avgCost: "From $76/hr",
+    },
+    benefitsTitle: "Storage Moves Made Simple",
+    benefitsIntro:
+      "We handle the lifting and the drive so your belongings get to or from storage safely.",
+    benefits: [
+      { title: "Into or Out of Storage", text: "Moving items into a unit or bringing them back — we do both, to any facility." },
+      { title: "Right Crew & Truck", text: "Choose the movers and vehicle to match the amount you're storing." },
+      { title: "Careful Handling", text: "Blankets, straps and shrink wrap as standard so items are protected in transit and in the unit." },
+      { title: "Upfront, Fair Pricing", text: "See your estimate before you book and pay as you go — no hidden fees." },
+      { title: "We Move Everything", text: "Furniture, appliances, boxes and bulky items all handled with care." },
+      { title: "Same-Day & 7 Days a Week", text: "Need access sorted this week? We run seven days and can often help the same day." },
+    ],
+    whyTitle: "Why Melburnians Choose OYO for Storage Moves",
+    why: [
+      { title: "Rated 4.9 on Google", text: "Trusted for quick, careful storage moves across Melbourne." },
+      { title: "Verified, Local Movers", text: "Every mover is ID-checked and experienced with storage facilities and access." },
+      { title: "No Quote Runaround", text: "Get an instant price online in about 60 seconds." },
+    ],
+    faqTitle: "Storage Removals FAQs",
+    faqs: [
+      { q: "Can you move items to any storage facility?", a: "Yes — give us the storage address and access details and we'll load, transport and unload into your unit." },
+      { q: "How much does a storage move cost in Melbourne?", a: "Storage moves start from around $76/hr depending on the crew, truck size and distance. You'll see a transparent estimate before you confirm." },
+      { q: "Do you provide the storage unit?", a: "We move your items to or from storage; the unit itself is arranged with your storage provider. Third-party storage terms and charges apply separately." },
+      { q: "Can you help the same day?", a: "Often yes — OYO runs seven days a week and can usually arrange a same-day storage move subject to availability." },
+    ],
+    ctaTitle: "Ready to move to or from storage?",
+    ctaText: "Get an upfront quote in about 60 seconds and book movers with a truck — same day, seven days a week.",
+  },
+
+  "junk-removal": {
+    slug: "junk-removal",
+    href: "/junk-removal",
+    metaTitle: "Junk Removal Melbourne | Rubbish & Furniture Removal — OYO Movers",
+    metaDescription:
+      "Need junk removed in Melbourne? OYO Movers hauls away unwanted furniture, appliances and rubbish and disposes of it responsibly. Upfront pricing, no hidden fees. Quote in 60 seconds.",
+    keywords:
+      "junk removal Melbourne, rubbish removal Melbourne, furniture removal, hard rubbish pickup, waste removal Melbourne",
+    breadcrumb: "Junk Removal",
+    hero: {
+      badge: "Junk Removal",
+      h1: "Junk Removal in Melbourne, Hauled Away Fast",
+      intro:
+        "Clear the clutter without lifting a finger. OYO Movers removes unwanted furniture, appliances and general junk and disposes of it responsibly — recycling and donating where possible. Transparent, pay-as-you-go pricing with no hidden fees.",
+      avgLabel: "Junk Removal (avg.)",
+      avgCost: "From $76/hr",
+    },
+    benefitsTitle: "Clear the Clutter, Stress-Free",
+    benefitsIntro:
+      "We carry it out, load it up and dispose of it responsibly so you don't have to.",
+    benefits: [
+      { title: "We Do the Lifting", text: "Old furniture, whitegoods, mattresses and boxes carried out and loaded for you." },
+      { title: "Responsible Disposal", text: "We recycle and donate where possible, so usable items don't go straight to landfill." },
+      { title: "Right Crew & Truck", text: "Choose the movers and truck size to match the amount you're clearing." },
+      { title: "Upfront, Fair Pricing", text: "See your estimate before you book and pay as you go — no hidden fees." },
+      { title: "Any Junk, Sorted", text: "Household clear-outs, garage cleanups, end-of-lease rubbish — we handle it." },
+      { title: "Same-Day & 7 Days a Week", text: "Need it gone today? We run seven days and can often help the same day." },
+    ],
+    whyTitle: "Why Melburnians Choose OYO for Junk Removal",
+    why: [
+      { title: "Rated 4.9 on Google", text: "Trusted for quick, tidy junk removal across Melbourne." },
+      { title: "Verified, Local Movers", text: "Every mover is ID-checked and knows local disposal and recycling options." },
+      { title: "No Quote Runaround", text: "Get an instant price online in about 60 seconds." },
+    ],
+    faqTitle: "Junk Removal FAQs",
+    faqs: [
+      { q: "What kind of junk can you remove?", a: "Furniture, whitegoods, mattresses, boxes and general household junk. Some hazardous materials can't be taken — ask us if you're unsure." },
+      { q: "How much does junk removal cost in Melbourne?", a: "Junk removal starts from around $76/hr depending on the crew, truck size, volume and disposal. You'll see a transparent estimate before you confirm." },
+      { q: "Do you recycle or donate items?", a: "Yes — we recycle and donate usable items where possible so less goes to landfill." },
+      { q: "Can you remove junk the same day?", a: "Often yes. OYO runs seven days a week and can usually arrange same-day junk removal subject to availability." },
+    ],
+    ctaTitle: "Ready to clear the junk?",
+    ctaText: "Get an upfront quote in about 60 seconds and book movers with a truck — same day, seven days a week.",
+  },
+
+  "store-delivery": {
+    slug: "store-delivery",
+    href: "/store-delivery",
+    metaTitle: "Store Delivery Melbourne | Store & Marketplace Pickup — OYO Movers",
+    metaDescription:
+      "Bought something in Melbourne that won't fit the car? OYO Movers collects your store or Marketplace purchase and delivers it home. A mover with a van or truck, upfront pricing, no hidden fees.",
+    keywords:
+      "store delivery Melbourne, marketplace pickup Melbourne, furniture pickup, store pickup delivery, same day delivery Melbourne",
+    breadcrumb: "Store Delivery",
+    hero: {
+      badge: "Store Delivery",
+      h1: "Store Delivery in Melbourne, Straight to Your Door",
+      intro:
+        "Bought a couch, fridge or flat-pack that won't fit the car? OYO Movers collects your store or Marketplace purchase and delivers it home — with a mover to carry it in. Transparent, pay-as-you-go pricing and no hidden fees.",
+      avgLabel: "Store Delivery (avg.)",
+      avgCost: "From $76/hr",
+    },
+    benefitsTitle: "Get Your Purchase Home the Easy Way",
+    benefitsIntro:
+      "We pick up from the store or seller and deliver to your door — no borrowing a ute or wrangling a trailer.",
+    benefits: [
+      { title: "Store & Marketplace Pickup", text: "From furniture stores to Gumtree and Facebook Marketplace — we collect and deliver." },
+      { title: "Mover + Van or Truck", text: "Choose the right vehicle and crew so your item gets home safely and is carried in." },
+      { title: "Careful Handling", text: "Blankets, straps and shrink wrap as standard so your new purchase arrives in perfect shape." },
+      { title: "Upfront, Fair Pricing", text: "See your estimate before you book and pay as you go — no hidden fees." },
+      { title: "Carried Inside", text: "Not just dropped at the door — our movers bring it into the room you want." },
+      { title: "Same-Day & 7 Days a Week", text: "Grabbed a bargain that needs collecting today? We often deliver the same day." },
+    ],
+    whyTitle: "Why Melburnians Choose OYO for Store Delivery",
+    why: [
+      { title: "Rated 4.9 on Google", text: "Thousands of quick, careful deliveries across Melbourne." },
+      { title: "Verified, Local Movers", text: "Every mover is ID-checked and knows Melbourne's streets, parking and access." },
+      { title: "No Quote Runaround", text: "Get an instant price online in about 60 seconds." },
+    ],
+    faqTitle: "Store Delivery FAQs",
+    faqs: [
+      { q: "Can you pick up from a store or a private seller?", a: "Yes — give us the pickup address (store, warehouse, or a Marketplace seller) and the drop-off, and we'll handle it." },
+      { q: "How much does store delivery cost in Melbourne?", a: "Store delivery starts from around $76/hr depending on the mover, vehicle size and distance. You'll see a transparent estimate before you confirm." },
+      { q: "Will the mover carry it inside?", a: "Yes — our movers bring your purchase into the room you want, not just to the front door. Let us know about stairs or access when booking." },
+      { q: "Can you deliver the same day?", a: "Often yes. OYO runs seven days a week and can usually arrange same-day store delivery subject to availability." },
+    ],
+    ctaTitle: "Ready to get your purchase home?",
+    ctaText: "Get an upfront quote in about 60 seconds and book a mover with a van or truck — same day, seven days a week.",
   },
 
   "college-moving": {

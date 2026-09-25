@@ -69,6 +69,17 @@ const ServicePageTemplate = ({ content }: { content: ServiceContent }) => {
                 <li><FaStar className="star" /> 4.9 Rating</li>
               </ul>
             </div>
+            {content.heroImage && (
+              <div className="sp-hero-right">
+                <div
+                  className={`sp-hero-banner ${
+                    /\.(jpg|jpeg|webp|avif)$/i.test(content.heroImage) ? "" : "is-illustration"
+                  }`}
+                >
+                  <img src={content.heroImage} alt={content.hero.h1} />
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </section>

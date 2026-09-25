@@ -1,8 +1,10 @@
-import React from "react";
-import MovingServiceWrapper from "@/components/MovingServiceWrapper";
+import ServicePageTemplate from "@/components/Services/ServicePageTemplate";
+import { serviceContent, serviceMetadata } from "@/components/Services/serviceContent";
 
-const DonationRun = () => {
-  return <MovingServiceWrapper service={"donationRun"} />;
-};
+const content = serviceContent["donation-run"];
 
-export default DonationRun;
+export const metadata = serviceMetadata(content);
+
+export default function DonationRun() {
+  return <ServicePageTemplate content={content} />;
+}

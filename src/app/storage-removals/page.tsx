@@ -1,8 +1,10 @@
-import React from "react";
-import MovingServiceWrapper from "@/components/MovingServiceWrapper";
+import ServicePageTemplate from "@/components/Services/ServicePageTemplate";
+import { serviceContent, serviceMetadata } from "@/components/Services/serviceContent";
 
-const StorageRemovals = () => {
-  return <MovingServiceWrapper service={"storageRemoval"} />;
-};
+const content = serviceContent["storage-removals"];
 
-export default StorageRemovals;
+export const metadata = serviceMetadata(content);
+
+export default function StorageRemovals() {
+  return <ServicePageTemplate content={content} />;
+}

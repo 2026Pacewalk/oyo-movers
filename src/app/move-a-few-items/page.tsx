@@ -1,7 +1,10 @@
-import MovingServiceWrapper from "@/components/MovingServiceWrapper";
+import ServicePageTemplate from "@/components/Services/ServicePageTemplate";
+import { serviceContent, serviceMetadata } from "@/components/Services/serviceContent";
 
-const MovingFewItems = () => {
-  return <MovingServiceWrapper service={"movingFewItems"} />;
-};
+const content = serviceContent["move-a-few-items"];
 
-export default MovingFewItems;
+export const metadata = serviceMetadata(content);
+
+export default function MoveAFewItems() {
+  return <ServicePageTemplate content={content} />;
+}

@@ -1,7 +1,10 @@
-import MovingServiceWrapper from "@/components/MovingServiceWrapper";
+import ServicePageTemplate from "@/components/Services/ServicePageTemplate";
+import { serviceContent, serviceMetadata } from "@/components/Services/serviceContent";
 
-const StoreDelivery = () => {
-  return <MovingServiceWrapper service={"storeDelivery"} />;
-};
+const content = serviceContent["store-delivery"];
 
-export default StoreDelivery;
+export const metadata = serviceMetadata(content);
+
+export default function StoreDelivery() {
+  return <ServicePageTemplate content={content} />;
+}

@@ -1,8 +1,10 @@
-import React from "react";
-import MovingServiceWrapper from "@/components/MovingServiceWrapper";
+import ServicePageTemplate from "@/components/Services/ServicePageTemplate";
+import { serviceContent, serviceMetadata } from "@/components/Services/serviceContent";
 
-const JunkRemoval = () => {
-  return <MovingServiceWrapper service={"junkRemoval"} />;
-};
+const content = serviceContent["junk-removal"];
 
-export default JunkRemoval;
+export const metadata = serviceMetadata(content);
+
+export default function JunkRemoval() {
+  return <ServicePageTemplate content={content} />;
+}
