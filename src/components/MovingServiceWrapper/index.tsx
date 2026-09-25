@@ -6,11 +6,11 @@ import ReviewService from "../LandingPage/Testimonial";
 import { s3ImageBaseUrl } from "@/config";
 
 const MovingServiceWrapper = ({ children, service }: any) => {
-  const bookOyoFor = (title: string, description: string, img: string) => {
+  const bookOyoFor = (title: string, description: string, img: string, href: string = "/booking") => {
     return (
       <div className="col-md-4 bookOyoBox">
         <div className="pricing-btn active-p-btn">
-          <a href="/">
+          <a href={href}>
             <span className="pricing-icon">
               <Image src={s3ImageBaseUrl+`/${img}`} alt="img" />
             </span>{" "}
@@ -155,17 +155,17 @@ const MovingServiceWrapper = ({ children, service }: any) => {
           <div className="col-md-10">
             <div className="row ">
               {/*  */}
-              {bookOyoFor("House Moving", " Studio, 1 BR, 2 BR or whole house", "house-moving.png")}
-              {bookOyoFor("Store Delivery", "Get your purchase home", "store-delivery.png")}
-              {bookOyoFor("Moving Few Items", "Couch, fridge, Desk etc.", "move-a-few-items.png")}
-              {bookOyoFor("Office Relocation", "Small workplace or Large Office", "office-relocation-icon.png")}
-              {bookOyoFor("Donation Run", "Donate used items", "donation-run.png")}
-              {bookOyoFor("Storage Removals", "Storing to & from", "storage-removals.png")}
+              {bookOyoFor("House Moving", " Studio, 1 BR, 2 BR or whole house", "house-moving.png", "/house-moving")}
+              {bookOyoFor("Store Delivery", "Get your purchase home", "store-delivery.png", "/store-delivery")}
+              {bookOyoFor("Moving Few Items", "Couch, fridge, Desk etc.", "move-a-few-items.png", "/move-a-few-items")}
+              {bookOyoFor("Office Relocation", "Small workplace or Large Office", "office-relocation-icon.png", "/office-relocation")}
+              {bookOyoFor("Donation Run", "Donate used items", "donation-run.png", "/donation-run")}
+              {bookOyoFor("Storage Removals", "Storing to & from", "storage-removals.png", "/storage-removals")}
 
-              {bookOyoFor("Junk Removal", "Discard unwanted items easily", "junk-removal.png")}
+              {bookOyoFor("Junk Removal", "Discard unwanted items easily", "junk-removal.png", "/junk-removal")}
 
-              {bookOyoFor("Apartment Move", "Studio, 1BR or 2 BR", "apartment-moves.png")}
-              {bookOyoFor("Helping Hands", "Muscles (💪)only, No Truck", "helping-hands.png")}
+              {bookOyoFor("Apartment Move", "Studio, 1BR or 2 BR", "apartment-moves.png", "/apartment-moves")}
+              {bookOyoFor("Helping Hands", "Muscles (💪)only, No Truck", "helping-hands.png", "/labour-only")}
             </div>
           </div>
           <div className="col-md-1"></div>

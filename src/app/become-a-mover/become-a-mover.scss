@@ -315,8 +315,8 @@ $bam-border: #eef0f3;
       img {
         width: auto;
         height: auto;
-        max-width: 110px;
-        max-height: 88px;
+        max-width: 160px;
+        max-height: 130px;
         object-fit: contain;
       }
     }
@@ -431,6 +431,14 @@ $bam-border: #eef0f3;
     display: flex;
     flex-direction: column;
     gap: 20px;
+  }
+
+  /* Keep the left/right cards the same height so rows line up across columns */
+  .perks-column:not(.income-column) .perk-item {
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .perk-item {
