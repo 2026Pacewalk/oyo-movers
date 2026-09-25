@@ -86,6 +86,11 @@
     background: transparent;
     border: none;
 
+    /* kill the global ".faq-section .card-header a[aria-expanded]:after" plus/minus
+       so only the React toggle icon shows */
+    a::after,
+    a::before { content: none !important; }
+
     a {
       display: flex;
       align-items: center;
