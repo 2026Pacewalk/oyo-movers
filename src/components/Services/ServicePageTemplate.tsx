@@ -4,6 +4,8 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Footer from "@/components/WebAppWrapper/Footer";
 import ReviewService from "@/components/LandingPage/Testimonial";
+import HowItsWork from "@/components/LandingPage/HowItsWork";
+import AreasWeCover from "@/components/Locations/AreasWeCover";
 import {
   FaCheck,
   FaTruck,
@@ -15,6 +17,9 @@ import {
   FaRegSmile,
   FaPlus,
   FaMinus,
+  FaRegClock,
+  FaBan,
+  FaStar,
 } from "react-icons/fa";
 import { serviceAreas, serviceJsonLd, type ServiceContent } from "./serviceContent";
 import "./servicePage.scss";
@@ -57,9 +62,9 @@ const ServicePageTemplate = ({ content }: { content: ServiceContent }) => {
                 </a>
               </div>
               <ul className="sp-hero-points">
-                <li><FaCheck /> No hidden fees</li>
-                <li><FaCheck /> 4.9★ rated</li>
-                <li><FaCheck /> Same-day, 7 days</li>
+                <li><FaRegClock /> Time Start at Pickup</li>
+                <li><FaBan className="no" /> No Hidden Fees</li>
+                <li><FaStar className="star" /> 4.9 Rating</li>
               </ul>
             </div>
             <div className="sp-hero-right">
@@ -91,22 +96,8 @@ const ServicePageTemplate = ({ content }: { content: ServiceContent }) => {
         </div>
       </section>
 
-      {/* How it works */}
-      <section className="sp-section sp-section-alt">
-        <div className="sp-container">
-          <h2 className="sp-h2">How It Works</h2>
-          <p className="sp-sub">Book professional movers with a truck in three simple steps.</p>
-          <div className="sp-grid-3">
-            {steps.map((s) => (
-              <div className="sp-step" key={s.title}>
-                <span className="sp-step-icon">{s.icon}</span>
-                <h3>{s.title}</h3>
-                <p>{s.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* How it works — same illustrated section as the home page */}
+      <HowItsWork />
 
       {/* Why choose */}
       <section className="sp-section">
@@ -123,20 +114,8 @@ const ServicePageTemplate = ({ content }: { content: ServiceContent }) => {
         </div>
       </section>
 
-      {/* Service areas (GEO) */}
-      <section className="sp-section sp-section-alt">
-        <div className="sp-container sp-areas">
-          <h2 className="sp-h2">Serving Melbourne & Surrounds</h2>
-          <p className="sp-sub">
-            OYO Movers operates right across the greater Melbourne region, seven days a week.
-          </p>
-          <ul className="sp-area-list">
-            {serviceAreas.map((a) => (
-              <li key={a}><FaMapMarkerAlt /> {a}</li>
-            ))}
-          </ul>
-        </div>
-      </section>
+      {/* Service areas — same map + suburb list as the home page */}
+      <AreasWeCover />
 
       {/* FAQ (AEO) */}
       <section className="sp-section">

@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Footer from "@/components/WebAppWrapper/Footer";
 import ReviewService from "@/components/LandingPage/Testimonial";
+import HowItsWork from "@/components/LandingPage/HowItsWork";
 import {
   FaCheck,
   FaTruck,
@@ -15,6 +16,9 @@ import {
   FaRegSmile,
   FaPlus,
   FaMinus,
+  FaRegClock,
+  FaBan,
+  FaStar,
 } from "react-icons/fa";
 import { servicesMenu } from "@/components/Services/servicesData";
 import { suburbs, type Suburb } from "./suburbs";
@@ -71,9 +75,9 @@ const LocationPageTemplate = ({ suburb }: { suburb: Suburb }) => {
                 <a href="tel:1300013131" className="sp-btn-ghost"><FaPhoneVolume /> 1300 01 31 31</a>
               </div>
               <ul className="sp-hero-points">
-                <li><FaCheck /> No hidden fees</li>
-                <li><FaCheck /> 4.9★ rated</li>
-                <li><FaCheck /> Same-day, 7 days</li>
+                <li><FaRegClock /> Time Start at Pickup</li>
+                <li><FaBan className="no" /> No Hidden Fees</li>
+                <li><FaStar className="star" /> 4.9 Rating</li>
               </ul>
             </div>
             <div className="sp-hero-right">
@@ -116,22 +120,8 @@ const LocationPageTemplate = ({ suburb }: { suburb: Suburb }) => {
         </div>
       </section>
 
-      {/* How it works */}
-      <section className="sp-section">
-        <div className="sp-container">
-          <h2 className="sp-h2">How It Works</h2>
-          <p className="sp-sub">Book movers with a truck in {suburb.name} in three simple steps.</p>
-          <div className="sp-grid-3">
-            {steps.map((s) => (
-              <div className="sp-step" key={s.title}>
-                <span className="sp-step-icon">{s.icon}</span>
-                <h3>{s.title}</h3>
-                <p>{s.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* How it works — same illustrated section as the home page */}
+      <HowItsWork />
 
       {/* Local coverage */}
       <section className="sp-section sp-section-alt">

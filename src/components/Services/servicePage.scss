@@ -111,7 +111,22 @@ $sp-border: #eef0f3;
       font-size: 14px;
       font-weight: 600;
       color: $sp-ink;
-      svg { color: #1fae5a; font-size: 13px; }
+      svg { color: #1a1a1a; font-size: 14px; }
+      svg.no { color: #e5162a; }
+      svg.star { color: #15803d; }
+
+      /* home-style dividers between the three points */
+      & + li { position: relative; padding-left: 19px; }
+      & + li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 1px;
+        height: 16px;
+        background: rgba(0, 0, 0, 0.18);
+      }
     }
   }
 
