@@ -438,7 +438,7 @@ $bam-border: #eef0f3;
 
   /* Keep the left/right cards the same height so rows line up across columns */
   .perks-column:not(.income-column) .perk-item {
-    min-height: 150px;
+    min-height: 176px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -458,10 +458,10 @@ $bam-border: #eef0f3;
     }
 
     h3 {
-      font-size: 17px;
+      font-size: 23px;
       font-weight: 700;
       color: $bam-dark;
-      margin: 0 0 8px;
+      margin: 0 0 12px;
       position: relative;
       padding-left: 16px;
 
@@ -469,18 +469,18 @@ $bam-border: #eef0f3;
         content: "";
         position: absolute;
         left: 0;
-        top: 4px;
+        top: 6px;
         width: 5px;
-        height: 16px;
+        height: 20px;
         border-radius: 3px;
         background: $bam-yellow;
       }
     }
     p {
-      font-size: 14px;
+      font-size: 16.5px;
       color: $bam-muted;
       margin: 0;
-      line-height: 1.55;
+      line-height: 1.6;
     }
   }
 
@@ -502,9 +502,11 @@ $bam-border: #eef0f3;
     h3 {
       color: #121241;
       margin-top: 0 !important;
-      font-size: 20px;
+      font-size: 23px;
       &::before {
         background: #ffce00;
+        top: 6px;
+        height: 20px;
       }
     }
     p,
@@ -525,10 +527,10 @@ $bam-border: #eef0f3;
         display: flex;
         align-items: center;
         gap: 10px;
-        font-size: 15px;
+        font-size: 16.5px;
         font-weight: 600;
         color: #121241;
-        padding: 8px 0;
+        padding: 9px 0;
         border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 
         .check {
@@ -547,8 +549,8 @@ $bam-border: #eef0f3;
       }
     }
     .note {
-      font-size: 12.5px;
-      line-height: 1.5;
+      font-size: 14px;
+      line-height: 1.55;
       font-style: italic;
     }
   }
