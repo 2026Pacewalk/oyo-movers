@@ -282,8 +282,34 @@ $sp-border: #eef0f3;
       font-size: 16px;
       margin-bottom: 14px;
     }
+    /* Line-art icon (no box) — matches the thin outline style */
+    .sp-card-tick.sp-card-lineicon {
+      width: auto;
+      height: auto;
+      border-radius: 0;
+      background: none;
+      color: $sp-dark;
+      font-size: 38px;
+      margin-bottom: 16px;
+      svg { stroke-width: 1.6; display: block; }
+    }
     h3 { font-size: 17px; font-weight: 700; color: $sp-ink; margin: 0 0 8px; }
     p { font-size: 14px; color: $sp-muted; margin: 0; line-height: 1.6; }
+  }
+
+  /* Icon-left layout: icon in its own column, text starts after it */
+  .sp-card.sp-card-icon-only {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 16px;
+    align-items: start;
+
+    .sp-card-lineicon {
+      grid-row: 1 / span 2;
+      margin-bottom: 0;
+      font-size: 34px;
+    }
+    h3 { margin-top: 2px; }
   }
 
   .sp-step {

@@ -18,7 +18,7 @@ export type ServiceContent = {
   };
   benefitsTitle: string;
   benefitsIntro: string;
-  benefits: { title: string; text: string }[];
+  benefits: { title: string; text: string; icon?: string }[];
   whyTitle: string;
   why: { title: string; text: string }[];
   faqTitle: string;
@@ -222,17 +222,17 @@ export const serviceContent: Record<string, ServiceContent> = {
   "apartment-moves": {
     slug: "apartment-moves",
     href: "/apartment-moves",
-    metaTitle: "Apartment Moving Melbourne | Stairs & Lift Movers — OYO Movers",
+    metaTitle: "Apartment Moving in Melbourne | Geelong — OYO Movers",
     metaDescription:
-      "Moving apartments in Melbourne? OYO Movers handles stairs, lifts and tight corners with the right crew and truck. Studio, 1 or 2 bedroom. Upfront pricing, no hidden fees. Quote in 60 seconds.",
+      "Apartment moves are much easier with OYO Movers. We handle stairs, lifts and tight corners across Melbourne and Geelong with the right crew and truck. Studio, 1 or 2 bedroom. Upfront pricing, no hidden fees. Quote in 60 seconds.",
     keywords:
-      "apartment moving Melbourne, apartment removalists, unit movers Melbourne, stairs movers, small move Melbourne",
+      "apartment moving Melbourne, apartment moving Geelong, apartment removalists, unit movers Melbourne, stairs movers, small move Melbourne",
     breadcrumb: "Apartment Moving",
     hero: {
       badge: "Apartment Moving",
-      h1: "Apartment Moving in Melbourne, Stairs and All",
+      h1: "Apartment Moving in Melbourne | Geelong",
       intro:
-        "Lifts, stairs, tight corners and narrow parking — apartment moves have their own challenges, and OYO Movers handles them every day. From a studio to a two-bedroom unit, get the right crew and truck for a fast, careful move. Transparent, pay-as-you-go pricing with no hidden fees.",
+        "Apartment moves are much easier with OYO Movers. Lifts, stairs, tight corners and narrow parking — apartment moves have their own challenges, and our crews handle them every day across Melbourne and Geelong. From a studio to a two-bedroom unit, get the right crew and truck for a fast, careful move. Transparent, pay-as-you-go pricing with no hidden fees.",
       avgLabel: "1-Bedroom Apartment (avg.)",
       avgCost: "$450 – $620",
     },
@@ -240,12 +240,12 @@ export const serviceContent: Record<string, ServiceContent> = {
     benefitsIntro:
       "Our movers know buildings, lifts and loading zones — so your move goes smoothly from door to door.",
     benefits: [
-      { title: "Stairs & Lifts Handled", text: "Multi-level walk-ups or lift access — our movers manage the tricky bits carefully." },
-      { title: "Right Crew & Truck", text: "Choose one or two movers and the right van or truck for a studio, 1 or 2 bedroom." },
-      { title: "We Move Everything", text: "Beds, sofas, fridges, wardrobes and boxes — all handled and protected." },
-      { title: "Upfront, Fair Pricing", text: "See your estimate before you book and pay as you go — no hidden fees." },
-      { title: "Careful Handling", text: "Blankets, straps and shrink wrap as standard so nothing gets marked in tight spaces." },
-      { title: "Same-Day & 7 Days a Week", text: "Lease starting suddenly? We run seven days and can often move you the same day." },
+      { title: "Stairs & Lifts Handled", text: "Multi-level walk-ups or lift access — our movers manage the tricky bits carefully.", icon: "building" },
+      { title: "Right Crew & Truck", text: "Choose one or two movers and the right van or truck for a studio, 1 or 2 bedroom.", icon: "truck" },
+      { title: "We Move Everything", text: "Beds, sofas, fridges, wardrobes and boxes — all handled and protected.", icon: "sofa" },
+      { title: "Upfront, Fair Pricing", text: "See your estimate before you book and pay as you go — no hidden fees.", icon: "price" },
+      { title: "Careful Handling", text: "Blankets, straps and shrink wrap as standard so nothing gets marked in tight spaces.", icon: "shield" },
+      { title: "Same-Day & 7 Days a Week", text: "Lease starting suddenly? We run seven days and can often move you the same day.", icon: "calendar" },
     ],
     whyTitle: "Why Melburnians Choose OYO for Apartment Moves",
     why: [

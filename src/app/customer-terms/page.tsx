@@ -45,9 +45,10 @@ export default function CustomerTermsPage() {
                   <li><Link href="#additional-movers" className="links">10. Additional Movers</Link></li>
                   <li><Link href="#conduct-safety" className="links">11. Conduct & Safety</Link></li>
                   <li><Link href="#provider-rights" className="links">12. Service Providers Rights</Link></li>
-                  <li><Link href="#dispute-resolution" className="links">13. Dispute Resolution</Link></li>
-                  <li><Link href="#governing-law" className="links">14. Governing Law</Link></li>
-                  <li><Link href="#contact" className="links">15. Contact Us</Link></li>
+                  <li><Link href="#liability-insurance" className="links">13. Liability & Insurance</Link></li>
+                  <li><Link href="#dispute-resolution" className="links">14. Dispute Resolution</Link></li>
+                  <li><Link href="#governing-law" className="links">15. Governing Law</Link></li>
+                  <li><Link href="#contact" className="links">16. Contact Us</Link></li>
                 </ul>
               </div>
             </div>
@@ -57,7 +58,7 @@ export default function CustomerTermsPage() {
               <div className="content-section">
                 <div id="last-updated">
                   <h6 className="underline font-weight-normal mb-4">
-                    <span style={{ fontWeight: "bold", color: "black" }}>Effective Date:</span> 16.08.2026
+                    <span style={{ fontWeight: "bold", color: "black" }}>Effective Date:</span> 28.09.2026
                   </h6>
                 </div>
 
@@ -144,12 +145,19 @@ export default function CustomerTermsPage() {
                 <div id="charges">
                   <h5 className="text-uppercase mt-3">5. Charges</h5>
                   <div className="points ">
-                    <p className="text-justify d-flex mb-2"><span>5.1&nbsp;</span><span><span className="font-weight-bold">Pricing:</span> Local moves have a 30-minute minimum, plus a 30-minute call-out travel fee (fuel included). Time is then billed in 30-minute increments. Large Truck or 3-4 Mover jobs have a 4-hour minimum.</span></p>
-                    <p className="text-justify d-flex mb-2"><span>5.2&nbsp;</span><span><span className="font-weight-bold">Work-Time:</span> Time starts when movers arrive at the pickup location and ends when the job is fully completed and payment has been processed. Waiting time caused by the customer is considered as work time.</span></p>
-                    <p className="text-justify d-flex mb-2"><span>5.3&nbsp;</span><span><span className="font-weight-bold">Additional:</span> Fees apply for toll routes, parking fees, bad access, delivery urgency and return travel for long-distance moves.</span></p>
-                    <p className="text-justify d-flex mb-2"><span>5.4&nbsp;</span><span><span className="font-weight-bold">Heavy lifting / Bad access:</span> A $100 fee applies for moving big items such as a Piano, Pool Table, Marble Table, Fish Tanks, bulky items, or for bad property access.</span></p>
+                    <p className="text-justify d-flex mb-2"><span>5.1&nbsp;</span><span>Only 30 minutes minimum, plus a 30-minute Call-Out Travel Fee (Large Trucks or 3+ Mover jobs have a 4-hour minimum).</span></p>
+                    <p className="text-justify d-flex mb-2"><span>5.2&nbsp;</span><span><span className="font-weight-bold">Time Calculations:</span> 30-minute increments.</span></p>
+                    <p className="text-justify d-flex mb-2"><span>5.3&nbsp;</span><span><span className="font-weight-bold">Work-Time:</span> Time starts when movers arrive at the pickup location and ends when the job is fully completed. Waiting time caused by the customer is considered as work time.</span></p>
+                    <p className="text-justify d-flex mb-2"><span>5.4&nbsp;</span><span><span className="font-weight-bold">Travel Fee:</span> A 30-minute Travel Fee (Call-Out) applies to all jobs; this includes fuel costs.</span></p>
+                    <p className="text-justify d-flex mb-2"><span>5.5&nbsp;</span><span><span className="font-weight-bold">Long Distance Jobs:</span> No back-to-base travel for jobs up to 20 km from Melbourne CBD. All jobs outside this area will incur a back-to-base travel time.</span></p>
+                    <p className="text-justify mb-2" style={{ paddingLeft: "1.4rem" }}>Here are some examples:</p>
+                    <p className="text-justify d-flex mb-2" style={{ paddingLeft: "1.4rem" }}><span>•&nbsp;</span><span>Melbourne, VIC – Box Hill, VIC (NO back-to-base time)</span></p>
+                    <p className="text-justify d-flex mb-2" style={{ paddingLeft: "1.4rem" }}><span>•&nbsp;</span><span>Melbourne, VIC – Geelong, VIC (60-minute back-to-base time)</span></p>
+                    <p className="text-justify mb-2" style={{ paddingLeft: "1.4rem" }}>We use Google Maps to determine the optimal route.</p>
+                    <p className="text-justify d-flex mb-2"><span>5.6&nbsp;</span><span><span className="font-weight-bold">Heavy Lifting / Bad Access:</span> A $100 fee may apply for moving big items such as a piano, pool table, marble table, fish tank, bulky items, or for bad property access.</span></p>
                     <p className="text-justify mb-2"><span className="font-weight-bold">Please Note:</span> Large or bulky items will not be moved if deemed unsafe or if extra crew or specialised equipment is required.</p>
-                    <p className="text-justify d-flex mb-2"><span>5.5&nbsp;</span><span><span className="font-weight-bold">GST:</span> All prices include GST, where applicable.</span></p>
+                    <p className="text-justify d-flex mb-2"><span>5.7&nbsp;</span><span>Fees apply for tolls, parking fees or last-minute cancellations.</span></p>
+                    <p className="text-justify d-flex mb-2"><span>5.8&nbsp;</span><span><span className="font-weight-bold">GST:</span> All prices include GST, where applicable.</span></p>
                   </div>
                 </div>
 
@@ -159,7 +167,7 @@ export default function CustomerTermsPage() {
                     <p className="text-justify d-flex mb-2"><span>6.1&nbsp;</span><span><span className="font-weight-bold">Local Jobs:</span> Payments are processed before or upon completion of the job.</span></p>
                     <p className="text-justify d-flex mb-2"><span>6.2&nbsp;</span><span><span className="font-weight-bold">Long Distance or Interstate Jobs:</span> Pre-payment of the estimated job total is required before commencement, and any balance payments upon delivery.</span></p>
                     <p className="text-justify d-flex mb-2"><span>6.3&nbsp;</span><span><span className="font-weight-bold">Late Hour Jobs:</span> Jobs after 5:00pm require pre-payment.</span></p>
-                    <p className="text-justify d-flex mb-2"><span>6.4&nbsp;</span><span><span className="font-weight-bold">Payment Collections:</span> We collect payments before completion of the job. Should circumstances arise where you are unwilling or unable to pay any due charges, we reserve the right to cancel the job or hold deliveries / items of equivalent value until full payment is received.</span></p>
+                    <p className="text-justify d-flex mb-2"><span>6.4&nbsp;</span><span><span className="font-weight-bold">Payment Collections:</span> All applicable charges must be paid when due. If you are unwilling or unable to pay, we may pause or cancel the job or hold delivery / items of equivalent value until full payment is received.</span></p>
                     <p className="text-justify d-flex mb-2"><span>6.5&nbsp;</span><span><span className="font-weight-bold">Payment Gateway:</span> All payments are processed securely via Stripe (PCI Level-1 certified).</span></p>
                     <p className="text-justify d-flex mb-2"><span>6.6&nbsp;</span><span><span className="font-weight-bold">Invoices:</span> All invoices will be emailed electronically.</span></p>
                   </div>
@@ -229,16 +237,27 @@ export default function CustomerTermsPage() {
                   </div>
                 </div>
 
-                <div id="dispute-resolution">
-                  <h5 className="text-uppercase mt-3">13. Dispute Resolution</h5>
+                <div id="liability-insurance">
+                  <h5 className="text-uppercase mt-3">13. Liability & Insurance</h5>
                   <div className="points ">
-                    <p className="text-justify d-flex mb-2"><span>13.1&nbsp;</span><span><span className="font-weight-bold">Dispute relating to these Terms or OYO Services:</span> Should first be raised with OYO Support. Both parties will first attempt to resolve the matter informally. If the dispute cannot be resolved, either party may pursue any rights available under applicable law.</span></p>
-                    <p className="text-justify d-flex mb-2"><span>13.2&nbsp;</span><span><span className="font-weight-bold">Dispute with Service Provider:</span> If any issue comes up, we suggest trying to resolve it directly with your movers on the spot. If it cannot be resolved, please contact OYO Support for assistance.</span></p>
+                    <p className="text-justify d-flex mb-2"><span>13.1&nbsp;</span><span>OYO requires its service providers to maintain Public Liability insurance of at least $5 million AUD.</span></p>
+                    <p className="text-justify d-flex mb-2"><span>13.2&nbsp;</span><span>The OYO Damage Guarantee is separate from transit and contents insurance and is subject to eligibility, exclusions, claim requirements and coverage limits.</span></p>
+                    <p className="text-justify mb-2">
+                      <a href="/insurance" style={{ color: "#007bff" }}>Click here for full Insurance Details</a>
+                    </p>
+                  </div>
+                </div>
+
+                <div id="dispute-resolution">
+                  <h5 className="text-uppercase mt-3">14. Dispute Resolution</h5>
+                  <div className="points ">
+                    <p className="text-justify d-flex mb-2"><span>14.1&nbsp;</span><span><span className="font-weight-bold">Dispute relating to these Terms or OYO Services:</span> Should first be raised with OYO Support. Both parties will first attempt to resolve the matter informally. If the dispute cannot be resolved, either party may pursue any rights available under applicable law.</span></p>
+                    <p className="text-justify d-flex mb-2"><span>14.2&nbsp;</span><span><span className="font-weight-bold">Dispute with Service Provider:</span> If any issue comes up, we suggest trying to resolve it directly with your movers on the spot. If it cannot be resolved, please contact OYO Support for assistance.</span></p>
                   </div>
                 </div>
 
                 <div id="governing-law">
-                  <h5 className="text-uppercase mt-3">14. Governing Law</h5>
+                  <h5 className="text-uppercase mt-3">15. Governing Law</h5>
                   <div className="points ">
                     <p className="text-justify mb-2">
                       These Terms are governed by the laws of Victoria, Australia, and you submit to the
@@ -248,7 +267,7 @@ export default function CustomerTermsPage() {
                 </div>
 
                 <div id="contact">
-                  <h5 className="text-uppercase mt-3">15. Contact Us</h5>
+                  <h5 className="text-uppercase mt-3">16. Contact Us</h5>
                   <div className="points ">
                     <p className="text-justify mb-2">
                       For Feedback, Questions or Concerns, please contact our support team:

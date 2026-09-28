@@ -7,6 +7,18 @@ import ReviewService from "@/components/LandingPage/Testimonial";
 import HowItsWork from "@/components/LandingPage/HowItsWork";
 import AreasWeCover from "@/components/Locations/AreasWeCover";
 import { BiSolidPhoneCall } from "react-icons/bi";
+import {
+  LuBuilding2,
+  LuTruck,
+  LuSofa,
+  LuBadgeDollarSign,
+  LuShieldCheck,
+  LuCalendarDays,
+  LuBox,
+  LuPackage,
+  LuClock,
+  LuMapPin,
+} from "react-icons/lu";
 import FaqAccordion from "@/components/FaqAccordion";
 import {
   FaCheck,
@@ -25,6 +37,19 @@ import {
 } from "react-icons/fa";
 import { serviceAreas, serviceJsonLd, type ServiceContent } from "./serviceContent";
 import "./servicePage.scss";
+
+const benefitIcons: Record<string, React.ReactNode> = {
+  building: <LuBuilding2 />,
+  truck: <LuTruck />,
+  sofa: <LuSofa />,
+  price: <LuBadgeDollarSign />,
+  shield: <LuShieldCheck />,
+  calendar: <LuCalendarDays />,
+  box: <LuBox />,
+  package: <LuPackage />,
+  clock: <LuClock />,
+  location: <LuMapPin />,
+};
 
 const steps = [
   { icon: <FaRegClipboard />, title: "1. Book Your Job", text: "Tell us your pickup and drop-off, then choose your time, vehicle and service type — all online in about 60 seconds." },
@@ -91,8 +116,10 @@ const ServicePageTemplate = ({ content }: { content: ServiceContent }) => {
           <p className="sp-sub">{content.benefitsIntro}</p>
           <div className="sp-grid-3">
             {content.benefits.map((b) => (
-              <div className="sp-card" key={b.title}>
-                <span className="sp-card-tick"><FaCheck /></span>
+              <div className={`sp-card ${b.icon ? "sp-card-icon-only" : ""}`} key={b.title}>
+                <span className={`sp-card-tick ${b.icon ? "sp-card-lineicon" : ""}`}>
+                  {b.icon ? benefitIcons[b.icon] ?? <FaCheck /> : <FaCheck />}
+                </span>
                 <h3>{b.title}</h3>
                 <p>{b.text}</p>
               </div>
