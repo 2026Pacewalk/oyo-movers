@@ -1,0 +1,105 @@
+/* ============================================================
+   "Book OYO For:-" services grid — yellow icon chips, line-art
+   ============================================================ */
+$boy-yellow: #ffe147;
+$boy-dark: #121241;
+$boy-muted: #6b6b72;
+$boy-border: #eef0f3;
+
+.book-oyo-section {
+  padding: 64px 0;
+
+  @media (max-width: 768px) {
+    padding: 44px 0;
+  }
+
+  .book-oyo-container {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .book-oyo-title {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 800;
+    color: $boy-dark;
+    margin: 0 0 12px;
+
+    .book-oyo-colon { color: $boy-dark; }
+
+    @media (max-width: 768px) { font-size: 24px; }
+  }
+
+  .book-oyo-underline {
+    width: 90px;
+    height: 4px;
+    background: $boy-yellow;
+    border-radius: 3px;
+    margin: 0 auto 36px;
+  }
+
+  .book-oyo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+
+    @media (max-width: 900px) { grid-template-columns: repeat(2, 1fr); }
+    @media (max-width: 560px) { grid-template-columns: 1fr; }
+  }
+
+  .book-oyo-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: #fff;
+    border: 1px solid $boy-border;
+    border-radius: 50px;
+    padding: 12px 18px;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 26px rgba(17, 17, 26, 0.08);
+      border-color: $boy-yellow;
+    }
+  }
+
+  .book-oyo-ic {
+    flex-shrink: 0;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $boy-yellow;
+    color: $boy-dark;
+    font-size: 22px;
+
+    svg { stroke-width: 1.6; }
+  }
+
+  .book-oyo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.3;
+    min-width: 0;
+  }
+
+  .book-oyo-label {
+    font-size: 16px;
+    font-weight: 700;
+    color: $boy-dark;
+  }
+
+  .book-oyo-desc {
+    font-size: 13px;
+    color: $boy-muted;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

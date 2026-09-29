@@ -603,7 +603,7 @@ export const WebNavbar = ({ isLogedIn, data }: any) => {
                   >
                     <span
                       className="drawer-subitem-ic"
-                      style={{ background: `${s.color}1f`, color: s.color }}
+                      style={{ background: "none", color: "#6b6b72" }}
                     >
                       {s.icon}
                     </span>

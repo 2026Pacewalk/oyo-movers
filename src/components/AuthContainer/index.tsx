@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { FaStar, FaShieldAlt, FaClock, FaCheckCircle } from "react-icons/fa";
+import { FaStar, FaBan, FaRegClock, FaCheckCircle } from "react-icons/fa";
 import "./authContainer.scss";
 
 const AuthContainer = ({ children }: any) => {
@@ -17,8 +17,7 @@ const AuthContainer = ({ children }: any) => {
             <span className="auth-badge">On-Demand Movers</span>
             <h2>Move smarter with Melbourne&apos;s trusted movers.</h2>
             <p>
-              Book verified movers with a truck in about 60 seconds. Transparent pricing,
-              no hidden fees, and help seven days a week.
+              Book verified movers with a truck in about 60 seconds.
             </p>
 
             <ul className="auth-points">
@@ -30,16 +29,16 @@ const AuthContainer = ({ children }: any) => {
 
           <div className="auth-trust">
             <div className="auth-trust-item">
-              <FaStar className="auth-trust-ic" />
-              <span><strong>4.9★</strong> Google rating</span>
+              <FaRegClock className="auth-trust-ic" />
+              <span>Time Start at Pickup</span>
             </div>
             <div className="auth-trust-item">
-              <FaShieldAlt className="auth-trust-ic" />
-              <span><strong>Verified</strong> movers</span>
+              <FaBan className="auth-trust-ic" style={{ color: "#e5162a" }} />
+              <span>No Hidden Fees</span>
             </div>
             <div className="auth-trust-item">
-              <FaClock className="auth-trust-ic" />
-              <span><strong>Same-day</strong> service</span>
+              <FaStar className="auth-trust-ic" style={{ color: "#15803d" }} />
+              <span>4.9 Rating</span>
             </div>
           </div>
         </div>

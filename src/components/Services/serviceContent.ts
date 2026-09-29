@@ -40,17 +40,17 @@ export const serviceContent: Record<string, ServiceContent> = {
   "house-moving": {
     slug: "house-moving",
     href: "/house-moving",
-    metaTitle: "House Moving Melbourne | Same-Day Removalists — OYO Movers",
+    metaTitle: "House Moving in Melbourne | Geelong — OYO Movers",
     metaDescription:
-      "Book affordable house removalists in Melbourne. From studios to 5-bedroom homes, OYO Movers gives you on-demand movers with a truck, upfront pricing and no hidden fees. Get a quote in 60 seconds.",
+      "Stress-free house moving across Melbourne and Geelong. From a small apartment to a big 4-bedroom house, OYO Movers gives you on-demand removalists with a truck, upfront pricing and no hidden fees. Get a quote in 60 seconds.",
     keywords:
-      "house moving Melbourne, house removalists Melbourne, home movers Melbourne, cheap removalists, same day movers, furniture removalists Melbourne",
+      "house moving Melbourne, house moving Geelong, house removalists Melbourne, home movers Melbourne, cheap removalists, same day movers, furniture removalists Melbourne",
     breadcrumb: "House Moving",
     hero: {
       badge: "House Moving",
-      h1: "House Moving in Melbourne, Made Stress-Free",
+      h1: "House Moving in Melbourne | Geelong",
       intro:
-        "Moving house shouldn't cost you a fortune or a full weekend of stress. OYO Movers connects you with verified, professional removalists and a truck sized to your home — from a compact studio to a sprawling five-bedroom house. Transparent, pay-as-you-go pricing. No hidden fees. Ready when you are.",
+        "Stress-free house moving with OYO. From a small apartment to a big four-bedroom house, we're the perfect solution for getting help moving — across Melbourne and Geelong. Connect with verified, professional removalists and a truck sized to your home, with transparent pay-as-you-go pricing and no hidden fees. We move everything.",
       avgLabel: "2-Bedroom House Move (avg.)",
       avgCost: "$672 – $840",
     },
@@ -87,17 +87,17 @@ export const serviceContent: Record<string, ServiceContent> = {
   "office-relocation": {
     slug: "office-relocation",
     href: "/office-relocation",
-    metaTitle: "Office Relocation Melbourne | After-Hours Office Movers — OYO Movers",
+    metaTitle: "Office Relocation in Melbourne | Geelong — OYO Movers",
     metaDescription:
-      "Relocating your office in Melbourne? OYO Movers moves desks, chairs, workstations and IT with minimal downtime — after hours or on weekends. Upfront pricing, no hidden fees. Quote in 60 seconds.",
+      "Office moving in a few clicks across Melbourne and Geelong. OYO Movers packs, dismantles, moves and re-assembles desks, chairs, workstations and IT with minimal downtime. Upfront pricing, no hidden fees. Quote in 60 seconds.",
     keywords:
-      "office relocation Melbourne, office movers Melbourne, commercial removalists, business relocation, workplace movers",
+      "office relocation Melbourne, office relocation Geelong, office movers Melbourne, commercial removalists, business relocation, workplace movers",
     breadcrumb: "Office Relocation",
     hero: {
       badge: "Office Relocation",
-      h1: "Office Relocation in Melbourne, Without the Downtime",
+      h1: "Office Relocation in Melbourne | Geelong",
       intro:
-        "Move your workplace with as little disruption as possible. OYO Movers relocates desks, chairs, workstations, filing and IT equipment — small studio offices to large workplaces — after hours or on weekends so your team is back up and running fast. Transparent, pay-as-you-go pricing with no hidden fees.",
+        "Office moving in a few clicks. Choose a day or night that doesn't disrupt your business and OYO does everything for you — packing, dismantling, moving and re-assembling — across Melbourne and Geelong. Relocate desks, chairs, workstations, filing and IT with minimal downtime. Transparent, pay-as-you-go pricing with no hidden fees.",
       avgLabel: "Small Office Move (avg.)",
       avgCost: "From $95/hr",
     },
@@ -132,17 +132,17 @@ export const serviceContent: Record<string, ServiceContent> = {
   "move-a-few-items": {
     slug: "move-a-few-items",
     href: "/move-a-few-items",
-    metaTitle: "Move a Few Items Melbourne | Furniture Delivery — OYO Movers",
+    metaTitle: "Moving a Few Items in Melbourne | Geelong — OYO Movers",
     metaDescription:
-      "Just need a few items moved in Melbourne? OYO Movers delivers single items or a few pieces — couch, fridge, desk, bed — with a mover and the right van or truck. Upfront pricing, no hidden fees.",
+      "Same-day, small removals across Melbourne and Geelong. Move a couch, fridge, desk or Marketplace purchase — OYO Movers is the fast, cheaper solution. Book one or two movers with a truck. Upfront pricing, no hidden fees.",
     keywords:
-      "move a few items Melbourne, furniture delivery Melbourne, single item movers, couch delivery, fridge delivery",
+      "move a few items Melbourne, move a few items Geelong, furniture delivery Melbourne, single item movers, couch delivery, fridge delivery",
     breadcrumb: "Move a Few Items",
     hero: {
       badge: "Move a Few Items",
-      h1: "Move a Few Items in Melbourne, the Easy Way",
+      h1: "Moving a Few Items in Melbourne | Geelong",
       intro:
-        "Don't need a whole truck? OYO Movers is perfect for moving a single item or a few pieces — a couch, fridge, desk, bed or that Marketplace bargain. Pick a mover and the right-sized van or truck, and pay only for what you need. Transparent pricing, no hidden fees.",
+        "Same-day, small removals made simple. Want to move a couch, fridge, desk or a Marketplace purchase? OYO is the fast, affordable solution across Melbourne and Geelong — in a few simple steps, book one or two movers with the right-sized van or truck and pay only for what you need. Transparent pricing, no hidden fees.",
       avgLabel: "Few Items (avg.)",
       avgCost: "From $76/hr",
     },
@@ -177,17 +177,17 @@ export const serviceContent: Record<string, ServiceContent> = {
   "donation-run": {
     slug: "donation-run",
     href: "/donation-run",
-    metaTitle: "Donation Run Melbourne | Charity Pickup & Drop-Off — OYO Movers",
+    metaTitle: "Donation Run in Melbourne | Geelong — OYO Movers",
     metaDescription:
-      "Donating unwanted items in Melbourne? OYO Movers collects your goods and drops them at your chosen charity or op-shop. A mover with a van or truck, upfront pricing and no hidden fees.",
+      "Donation runs are easier now across Melbourne and Geelong. OYO connects you with movers and trucks to donate used furniture, appliances and items to op-shops and charities. Upfront pricing, no hidden fees.",
     keywords:
-      "donation run Melbourne, charity pickup Melbourne, op shop drop off, donate furniture Melbourne, goodwill pickup",
+      "donation run Melbourne, donation run Geelong, charity pickup Melbourne, op shop drop off, donate furniture Melbourne, goodwill pickup",
     breadcrumb: "Donation Run",
     hero: {
       badge: "Donation Run",
-      h1: "Donation Runs in Melbourne, Done for You",
+      h1: "Donation Runs in Melbourne | Geelong",
       intro:
-        "Give your pre-loved furniture and goods a second home. OYO Movers collects the items you're donating and drops them at your chosen charity or op-shop — no heavy lifting, no borrowing a ute. Transparent, pay-as-you-go pricing with no hidden fees.",
+        "Donation runs are easier now. OYO connects you with movers and trucks to donate used furniture, appliances and other items to op-shops and charities across Melbourne and Geelong — no heavy lifting, no borrowing a ute. Transparent, pay-as-you-go pricing with no hidden fees.",
       avgLabel: "Donation Run (avg.)",
       avgCost: "From $76/hr",
     },
@@ -267,17 +267,17 @@ export const serviceContent: Record<string, ServiceContent> = {
   "storage-removals": {
     slug: "storage-removals",
     href: "/storage-removals",
-    metaTitle: "Storage Removals Melbourne | Move Into or Out of Storage — OYO Movers",
+    metaTitle: "Storage Removals in Melbourne | Geelong — OYO Movers",
     metaDescription:
-      "Moving items into or out of storage in Melbourne? OYO Movers loads, transports and unloads your goods to or from any storage facility. Upfront pricing, no hidden fees. Quote in 60 seconds.",
+      "Storage moving in a few clicks across Melbourne and Geelong. OYO Movers books movers and a truck to move your items and furniture into or out of any storage facility. Upfront pricing, no hidden fees. Quote in 60 seconds.",
     keywords:
-      "storage removals Melbourne, storage movers, move into storage, self storage delivery Melbourne",
+      "storage removals Melbourne, storage removals Geelong, storage movers, move into storage, self storage delivery Melbourne",
     breadcrumb: "Storage Removals",
     hero: {
       badge: "Storage Removals",
-      h1: "Storage Removals in Melbourne, Into or Out",
+      h1: "Storage Removals in Melbourne | Geelong",
       intro:
-        "Putting things into storage or bringing them home? OYO Movers loads, transports and unloads your goods to or from any storage facility across Melbourne. The right crew and truck, careful handling, and transparent pay-as-you-go pricing with no hidden fees.",
+        "Storage moving in a few clicks. In just a few simple steps, book movers and a truck to move your items and furniture into or out of any storage facility across Melbourne and Geelong. The right crew and truck, careful handling, and transparent pay-as-you-go pricing with no hidden fees.",
       avgLabel: "Storage Move (avg.)",
       avgCost: "From $76/hr",
     },
@@ -312,17 +312,17 @@ export const serviceContent: Record<string, ServiceContent> = {
   "junk-removal": {
     slug: "junk-removal",
     href: "/junk-removal",
-    metaTitle: "Junk Removal Melbourne | Rubbish & Furniture Removal — OYO Movers",
+    metaTitle: "Junk Removal in Melbourne | Geelong — OYO Movers",
     metaDescription:
-      "Need junk removed in Melbourne? OYO Movers hauls away unwanted furniture, appliances and rubbish and disposes of it responsibly. Upfront pricing, no hidden fees. Quote in 60 seconds.",
+      "Got junk? OYO Movers connects you with movers and trucks to remove and haul away junk to the nearest recycling facility across Melbourne and Geelong — faster, cheaper than traditional junk removal. Upfront pricing, no hidden fees.",
     keywords:
-      "junk removal Melbourne, rubbish removal Melbourne, furniture removal, hard rubbish pickup, waste removal Melbourne",
+      "junk removal Melbourne, junk removal Geelong, rubbish removal Melbourne, furniture removal, hard rubbish pickup, waste removal Melbourne",
     breadcrumb: "Junk Removal",
     hero: {
       badge: "Junk Removal",
-      h1: "Junk Removal in Melbourne, Hauled Away Fast",
+      h1: "Junk Removal in Melbourne | Geelong",
       intro:
-        "Clear the clutter without lifting a finger. OYO Movers removes unwanted furniture, appliances and general junk and disposes of it responsibly — recycling and donating where possible. Transparent, pay-as-you-go pricing with no hidden fees.",
+        "Got junk and need it gone quickly? OYO connects you with movers and trucks to remove and haul away your junk to the nearest recycling facility across Melbourne and Geelong — faster, more convenient and cheaper than traditional junk removal companies. Transparent, pay-as-you-go pricing with no hidden fees.",
       avgLabel: "Junk Removal (avg.)",
       avgCost: "From $76/hr",
     },
@@ -357,17 +357,17 @@ export const serviceContent: Record<string, ServiceContent> = {
   "store-delivery": {
     slug: "store-delivery",
     href: "/store-delivery",
-    metaTitle: "Store Delivery Melbourne | Store & Marketplace Pickup — OYO Movers",
+    metaTitle: "Store Delivery in Melbourne | Geelong — OYO Movers",
     metaDescription:
-      "Bought something in Melbourne that won't fit the car? OYO Movers collects your store or Marketplace purchase and delivers it home. A mover with a van or truck, upfront pricing, no hidden fees.",
+      "Same-day store delivery across Melbourne and Geelong. OYO Movers picks up and delivers purchases from your favourite furniture, appliance or homeware store — faster, cheaper and with a mover to carry it in. Upfront pricing, no hidden fees.",
     keywords:
-      "store delivery Melbourne, marketplace pickup Melbourne, furniture pickup, store pickup delivery, same day delivery Melbourne",
+      "store delivery Melbourne, store delivery Geelong, marketplace pickup Melbourne, furniture pickup, store pickup delivery, same day delivery Melbourne",
     breadcrumb: "Store Delivery",
     hero: {
       badge: "Store Delivery",
-      h1: "Store Delivery in Melbourne, Straight to Your Door",
+      h1: "Store Delivery in Melbourne | Geelong",
       intro:
-        "Bought a couch, fridge or flat-pack that won't fit the car? OYO Movers collects your store or Marketplace purchase and delivers it home — with a mover to carry it in. Transparent, pay-as-you-go pricing and no hidden fees.",
+        "Same-day store delivery. Need help to pick up and deliver purchases from your favourite furniture, appliance or homeware store? OYO is a faster, more convenient and cheaper delivery service across Melbourne and Geelong — with a mover to carry it in. Transparent, pay-as-you-go pricing and no hidden fees.",
       avgLabel: "Store Delivery (avg.)",
       avgCost: "From $76/hr",
     },
@@ -402,17 +402,17 @@ export const serviceContent: Record<string, ServiceContent> = {
   "college-moving": {
     slug: "college-moving",
     href: "/college-moving",
-    metaTitle: "Student & College Moving Melbourne | Cheap Movers — OYO Movers",
+    metaTitle: "Student & College Moving in Melbourne | Geelong — OYO Movers",
     metaDescription:
-      "Affordable student and uni moves across Melbourne. OYO Movers helps students shift dorms, share houses and apartments on a budget — movers with a truck, upfront pricing, same-day. Get a quote fast.",
+      "Affordable student and uni moves across Melbourne and Geelong. OYO Movers helps students shift dorms, share houses and apartments on a budget — movers with a truck, upfront pricing, same-day. Get a quote fast.",
     keywords:
-      "student moving Melbourne, college moving, cheap movers for students, uni move Melbourne, dorm move, share house move Melbourne",
+      "student moving Melbourne, student moving Geelong, college moving, cheap movers for students, uni move Melbourne, dorm move, share house move Melbourne",
     breadcrumb: "Student Moving",
     hero: {
       badge: "Student Moving",
-      h1: "Student & College Moving on a Budget",
+      h1: "Student & College Moving in Melbourne | Geelong",
       intro:
-        "End of semester, a new share house, or moving closer to uni? OYO Movers makes student moves quick and genuinely affordable. Book one or two movers with a right-sized truck, pay only for what you need, and skip the stress of borrowing a mate's ute.",
+        "End of semester, a new share house, or moving closer to uni? OYO Movers makes student moves quick and genuinely affordable across Melbourne and Geelong. Book one or two movers with a right-sized truck, pay only for what you need, and skip the stress of borrowing a mate's ute.",
       avgLabel: "Student Move (avg.)",
       avgCost: "$76 – $180",
     },
@@ -447,17 +447,17 @@ export const serviceContent: Record<string, ServiceContent> = {
   "labour-only": {
     slug: "labour-only",
     href: "/labour-only",
-    metaTitle: "Labour Only Movers Melbourne | Loading & Unloading Help — OYO Movers",
+    metaTitle: "Labour-Only Movers in Melbourne | Geelong — OYO Movers",
     metaDescription:
-      "Need muscle, not a truck? Book labour-only movers in Melbourne for loading, unloading, rearranging furniture and lifting heavy items. Verified helpers, upfront pricing, same-day. Get a quote now.",
+      "Need muscle, not a truck? Book labour-only movers across Melbourne and Geelong for loading, unloading, rearranging furniture and lifting heavy items. Verified helpers, upfront pricing, same-day. Get a quote now.",
     keywords:
-      "labour only movers Melbourne, loading unloading help, furniture rearranging, moving helpers Melbourne, muscle only movers, helping hands movers",
+      "labour only movers Melbourne, labour only movers Geelong, loading unloading help, furniture rearranging, moving helpers Melbourne, muscle only movers, helping hands movers",
     breadcrumb: "Labour Only",
     hero: {
       badge: "Labour Only",
-      h1: "Labour-Only Movers — Muscle Without the Truck",
+      h1: "Labour-Only Movers in Melbourne | Geelong",
       intro:
-        "Already have a truck, trailer or van? Book strong, experienced movers by the hour to do the heavy lifting. Perfect for loading and unloading, shifting furniture around the house, or getting bulky items up the stairs. You bring the vehicle — we bring the muscle.",
+        "Already have a truck, trailer or van? Book strong, experienced movers by the hour across Melbourne and Geelong to do the heavy lifting. Perfect for loading and unloading, shifting furniture around the house, or getting bulky items up the stairs. You bring the vehicle — we bring the muscle.",
       avgLabel: "Labour-Only Help (avg.)",
       avgCost: "$76 – $150",
     },
@@ -492,17 +492,17 @@ export const serviceContent: Record<string, ServiceContent> = {
   "appliance-delivery": {
     slug: "appliance-delivery",
     href: "/appliance-delivery",
-    metaTitle: "Appliance Delivery Melbourne | Fridge, Washer & Dryer Movers — OYO",
+    metaTitle: "Appliance Delivery in Melbourne | Geelong — OYO Movers",
     metaDescription:
-      "Affordable appliance delivery and pickup across Melbourne. OYO Movers collects and delivers fridges, washing machines, dryers, dishwashers and more — with movers to carry them in. Get a quote fast.",
+      "Affordable appliance delivery and pickup across Melbourne and Geelong. OYO Movers collects and delivers fridges, washing machines, dryers, dishwashers and more — with movers to carry them in. Get a quote fast.",
     keywords:
-      "appliance delivery Melbourne, fridge delivery, washing machine delivery, appliance pickup, whitegoods delivery Melbourne, second hand appliance transport",
+      "appliance delivery Melbourne, appliance delivery Geelong, fridge delivery, washing machine delivery, appliance pickup, whitegoods delivery Melbourne, second hand appliance transport",
     breadcrumb: "Appliance Delivery",
     hero: {
       badge: "Appliance Delivery",
-      h1: "Appliance Delivery & Pickup Across Melbourne",
+      h1: "Appliance Delivery in Melbourne | Geelong",
       intro:
-        "Bought a new fridge, washer or dryer — or picked up a bargain second-hand? OYO Movers collects your appliance from the store or seller and delivers it right where you need it, with movers to carry it in. No ute, no favours, no strained backs.",
+        "Bought a new fridge, washer or dryer — or picked up a bargain second-hand? OYO Movers collects your appliance from the store or seller and delivers it right where you need it across Melbourne and Geelong, with movers to carry it in. No ute, no favours, no strained backs.",
       avgLabel: "Appliance Delivery (avg.)",
       avgCost: "$76 – $150",
     },
@@ -537,17 +537,17 @@ export const serviceContent: Record<string, ServiceContent> = {
   "marketplace-delivery": {
     slug: "marketplace-delivery",
     href: "/marketplace-delivery",
-    metaTitle: "Marketplace Pickup & Delivery Melbourne | Gumtree & FB — OYO Movers",
+    metaTitle: "Marketplace Pickup in Melbourne | Geelong — OYO Movers",
     metaDescription:
-      "Bought something on Facebook Marketplace or Gumtree? OYO Movers picks it up and delivers it across Melbourne — with movers to load and carry. Furniture, appliances and more. Get a quote in 60 seconds.",
+      "Bought something on Facebook Marketplace or Gumtree? OYO Movers picks it up and delivers it across Melbourne and Geelong — with movers to load and carry. Furniture, appliances and more. Get a quote in 60 seconds.",
     keywords:
-      "marketplace delivery Melbourne, Facebook Marketplace pickup, Gumtree delivery, furniture pickup delivery, second hand furniture transport Melbourne",
+      "marketplace delivery Melbourne, marketplace delivery Geelong, Facebook Marketplace pickup, Gumtree delivery, furniture pickup delivery, second hand furniture transport Melbourne",
     breadcrumb: "Marketplace Pickup",
     hero: {
       badge: "Marketplace Pickup",
-      h1: "Facebook Marketplace & Gumtree Pickup + Delivery",
+      h1: "Marketplace Pickup in Melbourne | Geelong",
       intro:
-        "Scored a bargain online but it won't fit in the car? OYO Movers collects your Facebook Marketplace or Gumtree buy from the seller and delivers it to your door — with movers to load, carry and place it. From sofas to dining tables, we make second-hand simple.",
+        "Scored a bargain online but it won't fit in the car? OYO Movers collects your Facebook Marketplace or Gumtree buy from the seller and delivers it to your door across Melbourne and Geelong — with movers to load, carry and place it. From sofas to dining tables, we make second-hand simple.",
       avgLabel: "Marketplace Delivery (avg.)",
       avgCost: "$76 – $150",
     },

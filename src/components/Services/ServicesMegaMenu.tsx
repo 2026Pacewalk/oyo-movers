@@ -45,10 +45,7 @@ const ServicesMegaMenu = () => {
               role="menuitem"
               onClick={() => setOpen(false)}
             >
-              <span
-                className="services-mega-icon"
-                style={{ background: `${s.color}1f`, color: s.color }}
-              >
+              <span className="services-mega-icon">
                 {s.icon}
               </span>
               <span className="services-mega-text">

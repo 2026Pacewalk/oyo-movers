@@ -18,10 +18,22 @@ import {
   LuPackage,
   LuClock,
   LuMapPin,
+  LuWrench,
+  LuMonitor,
+  LuRecycle,
+  LuHeartHandshake,
+  LuHelpingHand,
+  LuStore,
+  LuHome,
+  LuBriefcase,
+  LuWarehouse,
+  LuPlug,
+  LuUsers,
+  LuCheck as LuCheckIcon,
 } from "react-icons/lu";
 import FaqAccordion from "@/components/FaqAccordion";
+import BookOyoFor from "./BookOyoFor";
 import {
-  FaCheck,
   FaTruck,
   FaPhoneVolume,
   FaArrowRight,
@@ -49,6 +61,43 @@ const benefitIcons: Record<string, React.ReactNode> = {
   package: <LuPackage />,
   clock: <LuClock />,
   location: <LuMapPin />,
+  wrench: <LuWrench />,
+  monitor: <LuMonitor />,
+  recycle: <LuRecycle />,
+  charity: <LuHeartHandshake />,
+  lifting: <LuHelpingHand />,
+  store: <LuStore />,
+  home: <LuHome />,
+  briefcase: <LuBriefcase />,
+  warehouse: <LuWarehouse />,
+  appliance: <LuPlug />,
+  crew: <LuUsers />,
+  check: <LuCheckIcon />,
+};
+
+/* Pick a relevant line-art icon from a benefit's title (keyword match, first wins). */
+const resolveBenefitIcon = (title: string): string => {
+  const t = title.toLowerCase();
+  if (/(assembl|disassembl)/.test(t)) return "wrench";
+  if (/(workstation|chairs|desks, chairs)/.test(t)) return "briefcase";
+  if (/(beds & desks|rearrange|restage)/.test(t)) return "wrench";
+  if (/(it & electronics|electronics|monitor)/.test(t)) return "monitor";
+  if (/(recycl|responsible disposal|disposal)/.test(t)) return "recycle";
+  if (/charity/.test(t)) return "charity";
+  if (/(lifting|loading|unloading|muscle|helping hand|experienced crew)/.test(t)) return "lifting";
+  if (/storage/.test(t)) return "warehouse";
+  if (/(stairs|lifts)/.test(t)) return "building";
+  if (/(fridge|washer|appliance|whitegood)/.test(t)) return "appliance";
+  if (/(pickup|seller|drop-off|pick up)/.test(t)) return "location";
+  if (/carried inside/.test(t)) return "home";
+  if (/(store|marketplace)/.test(t)) return "store";
+  if (/(truck|crew|van)/.test(t)) return "truck";
+  if (/(we move everything|furniture|bulky|item or a few|one item|loaded)/.test(t)) return "sofa";
+  if (/(pricing|price|pay as you go|pay only|by the hour|fair|cheaper|upfront|one simple)/.test(t)) return "price";
+  if (/(careful|protected|handling|insured|transit|kit)/.test(t)) return "shield";
+  if (/(after-hours|weekend)/.test(t)) return "clock";
+  if (/(same-day|7 days|fast|book in minutes|flexible|turnaround|minutes)/.test(t)) return "calendar";
+  return "check";
 };
 
 const steps = [
@@ -115,15 +164,18 @@ const ServicePageTemplate = ({ content }: { content: ServiceContent }) => {
           <h2 className="sp-h2">{content.benefitsTitle}</h2>
           <p className="sp-sub">{content.benefitsIntro}</p>
           <div className="sp-grid-3">
-            {content.benefits.map((b) => (
-              <div className={`sp-card ${b.icon ? "sp-card-icon-only" : ""}`} key={b.title}>
-                <span className={`sp-card-tick ${b.icon ? "sp-card-lineicon" : ""}`}>
-                  {b.icon ? benefitIcons[b.icon] ?? <FaCheck /> : <FaCheck />}
-                </span>
-                <h3>{b.title}</h3>
-                <p>{b.text}</p>
-              </div>
-            ))}
+            {content.benefits.map((b) => {
+              const iconKey = b.icon ?? resolveBenefitIcon(b.title);
+              return (
+                <div className="sp-card sp-card-icon-only" key={b.title}>
+                  <span className="sp-card-tick sp-card-lineicon">
+                    {benefitIcons[iconKey] ?? benefitIcons.check}
+                  </span>
+                  <h3>{b.title}</h3>
+                  <p>{b.text}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -145,6 +197,9 @@ const ServicePageTemplate = ({ content }: { content: ServiceContent }) => {
           </div>
         </div>
       </section>
+
+      {/* Book OYO For — services grid, shown on every service page */}
+      <BookOyoFor currentSlug={content.slug} />
 
       {/* Service areas — same map + suburb list as the home page */}
       <AreasWeCover />
