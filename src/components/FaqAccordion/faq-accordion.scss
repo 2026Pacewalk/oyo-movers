@@ -27,4 +27,59 @@
     background: #ffce00;
     margin: 12px auto 0;
   }
+
+  /* Plain accordion — matches the /packing-tips FAQ UI (fonts, dividers, +/× toggle) */
+  .pt-faq-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .pt-faq-item {
+    background: #fff;
+
+    .pt-faq-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding: 15px 25px;
+      cursor: pointer;
+      border-bottom: 1.2px solid #d9d9d9;
+      transition: background-color 0.25s ease;
+
+      &:hover { background-color: #f8f9fa; }
+
+      .pt-faq-q {
+        font-size: 21px;
+        font-weight: 600;
+        color: #000;
+        line-height: 1.35;
+
+        @media (max-width: 768px) { font-size: 17px; }
+      }
+
+      .pt-faq-icon {
+        flex-shrink: 0;
+        font-size: 30px;
+        font-weight: 600;
+        color: #000;
+        line-height: 1;
+      }
+    }
+
+    .pt-faq-content {
+      padding: 18px 25px;
+      background: #fff;
+      border-bottom: 4px solid #f8dd49;
+
+      p {
+        margin: 0;
+        color: #666;
+        font-size: 17px;
+        line-height: 1.7;
+
+        @media (max-width: 768px) { font-size: 15px; }
+      }
+    }
+  }
 }

@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import { FaPlus, FaXmark } from "react-icons/fa6";
 import "@/app/faqs/faqs.scss";
 import "./faq-accordion.scss";
 
@@ -46,32 +45,24 @@ const FaqAccordion = ({ items, heading = "Frequently Asked Questions", defaultOp
               <h2 className="faq-inline-title">{heading}</h2>
               <div className="faq-divider"></div>
             </div>
-            <div className="accordion mb-4" id="accordionExample">
+            <div className="pt-faq-wrapper">
               {items.map((item, i) => (
-                <div key={i} className="card">
-                  <div className="card-header p-0" id={`faq-h-${i}`}>
-                    <a
-                      href="javascript:void(0)"
-                      className={`text-left ${active === i ? "" : "collapsed"}`}
-                      onClick={() => setActive(active === i ? null : i)}
-                      aria-expanded={active === i}
-                      aria-controls={`faq-c-${i}`}
-                    >
-                      {item.q}
-                      <span className="toggle-icon">
-                        {active === i ? <FaXmark /> : <FaPlus />}
-                      </span>
-                    </a>
-                  </div>
+                <div key={i} className="pt-faq-item">
                   <div
-                    id={`faq-c-${i}`}
-                    className={`collapse ${active === i ? "show" : ""}`}
-                    aria-labelledby={`faq-h-${i}`}
+                    className={`pt-faq-header ${active === i ? "active" : ""}`}
+                    onClick={() => setActive(active === i ? null : i)}
+                    role="button"
+                    aria-expanded={active === i}
+                    aria-controls={`faq-c-${i}`}
                   >
-                    <div className="card-body">
+                    <span className="pt-faq-q">{item.q}</span>
+                    <span className="pt-faq-icon">{active === i ? "×" : "+"}</span>
+                  </div>
+                  {active === i && (
+                    <div className="pt-faq-content" id={`faq-c-${i}`}>
                       <p dangerouslySetInnerHTML={{ __html: highlightLinks(item.a) }}></p>
                     </div>
-                  </div>
+                  )}
                 </div>
               ))}
             </div>

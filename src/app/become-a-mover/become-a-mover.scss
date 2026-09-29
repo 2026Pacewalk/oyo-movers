@@ -649,9 +649,14 @@ $bam-border: #eef0f3;
     }
   }
 
+  /* Tighten the space between the FAQ accordion and the "Movers FAQ here" line */
+  .faq-section.faq-section--inline {
+    padding-bottom: 16px;
+  }
+
   .faq-link {
     text-align: center;
-    margin-top: 26px !important;
+    margin-top: 6px !important;
     font-size: 15px;
     color: $bam-muted;
     a {
